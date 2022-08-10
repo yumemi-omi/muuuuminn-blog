@@ -1,0 +1,15 @@
+{
+  "baseBranches": ["main"],
+  "timezone": "Asia/Tokyo",
+  "schedule": "every weekend",
+  "automergeType": "branch",
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "automerge": true
+    }
+  ],
+  "minor": {
+    "groupName": "all dependencies"
+  }
+}
