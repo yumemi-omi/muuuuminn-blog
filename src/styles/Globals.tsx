@@ -1,6 +1,6 @@
-import { css, Global } from '@emotion/react';
-import { FC } from 'react';
-import 'ress';
+import { css, Global } from "@emotion/react";
+import { FC } from "react";
+import "ress";
 
 export const GlobalStyles: FC = () => (
   <Global

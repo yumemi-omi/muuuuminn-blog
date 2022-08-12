@@ -1,7 +1,7 @@
-import { css } from '@emotion/react';
-import { FC } from 'react';
+import { css } from "@emotion/react";
+import { FC } from "react";
 
-import Button from '@/components/root/Button';
+import Button from "@/components/root/Button";
 
 const myStyle = css`
   color: hotpink;
@@ -14,10 +14,9 @@ const Home: FC = () => {
     <section css={myStyle}>
       <h1>サンプル</h1>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda
-        blanditiis consequatur eius hic ipsam nostrum omnis optio! Doloribus
-        quaerat quis ratione? At, maiores voluptas? Eveniet odio omnis
-        repellendus sapiente voluptatibus.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda blanditiis consequatur
+        eius hic ipsam nostrum omnis optio! Doloribus quaerat quis ratione? At, maiores voluptas?
+        Eveniet odio omnis repellendus sapiente voluptatibus.
       </p>
       <Button>Lets Start!!</Button>
     </section>
