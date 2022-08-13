@@ -1,7 +1,3 @@
 export const PostPage = () => {
-  return (
-    <div>
-      aa
-    </div>
-  )
-}
+  return <div>aa</div>;
+};

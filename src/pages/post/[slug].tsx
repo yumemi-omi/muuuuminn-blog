@@ -1,55 +1,52 @@
-import Head from 'next/head'
-import { useRouter } from 'next/router'
+import Head from "next/head";
+import { useRouter } from "next/router";
 
-import { getPostBySlug, getAllPosts } from '@/shared/libs/markdown/api'
-import markdownToHtml from '@/shared/libs/markdown/markdownToHtml'
-
+import { getPostBySlug, getAllPosts } from "@/shared/libs/markdown/api";
+import markdownToHtml from "@/shared/libs/markdown/markdownToHtml";
 
 type Props = {
-  post: any
-}
+  post: any;
+};
 
 export default function Post({ post }: Props) {
-  const router = useRouter()
+  const router = useRouter();
 
   return (
-    <div >
-        {router.isFallback ? (
-          <p>Loading…</p>
-        ) : (
-          <>
-            <article>
-              <Head>
-                <title>
-                  {post.title} | detail
-                </title>
-                <meta property="og:image" content={post.ogImage.url} />
-              </Head>
-              <div dangerouslySetInnerHTML={{__html:post.content}} />
-            </article>
-          </>
-        )}
+    <div>
+      {router.isFallback ? (
+        <p>Loading…</p>
+      ) : (
+        <>
+          <article>
+            <Head>
+              <title>{post.title} | detail</title>
+              <meta property="og:image" content={post.ogImage.url} />
+            </Head>
+            <div dangerouslySetInnerHTML={{ __html: post.content }} />
+          </article>
+        </>
+      )}
     </div>
-  )
+  );
 }
 
 type Params = {
   params: {
-    slug: string
-  }
-}
+    slug: string;
+  };
+};
 
 export async function getStaticProps({ params }: Params) {
   const post = getPostBySlug(params.slug, [
-    'title',
-    'date',
-    'slug',
-    'author',
-    'content',
-    'ogImage',
-    'coverImage',
-  ])
-  const content = await markdownToHtml(post.content || '')
+    "title",
+    "date",
+    "slug",
+    "author",
+    "content",
+    "ogImage",
+    "coverImage",
+  ]);
+  const content = await markdownToHtml(post.content || "");
 
   return {
     props: {
@@ -58,11 +55,11 @@ export async function getStaticProps({ params }: Params) {
         content,
       },
     },
-  }
+  };
 }
 
 export async function getStaticPaths() {
-  const posts = getAllPosts(['slug'])
+  const posts = getAllPosts(["slug"]);
 
   return {
     paths: posts.map((post) => {
@@ -70,8 +67,8 @@ export async function getStaticPaths() {
         params: {
           slug: post.slug,
         },
-      }
+      };
     }),
     fallback: false,
-  }
+  };
 }

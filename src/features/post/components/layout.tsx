@@ -1,7 +1,3 @@
 export const PostPageLayout = () => {
-  return (
-    <div>
-      aa
-    </div>
-  )
-}
+  return <div>aa</div>;
+};
