@@ -1,9 +1,9 @@
 /** @type {import('prettier').Config} */
 const config = {
-  trailingComma: 'all',
+  trailingComma: "all",
   printWidth: 100,
   tabWidth: 2,
-  arrowParens: 'always',
+  arrowParens: "always",
 };
 
 module.exports = config;
