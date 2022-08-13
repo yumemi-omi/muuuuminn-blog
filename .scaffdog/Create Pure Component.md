@@ -1,15 +1,38 @@
 ---
-name: 'Create Pure Component'
-root: '.'
-output: '**/*'
+name: "new component"
+root: "./src/"
+output: "**/components/"
 ignore: []
 questions:
-  value: 'Please enter any text.'
+  componentName: "Please enter component name."
 ---
 
-# `{{ inputs.value }}.md`
+# Variables
 
-```markdown
-Let's make a document! See more detail scaffdog repository.
-https://github.com/cats-oss/scaffdog/#templates
+- PascalComponentName: `{{ inputs.componentName | pascal }}`
+
+# {{ PascalComponentName }}/index.tsx
+
+```typescript
+export * from "./{{ PascalComponentName }}";
+```
+
+# {{ PascalComponentName }}/{{ PascalComponentName }}.tsx
+
+```typescript
+import { Box, BoxProps } from '@chakra-ui/react'
+import { FC, ReactNode } from 'react'
+
+interface {{ PascalComponentName }}Props extends BoxProps {
+  children: ReactNode
+}
+
+export const {{ PascalComponentName }}: FC<{{ PascalComponentName }}Props> = (props) => {
+  const { children } = props
+  return (
+    <Box>
+      {children}
+    </Box>
+  )
+}
 ```
