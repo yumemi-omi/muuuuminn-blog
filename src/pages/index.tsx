@@ -1,26 +1,42 @@
-import { css } from "@emotion/react";
-import { FC } from "react";
+import Head from 'next/head'
+import Link from 'next/link'
 
-import Button from "@/components/root/Button";
+import { getAllPosts } from '@/shared/libs/markdown/api'
 
-const myStyle = css`
-  color: hotpink;
-  font-size: 1rem;
-  font-weight: bold;
-`;
+type Props = {
+  posts: any[]
+}
 
-const Home: FC = () => {
+export default function Index({ posts }: Props) {
+console.log(posts)
   return (
-    <section css={myStyle}>
-      <h1>サンプル</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda blanditiis consequatur
-        eius hic ipsam nostrum omnis optio! Doloribus quaerat quis ratione? At, maiores voluptas?
-        Eveniet odio omnis repellendus sapiente voluptatibus.
-      </p>
-      <Button>Lets Start!!</Button>
-    </section>
-  );
-};
+    <>
+        <Head>
+          <title>muuuuminn-blog</title>
+        </Head>
+        {posts.map((post)=> (<div key={post.slug}>
+          <Link as={`/post/${post.slug}`} href="/post/[slug]">
+              <a className="hover:underline">{post.title}</a>
+            </Link>
+        </div>))}
+        <div dangerouslySetInnerHTML={{
+          __html: posts[0].excerpt as string
+        }}/>
+    </>
+  )
+}
 
-export default Home;
+export const getStaticProps = async () => {
+  const posts = getAllPosts([
+    'title',
+    'date',
+    'slug',
+    'author',
+    'coverImage',
+    'excerpt',
+  ])
+
+  return {
+    props: { posts },
+  }
+}
