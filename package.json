@@ -10,11 +10,13 @@
     "lint": "next lint",
     "lint:js": "eslint '**/*.@(js|ts|tsx)'",
     "check": "tsc && prettier --list-different . && npm run lint:js",
-    "format": "prettier --write . && npm run lint:js -- --fix",
-    "prepare": "husky install"
+    "format": "prettier --write . && npm run lint:js -- --fix"
   },
   "dependencies": {
-    "@emotion/react": "11.10.0",
+    "@chakra-ui/react": "^2.2.6",
+    "@emotion/react": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
+    "framer-motion": "^7.1.0",
     "next": "12.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
