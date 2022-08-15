@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 
+import { useTranslation } from "@/shared/hooks/useTranslation";
 import { getAllPosts } from "@/shared/libs/markdown/api";
 
 type Props = {
@@ -8,11 +9,11 @@ type Props = {
 };
 
 export default function Index({ posts }: Props) {
-  console.log(posts);
+  const { t } = useTranslation();
   return (
     <>
       <Head>
-        <title>muuuuminn-blog</title>
+        <title>{t.SITE_NAME}</title>
       </Head>
       {posts.map((post) => (
         <div key={post.slug}>

@@ -6,6 +6,10 @@ const nextConfig = {
   compiler: {
     emotion: true,
   },
+  i18n: {
+    locales: ["ja", "en"],
+    defaultLocale: "ja",
+  },
 };
 
 module.exports = nextConfig;
