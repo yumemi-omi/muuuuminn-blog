@@ -3,15 +3,16 @@ import { join } from "path";
 
 import matter from "gray-matter";
 
-const postsDirectory = join(process.cwd(), "src/contents/post/hello");
+const POSTS_DIRECTORY_NAME = "src/contents/post";
+
+const postsDirectory = join(process.cwd(), POSTS_DIRECTORY_NAME);
 
 export function getPostSlugs() {
   return fs.readdirSync(postsDirectory);
 }
 
 export function getPostBySlug(slug: string, fields: string[] = []) {
-  const realSlug = slug.replace(/\.md$/, "");
-  const fullPath = join(postsDirectory, `${realSlug}.md`);
+  const fullPath = join(postsDirectory, `${slug}/index.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
@@ -24,7 +25,7 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
   // Ensure only the minimal needed data is exposed
   fields.forEach((field) => {
     if (field === "slug") {
-      items[field] = realSlug;
+      items[field] = slug;
     }
     if (field === "content") {
       items[field] = content;
@@ -40,6 +41,7 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
 
 export function getAllPosts(fields: string[] = []) {
   const slugs = getPostSlugs();
+  console.log(slugs);
   const posts = slugs
     .map((slug) => getPostBySlug(slug, fields))
     // sort posts by date in descending order
