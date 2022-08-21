@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/router";
 
-import locales from "@/shared/locales";
+import locales from "@/shared/libs/i18n/locales";
 
 type LocalesType = keyof typeof locales;
 

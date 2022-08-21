@@ -1,7 +1,8 @@
 import Head from "next/head";
 import Link from "next/link";
 
-import { useTranslation } from "@/shared/hooks/useTranslation";
+import { Box } from "@/shared/libs/chakra/components/Box";
+import { useTranslation } from "@/shared/libs/i18n/hooks/useTranslation";
 import { getAllPosts } from "@/shared/libs/markdown/api";
 
 type Props = {
@@ -16,11 +17,11 @@ export default function Index({ posts }: Props) {
         <title>{t.SITE_NAME}</title>
       </Head>
       {posts.map((post) => (
-        <div key={post.slug}>
+        <Box my={10} key={post.slug}>
           <Link as={`/post/${post.slug}`} href="/post/[slug]">
             <a className="hover:underline">{post.title}</a>
           </Link>
-        </div>
+        </Box>
       ))}
       <div
         dangerouslySetInnerHTML={{
