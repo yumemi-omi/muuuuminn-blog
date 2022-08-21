@@ -1,6 +1,6 @@
 const config = {
   "*.@(ts|tsx)": "bash -c tsc",
-  "*.@(js|ts|tsx)": "eslint --fix",
+  "*.@(js|ts|tsx)": "eslint --fix --config eslint.config.js",
   "**/__tests__/?(*.)+(spec|test).[jt]s?(x)": "jest --ci",
 };
 
