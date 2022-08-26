@@ -1,15 +1,19 @@
 import Head from "next/head";
 import Link from "next/link";
 
+import { BasicLayout } from "@/shared/components/BasicLayout";
 import { Box } from "@/shared/libs/chakra/components/Box";
 import { useTranslation } from "@/shared/libs/i18n/hooks/useTranslation";
 import { getAllPosts } from "@/shared/libs/markdown/api";
+
+import type { NextPageWithLayout } from "@/pages/_app";
+import type { ReactElement } from "react";
 
 type Props = {
   posts: any[];
 };
 
-export default function Index({ posts }: Props) {
+const Index: NextPageWithLayout<Props> = ({ posts }) => {
   const { t } = useTranslation();
   return (
     <>
@@ -30,7 +34,11 @@ export default function Index({ posts }: Props) {
       />
     </>
   );
-}
+};
+
+Index.getLayout = function getLayout(page: ReactElement) {
+  return <BasicLayout>{page}</BasicLayout>;
+};
 
 export const getStaticProps = async () => {
   const posts = getAllPosts(["title", "date", "slug", "author", "coverImage", "excerpt"]);
@@ -39,3 +47,5 @@ export const getStaticProps = async () => {
     props: { posts },
   };
 };
+
+export default Index;
