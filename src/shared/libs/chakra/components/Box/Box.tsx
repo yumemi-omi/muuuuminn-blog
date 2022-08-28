@@ -1,9 +1,7 @@
 import { Box as OriginBox, BoxProps as OriginBoxProps } from "@chakra-ui/react";
-import { FC, ReactNode } from "react";
+import { FC } from "react";
 
-interface BoxProps extends OriginBoxProps {
-  children: ReactNode;
-}
+export type BoxProps = OriginBoxProps;
 
 export const Box: FC<BoxProps> = (props) => {
   const { children, ...rest } = props;

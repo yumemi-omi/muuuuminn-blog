@@ -1,9 +1,7 @@
 import { Stack as OriginStack, StackProps as OriginStackProps } from "@chakra-ui/react";
-import { FC, ReactNode } from "react";
+import { FC } from "react";
 
-interface StackProps extends OriginStackProps {
-  children: ReactNode;
-}
+export type StackProps = OriginStackProps;
 
 export const Stack: FC<StackProps> = (props) => {
   const { children, ...rest } = props;
