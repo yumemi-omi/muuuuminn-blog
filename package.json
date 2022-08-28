@@ -34,7 +34,7 @@
     "@typescript-eslint/parser": "5.33.0",
     "dependency-cruiser": "11.15.0",
     "eslint": "8.21.0",
-    "eslint-config-next": "12.2.4",
+    "eslint-config-next": "12.2.5",
     "eslint-config-prettier": "8.5.0",
     "husky": "8.0.0",
     "lint-staged": "13.0.3",
