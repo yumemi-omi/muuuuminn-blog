@@ -1,20 +1,19 @@
-import { Box, BoxProps } from "@chakra-ui/react";
-import { FC, ReactNode } from "react";
+import { FC } from "react";
 
 import { Footer } from "@/shared/components/Footer";
 import { Header } from "@/shared/components/Header";
+import { Box } from "@/shared/libs/chakra/components/Box";
+import { Grid, GridProps } from "@/shared/libs/chakra/components/Grid";
 
-interface BasicLayoutProps extends BoxProps {
-  children: ReactNode;
-}
+type BasicLayoutProps = GridProps;
 
 export const BasicLayout: FC<BasicLayoutProps> = (props) => {
   const { children } = props;
   return (
-    <Box>
+    <Grid templateRows={"auto 1fr auto"} templateColumns={"100%"} minHeight={"100vh"}>
       <Header />
-      {children}
+      <Box>{children}</Box>
       <Footer />
-    </Box>
+    </Grid>
   );
 };
