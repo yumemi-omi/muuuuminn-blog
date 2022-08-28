@@ -1,9 +1,10 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import { NextPage } from "next";
 
+import theme from "@/shared/libs/chakra/theme";
+
 import type { AppProps } from "next/app";
 import type { ReactElement, ReactNode } from "react";
-
 
 // eslint-disable-next-line @typescript-eslint/ban-types
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
@@ -19,7 +20,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout): JSX.Element {
 
   return (
     <>
-      <ChakraProvider>{getLayout(<Component {...pageProps} />)}</ChakraProvider>
+      <ChakraProvider theme={theme}>{getLayout(<Component {...pageProps} />)}</ChakraProvider>
     </>
   );
 }
