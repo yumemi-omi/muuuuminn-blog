@@ -1,10 +1,10 @@
 import Head from "next/head";
-import Link from "next/link";
 
 import { BasicLayout } from "@/shared/components/BasicLayout";
-import { Box } from "@/shared/libs/chakra/components/Box";
+import { Box } from "@/shared/libs/chakra";
 import { useTranslation } from "@/shared/libs/i18n/hooks/useTranslation";
 import { getAllPosts } from "@/shared/libs/markdown/api";
+import { ChakraNextLink } from "@/shared/libs/next";
 
 import type { NextPageWithLayout } from "@/pages/_app";
 import type { ReactElement } from "react";
@@ -22,9 +22,7 @@ const Index: NextPageWithLayout<Props> = ({ posts }) => {
       </Head>
       {posts.map((post) => (
         <Box my={10} key={post.slug}>
-          <Link as={`/post/${post.slug}`} href="/post/[slug]">
-            <a className="hover:underline">{post.title}</a>
-          </Link>
+          <ChakraNextLink href={`/post/${post.slug}`}>{post.title}</ChakraNextLink>
         </Box>
       ))}
       <div
