@@ -1,14 +1,18 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { ReactElement } from "react";
 
+import { BasicLayout } from "@/shared/components/BasicLayout";
 import { getPostBySlug, getAllPosts } from "@/shared/libs/markdown/api";
 import markdownToHtml from "@/shared/libs/markdown/markdownToHtml";
+
+import { NextPageWithLayout } from "../_app";
 
 type Props = {
   post: any;
 };
 
-export default function Post({ post }: Props) {
+const Post: NextPageWithLayout<Props> = ({ post }) => {
   const router = useRouter();
 
   return (
@@ -28,7 +32,11 @@ export default function Post({ post }: Props) {
       )}
     </div>
   );
-}
+};
+
+Post.getLayout = function getLayout(page: ReactElement) {
+  return <BasicLayout>{page}</BasicLayout>;
+};
 
 type Params = {
   params: {
@@ -72,3 +80,5 @@ export async function getStaticPaths() {
     fallback: false,
   };
 }
+
+export default Post;
