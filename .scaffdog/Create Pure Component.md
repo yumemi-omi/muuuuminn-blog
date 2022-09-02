@@ -20,7 +20,7 @@ export * from "./{{ PascalComponentName }}";
 # {{ PascalComponentName }}/{{ PascalComponentName }}.tsx
 
 ```typescript
-import { Box, BoxProps } from '@chakra-ui/react'
+import {  Box, BoxProps } from "@/shared/libs/chakra";
 import { FC } from 'react'
 
 interface {{ PascalComponentName }}Props extends BoxProps {}
