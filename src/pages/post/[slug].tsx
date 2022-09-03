@@ -2,14 +2,15 @@ import { ReactElement } from "react";
 
 import { PostPage } from "@/features/post/components/PostPage";
 import { PostPageLayout } from "@/features/post/components/PostPageLayout";
+import { getPostBySlug, getAllPosts } from "@/libs/markdown/api";
+import markdownToHtml from "@/libs/markdown/markdownToHtml";
 import { BasicLayout } from "@/shared/components/BasicLayout";
-import { getPostBySlug, getAllPosts } from "@/shared/libs/markdown/api";
-import markdownToHtml from "@/shared/libs/markdown/markdownToHtml";
+import { PostDetail } from "@/shared/type/post";
 
 import { NextPageWithLayout } from "../_app";
 
 type Props = {
-  post: any;
+  post: PostDetail;
 };
 
 const Post: NextPageWithLayout<Props> = ({ post }) => {

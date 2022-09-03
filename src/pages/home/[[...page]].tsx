@@ -1,14 +1,15 @@
 import { HomePage } from "@/features/home/components/HomePage";
 import { HomePageLayout } from "@/features/home/components/HomePageLayout";
+import { getAllPosts } from "@/libs/markdown/api";
+import array from "@/libs/utils/array";
 import { BasicLayout } from "@/shared/components/BasicLayout";
-import { getAllPosts } from "@/shared/libs/markdown/api";
-import array from "@/shared/libs/utils/array";
+import { PostList } from "@/shared/type/post";
 
 import type { NextPageWithLayout } from "@/pages/_app";
 import type { ReactElement } from "react";
 
 type Props = {
-  posts: any[];
+  posts: PostList;
 };
 
 const Home: NextPageWithLayout<Props> = ({ posts }) => {

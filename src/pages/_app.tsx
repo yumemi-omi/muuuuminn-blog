@@ -1,7 +1,7 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import { NextPage } from "next";
 
-import theme from "@/shared/libs/chakra/theme";
+import theme from "@/libs/chakra/theme";
 
 import type { AppProps } from "next/app";
 import type { ReactElement, ReactNode } from "react";

@@ -1,9 +1,9 @@
 import { Center, Text } from "@chakra-ui/react";
 import { FC } from "react";
 
-import { Flex, FlexProps } from "@/shared/libs/chakra";
-import { useTranslation } from "@/shared/libs/i18n/hooks/useTranslation";
-import { ChakraNextLink } from "@/shared/libs/next";
+import { Flex, FlexProps } from "@/libs/chakra";
+import { useTranslation } from "@/libs/i18n";
+import { ChakraNextLink } from "@/libs/next";
 
 type FooterProps = FlexProps;
 

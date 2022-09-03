@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import { Box, BoxProps } from "@/shared/libs/chakra";
+import { Box, BoxProps } from "@/libs/chakra";
 
 type ContentProps = { html: string } & BoxProps;
 

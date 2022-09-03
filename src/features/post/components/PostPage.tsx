@@ -1,12 +1,13 @@
 import Head from "next/head";
 import { FC } from "react";
 
-import { Box } from "@/shared/libs/chakra";
+import { Box } from "@/libs/chakra";
+import { PostDetail } from "@/shared/type/post";
 
 import { Content } from "./Content";
 
 type Props = {
-  post: any;
+  post: PostDetail;
 };
 
 export const PostPage: FC<Props> = ({ post }) => {
@@ -17,7 +18,7 @@ export const PostPage: FC<Props> = ({ post }) => {
       <article>
         <Head>
           <title>{title}</title>
-          <meta property="og:image" content={post.ogImage.url} />
+          <meta property="og:image" content={post.ogImageUrl} />
         </Head>
         <Content html={post.content} />
       </article>

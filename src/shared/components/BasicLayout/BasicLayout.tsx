@@ -1,8 +1,8 @@
 import { FC } from "react";
 
+import { Box, Grid, GridProps } from "@/libs/chakra";
 import { Footer } from "@/shared/components/Footer";
 import { Header } from "@/shared/components/Header";
-import { Box, Grid, GridProps } from "@/shared/libs/chakra";
 
 type BasicLayoutProps = GridProps;
 

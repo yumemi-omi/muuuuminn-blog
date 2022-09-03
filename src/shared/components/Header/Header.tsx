@@ -1,9 +1,9 @@
 import { Heading, Text } from "@chakra-ui/react";
 import { FC } from "react";
 
-import { Flex, FlexProps, Spacer } from "@/shared/libs/chakra";
-import { useTranslation } from "@/shared/libs/i18n/hooks/useTranslation";
-import { ChakraNextLink, ChakraNextImage } from "@/shared/libs/next";
+import { Flex, FlexProps, Spacer } from "@/libs/chakra";
+import { useTranslation } from "@/libs/i18n";
+import { ChakraNextLink, ChakraNextImage } from "@/libs/next";
 
 type HeaderProps = FlexProps;
 

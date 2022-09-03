@@ -1,12 +1,13 @@
 import Head from "next/head";
 import { FC } from "react";
 
-import { Box } from "@/shared/libs/chakra";
-import { useTranslation } from "@/shared/libs/i18n/hooks/useTranslation";
-import { ChakraNextLink } from "@/shared/libs/next";
+import { Box } from "@/libs/chakra";
+import { useTranslation } from "@/libs/i18n";
+import { ChakraNextLink } from "@/libs/next";
+import { PostList } from "@/shared/type/post";
 
 type Props = {
-  posts: any[];
+  posts: PostList;
 };
 
 export const HomePage: FC<Props> = ({ posts }) => {
@@ -22,11 +23,6 @@ export const HomePage: FC<Props> = ({ posts }) => {
           <ChakraNextLink href={`/post/${post.slug}`}>{post.title}</ChakraNextLink>
         </Box>
       ))}
-      <div
-        dangerouslySetInnerHTML={{
-          __html: posts[0].excerpt as string,
-        }}
-      />
     </>
   );
 };

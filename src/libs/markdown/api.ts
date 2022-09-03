@@ -5,14 +5,7 @@ import matter from "gray-matter";
 
 const POSTS_DIRECTORY_NAME = "src/contents/post";
 
-export const MARKDOWN_FIELDS = [
-  "title",
-  "date",
-  "slug",
-  "content",
-  "ogImageUrl",
-  "coverImage",
-] as const;
+const MARKDOWN_FIELDS = ["title", "date", "slug", "content", "ogImageUrl", "coverImage"] as const;
 type FieldsType = typeof MARKDOWN_FIELDS[number];
 
 const postsDirectory = join(process.cwd(), POSTS_DIRECTORY_NAME);
