@@ -11,7 +11,7 @@ export const Header: FC<HeaderProps> = () => {
   const { t } = useTranslation();
   return (
     <Flex alignItems={"center"} paddingY={"4"} paddingX={"6"}>
-      <ChakraNextLink href={"/"}>
+      <ChakraNextLink href={"/home"}>
         <ChakraNextImage
           src={"/logo/logo_transparent.png"}
           alt={t.ALT.SITE_LOGO}
@@ -25,7 +25,7 @@ export const Header: FC<HeaderProps> = () => {
       </ChakraNextLink>
       <Spacer />
       <Flex marginRight={"8"}>
-        <ChakraNextLink href={"/"}>
+        <ChakraNextLink href={"/home"}>
           <Text fontWeight={"bold"} fontSize={"xl"}>
             {t.PAGE.HOME}
           </Text>

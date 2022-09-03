@@ -12,7 +12,7 @@ export const Footer: FC<FooterProps> = () => {
   return (
     <Center>
       <Flex alignItems={"center"} paddingY={"4"}>
-        <ChakraNextLink href={"/"}>
+        <ChakraNextLink href={"/home"}>
           <Text fontWeight={"bold"} fontSize={"xl"}>
             {t.PAGE.HOME}
           </Text>

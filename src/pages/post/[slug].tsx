@@ -1,7 +1,7 @@
-import Head from "next/head";
-import { useRouter } from "next/router";
 import { ReactElement } from "react";
 
+import { PostPageLayout } from "@/features/post/components/layout";
+import { PostPage } from "@/features/post/components/PostPage";
 import { BasicLayout } from "@/shared/components/BasicLayout";
 import { getPostBySlug, getAllPosts } from "@/shared/libs/markdown/api";
 import markdownToHtml from "@/shared/libs/markdown/markdownToHtml";
@@ -13,29 +13,15 @@ type Props = {
 };
 
 const Post: NextPageWithLayout<Props> = ({ post }) => {
-  const router = useRouter();
-
-  return (
-    <div>
-      {router.isFallback ? (
-        <p>Loading…</p>
-      ) : (
-        <>
-          <article>
-            <Head>
-              <title>{post.title} | detail</title>
-              <meta property="og:image" content={post.ogImage.url} />
-            </Head>
-            <div dangerouslySetInnerHTML={{ __html: post.content }} />
-          </article>
-        </>
-      )}
-    </div>
-  );
+  return <PostPage post={post} />;
 };
 
 Post.getLayout = function getLayout(page: ReactElement) {
-  return <BasicLayout>{page}</BasicLayout>;
+  return (
+    <BasicLayout>
+      <PostPageLayout>{page}</PostPageLayout>
+    </BasicLayout>
+  );
 };
 
 type Params = {
