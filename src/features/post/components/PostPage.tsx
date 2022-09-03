@@ -8,6 +8,7 @@ type Props = {
 
 export const PostPage: FC<Props> = ({ post }) => {
   const router = useRouter();
+  const title = `${post.title} | detail`;
 
   return (
     <div>
@@ -17,7 +18,7 @@ export const PostPage: FC<Props> = ({ post }) => {
         <>
           <article>
             <Head>
-              <title>{post.title} | detail</title>
+              <title>{title}</title>
               <meta property="og:image" content={post.ogImage.url} />
             </Head>
             <div dangerouslySetInnerHTML={{ __html: post.content }} />
