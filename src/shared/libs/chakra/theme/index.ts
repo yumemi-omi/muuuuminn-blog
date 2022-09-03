@@ -5,4 +5,13 @@ const config: ThemeConfig = {
   useSystemColorMode: true,
 };
 
-export default extendTheme({ config });
+export default extendTheme({
+  config,
+  styles: {
+    global: {
+      body: {
+        overflow: "overlay",
+      },
+    },
+  },
+});
