@@ -55,14 +55,18 @@ export async function getStaticProps({ params }: Params) {
 export async function getStaticPaths() {
   const posts = getAllPosts(["slug"]);
 
+  const paths = posts.map((post) => {
+    return {
+      params: {
+        slug: post.slug,
+      },
+    };
+  });
+
+  paths.push(...paths.map((p) => ({ ...p, locale: "en" })));
+
   return {
-    paths: posts.map((post) => {
-      return {
-        params: {
-          slug: post.slug,
-        },
-      };
-    }),
+    paths: paths,
     fallback: false,
   };
 }

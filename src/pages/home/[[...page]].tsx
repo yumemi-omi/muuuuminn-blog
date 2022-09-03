@@ -36,15 +36,29 @@ export async function getStaticPaths() {
   const posts = getAllPosts(["slug"]);
 
   const totalPageCount = Math.ceil(posts.length / DEFAULT_PAGINATION_META.limit);
+  const defaultPaths = [
+    {
+      params: { page: [""] },
+    },
+    {
+      params: { page: ["1"] },
+    },
+  ];
 
   if (totalPageCount <= 1) {
-    return { paths: ["/home", "/home/1"], fallback: false };
-  } else {
-    const paths = [...array.createNumberArray(totalPageCount)].map((num) => {
-      return `/home/${num}`;
-    });
+    const paths = [...defaultPaths];
+    paths.push(...paths.map((p) => ({ ...p, locale: "en" })));
 
-    return { paths: [...paths, "home"], fallback: false };
+    return { paths, fallback: false };
+  } else {
+    const paths = [...defaultPaths, ...array.createNumberArray(totalPageCount)].map((num) => {
+      return {
+        params: { page: [`${num}`] },
+      };
+    });
+    paths.push(...paths.map((p) => ({ ...p, locale: "en" })));
+
+    return { paths, fallback: false };
   }
 }
 
