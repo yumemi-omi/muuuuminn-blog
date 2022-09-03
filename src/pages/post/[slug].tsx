@@ -1,34 +1,29 @@
-import Head from "next/head";
-import { useRouter } from "next/router";
+import { ReactElement } from "react";
 
-import { getPostBySlug, getAllPosts } from "@/shared/libs/markdown/api";
-import markdownToHtml from "@/shared/libs/markdown/markdownToHtml";
+import { PostPage } from "@/features/post/components/PostPage";
+import { PostPageLayout } from "@/features/post/components/PostPageLayout";
+import { getPostBySlug, getAllPosts } from "@/libs/markdown/api";
+import markdownToHtml from "@/libs/markdown/markdownToHtml";
+import { BasicLayout } from "@/shared/components/BasicLayout";
+import { PostDetail } from "@/shared/type/post";
+
+import { NextPageWithLayout } from "../_app";
 
 type Props = {
-  post: any;
+  post: PostDetail;
 };
 
-export default function Post({ post }: Props) {
-  const router = useRouter();
+const Post: NextPageWithLayout<Props> = ({ post }) => {
+  return <PostPage post={post} />;
+};
 
+Post.getLayout = function getLayout(page: ReactElement) {
   return (
-    <div>
-      {router.isFallback ? (
-        <p>Loading…</p>
-      ) : (
-        <>
-          <article>
-            <Head>
-              <title>{post.title} | detail</title>
-              <meta property="og:image" content={post.ogImage.url} />
-            </Head>
-            <div dangerouslySetInnerHTML={{ __html: post.content }} />
-          </article>
-        </>
-      )}
-    </div>
+    <BasicLayout>
+      <PostPageLayout>{page}</PostPageLayout>
+    </BasicLayout>
   );
-}
+};
 
 type Params = {
   params: {
@@ -41,9 +36,8 @@ export async function getStaticProps({ params }: Params) {
     "title",
     "date",
     "slug",
-    "author",
     "content",
-    "ogImage",
+    "ogImageUrl",
     "coverImage",
   ]);
   const content = await markdownToHtml(post.content || "");
@@ -61,14 +55,20 @@ export async function getStaticProps({ params }: Params) {
 export async function getStaticPaths() {
   const posts = getAllPosts(["slug"]);
 
+  const paths = posts.map((post) => {
+    return {
+      params: {
+        slug: post.slug,
+      },
+    };
+  });
+
+  paths.push(...paths.map((p) => ({ ...p, locale: "en" })));
+
   return {
-    paths: posts.map((post) => {
-      return {
-        params: {
-          slug: post.slug,
-        },
-      };
-    }),
+    paths: paths,
     fallback: false,
   };
 }
+
+export default Post;

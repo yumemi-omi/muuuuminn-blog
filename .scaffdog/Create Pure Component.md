@@ -20,12 +20,10 @@ export * from "./{{ PascalComponentName }}";
 # {{ PascalComponentName }}/{{ PascalComponentName }}.tsx
 
 ```typescript
-import { Box, BoxProps } from '@chakra-ui/react'
-import { FC, ReactNode } from 'react'
+import {  Box, BoxProps } from "@/libs/chakra";
+import { FC } from 'react'
 
-interface {{ PascalComponentName }}Props extends BoxProps {
-  children: ReactNode
-}
+interface {{ PascalComponentName }}Props extends BoxProps {}
 
 export const {{ PascalComponentName }}: FC<{{ PascalComponentName }}Props> = (props) => {
   const { children } = props
