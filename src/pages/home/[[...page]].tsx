@@ -24,7 +24,7 @@ Home.getLayout = function getLayout(page: ReactElement) {
 };
 
 export const getStaticProps = async () => {
-  const posts = getAllPosts(["title", "date", "slug", "author", "coverImage", "excerpt"]);
+  const posts = getAllPosts(["title", "date", "slug", "coverImage"]);
 
   return {
     props: { posts },

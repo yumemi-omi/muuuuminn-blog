@@ -14,9 +14,7 @@ questions:
 ---
 title: '{{ inputs.title }}'
 date: '{{ 'new Date().toISOString()' | eval }}'
-excerpt: ''
 coverImage: '/post/{{ inputs.filename }}'
-ogImage:
-  url: "/post/{{ inputs.filename }}"
+ogImageUrl: "/post/{{ inputs.filename }}"
 ---
 ```

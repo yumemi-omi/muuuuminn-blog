@@ -19,7 +19,7 @@ export const PostPage: FC<Props> = ({ post }) => {
           <title>{title}</title>
           <meta property="og:image" content={post.ogImage.url} />
         </Head>
-        <Content content={post.content} />
+        <Content html={post.content} />
       </article>
     </Box>
   );
