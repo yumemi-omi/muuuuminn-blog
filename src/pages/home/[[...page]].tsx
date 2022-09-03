@@ -1,5 +1,5 @@
 import { HomePage } from "@/features/home/components/HomePage";
-import { HomePageLayout } from "@/features/home/components/layout";
+import { HomePageLayout } from "@/features/home/components/HomePageLayout";
 import { BasicLayout } from "@/shared/components/BasicLayout";
 import { getAllPosts } from "@/shared/libs/markdown/api";
 import array from "@/shared/libs/utils/array";

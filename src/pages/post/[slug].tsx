@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 
-import { PostPageLayout } from "@/features/post/components/layout";
 import { PostPage } from "@/features/post/components/PostPage";
+import { PostPageLayout } from "@/features/post/components/PostPageLayout";
 import { BasicLayout } from "@/shared/components/BasicLayout";
 import { getPostBySlug, getAllPosts } from "@/shared/libs/markdown/api";
 import markdownToHtml from "@/shared/libs/markdown/markdownToHtml";
