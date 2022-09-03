@@ -1,9 +1,9 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   ja: {
-    SITE_NAME: "muuuuminn blog",
+    SITE_NAME: "muuuuminn ブログ",
     PAGE: {
-      HOME: "Home",
+      HOME: "ホーム",
     },
     ALT: {
       SITE_LOGO: "サイトロゴ",
