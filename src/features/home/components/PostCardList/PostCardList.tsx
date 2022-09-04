@@ -1,10 +1,23 @@
 import { FC } from "react";
 
 import { Box, BoxProps } from "@/libs/chakra";
+import { ChakraNextLink } from "@/libs/next";
+import { PostList } from "@/shared/type/post";
 
-type PostCardListProps = BoxProps;
+import { PostCard } from "../PostCard/PostCard";
 
-export const PostCardList: FC<PostCardListProps> = (props) => {
-  const { children } = props;
-  return <Box>{children}</Box>;
+type PostCardListProps = {
+  posts: PostList;
+} & BoxProps;
+
+export const PostCardList: FC<PostCardListProps> = ({ posts }) => {
+  return (
+    <Box my={10}>
+      {posts.map((post) => (
+        <ChakraNextLink key={post.slug} href={`/post/${post.slug}`}>
+          <PostCard post={post} />
+        </ChakraNextLink>
+      ))}
+    </Box>
+  );
 };
