@@ -1,8 +1,8 @@
 import { FC } from "react";
 
+import { Post } from "@/features/post/type/post";
 import { Box, BoxProps } from "@/libs/chakra";
 import { ChakraNextImage } from "@/libs/next";
-import { Post } from "@/shared/type/post";
 
 type PostCardProps = {
   post: Post;

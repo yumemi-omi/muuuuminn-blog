@@ -1,10 +1,9 @@
 import { FC } from "react";
 
+import { PostCard } from "@/features/post/components/PostCard";
+import { PostList } from "@/features/post/type/post";
 import { Box, BoxProps } from "@/libs/chakra";
 import { ChakraNextLink } from "@/libs/next";
-import { PostList } from "@/shared/type/post";
-
-import { PostCard } from "../PostCard/PostCard";
 
 type PostCardListProps = {
   posts: PostList;

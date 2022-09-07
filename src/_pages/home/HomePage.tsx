@@ -1,10 +1,9 @@
 import Head from "next/head";
 import { FC } from "react";
 
+import { PostCardList } from "@/features/post/components/PostCardList";
+import { PostList } from "@/features/post/type/post";
 import { useTranslation } from "@/libs/i18n";
-import { PostList } from "@/shared/type/post";
-
-import { PostCardList } from "./PostCardList";
 
 type Props = {
   posts: PostList;

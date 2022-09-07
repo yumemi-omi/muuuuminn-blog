@@ -1,10 +1,9 @@
 import Head from "next/head";
 import { FC } from "react";
 
+import { Content } from "@/features/post/components/Content";
+import { PostDetail } from "@/features/post/type/post";
 import { Box } from "@/libs/chakra";
-import { PostDetail } from "@/shared/type/post";
-
-import { Content } from "./Content";
 
 type Props = {
   post: PostDetail;
