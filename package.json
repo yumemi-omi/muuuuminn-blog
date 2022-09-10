@@ -32,7 +32,7 @@
     "@types/node": "18.7.16",
     "@types/react": "18.0.18",
     "@typescript-eslint/eslint-plugin": "5.36.2",
-    "@typescript-eslint/parser": "5.36.1",
+    "@typescript-eslint/parser": "5.36.2",
     "dependency-cruiser": "11.15.0",
     "eslint": "8.23.0",
     "eslint-config-next": "12.2.5",
