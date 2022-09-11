@@ -18,15 +18,17 @@ export const PostCard: FC<PostCardProps> = ({ post }) => {
           <ChakraNextImage width={100} height={100} src={post.coverImage} />
         </AspectRatio>
         <Box>
-          <CustomNextLink linkType={"withOverlay"} passHref href={`/post/${post.slug}`}>
-            <Text>{post.title}</Text>
-          </CustomNextLink>
+          <Text>
+            <CustomNextLink linkType={"withOverlay"} passHref href={`/post/${post.slug}`}>
+              {post.title}
+            </CustomNextLink>
+          </Text>
         </Box>
       </Box>
       <Box _hover={{ textDecoration: "underline" }}>
-        <CustomNextLink href={"#h1"}>
-          <Text fontSize="lg">タグ</Text>
-        </CustomNextLink>
+        <Text fontSize="lg">
+          <CustomNextLink href={"#h1"}>タグ</CustomNextLink>
+        </Text>
       </Box>
       <Text>{post.content}</Text>
       <Text>{post.date}</Text>
