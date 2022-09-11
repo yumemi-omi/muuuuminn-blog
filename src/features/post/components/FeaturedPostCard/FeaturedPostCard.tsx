@@ -1,4 +1,4 @@
-import { AspectRatio, LinkBox, LinkBoxProps, Tag } from "@chakra-ui/react";
+import { AspectRatio, LinkBox, LinkBoxProps } from "@chakra-ui/react";
 import { FC } from "react";
 
 import { Post } from "@/features/post/type/post";
@@ -9,11 +9,11 @@ import { ChakraNextImage, CustomNextLink } from "@/libs/next";
 import { Category } from "../Category";
 import { TagList } from "../TagList";
 
-type PostCardProps = {
+type FeaturedPostCardProps = {
   post: Post;
 } & LinkBoxProps;
 
-export const PostCard: FC<PostCardProps> = ({ post, ...rest }) => {
+export const FeaturedPostCard: FC<FeaturedPostCardProps> = ({ post, ...rest }) => {
   const relativeDate = getRelativeDate(post.date);
   return (
     <LinkBox px={"4"} py={"2"} as={"article"} {...rest}>

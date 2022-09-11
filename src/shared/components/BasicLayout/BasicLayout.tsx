@@ -11,7 +11,7 @@ export const BasicLayout: FC<BasicLayoutProps> = (props) => {
   return (
     <Grid
       // TODO: need responsive
-      maxWidth={"1400px"}
+      maxWidth={"1200px"}
       marginX={"auto"}
       templateRows={"auto 1fr auto"}
       templateColumns={"100%"}
