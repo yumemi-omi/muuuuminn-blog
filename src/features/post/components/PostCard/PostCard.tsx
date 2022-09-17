@@ -3,10 +3,10 @@ import { FC } from "react";
 
 import { Post } from "@/features/post/type/post";
 import { Flex, HStack, Stack, Text, VStack } from "@/libs/chakra";
-import { getRelativeDate } from "@/libs/dateFns";
 import { ChakraNextImage, CustomNextLink } from "@/libs/next";
 
 import { Category } from "../Category";
+import { PostDate } from "../PostDate";
 import { TagList } from "../TagList";
 
 type PostCardProps = {
@@ -14,13 +14,12 @@ type PostCardProps = {
 } & LinkBoxProps;
 
 export const PostCard: FC<PostCardProps> = ({ post, ...rest }) => {
-  const relativeDate = getRelativeDate(post.date);
   return (
     <LinkBox px={"4"} py={"2"} as={"article"} {...rest}>
       <VStack align={"start"}>
         <HStack>
           <AspectRatio ratio={1 / 1} w={"100px"}>
-            <ChakraNextImage layout={"fill"} src={post.coverImage} />
+            <ChakraNextImage borderRadius={"xl"} layout={"fill"} src={post.coverImage} />
           </AspectRatio>
           <Stack>
             <CustomNextLink href={"#"}>
@@ -59,9 +58,7 @@ export const PostCard: FC<PostCardProps> = ({ post, ...rest }) => {
           {post.content ||
             "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容"}
         </Text>
-        <Text w={"full"} textAlign={"end"} fontSize={"sm"}>
-          {relativeDate}
-        </Text>
+        <PostDate w={"full"} textAlign={"end"} fontSize={"sm"} date={post.date} />
       </VStack>
     </LinkBox>
   );

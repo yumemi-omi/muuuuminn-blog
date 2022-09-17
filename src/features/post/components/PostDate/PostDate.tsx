@@ -1,8 +1,11 @@
 import { formatDistance, format } from "date-fns";
 import { ja } from "date-fns/locale";
+import { FC } from "react";
+
+import { Text, TextProps } from "@/libs/chakra";
 
 // TODO: i18n対応
-export const getRelativeDate = (date: string) => {
+const getRelativeDate = (date: string) => {
   const time = formatDistance(new Date(), Date.parse(date), {
     locale: ja,
   });
@@ -16,4 +19,13 @@ export const getRelativeDate = (date: string) => {
   } else {
     return time + "前";
   }
+};
+
+type PostDateProps = {
+  date: string;
+} & TextProps;
+
+export const PostDate: FC<PostDateProps> = ({ date, ...rest }) => {
+  const relativeDate = getRelativeDate(date);
+  return <Text {...rest}>{relativeDate}</Text>;
 };

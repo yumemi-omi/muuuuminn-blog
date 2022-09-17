@@ -3,10 +3,10 @@ import { FC } from "react";
 
 import { Post } from "@/features/post/type/post";
 import { Flex, HStack, Stack, Text, VStack } from "@/libs/chakra";
-import { getRelativeDate } from "@/libs/dateFns";
 import { ChakraNextImage, CustomNextLink } from "@/libs/next";
 
 import { Category } from "../Category";
+import { PostDate } from "../PostDate";
 import { TagList } from "../TagList";
 
 type FeaturedPostCardProps = {
@@ -14,7 +14,6 @@ type FeaturedPostCardProps = {
 } & LinkBoxProps;
 
 export const FeaturedPostCard: FC<FeaturedPostCardProps> = ({ post, ...rest }) => {
-  const relativeDate = getRelativeDate(post.date);
   return (
     <LinkBox px={"4"} py={"2"} as={"article"} {...rest}>
       <VStack align={"start"}>
@@ -59,9 +58,7 @@ export const FeaturedPostCard: FC<FeaturedPostCardProps> = ({ post, ...rest }) =
           {post.content ||
             "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容"}
         </Text>
-        <Text w={"full"} textAlign={"end"} fontSize={"sm"}>
-          {relativeDate}
-        </Text>
+        <PostDate date={post.date} />
       </VStack>
     </LinkBox>
   );
