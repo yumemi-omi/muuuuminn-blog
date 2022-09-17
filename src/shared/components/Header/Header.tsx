@@ -3,7 +3,7 @@ import { FC } from "react";
 
 import { Flex, FlexProps, Spacer } from "@/libs/chakra";
 import { useTranslation } from "@/libs/i18n";
-import { ChakraNextLink, ChakraNextImage } from "@/libs/next";
+import { CustomNextLink, ChakraNextImage } from "@/libs/next";
 
 type HeaderProps = FlexProps;
 
@@ -11,7 +11,7 @@ export const Header: FC<HeaderProps> = () => {
   const { t } = useTranslation();
   return (
     <Flex alignItems={"center"} paddingY={"4"} paddingX={"6"}>
-      <ChakraNextLink href={"/home"}>
+      <CustomNextLink href={"/home"}>
         <ChakraNextImage
           src={"/logo/logo_transparent.png"}
           alt={t.ALT.SITE_LOGO}
@@ -22,14 +22,14 @@ export const Header: FC<HeaderProps> = () => {
           layout={"fixed"}
         />
         <Heading hidden>{t.SITE_NAME}</Heading>
-      </ChakraNextLink>
+      </CustomNextLink>
       <Spacer />
       <Flex marginRight={"8"}>
-        <ChakraNextLink href={"/home"}>
+        <CustomNextLink href={"/home"}>
           <Text fontWeight={"bold"} fontSize={"xl"}>
             {t.PAGE.HOME}
           </Text>
-        </ChakraNextLink>
+        </CustomNextLink>
       </Flex>
     </Flex>
   );

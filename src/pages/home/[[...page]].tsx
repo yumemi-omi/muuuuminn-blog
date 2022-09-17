@@ -1,9 +1,9 @@
-import { HomePage } from "@/features/home/components/HomePage";
-import { HomePageLayout } from "@/features/home/components/HomePageLayout";
+import { HomePage } from "@/_pages/home/HomePage";
+import { HomePageLayout } from "@/_pages/home/HomePageLayout";
+import { PostList } from "@/features/post/type/post";
 import { getAllPosts } from "@/libs/markdown/api";
-import array from "@/libs/utils/array";
 import { BasicLayout } from "@/shared/components/BasicLayout";
-import { PostList } from "@/shared/type/post";
+import array from "@/shared/utils/array";
 
 import type { NextPageWithLayout } from "@/pages/_app";
 import type { ReactElement } from "react";

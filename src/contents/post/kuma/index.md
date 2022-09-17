@@ -1,7 +1,7 @@
 ---
 title: "Dynamic Routing and Static Generation"
 coverImage: "/post/hello/akira.jpeg"
-date: "2020-03-16T05:35:07.322Z"
+date: "2022-09-14"
 ogImageUrl: "/post/hello/akira.jpeg"
 ---
 
