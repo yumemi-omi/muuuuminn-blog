@@ -1,4 +1,4 @@
-import Head from "next/head";
+import { NextSeo, NextSeoProps } from "next-seo";
 import { FC } from "react";
 
 import { PostCardList } from "@/features/post/components/PostCardList";
@@ -11,12 +11,14 @@ type Props = {
 
 export const HomePage: FC<Props> = ({ posts }) => {
   const { t } = useTranslation();
+  const seo = {
+    title: t.PAGE.HOME,
+    description: "ホームだよ",
+  } as NextSeoProps;
 
   return (
     <>
-      <Head>
-        <title>{t.SITE_NAME}</title>
-      </Head>
+      <NextSeo {...seo} />
       <PostCardList posts={posts} />
     </>
   );
