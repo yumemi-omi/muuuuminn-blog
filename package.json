@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "next",
+    "postbuild": "next-sitemap",
     "build": "next build",
     "start": "next start",
     "export": "next export",
@@ -23,6 +24,8 @@
     "framer-motion": "7.3.5",
     "gray-matter": "4.0.3",
     "next": "12.3.0",
+    "next-seo": "5.5.0",
+    "next-sitemap": "3.1.22",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "remark": "14.0.2",

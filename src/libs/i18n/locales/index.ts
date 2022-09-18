@@ -1,7 +1,7 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   ja: {
-    SITE_NAME: "muuuuminn ブログ",
+    SITE_NAME: "muuuuminnブログ",
     PAGE: {
       HOME: "ホーム",
     },

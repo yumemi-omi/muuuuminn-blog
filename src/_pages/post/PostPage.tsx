@@ -1,4 +1,4 @@
-import Head from "next/head";
+import { NextSeo, NextSeoProps } from "next-seo";
 import { FC } from "react";
 
 import { Content } from "@/features/post/components/Content";
@@ -10,17 +10,19 @@ type Props = {
 };
 
 export const PostPage: FC<Props> = ({ post }) => {
-  const title = `${post.title} | detail`;
+  const seo = {
+    title: `${post.title}`,
+    description: "詳細だよ",
+  } as NextSeoProps;
 
   return (
-    <Box padding={10}>
-      <article>
-        <Head>
-          <title>{title}</title>
-          <meta property="og:image" content={post.ogImageUrl} />
-        </Head>
-        <Content html={post.content} />
-      </article>
-    </Box>
+    <>
+      <NextSeo {...seo} />
+      <Box padding={10}>
+        <article>
+          <Content html={post.content} />
+        </article>
+      </Box>
+    </>
   );
 };
