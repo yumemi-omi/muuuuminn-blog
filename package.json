@@ -34,7 +34,7 @@
   "devDependencies": {
     "@emotion/eslint-plugin": "11.10.0",
     "@types/node": "18.7.19",
-    "@types/react": "18.0.20",
+    "@types/react": "18.0.21",
     "@typescript-eslint/eslint-plugin": "5.37.0",
     "@typescript-eslint/parser": "5.37.0",
     "dependency-cruiser": "11.15.0",
