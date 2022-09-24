@@ -21,7 +21,7 @@
     "@emotion/react": "11.10.4",
     "@emotion/styled": "11.10.4",
     "date-fns": "2.29.3",
-    "framer-motion": "7.3.5",
+    "framer-motion": "7.3.6",
     "gray-matter": "4.0.3",
     "next": "12.3.0",
     "next-seo": "5.5.0",
