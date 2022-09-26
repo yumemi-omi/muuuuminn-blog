@@ -1,36 +1,38 @@
-import { Heading, Text } from "@chakra-ui/react";
-import { FC } from "react";
+import { AspectRatio, Heading, Text } from "@chakra-ui/react";
+import { FC, memo } from "react";
 
-import { Flex, FlexProps, Spacer } from "@/libs/chakra";
+import { Flex, FlexProps, HStack, Spacer } from "@/libs/chakra";
 import { useTranslation } from "@/libs/i18n";
 import { CustomNextLink, ChakraNextImage } from "@/libs/next";
 
+import { ToggleAppearranceButton } from "./ToggleAppearranceButton";
+
 type HeaderProps = FlexProps;
 
-export const Header: FC<HeaderProps> = () => {
+export const Header: FC<HeaderProps> = memo(function _header() {
   const { t } = useTranslation();
   return (
     <Flex alignItems={"center"} paddingY={"4"} paddingX={"6"}>
       <CustomNextLink href={"/home"}>
-        <ChakraNextImage
-          src={"/logo/logo_transparent.png"}
-          alt={t.ALT.SITE_LOGO}
-          width={120}
-          height={120}
-          // max-heightなしだと、6px分サイズが大きくなる
-          maxH={"120px"}
-          layout={"fixed"}
-        />
+        <AspectRatio ratio={1 / 1} w={"120px"}>
+          <ChakraNextImage
+            src={"/logo/logo_transparent.png"}
+            alt={t.ALT.SITE_LOGO}
+            borderRadius={"xl"}
+            layout={"fill"}
+          />
+        </AspectRatio>
         <Heading hidden>{t.SITE_NAME}</Heading>
       </CustomNextLink>
       <Spacer />
-      <Flex marginRight={"8"}>
+      <HStack>
         <CustomNextLink href={"/home"}>
           <Text fontWeight={"bold"} fontSize={"xl"}>
             {t.PAGE.HOME}
           </Text>
         </CustomNextLink>
-      </Flex>
+        <ToggleAppearranceButton />
+      </HStack>
     </Flex>
   );
-};
+});

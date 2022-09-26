@@ -14,9 +14,11 @@
     "check": "tsc && prettier --list-different . && npm run lint:js",
     "format": "prettier --write . && npm run lint:js -- --fix",
     "deps": "depcruise --config .dependency-cruiser.js --include-only '^src' --output-type dot src | dot -T svg > dependencygraph.svg",
-    "scaffdog": "scaffdog generate"
+    "scaffdog": "scaffdog generate",
+    "gen:theme-typings": "npx @chakra-ui/cli tokens src/libs/chakra/theme/index.ts"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^2.0.9",
     "@chakra-ui/react": "2.3.4",
     "@emotion/react": "11.10.4",
     "@emotion/styled": "11.10.4",

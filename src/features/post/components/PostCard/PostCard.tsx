@@ -1,4 +1,4 @@
-import { AspectRatio, LinkBox, LinkBoxProps, Tag } from "@chakra-ui/react";
+import { AspectRatio, LinkBox, LinkBoxProps } from "@chakra-ui/react";
 import { FC } from "react";
 
 import { Post } from "@/features/post/type/post";
@@ -30,6 +30,7 @@ export const PostCard: FC<PostCardProps> = ({ post, ...rest }) => {
                   id: "diaivvkdaif",
                 }}
                 fontSize={"sm"}
+                textColor={"brand.500"}
               />
             </CustomNextLink>
             <CustomNextLink linkType={"withOverlay"} href={`/post/${post.slug}`}>
