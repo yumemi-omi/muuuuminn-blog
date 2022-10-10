@@ -11,14 +11,14 @@ type Props = {
 
 export const PostPage: FC<Props> = ({ post }) => {
   const seo = {
-    title: `${post.title}`,
-    description: "詳細だよ",
+    title: post.title,
+    description: post.content.slice(0, 20),
   } as NextSeoProps;
 
   return (
     <>
       <NextSeo {...seo} />
-      <Box padding={10}>
+      <Box px={8}>
         <article>
           <Content html={post.content} />
         </article>
