@@ -1,9 +1,9 @@
 import { NextSeo, NextSeoProps } from "next-seo";
 import { FC } from "react";
 
-import { Content } from "@/features/post/components/Content";
 import { PostDetail } from "@/features/post/type/post";
 import { Box } from "@/libs/chakra";
+import { RichMarkdownContent } from "@/shared/components/RichMarkdownContent";
 
 type Props = {
   post: PostDetail;
@@ -20,7 +20,7 @@ export const PostPage: FC<Props> = ({ post }) => {
       <NextSeo {...seo} />
       <Box padding={10}>
         <article>
-          <Content html={post.content} />
+          <RichMarkdownContent html={post.content} />
         </article>
       </Box>
     </>

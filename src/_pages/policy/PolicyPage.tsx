@@ -3,6 +3,7 @@ import { FC } from "react";
 
 import { Policy } from "@/features/policy/type/policy";
 import { useTranslation } from "@/libs/i18n";
+import { RichMarkdownContent } from "@/shared/components/RichMarkdownContent";
 
 type Props = {
   policy: Policy;
@@ -18,7 +19,7 @@ export const PolicyPage: FC<Props> = ({ policy }) => {
   return (
     <>
       <NextSeo {...seo} />
-      {policy.content}
+      <RichMarkdownContent html={policy.content} />
     </>
   );
 };

@@ -5,7 +5,7 @@ date: "2022-09-14"
 ogImageUrl: "/post/hello/akira.jpeg"
 ---
 
-```tsx[class="line-numbers"]
+```tsx:index.tsx
 import { AspectRatio, LinkBox, LinkBoxProps } from "@chakra-ui/react";
 import { FC } from "react";
 
