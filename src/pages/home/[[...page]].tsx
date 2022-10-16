@@ -1,6 +1,10 @@
+import { dehydrate, QueryClient } from "@tanstack/react-query";
+
 import { HomePage } from "@/_pages/home/HomePage";
 import { HomePageLayout } from "@/_pages/home/HomePageLayout";
 import { PostList } from "@/features/post/type/post";
+import { LifeRepositoryDocument, LifeRepositoryQuery, useLifeRepositoryQuery } from "@/generated";
+import fetcher from "@/libs/fetcher";
 import { getAllPosts } from "@/libs/markdown/api";
 import { BasicLayout } from "@/shared/components/BasicLayout";
 import array from "@/shared/utils/array";
@@ -12,7 +16,32 @@ type Props = {
   posts: PostList;
 };
 
+const getFiles = (lifeRepo: LifeRepositoryQuery) => {
+  const obj = lifeRepo?.repository?.object;
+
+  if (obj && "entries" in obj) {
+    return obj.entries
+      ?.map((entry) => {
+        const objInEntry = entry.object;
+        if (objInEntry && "entries" in objInEntry) {
+          return objInEntry.entries?.map((en) => ({
+            id: en.object && "id" in en.object && en.object.id,
+            name: en.name,
+            content: en.object && "text" in en.object && en.object.text,
+            folderName: entry.name,
+          }));
+        }
+      })
+      .flat();
+  }
+
+  return [];
+};
+
 const Home: NextPageWithLayout<Props> = ({ posts }) => {
+  const { data } = useLifeRepositoryQuery();
+  const files = getFiles(data || {});
+  console.log({ files });
   return <HomePage posts={posts} />;
 };
 
@@ -25,10 +54,14 @@ Home.getLayout = function getLayout(page: ReactElement) {
 };
 
 export const getStaticProps = async () => {
+  const queryClient = new QueryClient();
+
+  await queryClient.prefetchQuery(["LifeRepository"], fetcher(LifeRepositoryDocument));
+
   const posts = getAllPosts(["title", "date", "slug", "coverImage"]);
 
   return {
-    props: { posts },
+    props: { posts, dehydratedState: dehydrate(queryClient) },
   };
 };
 

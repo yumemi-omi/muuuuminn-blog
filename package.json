@@ -15,15 +15,18 @@
     "format": "prettier --write . && npm run lint:js -- --fix",
     "deps": "depcruise --config .dependency-cruiser.js --include-only '^src' --output-type dot src | dot -T svg > dependencygraph.svg",
     "scaffdog": "scaffdog generate",
-    "gen:theme-typings": "npx @chakra-ui/cli tokens src/libs/chakra/theme/index.ts"
+    "gen:theme-typings": "npx @chakra-ui/cli tokens src/libs/chakra/theme/index.ts",
+    "gen:type": "graphql-codegen --require dotenv/config --config codegen.ts dotenv_config_path=.env.local"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.9",
     "@chakra-ui/react": "2.3.4",
     "@emotion/react": "11.10.4",
     "@emotion/styled": "11.10.4",
+    "@tanstack/react-query": "^4.10.3",
     "date-fns": "2.29.3",
     "framer-motion": "7.5.3",
+    "graphql": "^16.6.0",
     "gray-matter": "4.0.3",
     "next": "12.3.1",
     "next-seo": "5.5.0",
@@ -35,11 +38,15 @@
   },
   "devDependencies": {
     "@emotion/eslint-plugin": "11.10.0",
+    "@graphql-codegen/cli": "^2.13.5",
+    "@graphql-codegen/client-preset": "^1.0.5",
+    "@graphql-codegen/typescript-react-query": "^4.0.1",
     "@types/node": "18.8.3",
     "@types/react": "18.0.21",
     "@typescript-eslint/eslint-plugin": "5.39.0",
     "@typescript-eslint/parser": "5.39.0",
     "dependency-cruiser": "11.16.1",
+    "dotenv": "^16.0.3",
     "eslint": "8.25.0",
     "eslint-config-next": "12.3.1",
     "eslint-config-prettier": "8.5.0",
@@ -48,6 +55,6 @@
     "npm-check-updates": "16.3.9",
     "prettier": "2.7.1",
     "scaffdog": "^2.2.0",
-    "typescript": "4.8.4"
+    "typescript": "^4.8.4"
   }
 }

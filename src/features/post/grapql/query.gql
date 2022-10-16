@@ -1,0 +1,28 @@
+query LifeRepository {
+  repository(owner: "yumemi-omi", name: "life") {
+    object(expression: "main:") {
+      ... on Tree {
+        entries {
+          name
+          type
+          object {
+            ... on Tree {
+              entries {
+                name
+                type
+                object {
+                  ... on Blob {
+                    byteSize
+                    isBinary
+                    id
+                    text
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
