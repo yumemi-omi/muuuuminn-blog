@@ -1,7 +1,7 @@
-import { Center, Text } from "@chakra-ui/react";
+import { Center, HStack, Text } from "@chakra-ui/react";
 import { FC } from "react";
 
-import { Flex, FlexProps } from "@/libs/chakra";
+import { FlexProps } from "@/libs/chakra";
 import { useTranslation } from "@/libs/i18n";
 import { CustomNextLink } from "@/libs/next";
 
@@ -11,13 +11,18 @@ export const Footer: FC<FooterProps> = () => {
   const { t } = useTranslation();
   return (
     <Center>
-      <Flex alignItems={"center"} paddingY={"4"}>
+      <HStack alignItems={"center"} paddingY={"4"}>
         <CustomNextLink href={"/home"}>
           <Text fontWeight={"bold"} fontSize={"xl"}>
             {t.PAGE.HOME}
           </Text>
         </CustomNextLink>
-      </Flex>
+        <CustomNextLink href={"/policy"}>
+          <Text fontWeight={"bold"} fontSize={"xl"}>
+            {t.PAGE.POLICY}
+          </Text>
+        </CustomNextLink>
+      </HStack>
     </Center>
   );
 };
