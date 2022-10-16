@@ -1,13 +1,11 @@
 import { FC } from "react";
 
-import { Box, BoxProps } from "@/libs/chakra";
-
-type ContentProps = { html: string } & BoxProps;
+type ContentProps = { html: string };
 
 export const Content: FC<ContentProps> = (props) => {
   const { html } = props;
   return (
-    <Box
+    <div
       dangerouslySetInnerHTML={{
         __html: html,
       }}

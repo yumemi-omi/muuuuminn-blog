@@ -8,6 +8,10 @@ import { useTranslation } from "@/libs/i18n";
 import type { AppProps } from "next/app";
 import type { ReactElement, ReactNode } from "react";
 
+import "prismjs/themes/prism-tomorrow.css";
+import "prismjs/plugins/line-numbers/prism-line-numbers.css";
+import "../libs/markdown/prism-override-style.css";
+
 // eslint-disable-next-line @typescript-eslint/ban-types
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
