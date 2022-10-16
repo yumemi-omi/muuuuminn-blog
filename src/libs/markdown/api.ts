@@ -3,7 +3,7 @@ import { join } from "path";
 
 import matter from "gray-matter";
 
-const POSTS_DIRECTORY_NAME = "src/contents/post";
+const POSTS_DIRECTORY_NAME = "src/muuuuminn-blog/posts";
 
 const MARKDOWN_FIELDS = ["title", "date", "slug", "content", "ogImageUrl", "coverImage"] as const;
 type FieldsType = typeof MARKDOWN_FIELDS[number];
