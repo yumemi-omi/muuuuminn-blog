@@ -1,5 +1,5 @@
 /** @type {import('@typescript-eslint/experimental-utils').TSESLint.Linter.Config} */
-const config = {
+const eslintConfig = {
   parser: "@typescript-eslint/parser",
   plugins: ["@emotion", "@typescript-eslint"],
   extends: [
@@ -38,4 +38,4 @@ const config = {
   },
 };
 
-module.exports = config;
+module.exports = eslintConfig;
