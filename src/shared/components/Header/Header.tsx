@@ -1,4 +1,4 @@
-import { AspectRatio, Heading, Text } from "@chakra-ui/react";
+import { AspectRatio, Heading, Text, useColorMode } from "@chakra-ui/react";
 import { FC, memo } from "react";
 
 import { Flex, FlexProps, HStack, Spacer } from "@/libs/chakra";
@@ -11,12 +11,18 @@ type HeaderProps = FlexProps;
 
 export const Header: FC<HeaderProps> = memo(function _header() {
   const { t } = useTranslation();
+  const { colorMode } = useColorMode();
+
   return (
     <Flex alignItems={"center"} paddingY={"4"} paddingX={"6"}>
       <CustomNextLink href={"/home"}>
         <AspectRatio ratio={1 / 1} w={"120px"}>
           <ChakraNextImage
-            src={"/logo/logo_transparent.png"}
+            src={
+              colorMode === "dark"
+                ? "/logo/logo_transparent.png"
+                : "/logo/logo_transparent_reverse.png"
+            }
             alt={t.ALT.SITE_LOGO}
             borderRadius={"xl"}
             layout={"fill"}
