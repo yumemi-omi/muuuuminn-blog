@@ -10,6 +10,9 @@ import QueryClientProvider from "@/libs/reactQuery/QueryClientProvider";
 
 import type { AppProps } from "next/app";
 
+import "zenn-content-css";
+import "../libs/markdown/prism-override-style.css";
+
 // eslint-disable-next-line @typescript-eslint/ban-types
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;

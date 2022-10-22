@@ -1,0 +1,79 @@
+.znc code[class*="language-"],
+.znc pre[class*="language-"] {
+  color: #fec8c8;
+  background: #1f1f1f;
+}
+
+.znc .token.comment,
+.znc .token.block-comment,
+.znc .token.prolog,
+.znc .token.doctype,
+.znc .token.cdata {
+  color: #888888;
+}
+
+.znc .token.punctuation {
+  color: #73a5bc;
+}
+
+.znc .token.tag,
+.znc .token.attr-name,
+.znc .token.namespace,
+.znc .token.deleted {
+  color: #00e1ff;
+}
+
+.znc .token.function-name {
+  color: #eab4b3;
+}
+
+.znc .token.boolean,
+.znc .token.number,
+.znc .token.function {
+  color: #cf6c59;
+}
+
+.znc .token.property,
+.znc .token.class-name,
+.znc .token.constant,
+.znc .token.symbol {
+  color: #ffebff;
+}
+
+.znc .token.selector,
+.znc .token.atrule,
+.znc .token.keyword,
+.znc .token.builtin {
+  color: #ff9e9a;
+}
+
+.znc .token.string,
+.znc .token.char,
+.znc .token.attr-value,
+.znc .token.regex,
+.znc .token.variable {
+  color: #ab9681;
+}
+
+.znc .token.operator,
+.znc .token.entity,
+.znc .token.url {
+  color: #83ee00;
+}
+
+.znc .token.important {
+  color: #ff6bb0;
+  font-weight: bold;
+}
+
+.znc .token.bold {
+  font-weight: bold;
+}
+
+.znc .token.italic {
+  font-style: italic;
+}
+
+.znc .token.inserted {
+  color: #9dfafa;
+}

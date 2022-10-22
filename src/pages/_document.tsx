@@ -9,7 +9,9 @@ export default class Document extends NextDocument {
   render() {
     return (
       <Html lang="jp">
-        <Head />
+        <Head>
+          <script async src="https://embed.zenn.studio/js/listen-embed-event.js"></script>
+        </Head>
         <body>
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />
           <Main />

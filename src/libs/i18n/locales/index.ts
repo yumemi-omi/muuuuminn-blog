@@ -4,6 +4,7 @@ export default {
     SITE_NAME: "muuuuminnブログ",
     PAGE: {
       HOME: "ホーム",
+      POLICY: "プライバシーポリシー",
     },
     ALT: {
       SITE_LOGO: "サイトロゴ",
@@ -13,6 +14,7 @@ export default {
     SITE_NAME: "muuuuminn blog",
     PAGE: {
       HOME: "Home",
+      POLICY: "Privacy policy",
     },
     ALT: {
       SITE_LOGO: "Site logo",
