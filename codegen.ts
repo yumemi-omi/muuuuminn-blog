@@ -20,6 +20,7 @@ const config: CodegenConfig = {
         },
         skipTypename: true,
         avoidOptionals: false,
+        // 生成されるuseQueryからfetcherへアクセス可能にする
         exposeFetcher: true,
       },
     },

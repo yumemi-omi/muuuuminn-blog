@@ -22,6 +22,7 @@ export const usePosts = (args?: UsePostType) => {
   const directionKey = getDirectionKey(args);
   const variables = {
     [directionKey]: DEFAULT_PAGINATION_META.LIMIT,
+    // before, afterともに設定しないときはnullにする。していないと正しくページネーションができない。
     before: args?.before || null,
     after: args?.after || null,
   };
@@ -32,3 +33,10 @@ export const usePosts = (args?: UsePostType) => {
 
   return { posts, pageInfo };
 };
+
+/**
+ * DOC: ページネーション情報(Relay-Style-Cursor-Paginationを使用)
+ * 初期ページ{ first: 10 }
+ * 前ページに行く{ last: 10, before: 'fuga' }
+ * 次ページに行く{ first: 10, after: 'hoge' }
+ */
