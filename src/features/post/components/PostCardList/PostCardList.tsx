@@ -1,11 +1,11 @@
 import { FC } from "react";
 
 import { PostCard } from "@/features/post/components/PostCard";
-import { PostList } from "@/features/post/type/post";
+import { PostType } from "@/features/post/type/post";
 import { Grid, GridItem } from "@/libs/chakra";
 
 type PostCardListProps = {
-  posts: PostList;
+  posts: PostType[];
 };
 
 export const PostCardList: FC<PostCardListProps> = ({ posts }) => {
@@ -13,7 +13,7 @@ export const PostCardList: FC<PostCardListProps> = ({ posts }) => {
     <Grid gridGap={"4"} templateColumns={"repeat(auto-fit, minmax(320px, 1fr))"}>
       {posts.map((post) => {
         return (
-          <GridItem key={post.slug}>
+          <GridItem key={post.id}>
             <PostCard post={post} />
           </GridItem>
         );

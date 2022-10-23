@@ -35,6 +35,15 @@ const eslintConfig = {
         alphabetize: { order: "asc", caseInsensitive: true },
       },
     ],
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        argsIgnorePattern: "^_",
+        varsIgnorePattern: "^_",
+        caughtErrorsIgnorePattern: "^_",
+        destructuredArrayIgnorePattern: "^_",
+      },
+    ],
   },
 };
 

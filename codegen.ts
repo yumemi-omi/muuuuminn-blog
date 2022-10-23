@@ -19,6 +19,8 @@ const config: CodegenConfig = {
           endpoint: `${process.env.APP_GITHUB_API_ROOT_URL}`,
         },
         skipTypename: true,
+        avoidOptionals: false,
+        exposeFetcher: true,
       },
     },
   },
