@@ -16,7 +16,9 @@ const config: CodegenConfig = {
       plugins: ["typescript", "typescript-operations", "typescript-react-query"],
       config: {
         fetcher: {
-          endpoint: `${process.env.APP_GITHUB_API_ROOT_URL}`,
+          // url形式ではないときはシングル・ダブルクォートで囲む
+          // https://github.com/dotansimha/graphql-code-generator/issues/7190#issuecomment-1030699022
+          endpoint: '"/api/github"',
         },
         skipTypename: true,
         avoidOptionals: false,
