@@ -27,7 +27,10 @@ export const getServerSideProps: GetServerSideProps = async (
   const id = context.params ? (context.params.id as string) : "";
 
   const queryClient = new QueryClient();
-  await queryClient.prefetchQuery(["IssueDetail"], useIssueDetailQuery.fetcher({ id }));
+  await queryClient.prefetchQuery(
+    useIssueDetailQuery.getKey({ id }),
+    useIssueDetailQuery.fetcher({ id }),
+  );
 
   return {
     props: {

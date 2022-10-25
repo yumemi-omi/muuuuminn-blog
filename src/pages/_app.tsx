@@ -19,24 +19,23 @@ export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
 };
 
 type AppPropsWithLayout = AppProps & {
-  Component: NextPageWithLayout;
+  Component: NextPageWithLayout<{ dehydratedState: DehydratedState }>;
   pageProps: {
     dehydratedState: DehydratedState;
   };
 };
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout): JSX.Element {
-  const { dehydratedState, ..._pageProps } = pageProps;
   const getLayout = Component.getLayout ?? ((page) => page);
 
   const { t } = useTranslation();
-  const titleTemplate = `%s | ${t.SITE_NAME}`;
+  const titleTemplate = `${t.SITE_NAME}`;
 
   return (
     <>
       <DefaultSeo titleTemplate={titleTemplate} />
-      <QueryClientProvider dehydratedState={dehydratedState}>
-        <ChakraProvider theme={theme}>{getLayout(<Component {..._pageProps} />)}</ChakraProvider>
+      <QueryClientProvider dehydratedState={pageProps.dehydratedState}>
+        <ChakraProvider theme={theme}>{getLayout(<Component {...pageProps} />)}</ChakraProvider>
       </QueryClientProvider>
     </>
   );

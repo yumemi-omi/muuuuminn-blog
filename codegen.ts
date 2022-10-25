@@ -18,12 +18,14 @@ const config: CodegenConfig = {
         fetcher: {
           // url形式ではないときはシングル・ダブルクォートで囲む
           // https://github.com/dotansimha/graphql-code-generator/issues/7190#issuecomment-1030699022
-          endpoint: '"/api/github"',
+          endpoint: `'${process.env.APP_GITHUB_API_ENDPOINT}'`,
         },
         skipTypename: true,
         avoidOptionals: false,
         // 生成されるuseQueryからfetcherへアクセス可能にする
         exposeFetcher: true,
+        // 生成されたhooksからgetKeys関数を使用可能にする
+        exposeQueryKeys: true,
       },
     },
   },

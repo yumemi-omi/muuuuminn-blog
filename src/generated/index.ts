@@ -7,7 +7,7 @@ export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Mayb
 
 function fetcher<TData, TVariables>(query: string, variables?: TVariables) {
   return async (): Promise<TData> => {
-    const res = await fetch("/api/github" as string, {
+    const res = await fetch('/api/github' as string, {
     method: "POST",
       body: JSON.stringify({ query, variables }),
     });
@@ -25669,6 +25669,10 @@ export const useLifeProjectIssuesQuery = <
       fetcher<LifeProjectIssuesQuery, LifeProjectIssuesQueryVariables>(LifeProjectIssuesDocument, variables),
       options
     );
+
+useLifeProjectIssuesQuery.getKey = (variables?: LifeProjectIssuesQueryVariables) => variables === undefined ? ['LifeProjectIssues'] : ['LifeProjectIssues', variables];
+;
+
 useLifeProjectIssuesQuery.fetcher = (variables?: LifeProjectIssuesQueryVariables) => fetcher<LifeProjectIssuesQuery, LifeProjectIssuesQueryVariables>(LifeProjectIssuesDocument, variables);
 export const LifeProjectIssuesPageInfoDocument = `
     query LifeProjectIssuesPageInfo($first: Int!, $before: String, $after: String) {
@@ -25700,6 +25704,10 @@ export const useLifeProjectIssuesPageInfoQuery = <
       fetcher<LifeProjectIssuesPageInfoQuery, LifeProjectIssuesPageInfoQueryVariables>(LifeProjectIssuesPageInfoDocument, variables),
       options
     );
+
+useLifeProjectIssuesPageInfoQuery.getKey = (variables: LifeProjectIssuesPageInfoQueryVariables) => ['LifeProjectIssuesPageInfo', variables];
+;
+
 useLifeProjectIssuesPageInfoQuery.fetcher = (variables: LifeProjectIssuesPageInfoQueryVariables) => fetcher<LifeProjectIssuesPageInfoQuery, LifeProjectIssuesPageInfoQueryVariables>(LifeProjectIssuesPageInfoDocument, variables);
 export const IssueDetailDocument = `
     query IssueDetail($id: ID!) {
@@ -25750,6 +25758,10 @@ export const useIssueDetailQuery = <
       fetcher<IssueDetailQuery, IssueDetailQueryVariables>(IssueDetailDocument, variables),
       options
     );
+
+useIssueDetailQuery.getKey = (variables: IssueDetailQueryVariables) => ['IssueDetail', variables];
+;
+
 useIssueDetailQuery.fetcher = (variables: IssueDetailQueryVariables) => fetcher<IssueDetailQuery, IssueDetailQueryVariables>(IssueDetailDocument, variables);
 export const LifeProjectStatusListDocument = `
     query LifeProjectStatusList {
@@ -25781,6 +25793,10 @@ export const useLifeProjectStatusListQuery = <
       fetcher<LifeProjectStatusListQuery, LifeProjectStatusListQueryVariables>(LifeProjectStatusListDocument, variables),
       options
     );
+
+useLifeProjectStatusListQuery.getKey = (variables?: LifeProjectStatusListQueryVariables) => variables === undefined ? ['LifeProjectStatusList'] : ['LifeProjectStatusList', variables];
+;
+
 useLifeProjectStatusListQuery.fetcher = (variables?: LifeProjectStatusListQueryVariables) => fetcher<LifeProjectStatusListQuery, LifeProjectStatusListQueryVariables>(LifeProjectStatusListDocument, variables);
 export const LifeRepositoryLabelsDocument = `
     query LifeRepositoryLabels {
@@ -25812,4 +25828,8 @@ export const useLifeRepositoryLabelsQuery = <
       fetcher<LifeRepositoryLabelsQuery, LifeRepositoryLabelsQueryVariables>(LifeRepositoryLabelsDocument, variables),
       options
     );
+
+useLifeRepositoryLabelsQuery.getKey = (variables?: LifeRepositoryLabelsQueryVariables) => variables === undefined ? ['LifeRepositoryLabels'] : ['LifeRepositoryLabels', variables];
+;
+
 useLifeRepositoryLabelsQuery.fetcher = (variables?: LifeRepositoryLabelsQueryVariables) => fetcher<LifeRepositoryLabelsQuery, LifeRepositoryLabelsQueryVariables>(LifeRepositoryLabelsDocument, variables);

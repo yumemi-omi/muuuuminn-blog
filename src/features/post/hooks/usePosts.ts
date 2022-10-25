@@ -26,6 +26,7 @@ export const usePosts = (args?: UsePostType) => {
     before: args?.before || null,
     after: args?.after || null,
   };
+
   const { data: issues } = useLifeProjectIssuesQuery(variables);
 
   const posts = queryConverter.convertIssuesIntoPosts(issues);

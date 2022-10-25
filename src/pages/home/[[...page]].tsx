@@ -26,21 +26,36 @@ Home.getLayout = function getLayout(page: ReactElement) {
   );
 };
 
+const getDirectionKey = (args: { before: string | null; after: string | null }) => {
+  if (args.after) {
+    return "first";
+  }
+  if (args.before) {
+    return "last";
+  }
+  return "first";
+};
+
 export const getServerSideProps: GetServerSideProps = async (
   context: GetServerSidePropsContext,
 ) => {
-  const before = context.params ? (context.params.before as string) : "";
-  const after = context.params ? (context.params.after as string) : "";
+  const before = context.query ? (context.query.before as string) : null;
+  const after = context.query ? (context.query.after as string) : null;
+
+  const directionKey = getDirectionKey({ before, after });
+  const variables = {
+    [directionKey]: DEFAULT_PAGINATION_META.LIMIT,
+    // before, afterともに設定しないときはnullにする。していないと正しくページネーションができない。
+    before: before || null,
+    after: after || null,
+  };
 
   const queryClient = new QueryClient();
   await queryClient.prefetchQuery(
-    ["LifeProjectIssues"],
-    useLifeProjectIssuesQuery.fetcher({
-      first: DEFAULT_PAGINATION_META.LIMIT,
-      before,
-      after,
-    }),
+    useLifeProjectIssuesQuery.getKey(variables),
+    useLifeProjectIssuesQuery.fetcher(variables),
   );
+
   return {
     props: {
       dehydratedState: dehydrate(queryClient),
