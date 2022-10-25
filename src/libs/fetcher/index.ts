@@ -1,6 +1,6 @@
 const fetcher = <TData, TVariables>(query: string, variables?: TVariables) => {
   return async (): Promise<TData> => {
-    const res = await fetch(`${process.env.APP_GITHUB_API_ROOT_URL}`, {
+    const res = await fetch(`${process.env.APP_GITHUB_API_ENDPOINT}`, {
       method: "POST",
       body: JSON.stringify({ query, variables }),
     });

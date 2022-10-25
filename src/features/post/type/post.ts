@@ -27,7 +27,7 @@ export type PostType = {
   description: string;
   coverImage: string;
   ogImageUrl: string;
-  content: string;
+  content?: string;
   closed: boolean;
   updatedAt: string;
 };

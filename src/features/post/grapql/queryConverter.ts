@@ -6,6 +6,7 @@ import {
   LifeProjectStatusListQuery,
   IssueDetailQuery,
 } from "@/generated";
+import markdownToHtml from "@/libs/markdown/markdownToHtml";
 
 import { CategoryType, PostPageInfo, PostType, TagType } from "../type/post";
 
@@ -82,7 +83,6 @@ const convertIssuesIntoPosts = (
               description,
               coverImage,
               ogImageUrl,
-              content: node.content.bodyHTML,
               closed: node.content.closed,
             };
 
@@ -124,7 +124,6 @@ const convertIssuesIntoPosts = (
               description: "",
               coverImage: "",
               ogImageUrl: "",
-              content: "",
               closed: false,
               updatedAt: "",
             };
@@ -159,7 +158,7 @@ const convertIssueDetailIntoPostDetail = (
       description,
       coverImage,
       ogImageUrl,
-      content: node.bodyHTML,
+      content: markdownToHtml(node.body),
       closed: node.closed,
     };
 
