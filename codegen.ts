@@ -15,11 +15,12 @@ const config: CodegenConfig = {
     "./src/generated/index.ts": {
       plugins: ["typescript", "typescript-operations", "typescript-react-query"],
       config: {
-        fetcher: {
-          // url形式ではないときはシングル・ダブルクォートで囲む
-          // https://github.com/dotansimha/graphql-code-generator/issues/7190#issuecomment-1030699022
-          endpoint: `'${process.env.APP_ROOT_URL}${process.env.APP_GITHUB_API_ENDPOINT}'`,
-        },
+        // fetcher: {
+        //   // url形式ではないときはシングル・ダブルクォートで囲む
+        //   // https://github.com/dotansimha/graphql-code-generator/issues/7190#issuecomment-1030699022
+        //   endpoint: `'${process.env.APP_ROOT_URL}${process.env.APP_GITHUB_API_ENDPOINT}'`,
+        // },
+        fetcher: "@/libs/fetcher#fetcher",
         skipTypename: true,
         avoidOptionals: false,
         // 生成されるuseQueryからfetcherへアクセス可能にする

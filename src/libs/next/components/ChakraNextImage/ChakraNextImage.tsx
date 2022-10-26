@@ -43,21 +43,25 @@ export const ChakraNextImage = (props: ImageProps & BoxProps) => {
   const { src, alt, width, quality, height, layout, objectFit, ...rest } = props;
   return (
     <Box pos="relative" className="group" {...rest}>
-      <ChakraNextUnwrappedImage
-        w="auto"
-        h="auto"
-        loader={myLoader}
-        layout={layout}
-        width={width}
-        quality={quality}
-        height={height}
-        placeholder="blur"
-        objectFit={objectFit}
-        blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}
-        src={src}
-        alt={alt}
-        transition="all 0.2s"
-      />
+      {src ? (
+        <ChakraNextUnwrappedImage
+          w="auto"
+          h="auto"
+          loader={myLoader}
+          layout={layout}
+          width={width}
+          quality={quality}
+          height={height}
+          placeholder="blur"
+          objectFit={objectFit}
+          blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}
+          src={src}
+          alt={alt}
+          transition="all 0.2s"
+        />
+      ) : (
+        <Box bgColor={"red.700"} />
+      )}
     </Box>
   );
 };

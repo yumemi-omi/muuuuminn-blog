@@ -5,7 +5,7 @@ const githubHandler: NextApiHandler = async (req, res) => {
 
   switch (method) {
     case "POST": {
-      const response = await fetch(process.env.GITHUB_API_ENDPOINT || "", {
+      const resp = await fetch(process.env.GITHUB_API_ENDPOINT || "", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -14,7 +14,7 @@ const githubHandler: NextApiHandler = async (req, res) => {
         body,
       });
 
-      const json = await response.json();
+      const json = await resp.json();
 
       res.status(200).json(json);
       break;
