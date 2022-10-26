@@ -1,26 +1,26 @@
 import { NextSeo, NextSeoProps } from "next-seo";
+import { useRouter } from "next/router";
 import { FC } from "react";
 
-import { PostDetail } from "@/features/post/type/post";
+import { usePostDetail } from "@/features/post/hooks/usePostDetail";
 import { Box } from "@/libs/chakra";
 import { RichMarkdownContent } from "@/shared/components/RichMarkdownContent";
 
-type Props = {
-  post: PostDetail;
-};
+export const PostPage: FC = () => {
+  const router = useRouter();
+  const id = (router.query.id as string) || "";
+  const { postDetail } = usePostDetail({ id });
 
-export const PostPage: FC<Props> = ({ post }) => {
   const seo = {
-    title: post.title,
-    // TODO: mdファイルのfront matterにdescriptionを記載するのがよさそう
-    description: post.content.slice(0, 20),
+    title: postDetail.title,
+    description: postDetail.description,
   } as NextSeoProps;
 
   return (
     <>
       <NextSeo {...seo} />
       <Box as="article" px={8}>
-        <RichMarkdownContent html={post.content} />
+        {postDetail.content && <RichMarkdownContent html={postDetail.content} />}
       </Box>
     </>
   );

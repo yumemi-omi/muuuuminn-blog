@@ -1,7 +1,7 @@
 import { AspectRatio, LinkBox, LinkBoxProps } from "@chakra-ui/react";
 import { FC } from "react";
 
-import { Post } from "@/features/post/type/post";
+import { PostType } from "@/features/post/type/post";
 import { Flex, HStack, Stack, Text, VStack } from "@/libs/chakra";
 import { ChakraNextImage, CustomNextLink } from "@/libs/next";
 
@@ -10,7 +10,7 @@ import { PostDate } from "../PostDate";
 import { TagList } from "../TagList";
 
 type PostCardProps = {
-  post: Post;
+  post: PostType;
 } & LinkBoxProps;
 
 export const PostCard: FC<PostCardProps> = ({ post, ...rest }) => {
@@ -22,17 +22,12 @@ export const PostCard: FC<PostCardProps> = ({ post, ...rest }) => {
             <ChakraNextImage borderRadius={"xl"} layout={"fill"} src={post.coverImage} />
           </AspectRatio>
           <Stack>
-            <CustomNextLink href={"#"}>
-              <Category
-                maxWidth={"200px"}
-                category={{
-                  name: "カテゴリだよカテゴリだよカテゴリだよカテゴリだよ",
-                  id: "diaivvkdaif",
-                }}
-                fontSize={"sm"}
-              />
-            </CustomNextLink>
-            <CustomNextLink linkType={"withOverlay"} href={`/post/${post.slug}`}>
+            {post.category && (
+              <CustomNextLink href={`?category=${post.category.id}`}>
+                <Category maxWidth={"200px"} category={post.category} fontSize={"sm"} />
+              </CustomNextLink>
+            )}
+            <CustomNextLink linkType={"withOverlay"} href={`/post/${post.id}`}>
               <Text noOfLines={2} fontSize={"lg"} fontWeight={"bold"}>
                 {post.title}
               </Text>
@@ -40,25 +35,10 @@ export const PostCard: FC<PostCardProps> = ({ post, ...rest }) => {
           </Stack>
         </HStack>
         <Flex gap={"2"} wrap={"wrap"}>
-          <TagList
-            maxWidth={"100px"}
-            tags={[
-              { name: "aaa", id: "ska" },
-              { name: "ididiid", id: "dakvadifvk" },
-              { name: "ididiidididiidididiidididiidididiidididiid", id: "vfdsbb" },
-              { name: "ididiid", id: "cad" },
-              { name: "ididiid", id: "cdaf" },
-              { name: "ididiid", id: "v" },
-              { name: "ididiid", id: "reagvd" },
-              { name: "ididiid", id: "vdaserr" },
-            ]}
-          />
+          <TagList maxWidth={"100px"} tags={post.tags} />
         </Flex>
-        <Text noOfLines={2}>
-          {post.content ||
-            "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容"}
-        </Text>
-        <PostDate w={"full"} textAlign={"end"} fontSize={"sm"} date={post.date} />
+        <Text noOfLines={2}>{post.description}</Text>
+        <PostDate w={"full"} textAlign={"end"} fontSize={"sm"} date={post.updatedAt} />
       </VStack>
     </LinkBox>
   );

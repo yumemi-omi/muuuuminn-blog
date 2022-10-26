@@ -6,6 +6,9 @@ const nextConfig = {
   compiler: {
     emotion: true,
   },
+  images: {
+    domains: ["user-images.githubusercontent.com"],
+  },
   i18n: {
     locales: ["ja", "en"],
     defaultLocale: "ja",

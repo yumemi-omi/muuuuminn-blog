@@ -35,6 +35,16 @@ const eslintConfig = {
         alphabetize: { order: "asc", caseInsensitive: true },
       },
     ],
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      // 「_」を変数名につけた場合は、変数を使用していないよって警告を出さない
+      {
+        argsIgnorePattern: "^_",
+        varsIgnorePattern: "^_",
+        caughtErrorsIgnorePattern: "^_",
+        destructuredArrayIgnorePattern: "^_",
+      },
+    ],
   },
 };
 
