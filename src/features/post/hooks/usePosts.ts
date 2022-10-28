@@ -32,7 +32,12 @@ export const usePosts = (args?: UsePostType) => {
   const posts = queryConverter.convertIssuesIntoPosts(issues);
   const pageInfo = queryConverter.convertIssuesIntoPostPageInfo(issues);
 
-  return { posts, pageInfo };
+  return {
+    posts,
+    pageInfo,
+    getKey: useLifeProjectIssuesQuery.getKey,
+    fetcher: useLifeProjectIssuesQuery.fetcher,
+  };
 };
 
 /**

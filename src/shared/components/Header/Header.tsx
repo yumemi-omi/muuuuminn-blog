@@ -5,7 +5,7 @@ import { Flex, FlexProps, HStack, Spacer } from "@/libs/chakra";
 import { useTranslation } from "@/libs/i18n";
 import { CustomNextLink, ChakraNextImage } from "@/libs/next";
 
-import { ToggleAppearranceButton } from "./ToggleAppearranceButton";
+import { ToggleAppearanceButton } from "./ToggleAppearanceButton";
 
 type HeaderProps = FlexProps;
 
@@ -15,7 +15,7 @@ export const Header: FC<HeaderProps> = memo(function _header() {
 
   return (
     <Flex alignItems={"center"} paddingY={"4"} paddingX={"6"}>
-      <CustomNextLink href={"/home"}>
+      <CustomNextLink href={"/posts"}>
         <AspectRatio ratio={1 / 1} w={"120px"}>
           <ChakraNextImage
             src={
@@ -32,12 +32,12 @@ export const Header: FC<HeaderProps> = memo(function _header() {
       </CustomNextLink>
       <Spacer />
       <HStack>
-        <CustomNextLink href={"/home"}>
+        <CustomNextLink href={"/posts"}>
           <Text fontWeight={"bold"} fontSize={"xl"}>
             {t.PAGE.HOME}
           </Text>
         </CustomNextLink>
-        <ToggleAppearranceButton />
+        <ToggleAppearanceButton />
       </HStack>
     </Flex>
   );
