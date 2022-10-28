@@ -12,7 +12,7 @@ export const Footer: FC<FooterProps> = () => {
   return (
     <Center>
       <HStack alignItems={"center"} paddingY={"4"}>
-        <CustomNextLink href={"/home"}>
+        <CustomNextLink href={"/posts"}>
           <Text fontWeight={"bold"} fontSize={"xl"}>
             {t.PAGE.HOME}
           </Text>

@@ -2,6 +2,7 @@ import { NextSeo, NextSeoProps } from "next-seo";
 import { FC } from "react";
 
 import { Policy } from "@/features/policy/type/policy";
+import { Box } from "@/libs/chakra";
 import { useTranslation } from "@/libs/i18n";
 import { RichMarkdownContent } from "@/shared/components/RichMarkdownContent";
 
@@ -15,11 +16,13 @@ export const PolicyPage: FC<Props> = ({ policy }) => {
     title: t.PAGE.POLICY,
     description: "プライバシーポリシー",
   } as NextSeoProps;
-  console.log({ policy });
+
   return (
     <>
       <NextSeo {...seo} />
-      <RichMarkdownContent html={policy.content} />
+      <Box px={8}>
+        <RichMarkdownContent html={policy.content} />
+      </Box>
     </>
   );
 };

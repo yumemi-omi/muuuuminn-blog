@@ -56,17 +56,24 @@ query LifeProjectIssues($first: Int, $last: Int, $before: String, $after: String
 }
 
 # 記事一覧ページ情報取得
-query LifeProjectIssuesPageInfo($first: Int!, $before: String, $after: String) {
+query LifeProjectIssuesPageInfo($first: Int!, $last: Int, $before: String, $after: String) {
   node(id: "PVT_kwHOAkr4os4AHb3E") {
     ... on ProjectV2 {
       id
-      items(first: $first, before: $before, after: $after) {
+      items(first: $first, last: $last, before: $before, after: $after) {
         totalCount
         pageInfo {
           endCursor
           hasNextPage
           startCursor
           hasPreviousPage
+        }
+        nodes {
+          content {
+            ... on Issue {
+              id
+            }
+          }
         }
       }
     }

@@ -1,17 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://muuuuminn.com/post/akira</loc><lastmod>2022-10-14T12:37:36.019Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://muuuuminn.com/post/hello</loc><lastmod>2022-10-14T12:37:36.019Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://muuuuminn.com/post/hiroki</loc><lastmod>2022-10-14T12:37:36.019Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://muuuuminn.com/post/kuma</loc><lastmod>2022-10-14T12:37:36.019Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://muuuuminn.com/post/misaki</loc><lastmod>2022-10-14T12:37:36.019Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://muuuuminn.com/en/post/akira</loc><lastmod>2022-10-14T12:37:36.019Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://muuuuminn.com/en/post/hello</loc><lastmod>2022-10-14T12:37:36.019Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://muuuuminn.com/en/post/hiroki</loc><lastmod>2022-10-14T12:37:36.019Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://muuuuminn.com/en/post/kuma</loc><lastmod>2022-10-14T12:37:36.019Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://muuuuminn.com/en/post/misaki</loc><lastmod>2022-10-14T12:37:36.019Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://muuuuminn.com/home</loc><lastmod>2022-10-14T12:37:36.020Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://muuuuminn.com/home/1</loc><lastmod>2022-10-14T12:37:36.020Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://muuuuminn.com/en/home</loc><lastmod>2022-10-14T12:37:36.020Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://muuuuminn.com/en/home/1</loc><lastmod>2022-10-14T12:37:36.020Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="https://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="https://www.w3.org/1999/xhtml" xmlns:mobile="https://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="https://www.google.com/schemas/sitemap-image/1.1" xmlns:video="https://www.google.com/schemas/sitemap-video/1.1">
+<url><loc>https://muuuuminn.com/policy</loc><lastmod>2022-10-28T00:25:16.840Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://muuuuminn.com/posts</loc><lastmod>2022-10-28T00:25:16.840Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://muuuuminn.com/en/policy</loc><lastmod>2022-10-28T00:25:16.840Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://muuuuminn.com/en/posts</loc><lastmod>2022-10-28T00:25:16.840Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://muuuuminn.com/post/I_kwDOIKnT4s5UbO59</loc><lastmod>2022-10-28T00:25:16.840Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://muuuuminn.com/post/I_kwDOIKnT4s5UlX4j</loc><lastmod>2022-10-28T00:25:16.840Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://muuuuminn.com/post/I_kwDOIKnT4s5UlYII</loc><lastmod>2022-10-28T00:25:16.840Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://muuuuminn.com/post/I_kwDOIKnT4s5Un5Wr</loc><lastmod>2022-10-28T00:25:16.840Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://muuuuminn.com/post/I_kwDOIKnT4s5Un5cR</loc><lastmod>2022-10-28T00:25:16.840Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://muuuuminn.com/post/I_kwDOIKnT4s5Un5b0</loc><lastmod>2022-10-28T00:25:16.840Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://muuuuminn.com/post/I_kwDOIKnT4s5Un5cH</loc><lastmod>2022-10-28T00:25:16.840Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://muuuuminn.com/post/I_kwDOIKnT4s5Un5dA</loc><lastmod>2022-10-28T00:25:16.840Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://muuuuminn.com/post/I_kwDOIKnT4s5Un5du</loc><lastmod>2022-10-28T00:25:16.840Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://muuuuminn.com/post/I_kwDOIKnT4s5Un5df</loc><lastmod>2022-10-28T00:25:16.840Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://muuuuminn.com/post/I_kwDOIKnT4s5Un5eJ</loc><lastmod>2022-10-28T00:25:16.840Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://muuuuminn.com/post/I_kwDOIKnT4s5Un5d8</loc><lastmod>2022-10-28T00:25:16.840Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://muuuuminn.com/post/I_kwDOIKnT4s5Un5eZ</loc><lastmod>2022-10-28T00:25:16.840Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://muuuuminn.com/post/I_kwDOIKnT4s5Un5hW</loc><lastmod>2022-10-28T00:25:16.840Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://muuuuminn.com/post/I_kwDOIKnT4s5Un5iQ</loc><lastmod>2022-10-28T00:25:16.840Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://muuuuminn.com/post/I_kwDOIKnT4s5Un5iI</loc><lastmod>2022-10-28T00:25:16.840Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://muuuuminn.com/post/I_kwDOIKnT4s5Un5jL</loc><lastmod>2022-10-28T00:25:16.840Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://muuuuminn.com/post/I_kwDOIKnT4s5Un5id</loc><lastmod>2022-10-28T00:25:16.840Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://muuuuminn.com/post/I_kwDOIKnT4s5Un5i5</loc><lastmod>2022-10-28T00:25:16.840Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://muuuuminn.com/post/I_kwDOIKnT4s5Un5jh</loc><lastmod>2022-10-28T00:25:16.840Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://muuuuminn.com/post/I_kwDOIKnT4s5Un5iu</loc><lastmod>2022-10-28T00:25:16.840Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://muuuuminn.com/post/I_kwDOIKnT4s5Un5jv</loc><lastmod>2022-10-28T00:25:16.840Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>

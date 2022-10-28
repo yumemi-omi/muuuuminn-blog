@@ -13,7 +13,17 @@ type Props = {
 };
 
 const QueryClientProvider: FC<Props> = ({ dehydratedState, children }) => {
-  const [queryClient] = useState(() => new QueryClient());
+  const [queryClient] = useState(
+    () =>
+      new QueryClient({
+        defaultOptions: {
+          queries: {
+            // https://tanstack.com/query/v4/docs/guides/window-focus-refetching
+            refetchOnWindowFocus: false,
+          },
+        },
+      }),
+  );
 
   return (
     <_QueryClientProvider client={queryClient}>

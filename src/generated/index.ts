@@ -14022,6 +14022,11 @@ export enum ProjectNextFieldType {
    */
   Title = 'TITLE',
   /**
+   * Tracked by
+   * @deprecated The `ProjectNext` API is deprecated in favour of the more capable `ProjectV2` API. Follow the ProjectV2 guide at https://github.blog/changelog/2022-06-23-the-new-github-issues-june-23rd-update/, to find a suitable replacement. Removal on 2023-01-01 UTC.
+   */
+  TrackedBy = 'TRACKED_BY',
+  /**
    * Tracks
    * @deprecated The `ProjectNext` API is deprecated in favour of the more capable `ProjectV2` API. Follow the ProjectV2 guide at https://github.blog/changelog/2022-06-23-the-new-github-issues-june-23rd-update/, to find a suitable replacement. Removal on 2023-01-01 UTC.
    */
@@ -18834,6 +18839,8 @@ export type Repository = Node & PackageOwner & ProjectOwner & ProjectV2Recent & 
   forks: RepositoryConnection;
   /** The funding links for this repository */
   fundingLinks: Array<FundingLink>;
+  /** Are discussions available on this repository? */
+  hasDiscussionsEnabled: Scalars['Boolean'];
   /** Indicates if the repository has issues feature enabled. */
   hasIssuesEnabled: Scalars['Boolean'];
   /** Indicates if the repository has the Projects feature enabled. */
@@ -24399,6 +24406,8 @@ export type UpdateRepositoryInput = {
   clientMutationId?: InputMaybe<Scalars['String']>;
   /** A new description for the repository. Pass an empty string to erase the existing description. */
   description?: InputMaybe<Scalars['String']>;
+  /** Indicates if the repository should have the discussions feature enabled. */
+  hasDiscussionsEnabled?: InputMaybe<Scalars['Boolean']>;
   /** Indicates if the repository should have the issues feature enabled. */
   hasIssuesEnabled?: InputMaybe<Scalars['Boolean']>;
   /** Indicates if the repository should have the project boards feature enabled. */
@@ -25557,12 +25566,13 @@ export type LifeProjectIssuesQuery = { node?: { id: string, items: { totalCount:
 
 export type LifeProjectIssuesPageInfoQueryVariables = Exact<{
   first: Scalars['Int'];
+  last?: InputMaybe<Scalars['Int']>;
   before?: InputMaybe<Scalars['String']>;
   after?: InputMaybe<Scalars['String']>;
 }>;
 
 
-export type LifeProjectIssuesPageInfoQuery = { node?: { id: string, items: { totalCount: number, pageInfo: { endCursor?: string | null, hasNextPage: boolean, startCursor?: string | null, hasPreviousPage: boolean } } } | {} | null };
+export type LifeProjectIssuesPageInfoQuery = { node?: { id: string, items: { totalCount: number, pageInfo: { endCursor?: string | null, hasNextPage: boolean, startCursor?: string | null, hasPreviousPage: boolean }, nodes?: Array<{ content?: { id: string } | {} | null } | null> | null } } | {} | null };
 
 export type IssueDetailQueryVariables = Exact<{
   id: Scalars['ID'];
@@ -25657,17 +25667,24 @@ useLifeProjectIssuesQuery.getKey = (variables?: LifeProjectIssuesQueryVariables)
 
 useLifeProjectIssuesQuery.fetcher = (variables?: LifeProjectIssuesQueryVariables, options?: RequestInit['headers']) => fetcher<LifeProjectIssuesQuery, LifeProjectIssuesQueryVariables>(LifeProjectIssuesDocument, variables, options);
 export const LifeProjectIssuesPageInfoDocument = `
-    query LifeProjectIssuesPageInfo($first: Int!, $before: String, $after: String) {
+    query LifeProjectIssuesPageInfo($first: Int!, $last: Int, $before: String, $after: String) {
   node(id: "PVT_kwHOAkr4os4AHb3E") {
     ... on ProjectV2 {
       id
-      items(first: $first, before: $before, after: $after) {
+      items(first: $first, last: $last, before: $before, after: $after) {
         totalCount
         pageInfo {
           endCursor
           hasNextPage
           startCursor
           hasPreviousPage
+        }
+        nodes {
+          content {
+            ... on Issue {
+              id
+            }
+          }
         }
       }
     }
