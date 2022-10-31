@@ -70,6 +70,7 @@ export type LifeProjectIssuesPageInfoQuery = {
             hasPreviousPage: boolean;
           };
           nodes?: Array<{ content?: { id: string } | {} | null } | null> | null;
+          edges?: Array<{ cursor: string } | null> | null;
         };
       }
     | {}
@@ -176,6 +177,9 @@ export const LifeProjectIssuesPageInfoDocument = `
               id
             }
           }
+        }
+        edges {
+          cursor
         }
       }
     }
