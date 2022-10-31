@@ -28,7 +28,7 @@ export const usePosts = (args?: UsePostType) => {
     after: args?.after || null,
   };
 
-  const { data: issues } = useLifeProjectIssuesQuery(variables);
+  const { data: issues } = useLifeProjectIssuesQuery(variables, { keepPreviousData: true });
 
   const posts = queryConverter.convertIssuesIntoPosts(issues);
   const pageInfo = queryConverter.convertIssuesIntoPostPageInfo(issues);
