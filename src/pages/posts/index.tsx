@@ -4,7 +4,7 @@ import { GetStaticProps, GetStaticPropsContext } from "next";
 import { HomePage } from "@/_pages/home/HomePage";
 import { HomePageLayout } from "@/_pages/home/HomePageLayout";
 import { DEFAULT_PAGINATION_META } from "@/features/post/constant";
-import { useLifeProjectIssuesQuery } from "@/generated";
+import { useLifeProjectIssuesQuery } from "@/features/post/graphql/issues.generated";
 import { BasicLayout } from "@/shared/components/BasicLayout";
 
 import type { NextPageWithLayout } from "@/pages/_app";

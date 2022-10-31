@@ -12,8 +12,19 @@ const config: CodegenConfig = {
   ],
   documents: "./src/**/*.gql",
   generates: {
-    "./src/generated/index.ts": {
-      plugins: ["typescript", "typescript-operations", "typescript-react-query"],
+    "./src/generated/types.ts": {
+      plugins: ["typescript"],
+      config: {
+        enumsAsConst: true,
+        dedupeFragments: true,
+      },
+    },
+    "./src/generated/": {
+      plugins: ["typescript-operations", "typescript-react-query"],
+      preset: "near-operation-file",
+      presetConfig: {
+        baseTypesPath: "types.ts",
+      },
       config: {
         // fetcher: {
         //   // url形式ではないときはシングル・ダブルクォートで囲む
@@ -29,6 +40,9 @@ const config: CodegenConfig = {
         exposeQueryKeys: true,
       },
     },
+  },
+  hooks: {
+    afterOneFileWrite: ["prettier --write .", "eslint --fix"],
   },
 };
 export default config;

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
-import queryConverter from "@/features/post/grapql/queryConverter";
-import { IssueDetailQueryVariables, useIssueDetailQuery } from "@/generated";
+import queryConverter from "@/features/post/graphql/queryConverter";
 
+import { IssueDetailQueryVariables, useIssueDetailQuery } from "../graphql/issueDetail.generated";
 import { PostType } from "../type/post";
 
 export const usePostDetail = (args: IssueDetailQueryVariables) => {

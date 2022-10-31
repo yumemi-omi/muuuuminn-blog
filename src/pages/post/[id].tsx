@@ -4,11 +4,13 @@ import { ReactElement, Suspense } from "react";
 
 import { PostPage } from "@/_pages/post/PostPage";
 import { PostPageLayout } from "@/_pages/post/PostPageLayout";
-import { useIssueDetailQuery, useLifeProjectIssuesPageInfoQuery } from "@/generated";
+import { useIssueDetailQuery } from "@/features/post/graphql/issueDetail.generated";
+import { useLifeProjectIssuesPageInfoQuery } from "@/features/post/graphql/issues.generated";
 import { BasicLayout } from "@/shared/components/BasicLayout";
 import array from "@/shared/utils/array";
 
 import type { NextPageWithLayout } from "@/pages/_app";
+
 
 const Post: NextPageWithLayout = () => {
   return (
