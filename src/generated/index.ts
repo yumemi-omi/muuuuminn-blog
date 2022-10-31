@@ -25572,7 +25572,7 @@ export type LifeProjectIssuesPageInfoQueryVariables = Exact<{
 }>;
 
 
-export type LifeProjectIssuesPageInfoQuery = { node?: { id: string, items: { totalCount: number, pageInfo: { endCursor?: string | null, hasNextPage: boolean, startCursor?: string | null, hasPreviousPage: boolean }, nodes?: Array<{ content?: { id: string } | {} | null } | null> | null } } | {} | null };
+export type LifeProjectIssuesPageInfoQuery = { node?: { id: string, items: { totalCount: number, pageInfo: { endCursor?: string | null, hasNextPage: boolean, startCursor?: string | null, hasPreviousPage: boolean }, nodes?: Array<{ content?: { id: string } | {} | null } | null> | null, edges?: Array<{ cursor: string } | null> | null } } | {} | null };
 
 export type IssueDetailQueryVariables = Exact<{
   id: Scalars['ID'];
@@ -25685,6 +25685,9 @@ export const LifeProjectIssuesPageInfoDocument = `
               id
             }
           }
+        }
+        edges {
+          cursor
         }
       }
     }

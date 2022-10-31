@@ -57,19 +57,19 @@ export const getStaticPaths = async (): Promise<{
           .filter((n) => n) as string[])
       : [];
 
-  if (totalCount < DEFAULT_FIRST) {
-    /**
-     * 一度のリクエストでとれるissueは100が上限
-     * 実際の合計数が上限100より少ない場合は追加リクエストは不要なので、pathsを返す
-     */
-    console.log({
-      paths,
-    });
+  /**
+   * 一度のリクエストでとれるissueは100が上限
+   * 実際の合計数が上限100より少ない場合は追加リクエストは不要なので、pathsを返す
+   */
+  if (totalCount <= DEFAULT_FIRST) {
     return { paths, fallback: false };
   }
 
   // ↓↓↓追加リクエストの処理(101件目以降のissueを取得する)↓↓↓
   let endCursor = result.node && "id" in result.node ? result.node.items.pageInfo.endCursor : null;
+  /**
+   * すでに一回分fetchしているので-1している
+   */
   const fetchingCounts = Math.ceil(totalCount / DEFAULT_FIRST) - 1;
 
   for await (const _ of array.createNumberArray(fetchingCounts)) {
@@ -99,9 +99,7 @@ export const getStaticPaths = async (): Promise<{
 
     endCursor = result.node && "id" in result.node ? result.node.items.pageInfo.endCursor : null;
   }
-  console.log({
-    二回目: paths,
-  });
+
   return { paths, fallback: false };
 };
 
@@ -113,8 +111,6 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
     useIssueDetailQuery.getKey({ id }),
     useIssueDetailQuery.fetcher({ id }),
   );
-
-  console.log({ state: dehydrate(queryClient) });
 
   return {
     props: {
