@@ -1,0 +1,17 @@
+# タグ
+query LifeRepositoryLabels {
+  node(id: "R_kgDOIKnT4g") {
+    ... on Repository {
+      id
+      name
+      labels(first: 50) {
+        nodes {
+          color
+          id
+          name
+          updatedAt
+        }
+      }
+    }
+  }
+}

@@ -1,14 +1,13 @@
 import matter from "gray-matter";
 
-import {
-  LifeProjectIssuesQuery,
-  LifeRepositoryLabelsQuery,
-  LifeProjectStatusListQuery,
-  IssueDetailQuery,
-} from "@/generated";
 import markdownToHtml from "@/libs/markdown/markdownToHtml";
 
 import { CategoryType, PostPageInfo, PostType, TagType } from "../type/post";
+
+import { IssueDetailQuery } from "./issueDetail.generated";
+import { LifeProjectIssuesQuery } from "./issues.generated";
+import { LifeRepositoryLabelsQuery } from "./labels.generated";
+import { LifeProjectStatusListQuery } from "./statusList.generated";
 
 const MARKDOWN_FIELDS = [
   "title",

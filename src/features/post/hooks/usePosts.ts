@@ -1,6 +1,7 @@
 import { DEFAULT_PAGINATION_META } from "@/features/post/constant";
-import queryConverter from "@/features/post/grapql/queryConverter";
-import { useLifeProjectIssuesQuery } from "@/generated";
+import queryConverter from "@/features/post/graphql/queryConverter";
+
+import { useLifeProjectIssuesQuery } from "../graphql/issues.generated";
 
 type UsePostType = {
   limit?: number;
