@@ -1,0 +1,85 @@
+# 記事一覧(Issue一覧)
+query LifeProjectIssues($first: Int, $last: Int, $before: String, $after: String) {
+  node(id: "PVT_kwHOAkr4os4AHb3E") {
+    ... on ProjectV2 {
+      id
+      items(
+        first: $first
+        last: $last
+        before: $before
+        after: $after
+        orderBy: { direction: DESC, field: POSITION }
+      ) {
+        totalCount
+        pageInfo {
+          endCursor
+          hasNextPage
+          startCursor
+          hasPreviousPage
+        }
+        nodes {
+          id
+          updatedAt
+          content {
+            ... on Issue {
+              id
+              body
+              bodyHTML
+              closed
+              updatedAt
+              title
+              labels(first: 10) {
+                nodes {
+                  color
+                  id
+                  name
+                }
+              }
+              comments(first: 1) {
+                nodes {
+                  body
+                }
+              }
+            }
+          }
+          fieldValueByName(name: "Status") {
+            ... on ProjectV2ItemFieldSingleSelectValue {
+              id
+              name
+            }
+          }
+          type
+        }
+      }
+    }
+  }
+}
+
+# 記事一覧ページ情報取得
+# 記事一覧ページ情報取得
+query LifeProjectIssuesPageInfo($first: Int!, $last: Int, $before: String, $after: String) {
+  node(id: "PVT_kwHOAkr4os4AHb3E") {
+    ... on ProjectV2 {
+      id
+      items(first: $first, last: $last, before: $before, after: $after) {
+        totalCount
+        pageInfo {
+          endCursor
+          hasNextPage
+          startCursor
+          hasPreviousPage
+        }
+        nodes {
+          content {
+            ... on Issue {
+              id
+            }
+          }
+        }
+        edges {
+          cursor
+        }
+      }
+    }
+  }
+}

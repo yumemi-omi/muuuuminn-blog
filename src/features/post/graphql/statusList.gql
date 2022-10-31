@@ -1,0 +1,17 @@
+# カテゴリ
+query LifeProjectStatusList {
+  node(id: "PVT_kwHOAkr4os4AHb3E") {
+    ... on ProjectV2 {
+      id
+      field(name: "Status") {
+        ... on ProjectV2SingleSelectField {
+          id
+          options {
+            id
+            name
+          }
+        }
+      }
+    }
+  }
+}

@@ -46,6 +46,24 @@ const eslintConfig = {
       },
     ],
   },
+  overrides: [
+    {
+      // tsxとcodegenで生成したコード内ではempty objectなtypeを許容する
+      // https://github.com/typescript-eslint/typescript-eslint/issues/2063#issuecomment-675156492
+      files: ["*.tsx", "*.generated.ts"],
+      rules: {
+        "@typescript-eslint/ban-types": [
+          "error",
+          {
+            extendDefaults: true,
+            types: {
+              "{}": false,
+            },
+          },
+        ],
+      },
+    },
+  ],
 };
 
 module.exports = eslintConfig;
