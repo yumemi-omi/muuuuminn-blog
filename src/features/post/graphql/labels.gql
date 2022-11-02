@@ -1,6 +1,6 @@
 # タグ
-query LifeRepositoryLabels {
-  node(id: "R_kgDOIKnT4g") {
+query LifeRepositoryLabels($id: ID! = "R_kgDOIKnT4g") {
+  node(id: $id) {
     ... on Repository {
       id
       name

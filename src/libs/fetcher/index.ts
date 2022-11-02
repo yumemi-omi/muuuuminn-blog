@@ -17,7 +17,7 @@ export const fetcher = <TData, TVariables>(
     });
 
     const json = await res.json();
-
+    console.log({ json });
     if (json.errors) {
       const { message } = json.errors[0];
 
