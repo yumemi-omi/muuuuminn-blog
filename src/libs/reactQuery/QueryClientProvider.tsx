@@ -20,6 +20,8 @@ const QueryClientProvider: FC<Props> = ({ dehydratedState, children }) => {
           queries: {
             // https://tanstack.com/query/v4/docs/guides/window-focus-refetching
             refetchOnWindowFocus: false,
+            staleTime: Infinity,
+            networkMode: "offlineFirst",
           },
         },
       }),
