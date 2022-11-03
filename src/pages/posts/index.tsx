@@ -4,7 +4,10 @@ import { GetStaticProps, GetStaticPropsContext } from "next";
 import { HomePage } from "@/_pages/home/HomePage";
 import { HomePageLayout } from "@/_pages/home/HomePageLayout";
 import { DEFAULT_PAGINATION_META } from "@/features/post/constant";
-import { useLifeProjectIssuesQuery } from "@/features/post/graphql/issues.generated";
+import {
+  useLifeProjectIssuesForInfiniteQuery,
+  useLifeProjectIssuesQuery,
+} from "@/features/post/graphql/issues.generated";
 import { BasicLayout } from "@/shared/components/BasicLayout";
 
 import type { NextPageWithLayout } from "@/pages/_app";
@@ -29,7 +32,7 @@ Home.getLayout = function getLayout(page: ReactElement) {
 export const getStaticProps: GetStaticProps = async (_context: GetStaticPropsContext) => {
   const queryClient = new QueryClient();
   await queryClient.prefetchQuery(
-    useLifeProjectIssuesQuery.getKey({ first: DEFAULT_PAGINATION_META.LIMIT }),
+    useLifeProjectIssuesForInfiniteQuery.getKey({ first: DEFAULT_PAGINATION_META.LIMIT }),
     useLifeProjectIssuesQuery.fetcher({ first: DEFAULT_PAGINATION_META.LIMIT }),
   );
 
