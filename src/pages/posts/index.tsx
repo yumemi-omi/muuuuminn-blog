@@ -31,14 +31,19 @@ Home.getLayout = function getLayout(page: ReactElement) {
 
 export const getStaticProps: GetStaticProps = async (_context: GetStaticPropsContext) => {
   const queryClient = new QueryClient();
-  await queryClient.prefetchQuery(
+  await queryClient.prefetchInfiniteQuery(
     useLifeProjectIssuesForInfiniteQuery.getKey({ first: DEFAULT_PAGINATION_META.LIMIT }),
     useLifeProjectIssuesQuery.fetcher({ first: DEFAULT_PAGINATION_META.LIMIT }),
   );
 
   return {
     props: {
-      dehydratedState: dehydrate(queryClient),
+      /**
+       * workaround
+       * https://github.com/TanStack/query/issues/1458#issuecomment-747716357
+       * infiniteQueryをprefetchしてdehydrateするとエラーになるため、JSONでパースして回避
+       */
+      dehydratedState: JSON.parse(JSON.stringify(dehydrate(queryClient))),
     },
   };
 };
