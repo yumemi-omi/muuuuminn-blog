@@ -16,13 +16,17 @@ export const Header: FC<HeaderProps> = memo(function _header() {
   return (
     <Flex alignItems={"center"} paddingY={"4"} paddingX={"6"}>
       <CustomNextLink href={"/posts"}>
-        <AspectRatio ratio={1 / 1} w={"120px"}>
+        <AspectRatio ratio={1 / 1} w={"120px"} hidden={colorMode === "dark"}>
           <ChakraNextImage
-            src={
-              colorMode === "dark"
-                ? "/logo/logo_transparent.png"
-                : "/logo/logo_transparent_reverse.png"
-            }
+            src={"/logo/logo_transparent_reverse.png"}
+            alt={t.ALT.SITE_LOGO}
+            borderRadius={"xl"}
+            layout={"fill"}
+          />
+        </AspectRatio>
+        <AspectRatio ratio={1 / 1} w={"120px"} hidden={colorMode === "light"}>
+          <ChakraNextImage
+            src={"/logo/logo_transparent.png"}
             alt={t.ALT.SITE_LOGO}
             borderRadius={"xl"}
             layout={"fill"}
