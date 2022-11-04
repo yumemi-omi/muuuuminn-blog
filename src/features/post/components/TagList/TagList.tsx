@@ -14,7 +14,7 @@ export const TagList: FC<TagListProps> = ({ tags, ...rest }) => {
       {tags.map(
         (tag, index) =>
           index <= 4 && (
-            <CustomNextLink href={`?tag=${tag.id}`} key={tag.id}>
+            <CustomNextLink href={`?tag=${tag.id}`} key={tag.id} prefetch={false}>
               <Tag {...rest}>
                 <Text noOfLines={1}>{tag.name}</Text>
               </Tag>

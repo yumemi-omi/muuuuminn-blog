@@ -12,12 +12,12 @@ export const Footer: FC<FooterProps> = () => {
   return (
     <Center>
       <HStack alignItems={"center"} paddingY={"4"}>
-        <CustomNextLink href={"/posts"}>
+        <CustomNextLink href={"/posts"} prefetch={false}>
           <Text fontWeight={"bold"} fontSize={"xl"}>
             {t.PAGE.HOME}
           </Text>
         </CustomNextLink>
-        <CustomNextLink href={"/policy"}>
+        <CustomNextLink href={"/policy"} prefetch={false}>
           <Text fontWeight={"bold"} fontSize={"xl"}>
             {t.PAGE.POLICY}
           </Text>

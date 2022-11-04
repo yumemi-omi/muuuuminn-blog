@@ -36,7 +36,7 @@ export const Header: FC<HeaderProps> = memo(function _header() {
       </CustomNextLink>
       <Spacer />
       <HStack>
-        <CustomNextLink href={"/posts"}>
+        <CustomNextLink href={"/posts"} prefetch={false}>
           <Text fontWeight={"bold"} fontSize={"xl"}>
             {t.PAGE.HOME}
           </Text>

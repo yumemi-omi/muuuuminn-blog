@@ -1,5 +1,5 @@
 import { QueryClient, dehydrate } from "@tanstack/react-query";
-import { GetStaticPropsContext } from "next";
+import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { ReactElement, Suspense } from "react";
 
 import { PostPage } from "@/_pages/post/PostPage";
@@ -29,7 +29,7 @@ Post.getLayout = function getLayout(page: ReactElement) {
 
 const DEFAULT_FIRST = 100;
 
-export const getStaticPaths = async (): Promise<{
+export const getStaticPaths: GetStaticPaths = async (): Promise<{
   paths: string[];
   fallback: boolean;
 }> => {
@@ -104,7 +104,7 @@ export const getStaticPaths = async (): Promise<{
   return { paths, fallback: false };
 };
 
-export const getStaticProps = async (context: GetStaticPropsContext) => {
+export const getStaticProps: GetStaticProps = async (context: GetStaticPropsContext) => {
   const id = context.params ? (context.params.id as string) : "";
 
   const queryClient = new QueryClient();
@@ -117,6 +117,7 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
     props: {
       dehydratedState: dehydrate(queryClient),
     },
+    revalidate: 1000,
   };
 };
 

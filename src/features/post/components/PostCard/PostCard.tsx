@@ -23,7 +23,7 @@ export const PostCard: FC<PostCardProps> = ({ post, ...rest }) => {
           </AspectRatio>
           <Stack>
             {post.category && (
-              <CustomNextLink href={`?category=${post.category.id}`}>
+              <CustomNextLink href={`?category=${post.category.id}`} prefetch={false}>
                 <Category maxWidth={"200px"} category={post.category} fontSize={"sm"} />
               </CustomNextLink>
             )}
