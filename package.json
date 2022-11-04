@@ -43,7 +43,7 @@
     "@graphql-codegen/client-preset": "^1.0.5",
     "@graphql-codegen/near-operation-file-preset": "^2.4.3",
     "@graphql-codegen/typescript-react-query": "^4.0.1",
-    "@types/node": "18.11.7",
+    "@types/node": "18.11.9",
     "@types/react": "18.0.24",
     "@typescript-eslint/eslint-plugin": "5.41.0",
     "@typescript-eslint/parser": "5.41.0",
