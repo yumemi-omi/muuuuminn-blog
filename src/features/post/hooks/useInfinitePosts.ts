@@ -1,10 +1,15 @@
+import { InfiniteData, useQueryClient } from "@tanstack/react-query";
 import { useMemo } from "react";
 
 import { DEFAULT_PAGINATION_META } from "@/features/post/constant";
-import { useInfiniteLifeProjectIssuesQuery } from "@/features/post/graphql/issues.generated";
+import {
+  LifeProjectIssuesQuery,
+  useInfiniteLifeProjectIssuesForInfiniteQuery,
+} from "@/features/post/graphql/issues.generated";
 import queryConverter from "@/features/post/graphql/queryConverter";
 
-export const useInfinitePosts = () => {
+export const useInfinitePosts = (_initialData?: InfiniteData<LifeProjectIssuesQuery>) => {
+  const queryClient = useQueryClient();
   const initialVariables = {
     first: DEFAULT_PAGINATION_META.LIMIT,
     after: null,
@@ -18,12 +23,19 @@ export const useInfinitePosts = () => {
     fetchNextPage,
     hasNextPage,
     isFetchingNextPage,
-  } = useInfiniteLifeProjectIssuesQuery("after", initialVariables, {
+  } = useInfiniteLifeProjectIssuesForInfiniteQuery("after", initialVariables, {
     getNextPageParam(lastQueryResult, _allQueryResultList) {
       const pageInfo = queryConverter.convertIssuesIntoPostPageInfo(lastQueryResult);
       if (pageInfo.hasNextPage) {
         return pageInfo.endCursor;
       }
+    },
+    initialData: () => {
+      return queryClient.getQueryData(
+        useInfiniteLifeProjectIssuesForInfiniteQuery.getKey({
+          first: DEFAULT_PAGINATION_META.LIMIT,
+        }),
+      );
     },
   });
 
@@ -43,7 +55,7 @@ export const useInfinitePosts = () => {
     fetchNextPage,
     hasNextPage,
     isFetchingNextPage,
-    getKey: useInfiniteLifeProjectIssuesQuery.getKey,
+    getKey: useInfiniteLifeProjectIssuesForInfiniteQuery.getKey,
   };
 };
 

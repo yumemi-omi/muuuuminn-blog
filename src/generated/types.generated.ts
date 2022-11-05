@@ -19073,7 +19073,7 @@ export type Repository = Node &
     readonly forks: RepositoryConnection;
     /** The funding links for this repository */
     readonly fundingLinks: ReadonlyArray<FundingLink>;
-    /** Are discussions available on this repository? */
+    /** Indicates if the repository has the Discussions feature enabled. */
     readonly hasDiscussionsEnabled: Scalars["Boolean"];
     /** Indicates if the repository has issues feature enabled. */
     readonly hasIssuesEnabled: Scalars["Boolean"];
@@ -19804,6 +19804,8 @@ export type RepositoryInfo = {
   readonly descriptionHTML: Scalars["HTML"];
   /** Returns how many forks there are of this repository in the whole network. */
   readonly forkCount: Scalars["Int"];
+  /** Indicates if the repository has the Discussions feature enabled. */
+  readonly hasDiscussionsEnabled: Scalars["Boolean"];
   /** Indicates if the repository has issues feature enabled. */
   readonly hasIssuesEnabled: Scalars["Boolean"];
   /** Indicates if the repository has the Projects feature enabled. */

@@ -27,6 +27,8 @@ const QueryClientProvider: FC<Props> = ({ dehydratedState, children }) => {
       }),
   );
 
+  console.log(dehydratedState);
+
   return (
     <_QueryClientProvider client={queryClient}>
       <Hydrate state={dehydratedState}>{children}</Hydrate>

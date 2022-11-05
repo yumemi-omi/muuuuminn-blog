@@ -315,7 +315,7 @@ export type LifeProjectIssuesQuery = {
 };
 
 export type LifeProjectIssuesForInfiniteQueryVariables = Types.Exact<{
-  first?: Types.Scalars["Int"];
+  first?: Types.InputMaybe<Types.Scalars["Int"]>;
   after?: Types.InputMaybe<Types.Scalars["String"]>;
 }>;
 
@@ -986,7 +986,7 @@ useLifeProjectIssuesQuery.fetcher = (
     options,
   );
 export const LifeProjectIssuesForInfiniteDocument = `
-    query LifeProjectIssuesForInfinite($first: Int! = 5, $after: String) {
+    query LifeProjectIssuesForInfinite($first: Int = 5, $after: String) {
   node(id: "PVT_kwHOAkr4os4AHb3E") {
     ... on ProjectV2 {
       id
