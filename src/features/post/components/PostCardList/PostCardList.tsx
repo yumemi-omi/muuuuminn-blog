@@ -25,7 +25,7 @@ export const PostCardList: FC<PostCardListProps> = ({ posts }) => {
   });
 
   return (
-    <Box overflow={"scroll"} h={"400px"} ref={parentRef}>
+    <Box overflow={"scroll"} h={"400px"} id="restore-scroll-position-element" ref={parentRef}>
       <Box position={"relative"} h={`${rowVirtualizer.getTotalSize()}px`}>
         {rowVirtualizer.getVirtualItems().map((virtualRow) => {
           const isLoaderRow = virtualRow.index > allRows.length - 1;
