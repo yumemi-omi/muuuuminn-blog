@@ -10,7 +10,7 @@ import { fetcher } from "@/libs/fetcher";
 
 import * as Types from "../../../generated/types.generated";
 export type LifeProjectStatusListQueryVariables = Types.Exact<{
-  id?: Types.Scalars["ID"];
+  id?: Types.InputMaybe<Types.Scalars["ID"]>;
 }>;
 
 export type LifeProjectStatusListQuery = {
@@ -265,7 +265,7 @@ export type LifeProjectStatusListQuery = {
 };
 
 export const LifeProjectStatusListDocument = `
-    query LifeProjectStatusList($id: ID! = "PVT_kwHOAkr4os4AHb3E") {
+    query LifeProjectStatusList($id: ID = "PVT_kwHOAkr4os4AHb3E") {
   node(id: $id) {
     ... on ProjectV2 {
       id

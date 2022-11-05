@@ -1,5 +1,5 @@
 # カテゴリ
-query LifeProjectStatusList($id: ID! = "PVT_kwHOAkr4os4AHb3E") {
+query LifeProjectStatusList($id: ID = "PVT_kwHOAkr4os4AHb3E") {
   node(id: $id) {
     ... on ProjectV2 {
       id

@@ -10,7 +10,7 @@ import { fetcher } from "@/libs/fetcher";
 
 import * as Types from "../../../generated/types.generated";
 export type LifeRepositoryLabelsQueryVariables = Types.Exact<{
-  id?: Types.Scalars["ID"];
+  id?: Types.InputMaybe<Types.Scalars["ID"]>;
 }>;
 
 export type LifeRepositoryLabelsQuery = {
@@ -263,7 +263,7 @@ export type LifeRepositoryLabelsQuery = {
 };
 
 export const LifeRepositoryLabelsDocument = `
-    query LifeRepositoryLabels($id: ID! = "R_kgDOIKnT4g") {
+    query LifeRepositoryLabels($id: ID = "R_kgDOIKnT4g") {
   node(id: $id) {
     ... on Repository {
       id

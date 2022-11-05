@@ -56,7 +56,7 @@ query LifeProjectIssues($first: Int = 5, $last: Int, $before: String, $after: St
 }
 
 # 記事一覧(Issue一覧)
-query LifeProjectIssuesForInfinite($first: Int! = 5, $after: String) {
+query LifeProjectIssuesForInfinite($first: Int = 5, $after: String) {
   node(id: "PVT_kwHOAkr4os4AHb3E") {
     ... on ProjectV2 {
       id

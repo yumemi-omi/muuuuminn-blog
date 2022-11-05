@@ -1,19 +1,23 @@
-import { dehydrate, QueryClient } from "@tanstack/react-query";
+import { dehydrate, InfiniteData, QueryClient } from "@tanstack/react-query";
 import { GetStaticProps, GetStaticPropsContext } from "next";
 
 import { HomePage } from "@/_pages/home/HomePage";
 import { HomePageLayout } from "@/_pages/home/HomePageLayout";
 import { DEFAULT_PAGINATION_META } from "@/features/post/constant";
 import {
-  useLifeProjectIssuesForInfiniteQuery,
   useLifeProjectIssuesQuery,
+  useInfiniteLifeProjectIssuesForInfiniteQuery,
 } from "@/features/post/graphql/issues.generated";
 import { BasicLayout } from "@/shared/components/BasicLayout";
 
 import type { NextPageWithLayout } from "@/pages/_app";
 import type { ReactElement } from "react";
 
-const Home: NextPageWithLayout = () => {
+type HomeProps = {
+  // issuesGroup: InfiniteData<LifeProjectIssuesQuery>;
+};
+
+const Home: NextPageWithLayout<HomeProps> = () => {
   return (
     <>
       <HomePage />
@@ -31,8 +35,12 @@ Home.getLayout = function getLayout(page: ReactElement) {
 
 export const getStaticProps: GetStaticProps = async (_context: GetStaticPropsContext) => {
   const queryClient = new QueryClient();
+  // const result = await queryClient.fetchInfiniteQuery(
+  //   useLifeProjectIssuesForInfiniteQuery.getKey({ first: DEFAULT_PAGINATION_META.LIMIT }),
+  //   useLifeProjectIssuesQuery.fetcher({ first: DEFAULT_PAGINATION_META.LIMIT }),
+  // );
   await queryClient.prefetchInfiniteQuery(
-    useLifeProjectIssuesForInfiniteQuery.getKey({ first: DEFAULT_PAGINATION_META.LIMIT }),
+    useInfiniteLifeProjectIssuesForInfiniteQuery.getKey({ first: DEFAULT_PAGINATION_META.LIMIT }),
     useLifeProjectIssuesQuery.fetcher({ first: DEFAULT_PAGINATION_META.LIMIT }),
   );
 
@@ -44,8 +52,8 @@ export const getStaticProps: GetStaticProps = async (_context: GetStaticPropsCon
        * infiniteQueryをprefetchしてdehydrateするとエラーになるため、JSONでパースして回避
        */
       dehydratedState: JSON.parse(JSON.stringify(dehydrate(queryClient))),
+      // issuesGroup: JSON.parse(JSON.stringify(result)),
     },
-    revalidate: 1000,
   };
 };
 
