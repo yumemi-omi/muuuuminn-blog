@@ -45,7 +45,7 @@
     "@graphql-codegen/near-operation-file-preset": "^2.4.3",
     "@graphql-codegen/typescript-react-query": "^4.0.1",
     "@types/node": "18.11.9",
-    "@types/react": "18.0.24",
+    "@types/react": "18.0.25",
     "@typescript-eslint/eslint-plugin": "5.41.0",
     "@typescript-eslint/parser": "5.41.0",
     "dependency-cruiser": "11.18.0",
