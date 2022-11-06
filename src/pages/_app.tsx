@@ -32,7 +32,7 @@ function MyApp({ Component, pageProps, router }: AppPropsWithLayout): JSX.Elemen
   const { t } = useTranslation();
   const titleTemplate = `${t.SITE_NAME}`;
 
-  useScrollRestoration(router, "restore-scroll-position-element");
+  // useScrollRestoration(router, "restore-scroll-position-element");
 
   return (
     <>
