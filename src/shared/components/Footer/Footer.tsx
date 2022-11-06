@@ -3,7 +3,7 @@ import { FC } from "react";
 
 import { FlexProps } from "@/libs/chakra";
 import { useTranslation } from "@/libs/i18n";
-import { CustomNextLink } from "@/libs/next";
+import { CustomNextLink } from "@/libs/next/link/CustomNextLink";
 
 type FooterProps = FlexProps;
 
