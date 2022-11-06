@@ -13,9 +13,7 @@ import { BasicLayout } from "@/shared/components/BasicLayout";
 import type { NextPageWithLayout } from "@/pages/_app";
 import type { ReactElement } from "react";
 
-type HomeProps = {
-  // issuesGroup: InfiniteData<LifeProjectIssuesQuery>;
-};
+type HomeProps = {};
 
 const Home: NextPageWithLayout<HomeProps> = () => {
   return (
@@ -35,10 +33,6 @@ Home.getLayout = function getLayout(page: ReactElement) {
 
 export const getStaticProps: GetStaticProps = async (_context: GetStaticPropsContext) => {
   const queryClient = new QueryClient();
-  // const result = await queryClient.fetchInfiniteQuery(
-  //   useLifeProjectIssuesForInfiniteQuery.getKey({ first: DEFAULT_PAGINATION_META.LIMIT }),
-  //   useLifeProjectIssuesQuery.fetcher({ first: DEFAULT_PAGINATION_META.LIMIT }),
-  // );
   await queryClient.prefetchInfiniteQuery(
     useInfiniteLifeProjectIssuesForInfiniteQuery.getKey({ first: DEFAULT_PAGINATION_META.LIMIT }),
     useLifeProjectIssuesQuery.fetcher({ first: DEFAULT_PAGINATION_META.LIMIT }),
@@ -52,7 +46,6 @@ export const getStaticProps: GetStaticProps = async (_context: GetStaticPropsCon
        * infiniteQueryをprefetchしてdehydrateするとエラーになるため、JSONでパースして回避
        */
       dehydratedState: JSON.parse(JSON.stringify(dehydrate(queryClient))),
-      // issuesGroup: JSON.parse(JSON.stringify(result)),
     },
   };
 };

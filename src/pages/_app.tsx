@@ -3,6 +3,8 @@ import { DehydratedState } from "@tanstack/react-query";
 import { NextPage } from "next";
 import { DefaultSeo } from "next-seo";
 import { ReactElement, ReactNode } from "react";
+import { RecoilRoot } from "recoil";
+import { RecoilHistorySyncJSONNext } from "recoil-sync-next";
 
 import theme from "@/libs/chakra/theme";
 import { useTranslation } from "@/libs/i18n";
@@ -35,7 +37,13 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout): JSX.Element {
     <>
       <DefaultSeo titleTemplate={titleTemplate} />
       <QueryClientProvider dehydratedState={pageProps.dehydratedState}>
-        <ChakraProvider theme={theme}>{getLayout(<Component {...pageProps} />)}</ChakraProvider>
+        <ChakraProvider theme={theme}>
+          <RecoilRoot>
+            <RecoilHistorySyncJSONNext storeKey="ui-state">
+              {getLayout(<Component {...pageProps} />)}
+            </RecoilHistorySyncJSONNext>
+          </RecoilRoot>
+        </ChakraProvider>
       </QueryClientProvider>
     </>
   );
