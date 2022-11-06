@@ -6,7 +6,6 @@ import { ReactElement, ReactNode } from "react";
 
 import theme from "@/libs/chakra/theme";
 import { useTranslation } from "@/libs/i18n";
-import { useScrollRestoration } from "@/libs/next";
 import QueryClientProvider from "@/libs/reactQuery/QueryClientProvider";
 
 import type { AppProps } from "next/app";
@@ -26,13 +25,11 @@ type AppPropsWithLayout = AppProps & {
   };
 };
 
-function MyApp({ Component, pageProps, router }: AppPropsWithLayout): JSX.Element {
+function MyApp({ Component, pageProps }: AppPropsWithLayout): JSX.Element {
   const getLayout = Component.getLayout ?? ((page) => page);
 
   const { t } = useTranslation();
   const titleTemplate = `${t.SITE_NAME}`;
-
-  // useScrollRestoration(router, "restore-scroll-position-element");
 
   return (
     <>
