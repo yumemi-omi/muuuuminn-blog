@@ -1,29 +1,74 @@
-import { FC, useEffect, useRef } from "react";
-import { Virtuoso } from "react-virtuoso";
+import { number } from "@recoiljs/refine";
+import { FC, useCallback, useEffect, useMemo, useRef } from "react";
+import { ListRange, Virtuoso } from "react-virtuoso";
+import { useRecoilState } from "recoil";
+import { syncEffect } from "recoil-sync";
+import { initializableAtomFamily } from "recoil-sync-next";
 
 import { PostCard } from "@/features/post/components/PostCard";
-import { PostType } from "@/features/post/type/post";
-import { Box, Grid, GridItem } from "@/libs/chakra";
+import { Box } from "@/libs/chakra";
 
 import { useInfinitePosts } from "../../hooks/useInfinitePosts";
 
-type PostCardListProps = {
-  posts: PostType[];
-};
+export const scrollPosition = initializableAtomFamily<number, string>({
+  key: "scrollPositionState",
+  effects: [
+    syncEffect({
+      storeKey: "ui-state",
+      refine: number(),
+    }),
+  ],
+});
 
-export const PostCardList: FC<PostCardListProps> = ({ posts }) => {
-  const { error, isFetching, isFetchingNextPage, hasNextPage, fetchNextPage } = useInfinitePosts();
+type PostCardListProps = {};
+
+export const PostCardList: FC<PostCardListProps> = () => {
+  const { error, isFetching, isFetchingNextPage, hasNextPage, fetchNextPage, posts } =
+    useInfinitePosts();
+  const [scrollY, setScrollY] = useRecoilState(scrollPosition("postList", 0));
+  const once = useRef(true);
+
+  const initialIndex = useMemo(() => {
+    if (once && scrollY !== 0) {
+      return scrollY;
+    }
+    return 0;
+  }, [scrollY]);
+
+  const rangeChanged = useCallback(
+    (range: ListRange) => {
+      if (range) {
+        setScrollY(range.startIndex);
+      }
+    },
+    [setScrollY],
+  );
+
+  useEffect(() => {
+    once.current = false;
+    return () => {
+      once.current = true;
+    };
+  }, []);
+
+  console.log({
+    error,
+    isFetching,
+    isFetchingNextPage,
+    hasNextPage,
+  });
 
   return (
     <Box id="restore-scroll-position-element">
       <Virtuoso
         data={posts}
+        overscan={10}
         useWindowScroll
-        totalCount={200}
+        initialTopMostItemIndex={initialIndex}
+        endReached={() => fetchNextPage()}
+        totalCount={posts.length}
         itemContent={(_index, post) => <PostCard post={post} />}
-        components={{
-          Footer: () => <button onClick={() => fetchNextPage()}>load more</button>,
-        }}
+        rangeChanged={rangeChanged}
       />
     </Box>
   );

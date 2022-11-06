@@ -22,6 +22,7 @@ const QueryClientProvider: FC<Props> = ({ dehydratedState, children }) => {
             refetchOnWindowFocus: false,
             staleTime: Infinity,
             networkMode: "offlineFirst",
+            suspense: false,
           },
         },
       }),
