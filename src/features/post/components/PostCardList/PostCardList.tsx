@@ -25,9 +25,16 @@ type PostCardListProps = {};
 export const PostCardList: FC<PostCardListProps> = () => {
   const { error, isFetching, isFetchingNextPage, hasNextPage, fetchNextPage, posts } =
     useInfinitePosts();
-  const [scrollY, setScrollY] = useRecoilState(scrollPosition("postList", 0));
-  const once = useRef(true);
 
+  const once = useRef(true);
+  useEffect(() => {
+    once.current = false;
+    return () => {
+      once.current = true;
+    };
+  }, []);
+
+  const [scrollY, setScrollY] = useRecoilState(scrollPosition("postList", 0));
   const initialIndex = useMemo(() => {
     if (once && scrollY !== 0) {
       return scrollY;
@@ -44,22 +51,8 @@ export const PostCardList: FC<PostCardListProps> = () => {
     [setScrollY],
   );
 
-  useEffect(() => {
-    once.current = false;
-    return () => {
-      once.current = true;
-    };
-  }, []);
-
-  console.log({
-    error,
-    isFetching,
-    isFetchingNextPage,
-    hasNextPage,
-  });
-
   return (
-    <Box id="restore-scroll-position-element">
+    <Box>
       <Virtuoso
         data={posts}
         overscan={10}
