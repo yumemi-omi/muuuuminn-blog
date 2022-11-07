@@ -40,7 +40,7 @@ const toBase64 = (str: string) =>
   typeof window === "undefined" ? Buffer.from(str).toString("base64") : window.btoa(str);
 
 export const ChakraNextImage = (props: ImageProps & BoxProps) => {
-  const { src, alt, width, quality, height, layout, objectFit, ...rest } = props;
+  const { src, alt = "", width, quality, height, layout, objectFit, ...rest } = props;
   return (
     <Box pos="relative" className="group" {...rest}>
       {src ? (
@@ -60,7 +60,7 @@ export const ChakraNextImage = (props: ImageProps & BoxProps) => {
           transition="all 0.2s"
         />
       ) : (
-        <Box bgColor={"red.700"} />
+        <Box h={"full"} w={"full"} bgColor={"currentcolor"} />
       )}
     </Box>
   );
