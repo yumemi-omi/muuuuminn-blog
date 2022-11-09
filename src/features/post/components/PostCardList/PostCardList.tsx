@@ -1,5 +1,5 @@
 import { number } from "@recoiljs/refine";
-import { useCallback, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import AutoSizer from "react-virtualized-auto-sizer";
 import { FixedSizeList, ListOnScrollProps } from "react-window";
 import InfiniteLoader from "react-window-infinite-loader";
@@ -24,18 +24,17 @@ export const PostCardList = () => {
   const { posts, fetchNextPage, hasNextPage } = useInfinitePosts();
 
   const [scrollTopState, setScrollTopState] = useRecoilState(scrollTop("scrollParam", 0));
-  const [timer, setTimer] = useState<NodeJS.Timeout | null>(null);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
   const onScroll = useCallback(
     (scrollProps: ListOnScrollProps) => {
-      if (timer !== null) {
-        clearTimeout(timer);
+      if (timerRef.current !== null) {
+        clearTimeout(timerRef.current);
       }
-      const time = setTimeout(function () {
+      timerRef.current = setTimeout(function () {
         setScrollTopState(scrollProps.scrollOffset);
-      }, 500);
-      setTimer(time);
+      }, 100);
     },
-    [timer, setScrollTopState],
+    [setScrollTopState],
   );
 
   const checkIfPhotoLoaded = (index: number) => {
