@@ -20,7 +20,7 @@ export const scrollTop = initializableAtomFamily<number, string>({
   ],
 });
 
-export const PostCardList = () => {
+export const ReactWindowList = () => {
   const { posts, fetchNextPage, hasNextPage } = useInfinitePosts();
 
   const [scrollTopState, setScrollTopState] = useRecoilState(scrollTop("scrollParam", 0));
