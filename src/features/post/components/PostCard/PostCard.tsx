@@ -27,7 +27,7 @@ export const PostCard: FC<PostCardProps> = ({ post, ...rest }) => {
                 <Category maxWidth={"200px"} category={post.category} fontSize={"sm"} />
               </CustomNextLink>
             )}
-            <CustomNextLink linkType={"withOverlay"} href={`/post/${post.id}`}>
+            <CustomNextLink linkType={"withOverlay"} href={`/post/${post.id}`} prefetch={false}>
               <Text noOfLines={2} fontSize={"lg"} fontWeight={"bold"}>
                 {post.title}
               </Text>
