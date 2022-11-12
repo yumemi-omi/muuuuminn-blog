@@ -1,5 +1,5 @@
 import { number } from "@recoiljs/refine";
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useRef } from "react";
 import AutoSizer from "react-virtualized-auto-sizer";
 import { FixedSizeList, ListOnScrollProps } from "react-window";
 import InfiniteLoader from "react-window-infinite-loader";
@@ -37,26 +37,26 @@ export const PostCardList = () => {
     [setScrollTopState],
   );
 
-  const checkIfPhotoLoaded = (index: number) => {
+  const checkIfPostLoaded = (index: number) => {
     return !hasNextPage || index < posts.length;
   };
   return (
     <InfiniteLoader
-      isItemLoaded={checkIfPhotoLoaded}
+      isItemLoaded={checkIfPostLoaded}
       loadMoreItems={() => {
         fetchNextPage();
       }}
       itemCount={Infinity}
     >
       {({ onItemsRendered, ref }) => (
-        <AutoSizer defaultHeight={240} ref={ref}>
+        <AutoSizer defaultHeight={201} ref={ref}>
           {({ height, width }) => (
             <FixedSizeList
               initialScrollOffset={scrollTopState}
               height={height}
               width={width}
               itemCount={posts.length}
-              itemSize={240}
+              itemSize={201}
               onItemsRendered={onItemsRendered}
               onScroll={onScroll}
             >
