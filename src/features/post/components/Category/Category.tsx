@@ -1,8 +1,6 @@
 import { TextProps, Badge } from "@chakra-ui/react";
 import { FC } from "react";
 
-import { Text } from "@/libs/chakra";
-
 type CategoryProps = TextProps & {
   category: { name: string; id: string };
 };

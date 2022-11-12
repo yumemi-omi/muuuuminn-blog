@@ -18,27 +18,29 @@ export const PostCard: FC<PostCardProps> = ({ post, ...rest }) => {
     <LinkBox px={"4"} py={"2"} as={"article"} {...rest}>
       <VStack align={"start"}>
         <HStack>
-          <AspectRatio ratio={1 / 1} w={"100px"}>
+          {post.category && (
+            <CustomNextLink href={`?category=${post.category.id}`} prefetch={false}>
+              <Category w={"100px"} maxWidth={"100px"} category={post.category} fontSize={"sm"} />
+            </CustomNextLink>
+          )}
+          <PostDate fontSize={"sm"} date={post.updatedAt} />
+        </HStack>
+        <HStack w={"full"}>
+          <AspectRatio flexShrink={0} ratio={1 / 1} w={"100px"}>
             <ChakraNextImage borderRadius={"xl"} layout={"fill"} src={post.coverImage} />
           </AspectRatio>
-          <Stack>
-            {post.category && (
-              <CustomNextLink href={`?category=${post.category.id}`} prefetch={false}>
-                <Category maxWidth={"200px"} category={post.category} fontSize={"sm"} />
-              </CustomNextLink>
-            )}
+          <Stack h={"100px"} justifyContent="space-between" flex={1} py={"2"}>
             <CustomNextLink linkType={"withOverlay"} href={`/post/${post.id}`} prefetch={false}>
               <Text noOfLines={2} fontSize={"lg"} fontWeight={"bold"}>
                 {post.title}
               </Text>
             </CustomNextLink>
+            <Flex gap={"2"} wrap={"nowrap"}>
+              <TagList maxWidth={"100px"} tags={post.tags} />
+            </Flex>
           </Stack>
         </HStack>
-        <Flex gap={"2"} wrap={"wrap"}>
-          <TagList maxWidth={"100px"} tags={post.tags} />
-        </Flex>
         <Text noOfLines={2}>{post.description}</Text>
-        <PostDate w={"full"} textAlign={"end"} fontSize={"sm"} date={post.updatedAt} />
       </VStack>
     </LinkBox>
   );
