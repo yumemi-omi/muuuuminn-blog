@@ -41,7 +41,7 @@
     "react-window": "^1.8.8",
     "react-window-infinite-loader": "^1.0.8",
     "recoil": "^0.7.6",
-    "recoil-sync": "^0.1.1",
+    "recoil-sync": "^0.2.0",
     "recoil-sync-next": "^0.0.3",
     "zenn-content-css": "0.1.132",
     "zenn-markdown-html": "0.1.132"
@@ -59,7 +59,7 @@
     "@typescript-eslint/parser": "5.42.1",
     "dependency-cruiser": "11.18.0",
     "dotenv": "^16.0.3",
-    "eslint": "8.26.0",
+    "eslint": "8.27.0",
     "eslint-config-next": "12.3.3",
     "eslint-config-prettier": "8.5.0",
     "husky": "8.0.2",
