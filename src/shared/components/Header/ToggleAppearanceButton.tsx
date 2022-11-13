@@ -5,5 +5,13 @@ export const ToggleAppearanceButton = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   const Icon = colorMode === "light" ? <MoonIcon /> : <SunIcon />;
 
-  return <IconButton onClick={toggleColorMode} aria-label="Toggle Appearance" icon={Icon} />;
+  return (
+    <IconButton
+      onClick={toggleColorMode}
+      // TODO: i18n
+      aria-label="Toggle Appearance"
+      icon={Icon}
+      variant="outline"
+    />
+  );
 };
