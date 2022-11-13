@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "next",
+    "dev": "next -p 3333",
     "postbuild": "next-sitemap",
     "build": "next build",
     "start": "next start",
