@@ -15,7 +15,7 @@ export const Header: FC<HeaderProps> = memo(function _header() {
   const { t } = useTranslation();
 
   return (
-    <Flex alignItems={"center"} paddingX={{ base: 2, md: 4 }}>
+    <Flex alignItems={"center"}>
       <CustomNextLink href={"/posts"}>
         {/* TODO: ずれを解消 */}
         <Logo />
