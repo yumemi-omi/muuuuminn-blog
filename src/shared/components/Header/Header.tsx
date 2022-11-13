@@ -23,6 +23,7 @@ export const Header: FC<HeaderProps> = memo(function _header() {
       <Spacer />
       <HStack>
         <ToggleAppearanceButton />
+        {/* TODO: モバイル表示のときはmuuuuminn blogと表示する */}
         <HeaderMenu />
       </HStack>
     </Flex>

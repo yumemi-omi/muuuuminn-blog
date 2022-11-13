@@ -22,8 +22,10 @@ export const BasicLayout: FC<BasicLayoutProps> = (props) => {
         },
       }}
     >
+      {/* TODO: 下スクロールで消す */}
       <Header />
       <Box>{children}</Box>
+      {/* TODO: 何かのきっかけをトリガーに消せたら消す */}
       <Footer />
     </Grid>
   );
