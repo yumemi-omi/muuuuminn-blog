@@ -15,7 +15,7 @@ export const Header: FC<HeaderProps> = memo(function _header() {
   const { t } = useTranslation();
 
   return (
-    <Flex py={"2"} alignItems={"center"}>
+    <Flex py={"4"} alignItems={"center"}>
       <CustomNextLink href={"/posts"}>
         <Flex gap={2} alignItems={"center"}>
           <Logo />

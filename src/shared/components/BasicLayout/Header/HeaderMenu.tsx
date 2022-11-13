@@ -8,7 +8,7 @@ import { CustomNextLink } from "@/libs/next";
 export const HeaderMenu = () => {
   const { t } = useTranslation();
   return (
-    <Menu>
+    <Menu placement={"bottom-end"}>
       {/* TODO: i18n */}
       <MenuButton as={IconButton} aria-label="Options" icon={<HamburgerIcon />} variant="outline" />
       <MenuList>
