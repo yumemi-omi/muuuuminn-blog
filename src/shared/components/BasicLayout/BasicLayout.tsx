@@ -15,7 +15,12 @@ export const BasicLayout: FC<BasicLayoutProps> = (props) => {
       marginX={"auto"}
       templateRows={"auto 1fr auto"}
       templateColumns={"100%"}
-      minHeight={"100vh"}
+      sx={{
+        minHeight: "100vh",
+        "&": {
+          minHeight: "100svh",
+        },
+      }}
     >
       <Header />
       <Box>{children}</Box>
