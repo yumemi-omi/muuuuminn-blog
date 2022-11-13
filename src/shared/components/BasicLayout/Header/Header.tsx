@@ -1,4 +1,4 @@
-import { Heading } from "@chakra-ui/react";
+import { Heading, useColorMode } from "@chakra-ui/react";
 import { FC, memo } from "react";
 
 import { Flex, FlexProps, Text, HStack, Spacer } from "@/libs/chakra";
@@ -13,13 +13,18 @@ type HeaderProps = FlexProps;
 
 export const Header: FC<HeaderProps> = memo(function _header() {
   const { t } = useTranslation();
+  const { colorMode } = useColorMode();
 
   return (
     <Flex py={"4"} alignItems={"center"}>
       <CustomNextLink href={"/posts"}>
         <Flex gap={2} alignItems={"center"}>
           <Logo />
-          <Text fontWeight={"extrabold"} color={"#fec8c8"} fontSize={{ base: "sm", md: "lg" }}>
+          <Text
+            fontWeight={"extrabold"}
+            color={colorMode === "dark" ? "#fec8c8" : "brand.800"}
+            fontSize={{ base: "sm", md: "lg" }}
+          >
             {t.SITE_NAME}
           </Text>
         </Flex>
