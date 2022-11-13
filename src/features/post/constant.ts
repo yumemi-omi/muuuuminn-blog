@@ -1,1 +1,1 @@
-export const DEFAULT_PAGINATION_META = { LIMIT: 5 } as const;
+export const DEFAULT_PAGINATION_META = { LIMIT: 50 } as const;

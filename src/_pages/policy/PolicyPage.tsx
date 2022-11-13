@@ -20,7 +20,7 @@ export const PolicyPage: FC<Props> = ({ policy }) => {
   return (
     <>
       <NextSeo {...seo} />
-      <Box px={8}>
+      <Box>
         <RichMarkdownContent html={policy.content} />
       </Box>
     </>

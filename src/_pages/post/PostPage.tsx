@@ -19,7 +19,7 @@ export const PostPage: FC = () => {
   return (
     <>
       <NextSeo {...seo} />
-      <Box px={8}>{postDetail.content && <RichMarkdownContent html={postDetail.content} />}</Box>
+      <Box>{postDetail.content && <RichMarkdownContent html={postDetail.content} />}</Box>
     </>
   );
 };

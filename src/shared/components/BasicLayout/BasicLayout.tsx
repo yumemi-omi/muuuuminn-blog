@@ -1,8 +1,8 @@
 import { FC } from "react";
 
 import { Box, Grid, GridProps } from "@/libs/chakra";
-import { Footer } from "@/shared/components/Footer";
-import { Header } from "@/shared/components/Header";
+import { Footer } from "@/shared/components/BasicLayout/Footer";
+import { Header } from "@/shared/components/BasicLayout/Header";
 
 type BasicLayoutProps = GridProps;
 
@@ -21,6 +21,7 @@ export const BasicLayout: FC<BasicLayoutProps> = (props) => {
           minHeight: "100svh",
         },
       }}
+      paddingX={{ base: 2, md: 4 }}
     >
       {/* TODO: 下スクロールで消す */}
       <Header />
