@@ -9,6 +9,7 @@ export default {
     ALT: {
       SITE_LOGO: "サイトロゴ",
     },
+    COPYRIGHT: "© 2022 muuuuminn ブログ. All rights reserved.",
   },
   en: {
     SITE_NAME: "muuuuminn blog",
@@ -19,5 +20,6 @@ export default {
     ALT: {
       SITE_LOGO: "Site logo",
     },
+    COPYRIGHT: "© 2022 muuuuminn blog. All rights reserved.",
   },
 } as const;
