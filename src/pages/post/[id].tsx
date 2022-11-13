@@ -30,7 +30,12 @@ Post.getLayout = function getLayout(page: ReactElement) {
 const DEFAULT_FIRST = 100;
 
 export const getStaticPaths: GetStaticPaths = async (): Promise<{
-  paths: string[];
+  paths: {
+    params: {
+      id: string;
+    };
+    locale: string;
+  }[];
   fallback: boolean;
 }> => {
   const queryClient = new QueryClient();
@@ -51,11 +56,16 @@ export const getStaticPaths: GetStaticPaths = async (): Promise<{
     result.node.items &&
     "nodes" in result.node.items &&
     result.node.items.nodes
-      ? (result.node.items.nodes
-          .map((node) =>
-            node && node.content && "id" in node.content ? `/post/${node.content.id}` : "",
-          )
-          .filter((n) => n) as string[])
+      ? result.node.items.nodes.flatMap((node) =>
+          node && node.content && "id" in node.content
+            ? {
+                params: {
+                  id: node.content.id,
+                },
+                locale: "ja",
+              }
+            : [],
+        )
       : [];
 
   /**
@@ -63,6 +73,7 @@ export const getStaticPaths: GetStaticPaths = async (): Promise<{
    * 実際の合計数が上限100より少ない場合は追加リクエストは不要なので、pathsを返す
    */
   if (totalCount <= DEFAULT_FIRST) {
+    paths.push(...paths.map((p) => ({ ...p, locale: "en" })));
     return { paths, fallback: false };
   }
 
@@ -90,17 +101,23 @@ export const getStaticPaths: GetStaticPaths = async (): Promise<{
       result.node.items &&
       "nodes" in result.node.items &&
       result.node.items.nodes
-        ? (result.node.items.nodes
-            .map((node) =>
-              node && node.content && "id" in node.content ? `/post/${node.content.id}` : "",
-            )
-            .filter((n) => n) as string[])
+        ? result.node.items.nodes.flatMap((node) =>
+            node && node.content && "id" in node.content
+              ? {
+                  params: {
+                    id: node.content.id,
+                  },
+                  locale: "ja",
+                }
+              : [],
+          )
         : [];
     paths.push(...generatedPaths);
 
     endCursor = result.node && "id" in result.node ? result.node.items.pageInfo.endCursor : null;
   }
 
+  paths.push(...paths.map((p) => ({ ...p, locale: "en" })));
   return { paths, fallback: false };
 };
 
