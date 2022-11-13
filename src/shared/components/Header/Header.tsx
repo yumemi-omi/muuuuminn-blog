@@ -17,6 +17,7 @@ export const Header: FC<HeaderProps> = memo(function _header() {
   return (
     <Flex alignItems={"center"} paddingX={{ base: 2, md: 4 }}>
       <CustomNextLink href={"/posts"}>
+        {/* TODO: ずれを解消 */}
         <Logo />
         <Heading hidden>{t.SITE_NAME}</Heading>
       </CustomNextLink>
