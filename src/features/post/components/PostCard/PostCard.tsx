@@ -35,7 +35,8 @@ export const PostCard: FC<PostCardProps> = ({ post, ...rest }) => {
                 {post.title}
               </Text>
             </CustomNextLink>
-            <Flex gap={"2"} wrap={"nowrap"}>
+            {/* TODO: Intersection observer */}
+            <Flex overflow={"scroll"} gap={"2"} wrap={"nowrap"}>
               <TagList maxWidth={"100px"} tags={post.tags} />
             </Flex>
           </Stack>
