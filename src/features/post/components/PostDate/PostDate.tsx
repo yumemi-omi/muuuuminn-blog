@@ -6,6 +6,12 @@ import { Text, TextProps } from "@/libs/chakra";
 
 // TODO: i18n対応
 const getRelativeDate = (date: string) => {
+  const isInvalidDate = Number.isNaN(new Date(date).getTime());
+
+  if (isInvalidDate) {
+    return "";
+  }
+
   const time = formatDistance(new Date(), Date.parse(date), {
     locale: ja,
   });

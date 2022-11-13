@@ -14,7 +14,7 @@ export const usePostDetail = (args: IssueDetailQueryVariables) => {
     enabled: !!variables.id,
   });
 
-  const [detail, setDetail] = useState<PostType>({
+  const [postDetail, setDetail] = useState<PostType>({
     id: "",
     category: null,
     tags: [],
@@ -35,7 +35,7 @@ export const usePostDetail = (args: IssueDetailQueryVariables) => {
   }, [issueDetail]);
 
   return {
-    postDetail: detail,
+    postDetail,
     getKey: useIssueDetailQuery.getKey,
     fetcher: useIssueDetailQuery.fetcher,
   };

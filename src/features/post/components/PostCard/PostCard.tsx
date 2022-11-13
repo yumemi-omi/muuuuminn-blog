@@ -16,7 +16,7 @@ type PostCardProps = {
 
 export const PostCard: FC<PostCardProps> = ({ post, ...rest }) => {
   return (
-    <LinkBox px={"4"} py={"2"} as={"article"} {...rest}>
+    <LinkBox py={"2"} as={"article"} {...rest}>
       <VStack align={"start"}>
         <HStack>
           {post.category && <Category asLink category={post.category} />}

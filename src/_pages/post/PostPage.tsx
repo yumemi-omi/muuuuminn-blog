@@ -2,9 +2,9 @@ import { NextSeo, NextSeoProps } from "next-seo";
 import { useRouter } from "next/router";
 import { FC } from "react";
 
+import { PostDetail } from "@/features/post/components/PostDetail";
 import { usePostDetail } from "@/features/post/hooks/usePostDetail";
 import { Box } from "@/libs/chakra";
-import { RichMarkdownContent } from "@/shared/components/RichMarkdownContent";
 
 export const PostPage: FC = () => {
   const router = useRouter();
@@ -19,7 +19,9 @@ export const PostPage: FC = () => {
   return (
     <>
       <NextSeo {...seo} />
-      <Box>{postDetail.content && <RichMarkdownContent html={postDetail.content} />}</Box>
+      <Box>
+        <PostDetail postDetail={postDetail} />
+      </Box>
     </>
   );
 };
