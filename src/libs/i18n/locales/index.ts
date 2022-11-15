@@ -14,6 +14,16 @@ export default {
     ALT: {
       SITE_LOGO: "サイトロゴ",
     },
+    ARIA_LABEL: {
+      TOGGLE_APPEARANCE_BUTTON: "テーマ切り替え",
+      MENU_BUTTON: "メニューの選択肢",
+    },
+    SUFFIX: {
+      DATE_TIME: {
+        JUST_NOW: "たった今",
+        AGO: "前",
+      },
+    },
     ...COMMON_I18N,
   },
   en: {
@@ -25,6 +35,16 @@ export default {
     },
     ALT: {
       SITE_LOGO: "Site logo",
+    },
+    ARIA_LABEL: {
+      TOGGLE_APPEARANCE_BUTTON: "Toggle appearance",
+      MENU_BUTTON: "Menu options",
+    },
+    SUFFIX: {
+      DATE_TIME: {
+        JUST_NOW: "Just now",
+        AGO: " ago",
+      },
     },
     ...COMMON_I18N,
   },

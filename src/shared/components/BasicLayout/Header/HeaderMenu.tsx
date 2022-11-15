@@ -9,8 +9,12 @@ export const HeaderMenu = () => {
   const { t } = useTranslation();
   return (
     <Menu placement={"bottom-end"}>
-      {/* TODO: i18n */}
-      <MenuButton as={IconButton} aria-label="Options" icon={<HamburgerIcon />} variant="outline" />
+      <MenuButton
+        as={IconButton}
+        aria-label={t.ARIA_LABEL.MENU_BUTTON}
+        icon={<HamburgerIcon />}
+        variant="outline"
+      />
       <MenuList>
         <MenuItem>
           <CustomNextLink href={"/posts"} prefetch={false}>
