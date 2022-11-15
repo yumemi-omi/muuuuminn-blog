@@ -22,7 +22,6 @@ const myLoader = (resolverProps: ImageLoaderProps): string => {
   return `${resolverProps.src}?w=${resolverProps.width}&q=${resolverProps.quality}`;
 };
 
-// TODO: 画像化
 const shimmer = (w: number, h: number) => `
 <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
@@ -58,7 +57,7 @@ export const ChakraNextImage = (props: ImageProps & BoxProps) => {
           blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}
           src={src}
           alt={alt}
-          transition="all 0.2s"
+          transition="all 0.01s"
         />
       ) : (
         <Box h={"full"} w={"full"} bgColor={"currentcolor"} />
