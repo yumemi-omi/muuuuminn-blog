@@ -33,6 +33,7 @@ type PostDateProps = {
   date: string;
 } & TextProps;
 
+// TODO: 日付も表示させることを考えてみる
 export const PostDate: FC<PostDateProps> = ({ date, ...rest }) => {
   const { t, locale } = useTranslation();
   const relativeDate = getRelativeDate(date, t, locale as LocalesType);

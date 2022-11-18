@@ -18,7 +18,7 @@ export const PostCard: FC<PostCardProps> = ({ post, ...rest }) => {
   return (
     <LinkBox py={"2"} as={"article"} {...rest}>
       <VStack align={"start"}>
-        <HStack>
+        <HStack spacing={4}>
           {post.category && <Category asLink category={post.category} />}
           <PostDate fontSize={"sm"} date={post.updatedAt} />
         </HStack>

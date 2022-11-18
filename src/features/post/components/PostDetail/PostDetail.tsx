@@ -17,19 +17,24 @@ export const PostDetail: FC<PostDetailProps> = ({ postDetail, ...rest }) => {
   return (
     <Box overflowX={"hidden"} {...rest}>
       <VStack align={"start"}>
-        <HStack>
+        <HStack spacing={4}>
           {postDetail.category && <Category asLink category={postDetail.category} />}
           <PostDate fontSize={"sm"} date={postDetail.updatedAt} />
         </HStack>
-        <HStack w={"full"}>
-          <PostThumbnail flexShrink={0} post={postDetail} />
-          <Stack h={"100px"} justifyContent="space-between" flex={1} py={"2"}>
-            <Text fontSize={"lg"} fontWeight={"bold"}>
-              {postDetail.title}
-            </Text>
-            <TagList tags={postDetail.tags} flexWrap={"wrap"} />
-          </Stack>
-        </HStack>
+        <VStack>
+          <PostThumbnail
+            post={postDetail}
+            imageQuality={75}
+            sizeSet={{
+              width: "200px",
+              height: "200px",
+            }}
+          />
+          <Text noOfLines={3} fontSize={"lg"} fontWeight={"bold"}>
+            {postDetail.title}
+          </Text>
+          <TagList tags={postDetail.tags} flexWrap={"wrap"} />
+        </VStack>
       </VStack>
       {postDetail.content && <RichMarkdownContent html={postDetail.content} />}
     </Box>
