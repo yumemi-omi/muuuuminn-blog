@@ -1,5 +1,4 @@
 import { Box as OriginBox, BoxProps as OriginBoxProps, forwardRef } from "@chakra-ui/react";
-import {} from "react";
 
 export type BoxProps = OriginBoxProps;
 

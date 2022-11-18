@@ -2,7 +2,7 @@ import { LinkBox, LinkBoxProps } from "@chakra-ui/react";
 import { FC } from "react";
 
 import { PostType } from "@/features/post/type/post";
-import { Flex, HStack, Stack, Text, VStack } from "@/libs/chakra";
+import { HStack, Stack, Text, VStack } from "@/libs/chakra";
 
 import { Category } from "../Category";
 import { PostDate } from "../PostDate";
@@ -23,13 +23,10 @@ export const PostCard: FC<PostCardProps> = ({ post, ...rest }) => {
           <PostDate fontSize={"sm"} date={post.updatedAt} />
         </HStack>
         <HStack w={"full"}>
-          <PostThumbnail flexShrink={0} post={post} />
+          <PostThumbnail flexShrink={0} post={post} imageQuality={50} />
           <Stack h={"100px"} justifyContent="space-between" flex={1} py={"2"}>
             <PostTitle post={post} />
-            {/* TODO: Intersection observer */}
-            <Flex overflow={"scroll"} gap={"2"} wrap={"nowrap"}>
-              <TagList maxWidth={"100px"} tags={post.tags} />
-            </Flex>
+            <TagList tags={post.tags} />
           </Stack>
         </HStack>
         <Text noOfLines={2}>{post.description}</Text>

@@ -33,7 +33,7 @@ type WrapperProps = {
 
 const Wrapper: FC<WrapperProps> = ({ children, category, asLink }) =>
   asLink ? (
-    <CustomNextLink href={`?category=${category.id}`} prefetch={false}>
+    <CustomNextLink href={`/posts?category=${category.id}`} prefetch={false}>
       {children}
     </CustomNextLink>
   ) : (
