@@ -23,6 +23,7 @@ export const Logo: FC<LogoProps> = memo(function _logo({ ...rest }) {
           alt={t.ALT.SITE_LOGO}
           borderRadius={"xl"}
           layout={"fill"}
+          quality={50}
         />
       </AspectRatio>
       <AspectRatio
@@ -36,6 +37,7 @@ export const Logo: FC<LogoProps> = memo(function _logo({ ...rest }) {
           alt={t.ALT.SITE_LOGO}
           borderRadius={"xl"}
           layout={"fill"}
+          quality={50}
         />
       </AspectRatio>
     </>

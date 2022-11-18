@@ -3,27 +3,29 @@ import { ja } from "date-fns/locale";
 import { FC } from "react";
 
 import { Text, TextProps } from "@/libs/chakra";
+import { useTranslation, Locales, LocalesType } from "@/libs/i18n";
 
-// TODO: i18n対応
-const getRelativeDate = (date: string) => {
+const DATE_FORMAT = "yyyy/M/d";
+
+const getRelativeDate = (date: string, t: Locales, locale: LocalesType) => {
   const isInvalidDate = Number.isNaN(new Date(date).getTime());
 
   if (isInvalidDate) {
     return "";
   }
 
-  const time = formatDistance(new Date(), Date.parse(date), {
-    locale: ja,
-  });
+  const options = locale === "en" ? {} : { locale: ja };
 
-  if (time.indexOf("未満") !== -1) {
-    return "たった今";
-  } else if (time.indexOf("か月") !== -1 || time.indexOf("年") !== -1) {
-    return format(Date.parse(date), "yyyy年M月d日", {
-      locale: ja,
-    });
+  const now = new Date();
+  const parsedDate = Date.parse(date);
+  const time = formatDistance(now, parsedDate);
+
+  if (time.indexOf("less than") !== -1) {
+    return t.SUFFIX.DATE_TIME.JUST_NOW;
+  } else if (time.indexOf("month") !== -1 || time.indexOf("year") !== -1) {
+    return format(parsedDate, DATE_FORMAT, options);
   } else {
-    return time + "前";
+    return `${formatDistance(now, parsedDate, options)}${t.SUFFIX.DATE_TIME.AGO}`;
   }
 };
 
@@ -32,6 +34,7 @@ type PostDateProps = {
 } & TextProps;
 
 export const PostDate: FC<PostDateProps> = ({ date, ...rest }) => {
-  const relativeDate = getRelativeDate(date);
+  const { t, locale } = useTranslation();
+  const relativeDate = getRelativeDate(date, t, locale as LocalesType);
   return <Text {...rest}>{relativeDate}</Text>;
 };
