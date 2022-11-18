@@ -3,10 +3,10 @@ import { FC } from "react";
 import { Category } from "@/features/post/components/Category";
 import { PostDate } from "@/features/post/components/PostDate";
 import { PostThumbnail } from "@/features/post/components/PostThumbnail";
-import { PostTitle } from "@/features/post/components/PostTitle";
 import { TagList } from "@/features/post/components/TagList";
 import { PostType } from "@/features/post/type/post";
 import { Box, BoxProps, HStack, Stack, VStack } from "@/libs/chakra";
+import { Text } from "@/libs/chakra";
 import { RichMarkdownContent } from "@/shared/components/RichMarkdownContent";
 
 type PostDetailProps = {
@@ -24,7 +24,9 @@ export const PostDetail: FC<PostDetailProps> = ({ postDetail, ...rest }) => {
         <HStack w={"full"}>
           <PostThumbnail flexShrink={0} post={postDetail} />
           <Stack h={"100px"} justifyContent="space-between" flex={1} py={"2"}>
-            <PostTitle post={postDetail} />
+            <Text fontSize={"lg"} fontWeight={"bold"}>
+              {postDetail.title}
+            </Text>
             <TagList tags={postDetail.tags} flexWrap={"wrap"} />
           </Stack>
         </HStack>

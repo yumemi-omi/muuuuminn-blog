@@ -20,6 +20,7 @@ export const scrollTop = initializableAtomFamily<number, string>({
   ],
 });
 
+// TODO: スクロールがあることを示すために上下に矢印をabsoluteで置くか、ボカシをいれて示すかしたい
 export const PostCardList = () => {
   const { posts, fetchNextPage, hasNextPage } = useInfinitePosts();
 

@@ -23,6 +23,7 @@ export const BasicLayout: FC<BasicLayoutProps> = (props) => {
       paddingX={{ base: 2, md: 4 }}
     >
       {/* TODO: 下スクロールで消す */}
+      {/* TODO: headerとbodyのマージンを少し離してもいいかも */}
       <Header />
       <Box>{children}</Box>
       {/* TODO: 何かのきっかけをトリガーに消せたら消す */}
