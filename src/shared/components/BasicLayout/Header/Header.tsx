@@ -5,8 +5,8 @@ import { Flex, FlexProps, Text, HStack, Spacer } from "@/libs/chakra";
 import { useTranslation } from "@/libs/i18n";
 import { CustomNextLink } from "@/libs/next";
 
-import { HeaderMenu } from "./HeaderMenu";
 import { Logo } from "./Logo";
+import { MenuDrawer } from "./MenuDrawer";
 import { ToggleAppearanceButton } from "./ToggleAppearanceButton";
 
 type HeaderProps = FlexProps;
@@ -17,7 +17,7 @@ export const Header: FC<HeaderProps> = memo(function _header() {
 
   return (
     <Flex py={"4"} alignItems={"center"}>
-      <CustomNextLink href={"/posts"}>
+      <CustomNextLink href={"/posts"} prefetch={false}>
         <Flex gap={2} alignItems={"center"}>
           <Logo />
           <Text
@@ -33,7 +33,7 @@ export const Header: FC<HeaderProps> = memo(function _header() {
       <Spacer />
       <HStack>
         <ToggleAppearanceButton />
-        <HeaderMenu />
+        <MenuDrawer />
       </HStack>
     </Flex>
   );

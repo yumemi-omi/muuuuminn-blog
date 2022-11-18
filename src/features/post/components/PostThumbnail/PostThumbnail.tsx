@@ -8,8 +8,8 @@ interface PostThumbnailProps extends AspectRatioProps {
   post: PostType;
   imageQuality?: string | number;
   sizeSet?: {
-    w: string;
-    h: string;
+    width: string;
+    height: string;
   };
 }
 

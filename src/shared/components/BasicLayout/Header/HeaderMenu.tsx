@@ -16,20 +16,33 @@ export const HeaderMenu = () => {
         variant="outline"
       />
       <MenuList>
-        <MenuItem>
-          <CustomNextLink href={"/posts"} prefetch={false}>
+        {/* https://github.com/chakra-ui/chakra-ui/issues/4892#issuecomment-1003213102
+            NextLinkとMenuItemを組み合わせる時は、NextLinkでa要素としてのMenuItemをラップする
+        */}
+        <CustomNextLink linkType="withChakraLink" href={"/posts"} prefetch={false}>
+          <MenuItem>
             <Text fontWeight={"bold"} fontSize={{ base: "sm", md: "md" }}>
               {t.PAGE.HOME}
             </Text>
-          </CustomNextLink>
-        </MenuItem>
-        <MenuItem>
-          <CustomNextLink href={"/policy"} prefetch={false}>
+          </MenuItem>
+        </CustomNextLink>
+        <CustomNextLink linkType="plainNextLink" tabIndex={2} href={"/policy"} prefetch={false}>
+          <MenuItem
+            as="a"
+            _focus={{
+              outlineColor: "transparent",
+            }}
+            _focusVisible={{
+              outlineOffset: "-3px",
+              outlineColor: "green",
+            }}
+            tabIndex={2}
+          >
             <Text fontWeight={"bold"} fontSize={{ base: "sm", md: "md" }}>
               {t.PAGE.POLICY}
             </Text>
-          </CustomNextLink>
-        </MenuItem>
+          </MenuItem>
+        </CustomNextLink>
       </MenuList>
     </Menu>
   );
