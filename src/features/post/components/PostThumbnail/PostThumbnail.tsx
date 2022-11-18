@@ -16,7 +16,7 @@ interface PostThumbnailProps extends AspectRatioProps {
 export const PostThumbnail: FC<PostThumbnailProps> = ({
   post,
   imageQuality,
-  sizeSet = { w: "100px", h: "100px" },
+  sizeSet = { width: "100px", height: "100px" },
   ...rest
 }) => {
   return (
