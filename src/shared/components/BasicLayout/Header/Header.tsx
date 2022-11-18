@@ -11,6 +11,7 @@ import { ToggleAppearanceButton } from "./ToggleAppearanceButton";
 
 type HeaderProps = FlexProps;
 
+// TODO: PCのレイアウトも用意する
 export const Header: FC<HeaderProps> = memo(function _header() {
   const { t } = useTranslation();
   const { colorMode } = useColorMode();
