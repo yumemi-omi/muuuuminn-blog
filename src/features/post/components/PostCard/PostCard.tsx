@@ -7,7 +7,7 @@ import { HStack, Stack, Text, VStack } from "@/libs/chakra";
 import { Category } from "../Category";
 import { PostDate } from "../PostDate";
 import { PostThumbnail } from "../PostThumbnail";
-import { PostTitle } from "../PostTitle";
+import { PostTitleLink } from "../PostTitleLink";
 import { TagList } from "../TagList";
 
 type PostCardProps = {
@@ -25,7 +25,7 @@ export const PostCard: FC<PostCardProps> = ({ post, ...rest }) => {
         <HStack w={"full"}>
           <PostThumbnail flexShrink={0} post={post} imageQuality={50} />
           <Stack h={"100px"} justifyContent="space-between" flex={1} py={"2"}>
-            <PostTitle post={post} />
+            <PostTitleLink post={post} />
             <TagList tags={post.tags} />
           </Stack>
         </HStack>

@@ -60,7 +60,7 @@ export const ChakraNextImage = (props: ImageProps & BoxProps) => {
           transition="all 0.01s"
         />
       ) : (
-        <Box h={"full"} w={"full"} bgColor={"currentcolor"} />
+        <Box width={width} height={height} bgColor={"currentcolor"} />
       )}
     </Box>
   );

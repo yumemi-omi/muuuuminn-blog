@@ -16,6 +16,7 @@ const isExternalLink = (href: string | UrlObject): boolean => {
   return href.startsWith("http");
 };
 
+// TODO: リンクをわかりやすくリンクとして示す
 export const CustomNextLink: FC<
   CustomNextLinkProps & {
     linkType?: "withChakraLink" | "plainNextLink" | "withOverlay";
