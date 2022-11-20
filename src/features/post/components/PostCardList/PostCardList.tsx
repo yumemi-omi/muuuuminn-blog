@@ -42,33 +42,38 @@ export const PostCardList = () => {
     return !hasNextPage || index < posts.length;
   };
   return (
-    <InfiniteLoader
-      isItemLoaded={checkIfPostLoaded}
-      loadMoreItems={() => {
-        fetchNextPage();
-      }}
-      itemCount={Infinity}
-    >
-      {({ onItemsRendered, ref }) => (
-        <AutoSizer defaultHeight={201} ref={ref}>
-          {({ height, width }) => (
-            <FixedSizeList
-              initialScrollOffset={scrollTopState}
-              height={height}
-              width={width}
-              itemCount={posts.length}
-              itemSize={201}
-              onItemsRendered={onItemsRendered}
-              onScroll={onScroll}
-            >
-              {({ index, style }) => {
-                const post = posts[index];
-                return <PostCard key={post.id} post={post} style={style} />;
-              }}
-            </FixedSizeList>
-          )}
-        </AutoSizer>
-      )}
-    </InfiniteLoader>
+    <div>
+      {posts.map((post) => (
+        <PostCard key={post.id} post={post} />
+      ))}
+    </div>
   );
 };
+// <InfiniteLoader
+//   isItemLoaded={checkIfPostLoaded}
+//   loadMoreItems={() => {
+//     fetchNextPage();
+//   }}
+//   itemCount={Infinity}
+// >
+//   {({ onItemsRendered, ref }) => (
+//     <AutoSizer defaultHeight={201} ref={ref}>
+//       {({ height, width }) => (
+//         <FixedSizeList
+//           initialScrollOffset={scrollTopState}
+//           height={height}
+//           width={width}
+//           itemCount={posts.length}
+//           itemSize={201}
+//           onItemsRendered={onItemsRendered}
+//           onScroll={onScroll}
+//         >
+//           {({ index, style }) => {
+//             const post = posts[index];
+//             return <PostCard key={post.id} post={post} style={style} />;
+//           }}
+//         </FixedSizeList>
+//       )}
+//     </AutoSizer>
+//   )}
+// </InfiniteLoader>
