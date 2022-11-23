@@ -8,7 +8,7 @@ import { Category } from "../Category";
 import { PostDate } from "../PostDate";
 import { PostThumbnail } from "../PostThumbnail";
 import { PostTitleLink } from "../PostTitleLink";
-import { TagList } from "../TagList";
+import { NoWrapTagList } from "../TagList";
 
 type PostCardProps = {
   post: PostType;
@@ -26,7 +26,7 @@ const _PostCard: FC<PostCardProps> = ({ post, ...rest }) => {
           <PostThumbnail flexShrink={0} post={post} imageQuality={50} />
           <Stack h={"100px"} justifyContent="space-between" py={"2"} overflow={"hidden"}>
             <PostTitleLink post={post} />
-            <TagList tags={post.tags} />
+            <NoWrapTagList tags={post.tags} />
           </Stack>
         </HStack>
         <Text noOfLines={2}>{post.description}</Text>

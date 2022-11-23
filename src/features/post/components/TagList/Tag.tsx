@@ -12,14 +12,7 @@ type TagProps = BoxProps & {
 const _Tag: FC<TagProps> = ({ tag, transformTagMenu, countsOfTagInMenu, ...rest }) => {
   if (transformTagMenu) {
     return (
-      <Box
-        display={"flex"}
-        flexShrink={0}
-        width={20}
-        px={2}
-        title={`+${countsOfTagInMenu}`}
-        {...rest}
-      >
+      <Box display={"flex"} px={2} title={`+${countsOfTagInMenu}`} {...rest}>
         <Box bgColor={"brand.700"} borderRadius={6} minWidth={8} px={2}>
           <Text
             fontSize={"sm"}
@@ -41,8 +34,6 @@ const _Tag: FC<TagProps> = ({ tag, transformTagMenu, countsOfTagInMenu, ...rest 
   return (
     <Box
       display={"flex"}
-      flexShrink={0}
-      width={20}
       bgColor={"brand.700"}
       borderRadius={16}
       justifyContent={"center"}
