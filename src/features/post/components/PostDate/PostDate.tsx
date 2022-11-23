@@ -1,6 +1,6 @@
 import { formatDistance, format } from "date-fns";
 import { ja } from "date-fns/locale";
-import { FC } from "react";
+import { FC, memo } from "react";
 
 import { Text, TextProps } from "@/libs/chakra";
 import { useTranslation, Locales, LocalesType } from "@/libs/i18n";
@@ -34,8 +34,10 @@ type PostDateProps = {
 } & TextProps;
 
 // TODO: 日付も表示させることを考えてみる
-export const PostDate: FC<PostDateProps> = ({ date, ...rest }) => {
+const _PostDate: FC<PostDateProps> = ({ date, ...rest }) => {
   const { t, locale } = useTranslation();
   const relativeDate = getRelativeDate(date, t, locale as LocalesType);
   return <Text {...rest}>{relativeDate}</Text>;
 };
+
+export const PostDate = memo(_PostDate);

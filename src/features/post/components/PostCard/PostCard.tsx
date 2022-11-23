@@ -1,5 +1,5 @@
 import { LinkBox, LinkBoxProps } from "@chakra-ui/react";
-import { FC } from "react";
+import { FC, memo } from "react";
 
 import { PostType } from "@/features/post/type/post";
 import { HStack, Stack, Text, VStack } from "@/libs/chakra";
@@ -14,9 +14,9 @@ type PostCardProps = {
   post: PostType;
 } & LinkBoxProps;
 
-export const PostCard: FC<PostCardProps> = ({ post, ...rest }) => {
+const _PostCard: FC<PostCardProps> = ({ post, ...rest }) => {
   return (
-    <LinkBox py={"2"} as={"article"} {...rest}>
+    <LinkBox py={"2"} as={"article"} overflow={"hidden"} {...rest}>
       <VStack align={"start"}>
         <HStack spacing={4}>
           {post.category && <Category asLink category={post.category} />}
@@ -24,9 +24,9 @@ export const PostCard: FC<PostCardProps> = ({ post, ...rest }) => {
         </HStack>
         <HStack w={"full"}>
           <PostThumbnail flexShrink={0} post={post} imageQuality={50} />
-          <Stack h={"100px"} justifyContent="space-between" flex={1} py={"2"}>
+          <Stack h={"100px"} justifyContent="space-between" py={"2"} overflow={"hidden"}>
             <PostTitleLink post={post} />
-            <TagList tags={post.tags} />
+            {post.id === "I_kwDOIKnT4s5Un5jv" && <TagList tags={post.tags} />}
           </Stack>
         </HStack>
         <Text noOfLines={2}>{post.description}</Text>
@@ -34,3 +34,5 @@ export const PostCard: FC<PostCardProps> = ({ post, ...rest }) => {
     </LinkBox>
   );
 };
+
+export const PostCard = memo(_PostCard);

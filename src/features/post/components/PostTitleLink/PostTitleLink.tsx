@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, memo } from "react";
 
 import { PostType } from "@/features/post/type/post";
 import { Text } from "@/libs/chakra";
@@ -8,7 +8,7 @@ type PostTitleProps = {
   post: PostType;
 };
 
-export const PostTitleLink: FC<PostTitleProps> = ({ post }) => {
+const _PostTitleLink: FC<PostTitleProps> = ({ post }) => {
   return (
     <CustomNextLink linkType={"withOverlay"} href={`/post/${post.id}`} prefetch={false}>
       <Text noOfLines={2} fontSize={"lg"} fontWeight={"bold"}>
@@ -17,3 +17,5 @@ export const PostTitleLink: FC<PostTitleProps> = ({ post }) => {
     </CustomNextLink>
   );
 };
+
+export const PostTitleLink = memo(_PostTitleLink);
