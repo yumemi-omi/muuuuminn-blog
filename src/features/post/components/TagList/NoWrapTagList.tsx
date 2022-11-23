@@ -78,7 +78,8 @@ const _NoWrapTagList: FC<TagListProps> = ({ tags, tagProps, ...boxProps }) => {
             countsOfTagInMenu={invisibleTagCounts}
             visibility={isVisibleTag ? "visible" : "hidden"}
             flexShrink={0}
-            width={20}
+            // SEで2つタグが見えるギリギリのサイズ
+            width={"78px"}
             {...tagProps}
           />
         );
