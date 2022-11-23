@@ -12,17 +12,21 @@ export type PostDetail = {
   ogImageUrl: string;
 } & Post;
 
+export type TagType = {
+  id: string;
+  name: string;
+  color: string;
+};
+
+export type CategoryType = {
+  id: string;
+  name: string;
+};
+
 export type PostType = {
   id: string;
-  category: {
-    id: string;
-    name: string;
-  } | null;
-  tags: {
-    id: string;
-    name: string;
-    color: string;
-  }[];
+  category: CategoryType | null;
+  tags: TagType[];
   title: string;
   description: string;
   coverImage: string;
@@ -38,15 +42,4 @@ export type PostPageInfo = {
   hasNextPage: boolean;
   startCursor?: string | null | undefined;
   hasPreviousPage: boolean;
-};
-
-export type TagType = {
-  id: string;
-  name: string;
-  color: string;
-};
-
-export type CategoryType = {
-  id: string;
-  name: string;
 };

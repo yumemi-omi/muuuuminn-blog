@@ -1,10 +1,11 @@
 import { FC, useCallback, useEffect, useMemo, useRef, useState, MouseEvent, memo } from "react";
 
+import { TagType } from "@/features/post/type/post";
 import { Text, Box, BoxProps } from "@/libs/chakra";
 import { CustomNextLink } from "@/libs/next";
 
 type TagProps = BoxProps & {
-  tag: { name: string; id: string };
+  tag: TagType;
   transformTagMenu?: boolean;
   countsOfTagInMenu?: number;
 };
@@ -34,7 +35,8 @@ const _Tag: FC<TagProps> = ({ tag, transformTagMenu, countsOfTagInMenu, ...rest 
   return (
     <Box
       display={"flex"}
-      bgColor={"brand.700"}
+      // githubのlabelのカラーに合わせる
+      bgColor={`#${tag.color}`}
       borderRadius={16}
       justifyContent={"center"}
       px={2}

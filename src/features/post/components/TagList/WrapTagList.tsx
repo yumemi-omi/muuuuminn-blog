@@ -1,11 +1,12 @@
 import { FC, memo } from "react";
 
+import { TagType } from "@/features/post/type/post";
 import { BoxProps, Box } from "@/libs/chakra";
 
 import { Tag } from "./Tag";
 
 type TagListProps = BoxProps & {
-  tags: { name: string; id: string }[];
+  tags: TagType[];
   tagProps?: BoxProps;
 };
 
