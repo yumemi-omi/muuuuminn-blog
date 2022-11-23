@@ -17,12 +17,12 @@ const _Tag: FC<TagProps> = ({ tag, transformTagMenu, countsOfTagInMenu, ...rest 
           <Text
             fontSize={"sm"}
             // 上下のスペース揃え https://coliss.com/articles/build-websites/operation/css/aligning-button-label-vertically.html
-            _before={{
-              content: "''",
-              display: "inline",
-              height: "20px",
-              verticalAlign: "middle",
-            }}
+            // _before={{
+            //   content: "''",
+            //   display: "inline",
+            //   height: "20px",
+            //   verticalAlign: "middle",
+            // }}
           >
             +{countsOfTagInMenu}
           </Text>
@@ -45,12 +45,12 @@ const _Tag: FC<TagProps> = ({ tag, transformTagMenu, countsOfTagInMenu, ...rest 
         <Text
           fontSize={"sm"}
           // 上下のスペース揃え https://coliss.com/articles/build-websites/operation/css/aligning-button-label-vertically.html
-          _before={{
-            content: "''",
-            display: "inline",
-            height: "20px",
-            verticalAlign: "middle",
-          }}
+          // _before={{
+          //   content: "''",
+          //   display: "inline",
+          //   height: "20px",
+          //   verticalAlign: "middle",
+          // }}
         >
           #{tag.name}
         </Text>
