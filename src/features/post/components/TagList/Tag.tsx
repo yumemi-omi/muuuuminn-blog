@@ -21,9 +21,11 @@ const _Tag: FC<TagProps> = ({ tag, transformTagMenu, countsOfTagInMenu, ...rest 
             _before={{
               content: "''",
               display: "inline",
-              height: "20px",
+              height: "22px",
               verticalAlign: "middle",
             }}
+            maxHeight={"22px"}
+            overflow={"hidden"}
           >
             +{countsOfTagInMenu}
           </Text>
@@ -51,10 +53,12 @@ const _Tag: FC<TagProps> = ({ tag, transformTagMenu, countsOfTagInMenu, ...rest 
         _before={{
           content: "''",
           display: "inline",
-          height: "20px",
+          height: "22px",
           verticalAlign: "middle",
         }}
         noOfLines={1}
+        maxHeight={"22px"}
+        overflow={"hidden"}
       >
         #{tag.name}
       </CustomNextLink>
