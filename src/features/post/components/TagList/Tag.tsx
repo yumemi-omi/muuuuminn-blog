@@ -37,7 +37,7 @@ const _Tag: FC<TagProps> = ({ tag, transformTagMenu, countsOfTagInMenu, ...rest 
   return (
     <Box
       display={"flex"}
-      // githubのlabelのカラーに合わせる
+      // TODO: githubのlabelのカラーに合わせる
       bgColor={`#${tag.color}`}
       borderRadius={16}
       justifyContent={"center"}
