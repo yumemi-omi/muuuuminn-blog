@@ -19,7 +19,7 @@ const _NoWrapTagList: FC<TagListProps> = ({ tags, tagProps, ...boxProps }) => {
     [visibilityMap],
   );
   const invisibleTagCounts = useMemo(
-    () => Object.values(visibilityMap).filter((v) => !v).length,
+    () => Object.values(visibilityMap).filter((v) => !v).length + 1,
     [visibilityMap],
   );
 

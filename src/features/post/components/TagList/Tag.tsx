@@ -13,7 +13,7 @@ type TagProps = BoxProps & {
 const _Tag: FC<TagProps> = ({ tag, transformTagMenu, countsOfTagInMenu, ...rest }) => {
   if (transformTagMenu) {
     return (
-      <Box display={"flex"} px={2} title={`+${countsOfTagInMenu}`} {...rest}>
+      <Box display={"flex"} title={`+${countsOfTagInMenu}`} {...rest}>
         <Box bgColor={"brand.700"} borderRadius={6} minWidth={8} px={2}>
           <Text
             fontSize={"sm"}
@@ -43,20 +43,20 @@ const _Tag: FC<TagProps> = ({ tag, transformTagMenu, countsOfTagInMenu, ...rest 
       title={`#${tag.name}`}
       {...rest}
     >
-      <CustomNextLink noOfLines={1} href={`/posts?tag=${tag.id}`} prefetch={false}>
-        <Text
-          fontSize={"sm"}
-          noOfLines={1}
-          // 上下のスペース揃え https://coliss.com/articles/build-websites/operation/css/aligning-button-label-vertically.html
-          _before={{
-            content: "''",
-            display: "inline",
-            height: "20px",
-            verticalAlign: "middle",
-          }}
-        >
-          #{tag.name}
-        </Text>
+      <CustomNextLink
+        href={`/posts?tag=${tag.id}`}
+        prefetch={false}
+        fontSize={"sm"}
+        // 上下のスペース揃え https://coliss.com/articles/build-websites/operation/css/aligning-button-label-vertically.html
+        _before={{
+          content: "''",
+          display: "inline",
+          height: "20px",
+          verticalAlign: "middle",
+        }}
+        noOfLines={1}
+      >
+        #{tag.name}
       </CustomNextLink>
     </Box>
   );
