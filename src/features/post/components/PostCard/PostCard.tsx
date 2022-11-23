@@ -26,7 +26,7 @@ const _PostCard: FC<PostCardProps> = ({ post, ...rest }) => {
           <PostThumbnail flexShrink={0} post={post} imageQuality={50} />
           <Stack h={"100px"} justifyContent="space-between" py={"2"} overflow={"hidden"}>
             <PostTitleLink post={post} />
-            {post.id === "I_kwDOIKnT4s5Un5jv" && <TagList tags={post.tags} />}
+            <TagList tags={post.tags} />
           </Stack>
         </HStack>
         <Text noOfLines={2}>{post.description}</Text>
