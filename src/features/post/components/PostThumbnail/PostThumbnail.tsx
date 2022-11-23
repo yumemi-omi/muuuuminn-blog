@@ -1,5 +1,5 @@
 import { AspectRatioProps, AspectRatio } from "@chakra-ui/react";
-import { FC } from "react";
+import { FC, memo } from "react";
 
 import { PostType } from "@/features/post/type/post";
 import { ChakraNextImage } from "@/libs/next";
@@ -13,7 +13,7 @@ interface PostThumbnailProps extends AspectRatioProps {
   };
 }
 
-export const PostThumbnail: FC<PostThumbnailProps> = ({
+const _PostThumbnail: FC<PostThumbnailProps> = ({
   post,
   imageQuality,
   sizeSet = { width: "100px", height: "100px" },
@@ -30,3 +30,5 @@ export const PostThumbnail: FC<PostThumbnailProps> = ({
     </AspectRatio>
   );
 };
+
+export const PostThumbnail = memo(_PostThumbnail);

@@ -1,24 +1,58 @@
-import { Tag, TagProps } from "@chakra-ui/react";
-import { FC, useCallback, useEffect, useMemo, useRef, useState, MouseEvent } from "react";
+import { FC, useCallback, useEffect, useMemo, useRef, useState, MouseEvent, memo } from "react";
 
-import { Text, FlexProps, Box } from "@/libs/chakra";
-import { CustomNextLink } from "@/libs/next";
+import { BoxProps, Box } from "@/libs/chakra";
 
-type TagListProps = FlexProps & {
+import { Tag } from "./Tag";
+
+type TagListProps = BoxProps & {
   tags: { name: string; id: string }[];
-  tagProps?: TagProps;
+  tagProps?: BoxProps;
 };
 
-export const TagList: FC<TagListProps> = ({ tags, tagProps, ...flexProps }) => {
+const _TagList: FC<TagListProps> = ({ tags, tagProps, ...boxProps }) => {
   const childrenWrapper = useRef<HTMLDivElement>(null);
-
   const [visibilityMap, setVisibilityMap] = useState<Record<string, boolean>>({});
-  const [isShownMenu, setIsShownMenu] = useState(false);
 
-  const lastInvisibleToolButtonIndex = useMemo(
-    () => Object.values(visibilityMap).findIndex((v) => !v),
+  const lastVisibleTagIndex = useMemo(
+    () => Object.values(visibilityMap).findIndex((v) => !v) - 1,
     [visibilityMap],
   );
+  const invisibleTagCounts = useMemo(
+    () => Object.values(visibilityMap).filter((v) => !v).length,
+    [visibilityMap],
+  );
+
+  const handleIntersection = useCallback((entries: IntersectionObserverEntry[]) => {
+    const updatedEntries: Record<string, boolean> = {};
+    entries.forEach((entry) => {
+      if (entry.target) {
+        const targetid = (entry.target as HTMLElement).id as string;
+        if (entry.isIntersecting) {
+          updatedEntries[targetid] = true;
+        } else {
+          updatedEntries[targetid] = false;
+        }
+      }
+    });
+    setVisibilityMap((prev) => ({
+      ...prev,
+      ...updatedEntries,
+    }));
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(handleIntersection, {
+      threshold: 1,
+    });
+    if (childrenWrapper.current) {
+      Array.from(childrenWrapper.current.children).forEach((item) => {
+        observer.observe(item);
+      });
+    }
+    return () => observer.disconnect();
+  }, [handleIntersection]);
+
+  const [isShownMenu, setIsShownMenu] = useState(false);
 
   const onMouseEnter = useCallback((event: MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
@@ -30,55 +64,24 @@ export const TagList: FC<TagListProps> = ({ tags, tagProps, ...flexProps }) => {
     setIsShownMenu(false);
   }, []);
 
-  const handleIntersection = useCallback((entries: IntersectionObserverEntry[]) => {
-    const updatedEntries: Record<string, boolean> = {};
-
-    entries.forEach((entry) => {
-      if (entry.target) {
-        const targetId = (entry.target as HTMLElement).id as string;
-        if (entry.isIntersecting) {
-          updatedEntries[targetId] = true;
-        } else {
-          updatedEntries[targetId] = false;
-        }
-      }
-    });
-
-    setVisibilityMap((prev) => ({
-      ...prev,
-      ...updatedEntries,
-    }));
-  }, []);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(handleIntersection, {
-      root: document.body,
-      threshold: 1,
-    });
-
-    if (childrenWrapper.current) {
-      Array.from(childrenWrapper.current.children).forEach((item) => {
-        observer.observe(item);
-      });
-    }
-
-    return () => observer.disconnect();
-  }, [handleIntersection]);
-
-  console.log(visibilityMap);
-
   return (
-    <Box ref={childrenWrapper} display={"flex"} gap={"2"} {...flexProps}>
-      {tags.map(
-        (tag, index) =>
-          index <= 4 && (
-            <CustomNextLink id={tag.id} href={`/posts?tag=${tag.id}`} key={tag.id} prefetch={false}>
-              <Tag {...tagProps}>
-                <Text noOfLines={1}>{tag.name}</Text>
-              </Tag>
-            </CustomNextLink>
-          ),
-      )}
+    <Box ref={childrenWrapper} display={"flex"} gap={2} width={"max-content"} {...boxProps}>
+      {tags.map((tag, index) => {
+        const isVisibleTag = visibilityMap[tag.id];
+        return (
+          <Tag
+            tag={tag}
+            key={tag.id}
+            id={tag.id}
+            transformTagMenu={index === lastVisibleTagIndex}
+            countsOfTagInMenu={invisibleTagCounts}
+            visibility={isVisibleTag ? "visible" : "hidden"}
+            {...tagProps}
+          />
+        );
+      })}
     </Box>
   );
 };
+
+export const TagList = memo(_TagList);
