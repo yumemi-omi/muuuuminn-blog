@@ -3,7 +3,7 @@ import { FC } from "react";
 import { Category } from "@/features/post/components/Category";
 import { PostDate } from "@/features/post/components/PostDate";
 import { PostThumbnail } from "@/features/post/components/PostThumbnail";
-import { TagList } from "@/features/post/components/TagList";
+import { WrapTagList } from "@/features/post/components/TagList";
 import { PostType } from "@/features/post/type/post";
 import { Box, BoxProps, HStack, VStack } from "@/libs/chakra";
 import { Text } from "@/libs/chakra";
@@ -33,7 +33,7 @@ export const PostDetail: FC<PostDetailProps> = ({ postDetail, ...rest }) => {
           <Text noOfLines={3} fontSize={"lg"} fontWeight={"bold"}>
             {postDetail.title}
           </Text>
-          <TagList tags={postDetail.tags} flexWrap={"wrap"} />
+          <WrapTagList tags={postDetail.tags} flexWrap={"wrap"} width={"full"} />
         </VStack>
       </VStack>
       {postDetail.content && <RichMarkdownContent html={postDetail.content} />}

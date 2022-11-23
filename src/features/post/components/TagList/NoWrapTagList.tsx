@@ -9,7 +9,7 @@ type TagListProps = BoxProps & {
   tagProps?: BoxProps;
 };
 
-const _TagList: FC<TagListProps> = ({ tags, tagProps, ...boxProps }) => {
+const _NoWrapTagList: FC<TagListProps> = ({ tags, tagProps, ...boxProps }) => {
   const childrenWrapper = useRef<HTMLDivElement>(null);
   const [visibilityMap, setVisibilityMap] = useState<Record<string, boolean>>({});
 
@@ -76,6 +76,8 @@ const _TagList: FC<TagListProps> = ({ tags, tagProps, ...boxProps }) => {
             transformTagMenu={index === lastVisibleTagIndex}
             countsOfTagInMenu={invisibleTagCounts}
             visibility={isVisibleTag ? "visible" : "hidden"}
+            flexShrink={0}
+            width={20}
             {...tagProps}
           />
         );
@@ -84,4 +86,4 @@ const _TagList: FC<TagListProps> = ({ tags, tagProps, ...boxProps }) => {
   );
 };
 
-export const TagList = memo(_TagList);
+export const NoWrapTagList = memo(_NoWrapTagList);
