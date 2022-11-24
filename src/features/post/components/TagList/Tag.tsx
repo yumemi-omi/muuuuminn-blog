@@ -31,7 +31,7 @@ const _Tag: FC<TagProps> = ({ tag, ...rest }) => {
         _before={{
           content: "''",
           display: "inline",
-          height: "22px",
+          height: "24px",
           verticalAlign: "middle",
         }}
         /**

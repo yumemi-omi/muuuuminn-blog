@@ -27,7 +27,7 @@ const _TagMenu: FC<TagProps> = ({ countsOfTagInMenu, tags, ...rest }) => {
           title={`+${countsOfTagInMenu}`}
           variant={"outline"}
           size={"sm"}
-          height={"full"}
+          height={6}
           display={"flex"}
           justifyContent={"center"}
           alignItems={"center"}
@@ -40,7 +40,7 @@ const _TagMenu: FC<TagProps> = ({ countsOfTagInMenu, tags, ...rest }) => {
             _before={{
               content: "''",
               display: "inline",
-              height: "22px",
+              height: "24px",
               verticalAlign: "middle",
             }}
           >
