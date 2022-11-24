@@ -8,10 +8,6 @@ const semanticTokens = {
       _light: "brand.800",
       _dark: "brand.50",
     },
-    "chakra-border-color": {
-      _light: "brand.200",
-      _dark: "brand.300",
-    },
     "chakra-placeholder-color": {
       _light: "brand.500",
       _dark: "brand.400",
