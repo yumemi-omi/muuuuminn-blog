@@ -2,12 +2,14 @@ import { FC, useCallback, useEffect, useMemo, useRef, useState, MouseEvent, memo
 
 import { TagType } from "@/features/post/type/post";
 import { BoxProps, Box } from "@/libs/chakra";
+import { CustomNextLinkProps } from "@/libs/next";
 
 import { Tag } from "./Tag";
+import { TagMenu } from "./TagMenu";
 
 type TagListProps = BoxProps & {
   tags: TagType[];
-  tagProps?: BoxProps;
+  tagProps?: CustomNextLinkProps;
 };
 
 const _NoWrapTagList: FC<TagListProps> = ({ tags, tagProps, ...boxProps }) => {
@@ -70,18 +72,20 @@ const _NoWrapTagList: FC<TagListProps> = ({ tags, tagProps, ...boxProps }) => {
       {tags.map((tag, index) => {
         const isVisibleTag = visibilityMap[tag.id];
         return (
-          <Tag
-            tag={tag}
+          <Box
             key={tag.id}
             id={tag.id}
-            transformTagMenu={index === lastVisibleTagIndex}
-            countsOfTagInMenu={invisibleTagCounts}
             visibility={isVisibleTag ? "visible" : "hidden"}
             flexShrink={0}
             // SEで2つタグが見えるギリギリのサイズ
             width={"78px"}
-            {...tagProps}
-          />
+          >
+            {index === lastVisibleTagIndex ? (
+              <TagMenu countsOfTagInMenu={invisibleTagCounts} />
+            ) : (
+              <Tag tag={tag} />
+            )}
+          </Box>
         );
       })}
     </Box>

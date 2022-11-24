@@ -9,7 +9,7 @@ import {
 import NextLink, { LinkProps as OriginNextLinkProps } from "next/link";
 import { FC, ReactNode } from "react";
 
-type CustomNextLinkProps = OriginChakraLinkProps & OriginNextLinkProps;
+export type CustomNextLinkProps = OriginChakraLinkProps & OriginNextLinkProps;
 
 const isExternalLink = (href: string | UrlObject): boolean => {
   if (typeof href !== "string") return false;
