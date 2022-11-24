@@ -2,17 +2,15 @@ import { FC, useCallback, useEffect, useMemo, useRef, useState, MouseEvent, memo
 
 import { TagType } from "@/features/post/type/post";
 import { BoxProps, Box } from "@/libs/chakra";
-import { CustomNextLinkProps } from "@/libs/next";
 
 import { Tag } from "./Tag";
 import { TagMenu } from "./TagMenu";
 
 type TagListProps = BoxProps & {
   tags: TagType[];
-  tagProps?: CustomNextLinkProps;
 };
 
-const _NoWrapTagList: FC<TagListProps> = ({ tags, tagProps, ...boxProps }) => {
+const _NoWrapTagList: FC<TagListProps> = ({ tags, ...boxProps }) => {
   const childrenWrapper = useRef<HTMLDivElement>(null);
   const [visibilityMap, setVisibilityMap] = useState<Record<string, boolean>>({});
 
@@ -20,10 +18,11 @@ const _NoWrapTagList: FC<TagListProps> = ({ tags, tagProps, ...boxProps }) => {
     () => Object.values(visibilityMap).findIndex((v) => !v) - 1,
     [visibilityMap],
   );
-  const invisibleTagCounts = useMemo(
-    () => Object.values(visibilityMap).filter((v) => !v).length + 1,
-    [visibilityMap],
-  );
+  const invisibleTags = useMemo(() => {
+    const invisibleTags = [...tags.filter((tag) => !visibilityMap[tag.id])];
+    const tagAsMenu = tags[invisibleTags.length - 1];
+    return [...invisibleTags, tagAsMenu];
+  }, [tags, visibilityMap]);
 
   const handleIntersection = useCallback((entries: IntersectionObserverEntry[]) => {
     const updatedEntries: Record<string, boolean> = {};
@@ -75,15 +74,14 @@ const _NoWrapTagList: FC<TagListProps> = ({ tags, tagProps, ...boxProps }) => {
           <Box
             key={tag.id}
             id={tag.id}
-            visibility={isVisibleTag ? "visible" : "hidden"}
             flexShrink={0}
             // SEで2つタグが見えるギリギリのサイズ
             width={"78px"}
           >
             {index === lastVisibleTagIndex ? (
-              <TagMenu countsOfTagInMenu={invisibleTagCounts} />
+              <TagMenu tags={invisibleTags} countsOfTagInMenu={invisibleTags.length} />
             ) : (
-              <Tag tag={tag} />
+              <Tag tag={tag} visibility={isVisibleTag ? "visible" : "hidden"} />
             )}
           </Box>
         );
