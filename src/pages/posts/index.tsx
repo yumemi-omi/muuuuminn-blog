@@ -1,24 +1,23 @@
-import { dehydrate, InfiniteData, QueryClient } from "@tanstack/react-query";
 import { GetStaticProps, GetStaticPropsContext } from "next";
 
 import { HomePage } from "@/_pages/home/HomePage";
 import { HomePageLayout } from "@/_pages/home/HomePageLayout";
-import { DEFAULT_PAGINATION_META } from "@/features/post/constant";
-import {
-  useLifeProjectIssuesQuery,
-  useInfiniteLifeProjectIssuesForInfiniteQuery,
-} from "@/features/post/graphql/issues.generated";
+import { CategoryType, PostListType } from "@/features/post/type/post";
+import { getAllPosts } from "@/libs/markdown/api";
 import { BasicLayout } from "@/shared/components/BasicLayout";
 
 import type { NextPageWithLayout } from "@/pages/_app";
 import type { ReactElement } from "react";
 
-type HomeProps = {};
+type HomeProps = {
+  categories: CategoryType[];
+  posts: PostListType;
+};
 
-const Home: NextPageWithLayout<HomeProps> = () => {
+const Home: NextPageWithLayout<HomeProps> = (props) => {
   return (
     <>
-      <HomePage />
+      <HomePage {...props} />
     </>
   );
 };
@@ -32,22 +31,42 @@ Home.getLayout = function getLayout(page: ReactElement) {
 };
 
 export const getStaticProps: GetStaticProps = async (_context: GetStaticPropsContext) => {
-  const queryClient = new QueryClient();
-  await queryClient.prefetchInfiniteQuery(
-    useInfiniteLifeProjectIssuesForInfiniteQuery.getKey({ first: DEFAULT_PAGINATION_META.LIMIT }),
-    useLifeProjectIssuesQuery.fetcher({ first: DEFAULT_PAGINATION_META.LIMIT }),
-  );
+  const posts = getAllPosts(["title", "date", "slug", "coverImage", "description"]);
 
   return {
-    props: {
-      /**
-       * workaround
-       * https://github.com/TanStack/query/issues/1458#issuecomment-747716357
-       * infiniteQueryをprefetchしてdehydrateするとエラーになるため、JSONでパースして回避
-       */
-      dehydratedState: JSON.parse(JSON.stringify(dehydrate(queryClient))),
-    },
+    props: { posts },
   };
 };
+
+// export async function getStaticPaths() {
+//   const { LIMIT } = DEFAULT_PAGINATION_META;
+//   const posts = getAllPosts(["slug"]);
+
+//   const totalPageCount = Math.ceil(posts.length / LIMIT);
+//   const defaultPaths = [
+//     {
+//       params: { page: [""] },
+//     },
+//     {
+//       params: { page: ["1"] },
+//     },
+//   ];
+
+//   if (totalPageCount <= 1) {
+//     const paths = [...defaultPaths];
+//     paths.push(...paths.map((p) => ({ ...p, locale: "en" })));
+
+//     return { paths, fallback: false };
+//   } else {
+//     const paths = [...defaultPaths, ...array.createNumberArray(totalPageCount)].map((num) => {
+//       return {
+//         params: { page: [`${num}`] },
+//       };
+//     });
+//     paths.push(...paths.map((p) => ({ ...p, locale: "en" })));
+
+//     return { paths, fallback: false };
+//   }
+// }
 
 export default Home;

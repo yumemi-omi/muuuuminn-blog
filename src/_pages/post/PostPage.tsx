@@ -1,26 +1,24 @@
 import { NextSeo, NextSeoProps } from "next-seo";
-import { useRouter } from "next/router";
 import { FC } from "react";
 
 import { PostDetail } from "@/features/post/components/PostDetail";
-import { usePostDetail } from "@/features/post/hooks/usePostDetail";
+import { PostDetailType } from "@/features/post/type/post";
 import { Box } from "@/libs/chakra";
 
-export const PostPage: FC = () => {
-  const router = useRouter();
-  const id = (router.query.id as string) || "";
-  const { postDetail } = usePostDetail({ id });
-
+type PostPageProps = {
+  post: PostDetailType;
+};
+export const PostPage: FC<PostPageProps> = ({ post }) => {
   const seo = {
-    title: postDetail.title,
-    description: postDetail.description,
+    title: post.title,
+    description: post.description,
   } as NextSeoProps;
 
   return (
     <>
       <NextSeo {...seo} />
       <Box>
-        <PostDetail postDetail={postDetail} />
+        <PostDetail postDetail={post} />
       </Box>
     </>
   );

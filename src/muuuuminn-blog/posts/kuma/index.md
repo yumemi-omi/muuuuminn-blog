@@ -3,6 +3,7 @@ title: "Dynamic Routing and Static Generation"
 coverImage: "/post/hello/akira.jpeg"
 date: "2022-09-14"
 ogImageUrl: "/post/hello/akira.jpeg"
+description: "説明だよおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおお"
 ---
 
 ```tsx:index.tsx
