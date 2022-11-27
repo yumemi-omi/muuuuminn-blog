@@ -10,7 +10,7 @@ type PostTitleProps = {
 
 const _PostTitleLink: FC<PostTitleProps> = ({ post }) => {
   return (
-    <CustomNextLink linkType={"withOverlay"} href={`/post/${post.id}`} prefetch={false}>
+    <CustomNextLink linkType={"withOverlay"} href={`/post/${post.slug}`} prefetch={false}>
       <Text noOfLines={2} fontSize={"lg"} fontWeight={"bold"}>
         {post.title}
       </Text>

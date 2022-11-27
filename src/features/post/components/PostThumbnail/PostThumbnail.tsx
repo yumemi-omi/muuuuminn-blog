@@ -1,11 +1,10 @@
 import { AspectRatioProps, AspectRatio } from "@chakra-ui/react";
 import { FC, memo } from "react";
 
-import { PostType } from "@/features/post/type/post";
 import { ChakraNextImage } from "@/libs/next";
 
 interface PostThumbnailProps extends AspectRatioProps {
-  post: PostType;
+  src: string;
   imageQuality?: string | number;
   sizeSet?: {
     width: string;
@@ -14,19 +13,14 @@ interface PostThumbnailProps extends AspectRatioProps {
 }
 
 const _PostThumbnail: FC<PostThumbnailProps> = ({
-  post,
+  src,
   imageQuality,
   sizeSet = { width: "100px", height: "100px" },
   ...rest
 }) => {
   return (
     <AspectRatio ratio={1 / 1} {...sizeSet} {...rest}>
-      <ChakraNextImage
-        borderRadius={"xl"}
-        src={post.coverImage}
-        quality={imageQuality}
-        {...sizeSet}
-      />
+      <ChakraNextImage borderRadius={"xl"} src={src} quality={imageQuality} {...sizeSet} />
     </AspectRatio>
   );
 };

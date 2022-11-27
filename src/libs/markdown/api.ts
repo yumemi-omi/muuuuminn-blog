@@ -5,7 +5,15 @@ import matter from "gray-matter";
 
 const POSTS_DIRECTORY_NAME = "src/muuuuminn-blog/posts";
 
-const MARKDOWN_FIELDS = ["title", "date", "slug", "content", "ogImageUrl", "coverImage"] as const;
+const MARKDOWN_FIELDS = [
+  "title",
+  "date",
+  "slug",
+  "content",
+  "ogImageUrl",
+  "coverImage",
+  "description",
+] as const;
 type FieldsType = typeof MARKDOWN_FIELDS[number];
 
 const postsDirectory = join(process.cwd(), POSTS_DIRECTORY_NAME);
@@ -28,6 +36,7 @@ const formatPost = (
     date: "",
     ogImageUrl: "",
     coverImage: "",
+    description: "",
   };
 
   // Ensure only the minimal needed data is exposed

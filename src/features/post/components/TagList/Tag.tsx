@@ -39,7 +39,7 @@ const _Tag: FC<TagProps> = ({ tag, ...rest }) => {
          * https://stackoverflow.com/questions/71666775/chakra-ui-text-component-nooflines-doesnt-display-right-in-safari
          * mobile実機のみnoOfLinesが機能しないため、maxHeightを指定してはみ出たテキストは非表示にする
          */
-        maxHeight={"24px"}
+        height={"24px"}
         overflow={"hidden"}
       >
         #{tag.name}
