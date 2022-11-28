@@ -5,6 +5,8 @@ export type PostType = {
   date: string;
   coverImage: string;
   description: string;
+  category: CategoryType;
+  tags: TagType[];
 };
 
 export type PostListType = PostType[];
@@ -22,4 +24,5 @@ export type TagType = {
 export type CategoryType = {
   id: string;
   name: string;
+  color: string;
 };

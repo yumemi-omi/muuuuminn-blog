@@ -3,7 +3,6 @@ import { FC } from "react";
 
 import { PostDetail } from "@/features/post/components/PostDetail";
 import { PostDetailType } from "@/features/post/type/post";
-import { Box } from "@/libs/chakra";
 
 type PostPageProps = {
   post: PostDetailType;
@@ -17,9 +16,13 @@ export const PostPage: FC<PostPageProps> = ({ post }) => {
   return (
     <>
       <NextSeo {...seo} />
-      <Box>
-        <PostDetail postDetail={post} />
-      </Box>
+      <PostDetail
+        overflowX={"hidden"}
+        marginY={{ base: 2 }}
+        // maxWidth={"640px"}
+        marginX={"auto"}
+        postDetail={post}
+      />
     </>
   );
 };

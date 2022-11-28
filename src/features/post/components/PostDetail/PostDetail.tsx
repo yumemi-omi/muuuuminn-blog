@@ -15,10 +15,10 @@ type PostDetailProps = {
 
 export const PostDetail: FC<PostDetailProps> = ({ postDetail, ...rest }) => {
   return (
-    <Box overflowX={"hidden"} {...rest}>
+    <Box {...rest}>
       <VStack>
         <HStack alignSelf={"flex-start"} spacing={4}>
-          {/* {postDetail.category && <Category asLink category={postDetail.category} />} */}
+          {postDetail.category && <Category asLink category={postDetail.category} />}
           <PostDate fontSize={"sm"} date={postDetail.date} />
         </HStack>
         <VStack>
@@ -30,13 +30,22 @@ export const PostDetail: FC<PostDetailProps> = ({ postDetail, ...rest }) => {
               height: "200px",
             }}
           />
-          <Text noOfLines={3} fontSize={"lg"} fontWeight={"bold"}>
+          <Text fontSize={"lg"} fontWeight={"bold"}>
             {postDetail.title}
           </Text>
-          {/* <WrapTagList tags={postDetail.tags} flexWrap={"wrap"} width={"full"} /> */}
+          <WrapTagList
+            tags={postDetail.tags}
+            flexWrap={"wrap"}
+            width={"full"}
+            justifyContent={"center"}
+          />
         </VStack>
       </VStack>
-      {postDetail.content && <RichMarkdownContent html={postDetail.content} />}
+      {postDetail.content && (
+        <Box marginTop={4}>
+          <RichMarkdownContent html={postDetail.content} />
+        </Box>
+      )}
     </Box>
   );
 };
