@@ -15,7 +15,7 @@ type PostDetailProps = {
 
 export const PostDetail: FC<PostDetailProps> = ({ postDetail, ...rest }) => {
   return (
-    <Box overflowX={"hidden"} {...rest} marginY={{ base: 2, md: 8 }}>
+    <Box {...rest}>
       <VStack>
         <HStack alignSelf={"flex-start"} spacing={4}>
           {postDetail.category && <Category asLink category={postDetail.category} />}
@@ -33,7 +33,12 @@ export const PostDetail: FC<PostDetailProps> = ({ postDetail, ...rest }) => {
           <Text fontSize={"lg"} fontWeight={"bold"}>
             {postDetail.title}
           </Text>
-          <WrapTagList tags={postDetail.tags} flexWrap={"wrap"} width={"full"} paddingX={20} />
+          <WrapTagList
+            tags={postDetail.tags}
+            flexWrap={"wrap"}
+            width={"full"}
+            justifyContent={"center"}
+          />
         </VStack>
       </VStack>
       {postDetail.content && (

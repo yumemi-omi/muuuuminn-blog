@@ -16,7 +16,13 @@ export const PostPage: FC<PostPageProps> = ({ post }) => {
   return (
     <>
       <NextSeo {...seo} />
-      <PostDetail postDetail={post} />
+      <PostDetail
+        overflowX={"hidden"}
+        marginY={{ base: 2 }}
+        // maxWidth={"640px"}
+        marginX={"auto"}
+        postDetail={post}
+      />
     </>
   );
 };
