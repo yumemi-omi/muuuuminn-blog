@@ -1,3 +1,4 @@
+import { useColorMode } from "@chakra-ui/react";
 import { FC, memo } from "react";
 
 import { TagType } from "@/features/post/type/post";
@@ -9,6 +10,8 @@ type TagProps = Omit<CustomNextLinkProps, "href"> & {
 };
 
 const _Tag: FC<TagProps> = ({ tag, ...rest }) => {
+  const { colorMode } = useColorMode();
+  const hoverBackgroundColor = colorMode === "dark" ? "#333333" : "#3333332e";
   return (
     <CustomNextLink
       {...rest}
@@ -19,21 +22,14 @@ const _Tag: FC<TagProps> = ({ tag, ...rest }) => {
       justifyContent={"center"}
       textAlign={"center"}
       fontSize={"sm"}
-      borderColor={`#${tag.color}CC`}
+      borderColor={tag.color ? `#${tag.color}cc` : "currentcolor"}
       borderWidth={1}
       borderRadius={16}
-      _hover={{ backgroundColor: `#${tag.color}2E` }}
+      _hover={{ backgroundColor: tag.color ? `#${tag.color}2E` : hoverBackgroundColor }}
     >
       <Box
         noOfLines={1}
         title={`#${tag.name}`}
-        // 上下のスペース揃え https://coliss.com/articles/build-websites/operation/css/aligning-button-label-vertically.html
-        _before={{
-          content: "''",
-          display: "inline",
-          height: "24px",
-          verticalAlign: "middle",
-        }}
         /**
          * workaround
          * https://stackoverflow.com/questions/71666775/chakra-ui-text-component-nooflines-doesnt-display-right-in-safari

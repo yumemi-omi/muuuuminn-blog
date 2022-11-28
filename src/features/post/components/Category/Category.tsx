@@ -3,8 +3,10 @@ import { FC, ReactNode } from "react";
 
 import { CustomNextLink } from "@/libs/next";
 
+import { CategoryType } from "../../type/post";
+
 type CategoryProps = TextProps & {
-  category: { name: string; id: string };
+  category: CategoryType;
   asLink?: boolean;
 };
 
@@ -28,7 +30,7 @@ export const Category: FC<CategoryProps> = ({ category, asLink = false, ...rest 
 type WrapperProps = {
   children: ReactNode;
   asLink: boolean;
-  category: { name: string; id: string };
+  category: CategoryType;
 };
 
 const Wrapper: FC<WrapperProps> = ({ children, category, asLink }) =>

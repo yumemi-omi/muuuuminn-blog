@@ -3,6 +3,8 @@ import { join } from "path";
 
 import matter from "gray-matter";
 
+import { categories, tags } from "@/features/post/constant";
+
 const POSTS_DIRECTORY_NAME = "src/muuuuminn-blog/posts";
 
 const MARKDOWN_FIELDS = [
@@ -13,14 +15,15 @@ const MARKDOWN_FIELDS = [
   "ogImageUrl",
   "coverImage",
   "description",
+  "category",
+  "tags",
 ] as const;
 type FieldsType = typeof MARKDOWN_FIELDS[number];
 
 const postsDirectory = join(process.cwd(), POSTS_DIRECTORY_NAME);
 
 const formatPost = (
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  data: { [key: string]: any },
+  data: { [key: string]: string },
   content: string,
   fields: FieldsType[] = [],
   slug: string,
@@ -37,6 +40,8 @@ const formatPost = (
     ogImageUrl: "",
     coverImage: "",
     description: "",
+    category: "",
+    tags: "",
   };
 
   // Ensure only the minimal needed data is exposed
@@ -47,7 +52,6 @@ const formatPost = (
     if (field === "content") {
       items[field] = content;
     }
-
     if (typeof data[field] !== "undefined") {
       items[field] = data[field];
     }
@@ -65,7 +69,28 @@ export function getPostBySlug(slug: string, fields: FieldsType[]) {
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
-  return formatPost(data, content, fields, slug);
+  const formattedPlainPost = formatPost(data, content, fields, slug);
+
+  const generatedCategory = categories.find(
+    (category) => category.id === formattedPlainPost.category,
+  ) || {
+    // TODO: 定数として管理する
+    id: "-1",
+    name: "Other",
+    color: "#c9c9c",
+  };
+  const generatedTags = formattedPlainPost.tags.split(",").flatMap((key, index) => {
+    const foundTag = tags.find((tag) => tag.id === key.trim());
+    // workaround: 重複したタグをmarkdown側で記述しても一意にして表示に影響がでないようにする
+    // TODO: タグ名の重複削除
+    return foundTag ? { ...foundTag, id: `${foundTag.id}_${index}` } : [];
+  });
+
+  return {
+    ...formattedPlainPost,
+    category: generatedCategory,
+    tags: generatedTags,
+  };
 }
 
 export function getAllPosts(fields: FieldsType[]) {

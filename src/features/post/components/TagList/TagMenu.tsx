@@ -10,7 +10,7 @@ import {
 import { FC, memo } from "react";
 
 import { TagType } from "@/features/post/type/post";
-import { Text } from "@/libs/chakra";
+import { Text, Box } from "@/libs/chakra";
 
 import { Tag } from "./Tag";
 
@@ -34,26 +34,17 @@ const _TagMenu: FC<TagProps> = ({ countsOfTagInMenu, tags, ...rest }) => {
           borderRadius={16}
           {...rest}
         >
-          <Text
-            fontSize={"sm"}
-            // 上下のスペース揃え https://coliss.com/articles/build-websites/operation/css/aligning-button-label-vertically.html
-            _before={{
-              content: "''",
-              display: "inline",
-              height: "24px",
-              verticalAlign: "middle",
-            }}
-          >
-            +{countsOfTagInMenu}
-          </Text>
+          <Text fontSize={"sm"}>+{countsOfTagInMenu}</Text>
         </Button>
       </PopoverTrigger>
       <PopoverContent>
         <PopoverArrow />
         {/* TODO: CloseButtonをいい感じにおきたい */}
         <PopoverBody display={"flex"} gap={2} py={2} overflowX={"auto"}>
-          {tags.map((tag) => (
-            <Tag key={`tag_in_menu_${tag.id}`} tag={tag} />
+          {tags.map((tag, index) => (
+            <Box key={`tag_in_menu_${tag.id}_${index}`} flexShrink={0}>
+              <Tag tag={tag} />
+            </Box>
           ))}
         </PopoverBody>
       </PopoverContent>
