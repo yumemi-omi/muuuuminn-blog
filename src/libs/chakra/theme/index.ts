@@ -1,23 +1,13 @@
-import { extendTheme, type ThemeConfig } from "@chakra-ui/react";
+import { extendTheme } from "@chakra-ui/react";
 
+import componentStyles from "./componentStyles";
 import foundations from "./foundations";
-
-const config: ThemeConfig = {
-  initialColorMode: "system",
-  useSystemColorMode: true,
-  disableTransitionOnChange: false,
-};
-
-const styles = {
-  global: {
-    body: {
-      overflow: "overlay",
-    },
-  },
-};
+import globalStyles from "./globalStyles";
+import themeConfig from "./themeConfig";
 
 export default extendTheme({
+  config: themeConfig,
   ...foundations,
-  config,
-  styles,
+  styles: globalStyles,
+  components: componentStyles,
 });
