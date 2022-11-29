@@ -6,12 +6,12 @@ import { CategoryType } from "@/features/post/subFeatures/category/types";
 import { PostListType } from "@/features/post/types";
 import { useTranslation } from "@/libs/i18n";
 
-type HomePageProps = {
+type PostsPageProps = {
   categories: CategoryType[];
   posts: PostListType;
 };
 
-export const HomePage: FC<HomePageProps> = ({ posts }) => {
+export const PostsPage: FC<PostsPageProps> = ({ posts }) => {
   const { t } = useTranslation();
   const seo = {
     title: t.PAGE.HOME,
