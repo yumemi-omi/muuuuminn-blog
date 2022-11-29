@@ -14,7 +14,6 @@ type PostCardProps = {
 } & LinkBoxProps;
 
 const _PostCard: FC<PostCardProps> = ({ post, ...rest }) => {
-  console.log(post);
   return (
     <LinkBox py={"2"} as={"article"} overflow={"hidden"} {...rest}>
       <VStack align={"start"}>

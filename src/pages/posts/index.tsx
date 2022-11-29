@@ -2,6 +2,7 @@ import { GetStaticProps, GetStaticPropsContext } from "next";
 
 import { PostsPage } from "@/_pages/posts/PostsPage";
 import { PostsPageLayout } from "@/_pages/posts/PostsPageLayout";
+import { MASTER_CATEGORIES } from "@/features/post/subFeatures/category/constants";
 import { CategoryType } from "@/features/post/subFeatures/category/types";
 import { PostListType } from "@/features/post/types";
 import { getAllPosts } from "@/libs/markdown/api";
@@ -43,7 +44,10 @@ export const getStaticProps: GetStaticProps = async (_context: GetStaticPropsCon
   ]);
 
   return {
-    props: { posts },
+    props: {
+      posts,
+      categories: MASTER_CATEGORIES,
+    },
   };
 };
 
