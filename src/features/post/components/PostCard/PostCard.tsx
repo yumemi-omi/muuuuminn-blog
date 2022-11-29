@@ -1,14 +1,13 @@
 import { LinkBox, LinkBoxProps } from "@chakra-ui/react";
 import { FC, memo } from "react";
 
-import { PostType } from "@/features/post/type/post";
+import { PostDate } from "@/features/post/components/PostDate";
+import { PostThumbnail } from "@/features/post/components/PostThumbnail";
+import { PostTitleLink } from "@/features/post/components/PostTitleLink";
+import { Category } from "@/features/post/subFeatures/category/components/Category";
+import { NoWrapTagList } from "@/features/post/subFeatures/tag/components/TagList";
+import { PostType } from "@/features/post/types";
 import { HStack, Stack, Text, VStack } from "@/libs/chakra";
-
-import { Category } from "../Category";
-import { PostDate } from "../PostDate";
-import { PostThumbnail } from "../PostThumbnail";
-import { PostTitleLink } from "../PostTitleLink";
-import { NoWrapTagList } from "../TagList";
 
 type PostCardProps = {
   post: PostType;

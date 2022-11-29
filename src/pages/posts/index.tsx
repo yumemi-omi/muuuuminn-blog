@@ -2,7 +2,8 @@ import { GetStaticProps, GetStaticPropsContext } from "next";
 
 import { HomePage } from "@/_pages/home/HomePage";
 import { HomePageLayout } from "@/_pages/home/HomePageLayout";
-import { CategoryType, PostListType } from "@/features/post/type/post";
+import { CategoryType } from "@/features/post/subFeatures/category/types";
+import { PostListType } from "@/features/post/types";
 import { getAllPosts } from "@/libs/markdown/api";
 import { BasicLayout } from "@/shared/components/BasicLayout";
 

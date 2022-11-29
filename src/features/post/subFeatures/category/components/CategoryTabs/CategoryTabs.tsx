@@ -2,9 +2,8 @@ import { Tabs, TabList, Tab, TabPanels } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { FC } from "react";
 
+import { CategoryType } from "@/features/post/subFeatures/category/types";
 import { BoxProps } from "@/libs/chakra";
-
-import { CategoryType } from "../../type/post";
 
 type CategoryTabsProps = BoxProps & {
   categories: CategoryType[];

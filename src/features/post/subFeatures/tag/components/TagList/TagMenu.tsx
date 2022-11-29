@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import { FC, memo } from "react";
 
-import { TagType } from "@/features/post/type/post";
+import { TagType } from "@/features/post/subFeatures/tag/types";
 import { Text, Box } from "@/libs/chakra";
 
 import { Tag } from "./Tag";

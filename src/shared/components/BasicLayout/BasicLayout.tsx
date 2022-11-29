@@ -10,7 +10,7 @@ export const BasicLayout: FC<BasicLayoutProps> = (props) => {
   const { children } = props;
   return (
     <Grid
-      maxWidth={"640px"}
+      maxWidth={"690px"}
       marginX={"auto"}
       templateRows={"auto 1fr auto"}
       templateColumns={"100%"}

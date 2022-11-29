@@ -1,6 +1,6 @@
 import { FC, memo } from "react";
 
-import { PostType } from "@/features/post/type/post";
+import { PostType } from "@/features/post/types";
 import { Text } from "@/libs/chakra";
 import { CustomNextLink } from "@/libs/next";
 

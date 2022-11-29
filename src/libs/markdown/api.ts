@@ -3,7 +3,8 @@ import { join } from "path";
 
 import matter from "gray-matter";
 
-import { categories, tags } from "@/features/post/constant";
+import { MASTER_CATEGORIES } from "@/features/post/subFeatures/category/constants";
+import { MASTER_TAGS } from "@/features/post/subFeatures/tag/constants";
 
 const POSTS_DIRECTORY_NAME = "src/muuuuminn-blog/posts";
 
@@ -71,7 +72,7 @@ export function getPostBySlug(slug: string, fields: FieldsType[]) {
 
   const formattedPlainPost = formatPost(data, content, fields, slug);
 
-  const generatedCategory = categories.find(
+  const generatedCategory = MASTER_CATEGORIES.find(
     (category) => category.id === formattedPlainPost.category,
   ) || {
     // TODO: 定数として管理する
@@ -80,7 +81,7 @@ export function getPostBySlug(slug: string, fields: FieldsType[]) {
     color: "#c9c9c",
   };
   const generatedTags = formattedPlainPost.tags.split(",").flatMap((key, index) => {
-    const foundTag = tags.find((tag) => tag.id === key.trim());
+    const foundTag = MASTER_TAGS.find((tag) => tag.id === key.trim());
     // workaround: 重複したタグをmarkdown側で記述しても一意にして表示に影響がでないようにする
     // TODO: タグ名の重複削除
     return foundTag ? { ...foundTag, id: `${foundTag.id}_${index}` } : [];

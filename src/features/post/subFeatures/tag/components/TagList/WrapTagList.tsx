@@ -1,6 +1,6 @@
 import { FC, memo } from "react";
 
-import { TagType } from "@/features/post/type/post";
+import { TagType } from "@/features/post/subFeatures/tag/types";
 import { BoxProps, Box } from "@/libs/chakra";
 
 import { Tag } from "./Tag";
