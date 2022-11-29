@@ -1,9 +1,8 @@
 import { TextProps, Badge } from "@chakra-ui/react";
 import { FC, ReactNode } from "react";
 
+import { CategoryType } from "@/features/post/subFeatures/category/types";
 import { CustomNextLink } from "@/libs/next";
-
-import { CategoryType } from "../../type/post";
 
 type CategoryProps = TextProps & {
   category: CategoryType;

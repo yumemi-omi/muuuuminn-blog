@@ -1,3 +1,6 @@
+import { CategoryType } from "@/features/post/subFeatures/category/types";
+import { TagType } from "@/features/post/subFeatures/tag/types";
+
 export type PostType = {
   content: string;
   title: string;
@@ -14,15 +17,3 @@ export type PostListType = PostType[];
 export type PostDetailType = {
   ogImageUrl: string;
 } & PostType;
-
-export type TagType = {
-  id: string;
-  name: string;
-  color: string;
-};
-
-export type CategoryType = {
-  id: string;
-  name: string;
-  color: string;
-};

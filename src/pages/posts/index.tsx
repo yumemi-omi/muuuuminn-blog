@@ -1,8 +1,10 @@
 import { GetStaticProps, GetStaticPropsContext } from "next";
 
-import { HomePage } from "@/_pages/home/HomePage";
-import { HomePageLayout } from "@/_pages/home/HomePageLayout";
-import { CategoryType, PostListType } from "@/features/post/type/post";
+import { PostsPage } from "@/_pages/posts/PostsPage";
+import { PostsPageLayout } from "@/_pages/posts/PostsPageLayout";
+import { MASTER_CATEGORIES } from "@/features/post/subFeatures/category/constants";
+import { CategoryType } from "@/features/post/subFeatures/category/types";
+import { PostListType } from "@/features/post/types";
 import { getAllPosts } from "@/libs/markdown/api";
 import { BasicLayout } from "@/shared/components/BasicLayout";
 
@@ -17,7 +19,7 @@ type HomeProps = {
 const Home: NextPageWithLayout<HomeProps> = (props) => {
   return (
     <>
-      <HomePage {...props} />
+      <PostsPage {...props} />
     </>
   );
 };
@@ -25,7 +27,7 @@ const Home: NextPageWithLayout<HomeProps> = (props) => {
 Home.getLayout = function getLayout(page: ReactElement) {
   return (
     <BasicLayout>
-      <HomePageLayout>{page}</HomePageLayout>
+      <PostsPageLayout>{page}</PostsPageLayout>
     </BasicLayout>
   );
 };
@@ -42,7 +44,10 @@ export const getStaticProps: GetStaticProps = async (_context: GetStaticPropsCon
   ]);
 
   return {
-    props: { posts },
+    props: {
+      posts,
+      categories: MASTER_CATEGORIES,
+    },
   };
 };
 

@@ -1,10 +1,10 @@
 import { FC } from "react";
 
-import { Category } from "@/features/post/components/Category";
 import { PostDate } from "@/features/post/components/PostDate";
 import { PostThumbnail } from "@/features/post/components/PostThumbnail";
-import { WrapTagList } from "@/features/post/components/TagList";
-import { PostDetailType } from "@/features/post/type/post";
+import { Category } from "@/features/post/subFeatures/category/components/Category";
+import { WrapTagList } from "@/features/post/subFeatures/tag/components/TagList";
+import { PostDetailType } from "@/features/post/types";
 import { Box, BoxProps, HStack, VStack } from "@/libs/chakra";
 import { Text } from "@/libs/chakra";
 import { RichMarkdownContent } from "@/shared/components/RichMarkdownContent";

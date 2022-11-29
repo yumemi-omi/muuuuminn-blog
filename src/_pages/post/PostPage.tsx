@@ -2,7 +2,7 @@ import { NextSeo, NextSeoProps } from "next-seo";
 import { FC } from "react";
 
 import { PostDetail } from "@/features/post/components/PostDetail";
-import { PostDetailType } from "@/features/post/type/post";
+import { PostDetailType } from "@/features/post/types";
 
 type PostPageProps = {
   post: PostDetailType;

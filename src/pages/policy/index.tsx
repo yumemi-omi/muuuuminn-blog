@@ -1,6 +1,6 @@
 import { PolicyPage } from "@/_pages/policy/PolicyPage";
 import { PolicyPageLayout } from "@/_pages/policy/PolicyPageLayout";
-import { Policy } from "@/features/policy/type/policy";
+import { Policy } from "@/features/policy/types";
 import { getMarkdownFileByFilename } from "@/libs/markdown/api";
 import markdownToHtml from "@/libs/markdown/markdownToHtml";
 import { BasicLayout } from "@/shared/components/BasicLayout";

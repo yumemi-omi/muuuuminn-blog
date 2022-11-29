@@ -3,7 +3,7 @@ import markdownToHtml from "zenn-markdown-html";
 
 import { PostPage } from "@/_pages/post/PostPage";
 import { PostPageLayout } from "@/_pages/post/PostPageLayout";
-import { PostDetailType } from "@/features/post/type/post";
+import { PostDetailType } from "@/features/post/types";
 import { getPostBySlug, getAllPosts } from "@/libs/markdown/api";
 import { BasicLayout } from "@/shared/components/BasicLayout";
 

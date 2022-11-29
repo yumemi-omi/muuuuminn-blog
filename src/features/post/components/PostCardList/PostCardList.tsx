@@ -6,7 +6,8 @@ import { useRecoilState } from "recoil";
 import { syncEffect } from "recoil-sync";
 import { initializableAtomFamily } from "recoil-sync-next";
 
-import { PostListType } from "../../type/post";
+import { PostListType } from "@/features/post/types";
+
 import { PostCard } from "../PostCard";
 
 type PostCardListProps = {
