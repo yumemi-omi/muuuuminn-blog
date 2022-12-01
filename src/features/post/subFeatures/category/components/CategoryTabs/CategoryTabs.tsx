@@ -1,4 +1,4 @@
-import { Tabs, TabList, Tab, TabPanels } from "@chakra-ui/react";
+import { Tabs, TabList, Tab, TabPanels, useColorMode } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { FC, useCallback, useMemo } from "react";
 
@@ -10,6 +10,7 @@ type CategoryTabsProps = BoxProps & {
 };
 
 export const CategoryTabs: FC<CategoryTabsProps> = ({ categories }) => {
+  const { colorMode } = useColorMode();
   const router = useRouter();
   const categoryNameAsQuery = (router.query.category as string) || "";
 
@@ -18,7 +19,7 @@ export const CategoryTabs: FC<CategoryTabsProps> = ({ categories }) => {
     [categories, categoryNameAsQuery],
   );
 
-  const tabList = useMemo(() => [{ id: "0", name: "All" }, ...categories], [categories]);
+  const tabList = useMemo(() => [{ id: "-1", name: "All" }, ...categories], [categories]);
 
   const selectedTabIndex = useMemo(() => {
     const foundCategoryTabIndex = tabList.findIndex((tab) => tab.name === selectedCategory?.name);
@@ -38,10 +39,29 @@ export const CategoryTabs: FC<CategoryTabsProps> = ({ categories }) => {
   );
 
   return (
-    <Tabs onChange={handleChangeTab} variant="enclosed" index={selectedTabIndex}>
+    <Tabs
+      size={{ base: "sm", md: "md" }}
+      onChange={handleChangeTab}
+      variant="unstyled"
+      index={selectedTabIndex}
+      overflowX="scroll"
+    >
       <TabList>
-        {tabList.map((tab, index) => (
-          <Tab id={`${index}`} key={index}>
+        {tabList.map((tab) => (
+          <Tab
+            backgroundColor={"transparent"}
+            _selected={{
+              borderColor: colorMode === "dark" ? "#fec8c8" : "brand.800",
+            }}
+            _hover={{
+              borderColor: colorMode === "dark" ? "#fec8c82e" : "#473a392e",
+            }}
+            borderColor={"transparent"}
+            borderBottomWidth={"2px"}
+            borderRadius={"none"}
+            id={`${tab.id}`}
+            key={tab.id}
+          >
             {tab.name}
           </Tab>
         ))}

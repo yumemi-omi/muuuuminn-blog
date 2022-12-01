@@ -10,4 +10,19 @@ export const MASTER_CATEGORIES = [
     name: "Travel",
     color: "C05621",
   },
+  {
+    id: "2",
+    name: "Magic",
+    color: "C05621",
+  },
+  {
+    id: "3",
+    name: "Game",
+    color: "C05621",
+  },
+  {
+    id: "4",
+    name: "Life",
+    color: "C05621",
+  },
 ];
