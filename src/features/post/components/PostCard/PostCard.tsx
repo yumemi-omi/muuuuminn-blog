@@ -21,7 +21,7 @@ const _PostCard: FC<PostCardProps> = ({ post, ...rest }) => {
           {post.category && <Category asLink category={post.category} />}
           <PostDate fontSize={"sm"} date={post.date} />
         </HStack>
-        <HStack w={"full"}>
+        <HStack w={"full"} spacing={4}>
           <PostThumbnail flexShrink={0} src={post.coverImage} imageQuality={50} />
           <Stack h={"100px"} justifyContent="space-between" py={"2"} overflow={"hidden"}>
             <PostTitleLink post={post} />
