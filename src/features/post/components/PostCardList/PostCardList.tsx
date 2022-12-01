@@ -1,7 +1,7 @@
 import { number } from "@recoiljs/refine";
-import { FC, memo, useMemo } from "react";
+import { FC, memo, useCallback, useMemo } from "react";
 import AutoSizer from "react-virtualized-auto-sizer";
-import { FixedSizeList } from "react-window";
+import { FixedSizeList, ListOnItemsRenderedProps } from "react-window";
 import { useRecoilState } from "recoil";
 import { syncEffect } from "recoil-sync";
 import { initializableAtomFamily } from "recoil-sync-next";
@@ -32,6 +32,13 @@ const _PostCardList: FC<PostCardListProps> = ({ posts }) => {
     virtualStartIndex("virtualStartIndexParam", 0),
   );
 
+  const onItemsRendered = useCallback(
+    ({ visibleStartIndex }: ListOnItemsRenderedProps) => {
+      setVirtualStartIndexState(visibleStartIndex);
+    },
+    [setVirtualStartIndexState],
+  );
+
   const initialScrollOffset = useMemo(() => {
     return virtualStartIndexState * POST_CARD_HEIGHT;
   }, [virtualStartIndexState]);
@@ -40,18 +47,17 @@ const _PostCardList: FC<PostCardListProps> = ({ posts }) => {
     <AutoSizer defaultHeight={POST_CARD_HEIGHT}>
       {({ height, width }) => (
         <FixedSizeList
+          overscanCount={10}
           initialScrollOffset={initialScrollOffset}
           height={height}
           width={width}
           itemCount={posts.length}
           itemSize={POST_CARD_HEIGHT}
-          onItemsRendered={({ visibleStartIndex }) => {
-            setVirtualStartIndexState(visibleStartIndex);
-          }}
+          onItemsRendered={onItemsRendered}
         >
           {({ index, style }) => {
             const post = posts[index];
-            return <PostCard key={post.slug} post={post} style={style} />;
+            return <PostCard post={post} key={post.slug} style={style} />;
           }}
         </FixedSizeList>
       )}

@@ -1,5 +1,6 @@
+import { Box } from "@chakra-ui/react";
 import { NextSeo, NextSeoProps } from "next-seo";
-import router, { useRouter } from "next/router";
+import { useRouter } from "next/router";
 import { FC, useMemo } from "react";
 
 import { PostCardList } from "@/features/post/components/PostCardList";
@@ -36,8 +37,10 @@ export const PostsPage: FC<PostsPageProps> = ({ posts, categories }) => {
   return (
     <>
       <NextSeo {...seo} />
-      <CategoryTabs categories={categories} />
-      <PostCardList posts={filteredPosts} />
+      <Box height={"calc(100% - 32px)"}>
+        <CategoryTabs categories={categories} />
+        <PostCardList posts={filteredPosts} />
+      </Box>
     </>
   );
 };
