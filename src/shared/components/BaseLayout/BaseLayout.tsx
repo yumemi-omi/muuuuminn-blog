@@ -1,12 +1,12 @@
 import { FC } from "react";
 
 import { Box, Grid, GridProps } from "@/libs/chakra";
-import { Footer } from "@/shared/components/BasicLayout/Footer";
-import { Header } from "@/shared/components/BasicLayout/Header";
+import { Footer } from "@/shared/components/BaseLayout/Footer";
+import { Header } from "@/shared/components/BaseLayout/Header";
 
-type BasicLayoutProps = GridProps;
+type BaseLayoutProps = GridProps;
 
-export const BasicLayout: FC<BasicLayoutProps> = (props) => {
+export const BaseLayout: FC<BaseLayoutProps> = (props) => {
   const { children } = props;
   return (
     <Grid

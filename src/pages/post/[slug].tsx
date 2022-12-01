@@ -5,7 +5,7 @@ import { PostPage } from "@/_pages/post/PostPage";
 import { PostPageLayout } from "@/_pages/post/PostPageLayout";
 import { PostDetailType } from "@/features/post/types";
 import { getPostBySlug, getAllPosts } from "@/libs/markdown/api";
-import { BasicLayout } from "@/shared/components/BasicLayout";
+import { BaseLayout } from "@/shared/components/BaseLayout";
 
 import type { NextPageWithLayout } from "@/pages/_app";
 
@@ -19,9 +19,9 @@ const Post: NextPageWithLayout<PostProps> = ({ post }) => {
 
 Post.getLayout = function getLayout(page: ReactElement) {
   return (
-    <BasicLayout>
+    <BaseLayout>
       <PostPageLayout>{page}</PostPageLayout>
-    </BasicLayout>
+    </BaseLayout>
   );
 };
 

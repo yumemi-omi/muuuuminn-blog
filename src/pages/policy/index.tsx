@@ -3,7 +3,7 @@ import { PolicyPageLayout } from "@/_pages/policy/PolicyPageLayout";
 import { Policy } from "@/features/policy/types";
 import { getMarkdownFileByFilename } from "@/libs/markdown/api";
 import markdownToHtml from "@/libs/markdown/markdownToHtml";
-import { BasicLayout } from "@/shared/components/BasicLayout";
+import { BaseLayout } from "@/shared/components/BaseLayout";
 
 import type { NextPageWithLayout } from "@/pages/_app";
 import type { ReactElement } from "react";
@@ -18,9 +18,9 @@ const Home: NextPageWithLayout<Props> = ({ policy }) => {
 
 Home.getLayout = function getLayout(page: ReactElement) {
   return (
-    <BasicLayout>
+    <BaseLayout>
       <PolicyPageLayout>{page}</PolicyPageLayout>
-    </BasicLayout>
+    </BaseLayout>
   );
 };
 

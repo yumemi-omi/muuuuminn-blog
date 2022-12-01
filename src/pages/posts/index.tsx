@@ -6,7 +6,7 @@ import { MASTER_CATEGORIES } from "@/features/post/subFeatures/category/constant
 import { CategoryType } from "@/features/post/subFeatures/category/types";
 import { PostListType } from "@/features/post/types";
 import { getAllPosts } from "@/libs/markdown/api";
-import { BasicLayout } from "@/shared/components/BasicLayout";
+import { BaseLayout } from "@/shared/components/BaseLayout";
 
 import type { NextPageWithLayout } from "@/pages/_app";
 import type { ReactElement } from "react";
@@ -26,9 +26,9 @@ const Home: NextPageWithLayout<HomeProps> = (props) => {
 
 Home.getLayout = function getLayout(page: ReactElement) {
   return (
-    <BasicLayout>
+    <BaseLayout>
       <PostsPageLayout>{page}</PostsPageLayout>
-    </BasicLayout>
+    </BaseLayout>
   );
 };
 

@@ -40,8 +40,12 @@ const shimmer = (w: number, h: number) => `
 const toBase64 = (str: string) =>
   typeof window === "undefined" ? Buffer.from(str).toString("base64") : window.btoa(str);
 
-const _ChakraNextImage = (props: ImageProps & BoxProps) => {
-  const { src, alt = "", width, quality, height, layout, objectFit, ...rest } = props;
+type ChakraNextImageProps = {
+  enableBlur?: boolean;
+} & ImageProps &
+  BoxProps;
+const _ChakraNextImage = (props: ChakraNextImageProps) => {
+  const { src, alt = "", width, quality, height, layout, objectFit, enableBlur, ...rest } = props;
   return (
     <Box pos="relative" className="group" {...rest}>
       {src ? (
@@ -53,9 +57,11 @@ const _ChakraNextImage = (props: ImageProps & BoxProps) => {
           width={width}
           quality={quality}
           height={height}
-          placeholder="blur"
           objectFit={objectFit}
-          blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}
+          placeholder={enableBlur ? "blur" : undefined}
+          blurDataURL={
+            enableBlur ? `data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}` : undefined
+          }
           src={src}
           alt={alt}
           transition="all 0.01s"

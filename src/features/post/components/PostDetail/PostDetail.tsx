@@ -29,6 +29,7 @@ export const PostDetail: FC<PostDetailProps> = ({ postDetail, ...rest }) => {
               width: "200px",
               height: "200px",
             }}
+            enableBlur
           />
           <Text fontSize={"lg"} fontWeight={"bold"}>
             {postDetail.title}
