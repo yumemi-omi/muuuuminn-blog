@@ -1,5 +1,6 @@
 import { chakra } from "@chakra-ui/react";
 import NextImage, { ImageProps, ImageLoaderProps } from "next/image";
+import { memo } from "react";
 
 import { Box, BoxProps } from "@/libs/chakra/components/Box";
 
@@ -39,7 +40,7 @@ const shimmer = (w: number, h: number) => `
 const toBase64 = (str: string) =>
   typeof window === "undefined" ? Buffer.from(str).toString("base64") : window.btoa(str);
 
-export const ChakraNextImage = (props: ImageProps & BoxProps) => {
+const _ChakraNextImage = (props: ImageProps & BoxProps) => {
   const { src, alt = "", width, quality, height, layout, objectFit, ...rest } = props;
   return (
     <Box pos="relative" className="group" {...rest}>
@@ -65,3 +66,5 @@ export const ChakraNextImage = (props: ImageProps & BoxProps) => {
     </Box>
   );
 };
+
+export const ChakraNextImage = memo(_ChakraNextImage);
