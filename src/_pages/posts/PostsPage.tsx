@@ -37,7 +37,7 @@ export const PostsPage: FC<PostsPageProps> = ({ posts, categories }) => {
   return (
     <>
       <NextSeo {...seo} />
-      <Box height={"calc(100% - 32px)"}>
+      <Box height={{ base: "calc(100% - 32px)", md: "calc(100% - 40px)" }}>
         <CategoryTabs categories={categories} />
         <PostCardList posts={filteredPosts} />
       </Box>
