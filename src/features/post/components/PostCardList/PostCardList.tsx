@@ -14,6 +14,8 @@ type PostCardListProps = {
   posts: PostListType;
 };
 
+const POST_CARD_HEIGHT = 200;
+
 export const virtualStartIndex = initializableAtomFamily<number, string>({
   key: "virtualStartIndexState",
   effects: [
@@ -31,18 +33,18 @@ const _PostCardList: FC<PostCardListProps> = ({ posts }) => {
   );
 
   const initialScrollOffset = useMemo(() => {
-    return virtualStartIndexState * 201;
+    return virtualStartIndexState * POST_CARD_HEIGHT;
   }, [virtualStartIndexState]);
 
   return (
-    <AutoSizer defaultHeight={201}>
+    <AutoSizer defaultHeight={POST_CARD_HEIGHT}>
       {({ height, width }) => (
         <FixedSizeList
           initialScrollOffset={initialScrollOffset}
           height={height}
           width={width}
           itemCount={posts.length}
-          itemSize={201}
+          itemSize={POST_CARD_HEIGHT}
           onItemsRendered={({ visibleStartIndex }) => {
             setVirtualStartIndexState(visibleStartIndex);
           }}
