@@ -28,11 +28,11 @@ const _NoWrapTagList: FC<TagListProps> = ({ tags, ...boxProps }) => {
     const updatedEntries: Record<string, boolean> = {};
     entries.forEach((entry) => {
       if (entry.target) {
-        const targetid = (entry.target as HTMLElement).id as string;
+        const targetId = (entry.target as HTMLElement).id as string;
         if (entry.isIntersecting) {
-          updatedEntries[targetid] = true;
+          updatedEntries[targetId] = true;
         } else {
-          updatedEntries[targetid] = false;
+          updatedEntries[targetId] = false;
         }
       }
     });
@@ -53,18 +53,6 @@ const _NoWrapTagList: FC<TagListProps> = ({ tags, ...boxProps }) => {
     }
     return () => observer.disconnect();
   }, [handleIntersection]);
-
-  const [isShownMenu, setIsShownMenu] = useState(false);
-
-  const onMouseEnter = useCallback((event: MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault();
-    setIsShownMenu(true);
-  }, []);
-
-  const onMouseLeave = useCallback((event: MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault();
-    setIsShownMenu(false);
-  }, []);
 
   return (
     <Box ref={childrenWrapper} display={"flex"} gap={2} width={"max-content"} {...boxProps}>

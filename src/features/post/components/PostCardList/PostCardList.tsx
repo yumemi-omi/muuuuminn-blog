@@ -1,5 +1,5 @@
 import { number } from "@recoiljs/refine";
-import { FC, memo, useCallback, useMemo } from "react";
+import { FC, memo, useCallback, useMemo, useRef } from "react";
 import AutoSizer from "react-virtualized-auto-sizer";
 import { FixedSizeList, ListOnItemsRenderedProps } from "react-window";
 import { useRecoilState } from "recoil";
@@ -28,13 +28,20 @@ export const virtualStartIndex = initializableAtomFamily<number, string>({
 
 // TODO: スクロールがあることを示すために上下に矢印をabsoluteで置くか、ボカシをいれて示すかしたい
 const _PostCardList: FC<PostCardListProps> = ({ posts }) => {
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
   const [virtualStartIndexState, setVirtualStartIndexState] = useRecoilState(
     virtualStartIndex("virtualStartIndexParam", 0),
   );
 
   const onItemsRendered = useCallback(
     ({ visibleStartIndex }: ListOnItemsRenderedProps) => {
-      setVirtualStartIndexState(visibleStartIndex);
+      if (timerRef.current !== null) {
+        clearTimeout(timerRef.current);
+      }
+
+      timerRef.current = setTimeout(function () {
+        setVirtualStartIndexState(visibleStartIndex);
+      }, 200);
     },
     [setVirtualStartIndexState],
   );
