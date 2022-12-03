@@ -7,7 +7,7 @@ const nextConfig = {
     emotion: true,
   },
   images: {
-    domains: ["user-images.githubusercontent.com"],
+    domains: ["user-images.githubusercontent.com", "s3.us-west-2.amazonaws.com"],
   },
   i18n: {
     locales: ["ja", "en"],
