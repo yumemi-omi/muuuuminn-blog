@@ -11,6 +11,10 @@ export default class Document extends NextDocument {
       <Html lang="jp">
         <Head>
           <script async src="https://embed.zenn.studio/js/listen-embed-event.js"></script>
+          <link rel="icon" href="/favicons/favicon.ico" sizes="any" />
+          <link rel="icon" href="/favicons/icon.svg" type="image/svg+xml" />
+          <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
+          <link rel="manifest" href="/favicons/site.webmanifest" />
         </Head>
         <body>
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />
