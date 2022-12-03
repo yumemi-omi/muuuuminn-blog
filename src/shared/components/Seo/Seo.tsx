@@ -45,6 +45,9 @@ export const BasicSeo: FC<BasicSeoProps> = (props) => {
         cardType: "summary_large_image",
         site: "@4ho_v",
       }}
+      facebook={{
+        appId: "475650504470227",
+      }}
     />
   );
 };
@@ -97,6 +100,9 @@ export const ArticleSeo: FC<ArticleSeoProps> = (props) => {
       twitter={{
         cardType: "summary_large_image",
         site: "@4ho_v",
+      }}
+      facebook={{
+        appId: "475650504470227",
       }}
     />
   );
