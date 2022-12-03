@@ -16,7 +16,7 @@ export const BasicSeo: FC<BasicSeoProps> = (props) => {
     description,
     ogImage = {
       alt: `${title}のサムネイル`,
-      url: "/logo/logo.png",
+      url: "/images/logo/logo.png",
       type: "image/png",
     },
     noindexAndFollow,
@@ -64,7 +64,7 @@ export const ArticleSeo: FC<ArticleSeoProps> = (props) => {
     description,
     ogImage = {
       alt: `${title}のサムネイル`,
-      url: "/logo/logo.png",
+      url: "/images/logo/logo.png",
       type: "image/png",
     },
     noindexAndFollow,
