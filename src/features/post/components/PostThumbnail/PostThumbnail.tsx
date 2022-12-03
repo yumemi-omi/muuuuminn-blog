@@ -31,6 +31,7 @@ const _PostThumbnail: FC<PostThumbnailProps> = ({
         {...sizeSet}
         enableBlur={enableBlur}
         alt={alt}
+        objectFit={"contain"}
       />
     </AspectRatio>
   );
