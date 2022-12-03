@@ -8,7 +8,7 @@ import theme from "@/libs/chakra/theme";
 export default class Document extends NextDocument {
   render() {
     return (
-      <Html lang="jp">
+      <Html lang="ja">
         <Head>
           <script async src="https://embed.zenn.studio/js/listen-embed-event.js"></script>
           <link rel="icon" href="/favicons/favicon.ico" sizes="any" />
