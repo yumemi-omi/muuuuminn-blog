@@ -1,5 +1,4 @@
 import { Box } from "@chakra-ui/react";
-import { NextSeo, NextSeoProps } from "next-seo";
 import { useRouter } from "next/router";
 import { FC, useMemo } from "react";
 
@@ -8,6 +7,7 @@ import { CategoryTabs } from "@/features/post/subFeatures/category/components/Ca
 import { CategoryType } from "@/features/post/subFeatures/category/types";
 import { PostListType } from "@/features/post/types";
 import { useTranslation } from "@/libs/i18n";
+import { BasicSeo, BasicSeoProps } from "@/shared/components/Seo";
 
 type PostsPageProps = {
   categories: CategoryType[];
@@ -16,12 +16,14 @@ type PostsPageProps = {
 
 export const PostsPage: FC<PostsPageProps> = ({ posts, categories }) => {
   const { t } = useTranslation();
-  const seo = {
-    title: t.PAGE.HOME,
-    description: "ホームだよ",
-  } as NextSeoProps;
-
   const router = useRouter();
+
+  const seo: BasicSeoProps = {
+    title: t.PAGE.HOME,
+    description: "投稿記事一覧です",
+    path: "/",
+  };
+
   const categoryNameAsQuery = (router.query.category as string) || "";
   const selectedCategory = useMemo(
     () => categories.find((category) => category.name === categoryNameAsQuery),
@@ -36,7 +38,7 @@ export const PostsPage: FC<PostsPageProps> = ({ posts, categories }) => {
 
   return (
     <>
-      <NextSeo {...seo} />
+      <BasicSeo {...seo} />
       <Box height={{ base: "calc(100% - 32px)", md: "calc(100% - 40px)" }}>
         <CategoryTabs categories={categories} />
         <PostCardList posts={filteredPosts} />

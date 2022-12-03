@@ -1,21 +1,31 @@
-import { NextSeo, NextSeoProps } from "next-seo";
 import { FC } from "react";
 
 import { PostDetail } from "@/features/post/components/PostDetail";
 import { PostDetailType } from "@/features/post/types";
+import { ArticleSeo, ArticleSeoProps } from "@/shared/components/Seo";
 
 type PostPageProps = {
   post: PostDetailType;
 };
 export const PostPage: FC<PostPageProps> = ({ post }) => {
-  const seo = {
+  const seo: ArticleSeoProps = {
     title: post.title,
     description: post.description,
-  } as NextSeoProps;
+    path: `/post/${post.slug}`,
+    ogImage: {
+      url: post.ogImageUrl,
+      alt: `${post.title}のサムネイル`,
+    },
+    articleOgp: {
+      publishedTime: post.date,
+      section: post.category.name,
+      tags: post.tags.map((tag) => tag.name),
+    },
+  };
 
   return (
     <>
-      <NextSeo {...seo} />
+      <ArticleSeo {...seo} />
       <PostDetail
         overflowX={"hidden"}
         marginY={{ base: 2 }}

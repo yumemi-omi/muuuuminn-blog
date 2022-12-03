@@ -1,5 +1,5 @@
 ---
-name: "new component"
+name: "Create a new component"
 root: "./src/"
 output: "**/components/"
 ignore: []
@@ -20,12 +20,12 @@ export * from "./{{ PascalComponentName }}";
 # {{ PascalComponentName }}/{{ PascalComponentName }}.tsx
 
 ```typescript
-import {  Box, BoxProps } from "@/libs/chakra";
-import { FC } from 'react'
+import { Box, BoxProps } from "@/libs/chakra";
+import { FC, memo } from 'react'
 
-interface {{ PascalComponentName }}Props extends BoxProps {}
+export type {{ PascalComponentName }}Props = BoxProps
 
-export const {{ PascalComponentName }}: FC<{{ PascalComponentName }}Props> = (props) => {
+const _{{ PascalComponentName }}: FC<{{ PascalComponentName }}Props> = (props) => {
   const { children } = props
   return (
     <Box>
@@ -33,4 +33,6 @@ export const {{ PascalComponentName }}: FC<{{ PascalComponentName }}Props> = (pr
     </Box>
   )
 }
+
+export const {{ PascalComponentName }} = memo(_{{ PascalComponentName }})
 ```
