@@ -14,6 +14,7 @@ type PostCardProps = {
 } & LinkBoxProps;
 
 const _PostCard: FC<PostCardProps> = ({ post, ...rest }) => {
+  const alt = `${post.title}のサムネイル`;
   return (
     <LinkBox py={"2"} as={"article"} overflow={"hidden"} {...rest}>
       <VStack align={"start"}>
@@ -22,7 +23,7 @@ const _PostCard: FC<PostCardProps> = ({ post, ...rest }) => {
           <PostDate fontSize={"sm"} date={post.date} />
         </HStack>
         <HStack w={"full"} spacing={4}>
-          <PostThumbnail flexShrink={0} src={post.coverImage} imageQuality={50} />
+          <PostThumbnail flexShrink={0} src={post.coverImage} imageQuality={50} alt={alt} />
           <Stack h={"100px"} justifyContent="space-between" py={"2"} overflow={"hidden"}>
             <PostTitleLink post={post} />
             <NoWrapTagList tags={post.tags} />

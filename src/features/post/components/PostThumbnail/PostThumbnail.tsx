@@ -11,6 +11,7 @@ interface PostThumbnailProps extends AspectRatioProps {
     height: string;
   };
   enableBlur?: boolean;
+  alt?: string;
 }
 
 const _PostThumbnail: FC<PostThumbnailProps> = ({
@@ -18,6 +19,7 @@ const _PostThumbnail: FC<PostThumbnailProps> = ({
   imageQuality,
   sizeSet = { width: "100px", height: "100px" },
   enableBlur,
+  alt,
   ...rest
 }) => {
   return (
@@ -28,6 +30,7 @@ const _PostThumbnail: FC<PostThumbnailProps> = ({
         quality={imageQuality}
         {...sizeSet}
         enableBlur={enableBlur}
+        alt={alt}
       />
     </AspectRatio>
   );

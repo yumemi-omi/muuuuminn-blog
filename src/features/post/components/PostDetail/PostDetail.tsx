@@ -14,6 +14,7 @@ type PostDetailProps = {
 } & BoxProps;
 
 export const PostDetail: FC<PostDetailProps> = ({ postDetail, ...rest }) => {
+  const alt = `${postDetail.title}のサムネイル`;
   return (
     <Box {...rest}>
       <VStack>
@@ -30,6 +31,7 @@ export const PostDetail: FC<PostDetailProps> = ({ postDetail, ...rest }) => {
               height: "200px",
             }}
             enableBlur
+            alt={alt}
           />
           <Text fontSize={"lg"} fontWeight={"bold"}>
             {postDetail.title}
