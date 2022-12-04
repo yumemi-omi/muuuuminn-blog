@@ -30,4 +30,14 @@ export const MASTER_TAGS = [
     name: "コインマジック",
     color: "E53E3E",
   },
+  {
+    id: "6",
+    name: "Chakra UI",
+    color: "4ac7c1",
+  },
+  {
+    id: "7",
+    name: "Tailwind CSS",
+    color: "42bff8",
+  },
 ];
