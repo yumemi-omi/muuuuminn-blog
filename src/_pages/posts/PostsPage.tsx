@@ -5,16 +5,18 @@ import { FC, useMemo } from "react";
 import { PostCardList } from "@/features/post/components/PostCardList";
 import { CategoryTabs } from "@/features/post/subFeatures/category/components/CategoryTabs";
 import { CategoryType } from "@/features/post/subFeatures/category/types";
+import { TagType } from "@/features/post/subFeatures/tag/types";
 import { PostListType } from "@/features/post/types";
 import { useTranslation } from "@/libs/i18n";
 import { BasicSeo, BasicSeoProps } from "@/shared/components/Seo";
 
 type PostsPageProps = {
-  categories: CategoryType[];
   posts: PostListType;
+  categories: CategoryType[];
+  tags: TagType[];
 };
 
-export const PostsPage: FC<PostsPageProps> = ({ posts, categories }) => {
+export const PostsPage: FC<PostsPageProps> = ({ posts, categories, tags }) => {
   const { t } = useTranslation();
   const router = useRouter();
 
@@ -29,19 +31,32 @@ export const PostsPage: FC<PostsPageProps> = ({ posts, categories }) => {
     () => categories.find((category) => category.name === categoryNameAsQuery),
     [categories, categoryNameAsQuery],
   );
+  const tagNameAsQuery = (router.query.tag as string) || "";
+  const selectedTag = useMemo(
+    () => tags.find((tag) => tag.name === tagNameAsQuery),
+    [tags, tagNameAsQuery],
+  );
 
-  const filteredPosts = useMemo(() => {
+  const postsFilteredByCategory = useMemo(() => {
     return selectedCategory
-      ? posts.filter((post) => post.category.id === selectedCategory?.id)
+      ? posts.filter((post) => post.category.id === selectedCategory.id)
       : posts;
   }, [posts, selectedCategory]);
+
+  const postsFilteredByTag = useMemo(() => {
+    return selectedTag
+      ? postsFilteredByCategory.filter((post) =>
+          post.tags.some((tag) => tag.name === selectedTag.name),
+        )
+      : postsFilteredByCategory;
+  }, [postsFilteredByCategory, selectedTag]);
 
   return (
     <>
       <BasicSeo {...seo} />
       <Box height={{ base: "calc(100% - 32px)", md: "calc(100% - 40px)" }}>
         <CategoryTabs categories={categories} />
-        <PostCardList posts={filteredPosts} />
+        <PostCardList posts={postsFilteredByTag} />
       </Box>
     </>
   );

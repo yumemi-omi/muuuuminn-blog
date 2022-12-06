@@ -1,5 +1,6 @@
 import { useColorMode } from "@chakra-ui/react";
-import { FC, memo } from "react";
+import { useRouter } from "next/router";
+import { FC, memo, useMemo } from "react";
 
 import { TagType } from "@/features/post/subFeatures/tag/types";
 import { Box } from "@/libs/chakra";
@@ -10,12 +11,27 @@ type TagProps = Omit<CustomNextLinkProps, "href"> & {
 };
 
 const _Tag: FC<TagProps> = ({ tag, ...rest }) => {
+  const router = useRouter();
+  const categoryNameAsQuery = (router.query.category as string) || "";
+  const href = useMemo(() => {
+    // TODO: クエリ作成を関数化する
+    const params = new URLSearchParams();
+    if (categoryNameAsQuery) {
+      params.append("category", categoryNameAsQuery);
+    }
+    params.append("tag", tag.name);
+    const searchParams = params.toString();
+    const urlSuffix = searchParams ? `/?${searchParams}` : "";
+    return `/posts${urlSuffix}`;
+  }, [categoryNameAsQuery, tag]);
+
   const { colorMode } = useColorMode();
   const hoverBackgroundColor = colorMode === "dark" ? "#333333" : "#3333332e";
+
   return (
     <CustomNextLink
       {...rest}
-      href={`/posts?tag=${tag.id}`}
+      href={href}
       prefetch={false}
       px={2}
       display={"flex"}

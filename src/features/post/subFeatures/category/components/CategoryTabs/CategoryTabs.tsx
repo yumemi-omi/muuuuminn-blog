@@ -13,6 +13,7 @@ export const CategoryTabs: FC<CategoryTabsProps> = ({ categories }) => {
   const { colorMode } = useColorMode();
   const router = useRouter();
   const categoryNameAsQuery = (router.query.category as string) || "";
+  const tagNameAsQuery = (router.query.tag as string) || "";
 
   const selectedCategory = useMemo(
     () => categories.find((category) => category.name === categoryNameAsQuery),
@@ -28,14 +29,23 @@ export const CategoryTabs: FC<CategoryTabsProps> = ({ categories }) => {
 
   const handleChangeTab = useCallback(
     (index: number) => {
-      const category = tabList[index].name;
-      if (category === "All") {
-        router.replace("", undefined, { shallow: true });
-      } else {
-        router.replace(`?category=${category}`, undefined, { shallow: true });
+      // TODO: クエリ作成を関数化する
+      const params = new URLSearchParams();
+      if (tagNameAsQuery) {
+        params.append("tag", tagNameAsQuery);
       }
+
+      const categoryName = tabList[index].name;
+      if (categoryName !== "All") {
+        params.append("category", categoryName);
+      }
+
+      const searchParams = params.toString();
+      const urlSuffix = searchParams ? `/?${searchParams}` : "";
+
+      router.replace(`/posts${urlSuffix}`, undefined, { shallow: true });
     },
-    [tabList, router],
+    [tabList, router, tagNameAsQuery],
   );
 
   return (
