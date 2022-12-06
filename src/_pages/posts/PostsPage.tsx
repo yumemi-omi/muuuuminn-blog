@@ -5,6 +5,7 @@ import { FC, useMemo } from "react";
 import { PostCardList } from "@/features/post/components/PostCardList";
 import { CategoryTabs } from "@/features/post/subFeatures/category/components/CategoryTabs";
 import { CategoryType } from "@/features/post/subFeatures/category/types";
+import { TagFilter } from "@/features/post/subFeatures/tag/components/TagFilter";
 import { TagType } from "@/features/post/subFeatures/tag/types";
 import { PostListType } from "@/features/post/types";
 import { useTranslation } from "@/libs/i18n";
@@ -56,6 +57,7 @@ export const PostsPage: FC<PostsPageProps> = ({ posts, categories, tags }) => {
       <BasicSeo {...seo} />
       <Box height={{ base: "calc(100% - 32px)", md: "calc(100% - 40px)" }}>
         <CategoryTabs categories={categories} />
+        <TagFilter tags={tags} />
         <PostCardList posts={postsFilteredByTag} />
       </Box>
     </>
