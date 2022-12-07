@@ -8,6 +8,7 @@ import { MASTER_TAGS } from "@/features/post/subFeatures/tag/constants";
 import { TagType } from "@/features/post/subFeatures/tag/types";
 import { PostListType } from "@/features/post/types";
 import { getAllPosts } from "@/libs/markdown/api";
+import generateRssFeed from "@/libs/rss/generateRSSFeed";
 import { BaseLayout } from "@/shared/components/BaseLayout";
 
 import type { NextPageWithLayout } from "@/pages/_app";
@@ -45,6 +46,8 @@ export const getStaticProps: GetStaticProps = async (_context: GetStaticPropsCon
     "category",
     "tags",
   ]);
+
+  await generateRssFeed();
 
   return {
     props: {
