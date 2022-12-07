@@ -1,15 +1,16 @@
 const COMMON_I18N = {
-  COPYRIGHT: "© 2022 muuuuminn ブログ. All rights reserved.",
+  COPYRIGHT: "© 2022 muuuuminn blog. All rights reserved.",
 } as const;
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   ja: {
-    SITE_NAME: "muuuuminn ブログ",
+    SITE_NAME: "muuuuminn blog",
     PAGE: {
-      HOME: "ホーム",
+      HOME: "投稿一覧",
       POLICY: "プライバシーポリシー",
       ABOUT_ME: "自己紹介",
+      RSS: "RSS",
     },
     ALT: {
       SITE_LOGO: "サイトロゴ",
@@ -29,9 +30,10 @@ export default {
   en: {
     SITE_NAME: "muuuuminn blog",
     PAGE: {
-      HOME: "Home",
+      HOME: "Posts",
       POLICY: "Privacy policy",
       ABOUT_ME: "About me",
+      RSS: "RSS",
     },
     ALT: {
       SITE_LOGO: "Site logo",

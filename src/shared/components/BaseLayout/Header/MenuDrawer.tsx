@@ -24,6 +24,10 @@ const MenuLinks = [
     name: "POLICY",
     href: "/policy",
   },
+  {
+    name: "RSS",
+    href: "/rss.xml",
+  },
 ] as const;
 
 export const MenuDrawer = () => {
