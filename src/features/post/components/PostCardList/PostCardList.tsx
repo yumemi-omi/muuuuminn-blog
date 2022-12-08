@@ -51,7 +51,7 @@ const _PostCardList: FC<PostCardListProps> = ({ posts }) => {
   }, [virtualStartIndexState]);
 
   return (
-    <AutoSizer defaultHeight={POST_CARD_HEIGHT}>
+    <AutoSizer>
       {({ height, width }) => (
         <FixedSizeList
           overscanCount={10}
