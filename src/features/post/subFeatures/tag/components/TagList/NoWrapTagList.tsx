@@ -1,4 +1,4 @@
-import { FC, useCallback, useEffect, useMemo, useRef, useState, MouseEvent, memo } from "react";
+import { FC, useCallback, useEffect, useMemo, useRef, useState, memo } from "react";
 
 import { TagType } from "@/features/post/subFeatures/tag/types";
 import { BoxProps, Box } from "@/libs/chakra";
@@ -6,11 +6,15 @@ import { BoxProps, Box } from "@/libs/chakra";
 import { Tag } from "./Tag";
 import { TagMenu } from "./TagMenu";
 
-type TagListProps = BoxProps & {
+type NoWrapTagListProps = BoxProps & {
   tags: TagType[];
+  tagProps?: {
+    shallow?: boolean;
+    replace?: boolean;
+  };
 };
 
-const _NoWrapTagList: FC<TagListProps> = ({ tags, ...boxProps }) => {
+const _NoWrapTagList: FC<NoWrapTagListProps> = ({ tags, tagProps, ...boxProps }) => {
   const childrenWrapper = useRef<HTMLDivElement>(null);
   const [visibilityMap, setVisibilityMap] = useState<Record<string, boolean>>({});
 
@@ -70,7 +74,7 @@ const _NoWrapTagList: FC<TagListProps> = ({ tags, ...boxProps }) => {
             {index === lastVisibleTagIndex ? (
               <TagMenu tags={invisibleTags} countsOfTagInMenu={invisibleTags.length} />
             ) : (
-              <Tag tag={tag} visibility={isVisibleTag ? "visible" : "hidden"} />
+              <Tag {...tagProps} tag={tag} visibility={isVisibleTag ? "visible" : "hidden"} />
             )}
           </Box>
         );

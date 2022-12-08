@@ -43,7 +43,7 @@ const _TagMenu: FC<TagProps> = ({ countsOfTagInMenu, tags, ...rest }) => {
         <PopoverBody display={"flex"} gap={2} py={2} overflowX={"auto"}>
           {tags.map((tag, index) => (
             <Box key={`tag_in_menu_${tag.id}_${index}`} flexShrink={0}>
-              <Tag tag={tag} />
+              <Tag shallow replace tag={tag} />
             </Box>
           ))}
         </PopoverBody>

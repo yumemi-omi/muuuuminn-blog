@@ -5,15 +5,19 @@ import { BoxProps, Box } from "@/libs/chakra";
 
 import { Tag } from "./Tag";
 
-type TagListProps = BoxProps & {
+type WrapTagListProps = BoxProps & {
   tags: TagType[];
+  tagProps?: {
+    shallow?: boolean;
+    replace?: boolean;
+  };
 };
 
-const _WrapTagList: FC<TagListProps> = ({ tags, ...boxProps }) => {
+const _WrapTagList: FC<WrapTagListProps> = ({ tags, tagProps, ...boxProps }) => {
   return (
     <Box display={"flex"} gap={2} {...boxProps}>
       {tags.map((tag) => {
-        return <Tag tag={tag} key={tag.id} id={tag.id} />;
+        return <Tag {...tagProps} tag={tag} key={tag.id} id={tag.id} />;
       })}
     </Box>
   );
