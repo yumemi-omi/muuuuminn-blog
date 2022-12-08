@@ -80,11 +80,11 @@ export function getPostBySlug(slug: string, fields: FieldsType[]) {
     name: "Other",
     color: "#c9c9c",
   };
-  const generatedTags = formattedPlainPost.tags.split(",").flatMap((key, index) => {
+  const generatedTags = formattedPlainPost.tags.split(",").flatMap((key) => {
     const foundTag = MASTER_TAGS.find((tag) => tag.id === key.trim());
     // workaround: 重複したタグをmarkdown側で記述しても一意にして表示に影響がでないようにする
     // TODO: タグ名の重複削除
-    return foundTag ? { ...foundTag, id: `${foundTag.id}_${index}` } : [];
+    return foundTag ? foundTag : [];
   });
 
   return {
