@@ -18,11 +18,11 @@ const _NoWrapTagList: FC<TagListProps> = ({ tags, ...boxProps }) => {
     () => Object.values(visibilityMap).findIndex((v) => !v) - 1,
     [visibilityMap],
   );
+
   const invisibleTags = useMemo(() => {
     const invisibleTags = [...tags.filter((tag) => !visibilityMap[tag.id])];
-    const tagAsMenu = tags[invisibleTags.length - 1];
-    return [...invisibleTags, tagAsMenu];
-  }, [tags, visibilityMap]);
+    return [tags[lastVisibleTagIndex], ...invisibleTags];
+  }, [tags, visibilityMap, lastVisibleTagIndex]);
 
   const handleIntersection = useCallback((entries: IntersectionObserverEntry[]) => {
     const updatedEntries: Record<string, boolean> = {};
@@ -63,7 +63,7 @@ const _NoWrapTagList: FC<TagListProps> = ({ tags, ...boxProps }) => {
             key={tag.id}
             id={tag.id}
             flexShrink={0}
-            // SEで2つタグが見えるギリギリのサイズ
+            // iPhone SEで2つタグが見えるギリギリのサイズ
             width={"78px"}
             height={6}
           >
