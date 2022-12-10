@@ -58,7 +58,7 @@ https://www.kotobukiya.co.jp/decoctionmodels-01/ja/
 ## さいごに
 
 ACV や VD はやっていないので、次やるとしたら AC6 だろう。
-ガチるぞ〜
+ガチるぞ〜。
 
 ## 余談
 
