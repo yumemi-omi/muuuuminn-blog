@@ -40,4 +40,9 @@ export const MASTER_TAGS = [
     name: "Tailwind CSS",
     color: "42bff8",
   },
+  {
+    id: "8",
+    name: "アーマード・コア",
+    color: "42bff8",
+  },
 ];
