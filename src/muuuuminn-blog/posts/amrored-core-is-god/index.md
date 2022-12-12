@@ -2,8 +2,8 @@
 title: "アーマード・コア6が発表されてビックリしたついでに、やったことのある過去作を振り返る"
 description: "2022/12/9にアーマード・コア6の発表がありビックリして思い出が逆流したきた話をつらつらと…"
 date: "2022-12-10T03:32:26.606Z"
-coverImage: "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/887c9fe0-e57f-418a-8727-bbd57d4a292b/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2022-12-10_12.30.32.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221210%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221210T033103Z&X-Amz-Expires=86400&X-Amz-Signature=71908cd5614b81b3cfc49a8a36a0c8b4f456ec5739843e36773dcdab4d72f263&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%25202022-12-10%252012.30.32.png%22&x-id=GetObject"
-ogImageUrl: "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/887c9fe0-e57f-418a-8727-bbd57d4a292b/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2022-12-10_12.30.32.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221210%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221210T033103Z&X-Amz-Expires=86400&X-Amz-Signature=71908cd5614b81b3cfc49a8a36a0c8b4f456ec5739843e36773dcdab4d72f263&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588%25202022-12-10%252012.30.32.png%22&x-id=GetObject"
+coverImage: "https://user-images.githubusercontent.com/38467746/206960112-cffe67e9-8bc5-4700-a9e8-88033893a27c.png"
+ogImageUrl: "https://user-images.githubusercontent.com/38467746/206960112-cffe67e9-8bc5-4700-a9e8-88033893a27c.png"
 category: "3"
 tags: "8"
 ---

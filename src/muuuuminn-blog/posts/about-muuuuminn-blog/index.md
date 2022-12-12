@@ -2,8 +2,8 @@
 title: "Next.js / Chakra UIを使ってMarkdownで管理するブログを作成した話"
 description: "Next.js / Chakra UIを使ってMarkdownで管理するブログを作成してみた感想とこれから実装したい機能を書きました。"
 date: "2022-12-04T08:57:04.913Z"
-coverImage: "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/acb04a66-0d14-46a8-b33d-a514380baf22/rzylUjaf_400x400.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221204%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221204T085256Z&X-Amz-Expires=86400&X-Amz-Signature=e5d9b5d688aeb5bac8d6efc2f8816409a8b8c455e5f3fe38c1fcefbf823c7433&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22rzylUjaf_400x400.jpeg%22&x-id=GetObject"
-ogImageUrl: "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/acb04a66-0d14-46a8-b33d-a514380baf22/rzylUjaf_400x400.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221204%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221204T085256Z&X-Amz-Expires=86400&X-Amz-Signature=e5d9b5d688aeb5bac8d6efc2f8816409a8b8c455e5f3fe38c1fcefbf823c7433&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22rzylUjaf_400x400.jpeg%22&x-id=GetObject"
+coverImage: "https://user-images.githubusercontent.com/38467746/206960442-1cc2aec5-7ec7-494a-8836-b118ecdedeff.png"
+ogImageUrl: "https://user-images.githubusercontent.com/38467746/206960442-1cc2aec5-7ec7-494a-8836-b118ecdedeff.png"
 category: "0"
 tags: "0,1,6"
 ---

@@ -16,7 +16,7 @@ export const BasicSeo: FC<BasicSeoProps> = (props) => {
     description,
     ogImage = {
       alt: `${title}のサムネイル`,
-      url: "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/eb64b45d-2be0-4182-a9f3-578269fce660/logo_transparent_no_title.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221203%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221203T121900Z&X-Amz-Expires=86400&X-Amz-Signature=c200273be0b8bbc69cb82dbd0212dd7acfcef40d42edc19897b661872bc8e834&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22logo_transparent_no_title.png%22&x-id=GetObject",
+      url: "https://user-images.githubusercontent.com/38467746/206959970-b3ef349e-e1fc-4646-973f-a7862e1f5d09.png",
       type: "image/png",
     },
     noindexAndFollow,
@@ -67,7 +67,7 @@ export const ArticleSeo: FC<ArticleSeoProps> = (props) => {
     description,
     ogImage = {
       alt: `${title}のサムネイル`,
-      url: "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/eb64b45d-2be0-4182-a9f3-578269fce660/logo_transparent_no_title.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221203%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221203T121900Z&X-Amz-Expires=86400&X-Amz-Signature=c200273be0b8bbc69cb82dbd0212dd7acfcef40d42edc19897b661872bc8e834&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22logo_transparent_no_title.png%22&x-id=GetObject",
+      url: "https://user-images.githubusercontent.com/38467746/206959970-b3ef349e-e1fc-4646-973f-a7862e1f5d09.png",
       type: "image/png",
     },
     noindexAndFollow,
