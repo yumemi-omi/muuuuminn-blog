@@ -7,22 +7,31 @@ export default {
   ja: {
     SITE_NAME: "muuuuminn blog",
     PAGE: {
-      HOME: "投稿一覧",
+      POSTS: "投稿一覧",
       POLICY: "プライバシーポリシー",
       ABOUT_ME: "自己紹介",
       RSS: "RSS",
     },
+    DESCRIPTION: {
+      POSTS: "muuuuminnによる投稿一覧ページです。",
+      POLICY: "muuuuminn blogのプライバシーポリシーを載せたページです",
+    },
     ALT: {
       SITE_LOGO: "サイトロゴ",
+      THUMBNAIL_OF: "のサムネイル",
     },
     ARIA_LABEL: {
       TOGGLE_APPEARANCE_BUTTON: "テーマ切り替え",
       MENU_BUTTON: "メニューの選択肢",
     },
-    SUFFIX: {
-      DATE_TIME: {
-        JUST_NOW: "たった今",
-        AGO: "前",
+    DATE_TIME: {
+      JUST_NOW: "たった今",
+      AGO: "前",
+    },
+    COMPONENTS: {
+      TAG: {
+        PLACEHOLDER: "すべての",
+        LABEL: "タグで絞り込み",
       },
     },
     ...COMMON_I18N,
@@ -30,22 +39,31 @@ export default {
   en: {
     SITE_NAME: "muuuuminn blog",
     PAGE: {
-      HOME: "Posts",
+      POSTS: "Posts",
       POLICY: "Privacy policy",
       ABOUT_ME: "About me",
       RSS: "RSS",
     },
+    DESCRIPTION: {
+      POSTS: "This page shows post written by muuuuminn.",
+      POLICY: "This page shows privacy policy.",
+    },
     ALT: {
       SITE_LOGO: "Site logo",
+      THUMBNAIL_OF: "'s thumbnail",
     },
     ARIA_LABEL: {
       TOGGLE_APPEARANCE_BUTTON: "Toggle appearance",
       MENU_BUTTON: "Menu options",
     },
-    SUFFIX: {
-      DATE_TIME: {
-        JUST_NOW: "Just now",
-        AGO: " ago",
+    DATE_TIME: {
+      JUST_NOW: "Just now",
+      AGO: " ago",
+    },
+    COMPONENTS: {
+      TAG: {
+        PLACEHOLDER: "All",
+        LABEL: "tag is used by filtering.",
       },
     },
     ...COMMON_I18N,

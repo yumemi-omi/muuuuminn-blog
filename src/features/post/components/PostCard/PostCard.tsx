@@ -8,13 +8,15 @@ import { Category } from "@/features/post/subFeatures/category/components/Catego
 import { NoWrapTagList } from "@/features/post/subFeatures/tag/components/TagList";
 import { PostType } from "@/features/post/types";
 import { HStack, Stack, Text, VStack } from "@/libs/chakra";
+import { useTranslation } from "@/libs/i18n";
 
 type PostCardProps = {
   post: PostType;
 } & LinkBoxProps;
 
 const _PostCard: FC<PostCardProps> = ({ post, ...rest }) => {
-  const alt = `${post.title}のサムネイル`;
+  const { t } = useTranslation();
+  const alt = `${post.title}${t.ALT.THUMBNAIL_OF}`;
   return (
     <LinkBox py={"2"} as={"article"} overflow={"hidden"} {...rest}>
       <VStack align={"start"}>

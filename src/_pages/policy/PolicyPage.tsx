@@ -14,7 +14,7 @@ export const PolicyPage: FC<Props> = ({ policy }) => {
   const { t } = useTranslation();
   const seo: BasicSeoProps = {
     title: t.PAGE.POLICY,
-    description: "プライバシーポリシー",
+    description: t.DESCRIPTION.POLICY,
     path: "/policy",
   };
 

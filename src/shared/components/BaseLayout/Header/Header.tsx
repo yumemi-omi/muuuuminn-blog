@@ -18,7 +18,15 @@ export const Header: FC<HeaderProps> = memo(function _header() {
 
   return (
     <Flex py={"4"} alignItems={"center"}>
-      <CustomNextLink href={"/posts"} prefetch={false}>
+      <CustomNextLink
+        p={"2"}
+        href={"/posts"}
+        prefetch={false}
+        style={{
+          textDecoration: "none",
+        }}
+        _hover={{ backgroundColor: "#fec8c82e", borderRadius: "xl" }}
+      >
         <Flex gap={2} alignItems={"center"}>
           <Logo />
           <Text

@@ -17,7 +17,7 @@ import { CustomNextLink } from "@/libs/next";
 
 const MenuLinks = [
   {
-    name: "HOME",
+    name: "POSTS",
     href: "/posts",
   },
   {

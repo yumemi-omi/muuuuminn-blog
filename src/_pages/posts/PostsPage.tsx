@@ -22,8 +22,8 @@ export const PostsPage: FC<PostsPageProps> = ({ posts, categories, tags }) => {
   const router = useRouter();
 
   const seo: BasicSeoProps = {
-    title: t.PAGE.HOME,
-    description: "投稿記事一覧です",
+    title: t.PAGE.POSTS,
+    description: t.DESCRIPTION.POSTS,
     path: "/",
   };
 
@@ -55,7 +55,7 @@ export const PostsPage: FC<PostsPageProps> = ({ posts, categories, tags }) => {
   return (
     <>
       <BasicSeo {...seo} />
-      <Flex height={"full"} flexDirection={"column"}>
+      <Flex gap={2} height={"full"} flexDirection={"column"}>
         <CategoryTabs categories={categories} />
         <TagFilter tags={tags} />
         <Box flex={"1 1 auto"}>

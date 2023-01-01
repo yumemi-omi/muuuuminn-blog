@@ -22,7 +22,7 @@ export const HeaderMenu = () => {
         <CustomNextLink linkType="withChakraLink" href={"/posts"} prefetch={false}>
           <MenuItem>
             <Text fontWeight={"bold"} fontSize={{ base: "sm", md: "md" }}>
-              {t.PAGE.HOME}
+              {t.PAGE.POSTS}
             </Text>
           </MenuItem>
         </CustomNextLink>

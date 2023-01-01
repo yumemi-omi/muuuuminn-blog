@@ -103,14 +103,7 @@ export const CustomNextLink: FC<
 const _NextLink: FC<OriginNextLinkProps & { children: ReactNode }> = (props) => {
   const { children, href, ...rest } = props;
   return (
-    <NextLink
-      href={href}
-      rel={isExternalLink(href) ? "nofollow noreferrer" : undefined}
-      {...rest}
-      style={{
-        textDecoration: "none",
-      }}
-    >
+    <NextLink href={href} rel={isExternalLink(href) ? "nofollow noreferrer" : undefined} {...rest}>
       {children}
     </NextLink>
   );
@@ -139,13 +132,7 @@ const WithChakraLink: FC<CustomNextLinkProps> = ({
       prefetch={prefetch}
       locale={locale}
     >
-      <OriginChakraLink
-        {...rest}
-        style={{
-          textDecoration: "none",
-        }}
-        rel={isExternalLink(href) ? "nofollow noreferrer" : undefined}
-      >
+      <OriginChakraLink {...rest} rel={isExternalLink(href) ? "nofollow noreferrer" : undefined}>
         {children}
       </OriginChakraLink>
     </_NextLink>

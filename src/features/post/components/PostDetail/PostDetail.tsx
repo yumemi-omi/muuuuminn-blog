@@ -7,6 +7,7 @@ import { WrapTagList } from "@/features/post/subFeatures/tag/components/TagList"
 import { PostDetailType } from "@/features/post/types";
 import { Box, BoxProps, HStack, VStack } from "@/libs/chakra";
 import { Text } from "@/libs/chakra";
+import { useTranslation } from "@/libs/i18n";
 import { RichMarkdownContent } from "@/shared/components/RichMarkdownContent";
 
 type PostDetailProps = {
@@ -14,7 +15,9 @@ type PostDetailProps = {
 } & BoxProps;
 
 export const PostDetail: FC<PostDetailProps> = ({ postDetail, ...rest }) => {
-  const alt = `${postDetail.title}のサムネイル`;
+  const { t } = useTranslation();
+
+  const alt = `${postDetail.title}${t.ALT.THUMBNAIL_OF}`;
   return (
     <Box {...rest}>
       <VStack>
