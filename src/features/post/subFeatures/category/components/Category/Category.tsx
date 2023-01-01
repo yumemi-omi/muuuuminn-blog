@@ -1,4 +1,4 @@
-import { TextProps, Badge } from "@chakra-ui/react";
+import { TextProps, Badge, useColorMode } from "@chakra-ui/react";
 import { FC, ReactNode } from "react";
 
 import { CategoryType } from "@/features/post/subFeatures/category/types";
@@ -10,6 +10,8 @@ type CategoryProps = TextProps & {
 };
 
 export const Category: FC<CategoryProps> = ({ category, asLink = false, ...rest }) => {
+  const { colorMode } = useColorMode();
+
   return (
     <Wrapper asLink={asLink} category={category}>
       <Badge
@@ -18,6 +20,13 @@ export const Category: FC<CategoryProps> = ({ category, asLink = false, ...rest 
         w={"100px"}
         maxWidth={"100px"}
         fontSize={"sm"}
+        // TODO: いい感じの色の管理をする！
+        sx={{
+          "--new-badge-color": colorMode === "dark" ? "#fec8c8" : "colors.brand.800",
+          boxShadow: "inset 0 0 0px 1px var(--new-badge-color)",
+          color: "var(--new-badge-color)",
+        }}
+        variant={"outline"}
         {...rest}
       >
         {category.name}

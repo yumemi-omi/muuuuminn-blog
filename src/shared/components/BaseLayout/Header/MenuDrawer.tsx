@@ -64,6 +64,18 @@ export const MenuDrawer = () => {
                   </Text>
                 </CustomNextLink>
               ))}
+              <CustomNextLink
+                linkType={"withChakraLink"}
+                href={
+                  "https://docs.google.com/forms/d/e/1FAIpQLSeXNfr1rEd0Cf_55yIlk2mOjrC4Rs00gA5jw0POoQ7pQOPo7A/viewform"
+                }
+                target={"_blank"}
+                onClick={onClose}
+              >
+                <Text fontWeight={"bold"} fontSize={{ base: "sm", md: "md" }}>
+                  {t.PAGE.CONTACT}
+                </Text>
+              </CustomNextLink>
             </Stack>
           </DrawerBody>
         </DrawerContent>
