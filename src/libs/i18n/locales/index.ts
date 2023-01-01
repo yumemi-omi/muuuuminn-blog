@@ -11,6 +11,7 @@ export default {
       POLICY: "プライバシーポリシー",
       ABOUT_ME: "自己紹介",
       RSS: "RSS",
+      CONTACT: "お問い合わせ",
     },
     DESCRIPTION: {
       POSTS: "muuuuminnによる投稿一覧ページです。",
@@ -43,6 +44,7 @@ export default {
       POLICY: "Privacy policy",
       ABOUT_ME: "About me",
       RSS: "RSS",
+      CONTACT: "Contact",
     },
     DESCRIPTION: {
       POSTS: "This page shows post written by muuuuminn.",
