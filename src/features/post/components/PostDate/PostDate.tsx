@@ -21,11 +21,11 @@ const getRelativeDate = (date: string, t: Locales, locale: LocalesType) => {
   const time = formatDistance(now, parsedDate);
 
   if (time.indexOf("less than") !== -1) {
-    return t.SUFFIX.DATE_TIME.JUST_NOW;
+    return t.DATE_TIME.JUST_NOW;
   } else if (time.indexOf("month") !== -1 || time.indexOf("year") !== -1) {
     return format(parsedDate, DATE_FORMAT, options);
   } else {
-    return `${formatDistance(now, parsedDate, options)}${t.SUFFIX.DATE_TIME.AGO}`;
+    return `${formatDistance(now, parsedDate, options)}${t.DATE_TIME.AGO}`;
   }
 };
 

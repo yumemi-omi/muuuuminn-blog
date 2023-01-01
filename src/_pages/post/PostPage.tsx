@@ -2,19 +2,22 @@ import { FC } from "react";
 
 import { PostDetail } from "@/features/post/components/PostDetail";
 import { PostDetailType } from "@/features/post/types";
+import { useTranslation } from "@/libs/i18n";
 import { ArticleSeo, ArticleSeoProps } from "@/shared/components/Seo";
 
 type PostPageProps = {
   post: PostDetailType;
 };
 export const PostPage: FC<PostPageProps> = ({ post }) => {
+  const { t } = useTranslation();
+
   const seo: ArticleSeoProps = {
     title: post.title,
     description: post.description,
     path: `/post/${post.slug}`,
     ogImage: {
       url: post.ogImageUrl,
-      alt: `${post.title}のサムネイル`,
+      alt: `${post.title}${t.ALT.THUMBNAIL_OF}`,
     },
     articleOgp: {
       publishedTime: post.date,
