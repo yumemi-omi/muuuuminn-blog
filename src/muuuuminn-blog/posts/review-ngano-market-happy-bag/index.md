@@ -55,6 +55,8 @@ https://youtu.be/G0suap5pSdY
 材質：ポリエステル
 原産国：中国
 
+https://youtu.be/R5F8TBoO800
+
 ### ★ メラミンプレート
 
 サイズ：約直径 170mm
