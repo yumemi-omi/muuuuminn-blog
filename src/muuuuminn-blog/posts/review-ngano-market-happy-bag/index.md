@@ -1,6 +1,6 @@
 ---
 title: "ナガノマーケットハッピーバッグ2023をGET！レビューしますよっと。"
-description: "ナガノマーケットハッピーバッグ2023の中身を徹底解剖！？正直買いだと思います。"
+description: "ナガノマーケットハッピーバッグ2023の中身をレビュー！！正直買いだと思います。"
 date: "2023-01-03T01:08:02.305Z"
 coverImage: "https://user-images.githubusercontent.com/38467746/210288302-c07d9fb9-927c-41ce-8fca-4c0bbb62ae0d.jpeg"
 ogImageUrl: "https://user-images.githubusercontent.com/38467746/210288302-c07d9fb9-927c-41ce-8fca-4c0bbb62ae0d.jpeg"
@@ -26,7 +26,7 @@ tags: "9,10,11,12"
 原産国：中国
 
 ![トートバッグの正面の画像](https://user-images.githubusercontent.com/38467746/210239684-6fba934f-5069-45e4-920a-7a5c925e9c28.jpeg)
-_正面にプリントされたナガノのくま_
+_正面にプリントされたナガノのくま（洗濯後なのでシワシワ）_
 
 ![トートバッグの中身の画像](https://user-images.githubusercontent.com/38467746/210239688-d50579fe-8611-4440-85f4-2b1c3b6e4d12.jpeg)
 _チャックつきのバッグの中身_
