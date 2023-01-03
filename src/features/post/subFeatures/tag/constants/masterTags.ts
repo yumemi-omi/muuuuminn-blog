@@ -45,4 +45,24 @@ export const MASTER_TAGS = [
     name: "アーマード・コア",
     color: "42bff8",
   },
+  {
+    id: "9",
+    name: "ナガノのくま",
+    color: "f9c848",
+  },
+  {
+    id: "10",
+    name: "ナガノマーケット",
+    color: "ffec82",
+  },
+  {
+    id: "11",
+    name: "福袋",
+    color: "fb6423",
+  },
+  {
+    id: "12",
+    name: "ちいかわ",
+    color: "0b9fd9",
+  },
 ];
