@@ -1,3 +1,4 @@
+import { useColorMode } from "@chakra-ui/react";
 import { FC, memo } from "react";
 
 import { PostType } from "@/features/post/types";
@@ -9,18 +10,22 @@ type PostTitleProps = {
 };
 
 const _PostTitleLink: FC<PostTitleProps> = ({ post }) => {
+  const { colorMode } = useColorMode();
   return (
     <CustomNextLink
       linkType={"withOverlay"}
       href={`/post/${post.slug}`}
       prefetch={false}
-      _hover={{ color: "#fec8c8cc" }}
-      _visited={{ color: "#fec8c8" }}
+      _hover={{
+        color: colorMode === "dark" ? "#fec8c8cc" : "#775f5fcc",
+        "--d": "100%",
+      }}
+      _visited={{ color: colorMode === "dark" ? "#fec8c8" : "#775f5f" }}
+      background={"linear-gradient(currentColor 0 0) 0 100% /var(--d, 0) 1px no-repeat"}
       sx={{
-        "transition-property": "var(--chakra-transition-property-common)",
+        "transition-property": "var(--chakra-transition-property-common), background",
         "transition-duration": "var(--chakra-transition-duration-normal)",
       }}
-      // _visited={{ color: "#fec8c8" }}
     >
       <Text noOfLines={2} fontSize={"lg"} fontWeight={"bold"}>
         {post.title}
