@@ -18,7 +18,7 @@ const _PostCard: FC<PostCardProps> = ({ post, ...rest }) => {
   const { t } = useTranslation();
   const alt = `${post.title}${t.ALT.THUMBNAIL_OF}`;
   return (
-    <LinkBox py={"2"} as={"article"} overflow={"hidden"} {...rest}>
+    <LinkBox as={"article"} py={"4"} overflow={"hidden"} {...rest}>
       <VStack align={"start"}>
         <HStack spacing={4}>
           {post.category && <Category asLink category={post.category} />}
