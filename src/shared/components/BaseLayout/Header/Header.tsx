@@ -25,7 +25,8 @@ export const Header: FC<HeaderProps> = memo(function _header() {
         style={{
           textDecoration: "none",
         }}
-        _hover={{ backgroundColor: "#fec8c82e", borderRadius: "xl" }}
+        borderRadius={"xl"}
+        _hover={{ backgroundColor: "#fec8c82e" }}
       >
         <Flex gap={2} alignItems={"center"}>
           <Logo />

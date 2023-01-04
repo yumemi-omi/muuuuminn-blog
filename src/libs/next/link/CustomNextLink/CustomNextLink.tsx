@@ -62,6 +62,7 @@ export const CustomNextLink: FC<
           shallow={shallow}
           prefetch={prefetch}
           locale={locale}
+          {...rest}
         >
           {children}
         </_NextLink>
@@ -77,6 +78,7 @@ export const CustomNextLink: FC<
           shallow={shallow}
           prefetch={prefetch}
           locale={locale}
+          {...rest}
         >
           {children}
         </WithOverlay>
