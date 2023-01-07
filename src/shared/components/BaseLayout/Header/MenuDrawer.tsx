@@ -19,14 +19,27 @@ const MenuLinks = [
   {
     name: "POSTS",
     href: "/posts",
+    targetBlank: false,
+  },
+  {
+    name: "COFFEE",
+    href: "https://www.buymeacoffee.com/muuuuminn",
+    targetBlank: true,
   },
   {
     name: "POLICY",
     href: "/policy",
+    targetBlank: false,
+  },
+  {
+    name: "CONTACT",
+    href: "https://docs.google.com/forms/d/e/1FAIpQLSeXNfr1rEd0Cf_55yIlk2mOjrC4Rs00gA5jw0POoQ7pQOPo7A/viewform",
+    targetBlank: true,
   },
   {
     name: "RSS",
     href: "/rss.xml",
+    targetBlank: false,
   },
 ] as const;
 
@@ -56,7 +69,7 @@ export const MenuDrawer = () => {
                 <CustomNextLink
                   key={menuLink.href}
                   href={menuLink.href}
-                  prefetch={false}
+                  target={menuLink.targetBlank ? "_blank" : undefined}
                   onClick={onClose}
                 >
                   <Text fontWeight={"bold"} fontSize={{ base: "sm", md: "md" }}>
@@ -64,18 +77,6 @@ export const MenuDrawer = () => {
                   </Text>
                 </CustomNextLink>
               ))}
-              <CustomNextLink
-                linkType={"withChakraLink"}
-                href={
-                  "https://docs.google.com/forms/d/e/1FAIpQLSeXNfr1rEd0Cf_55yIlk2mOjrC4Rs00gA5jw0POoQ7pQOPo7A/viewform"
-                }
-                target={"_blank"}
-                onClick={onClose}
-              >
-                <Text fontWeight={"bold"} fontSize={{ base: "sm", md: "md" }}>
-                  {t.PAGE.CONTACT}
-                </Text>
-              </CustomNextLink>
             </Stack>
           </DrawerBody>
         </DrawerContent>

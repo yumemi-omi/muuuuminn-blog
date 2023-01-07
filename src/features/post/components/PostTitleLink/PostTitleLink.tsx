@@ -23,8 +23,8 @@ const _PostTitleLink: FC<PostTitleProps> = ({ post }) => {
       _visited={{ color: colorMode === "dark" ? "#fec8c8" : "#775f5f" }}
       background={"linear-gradient(currentColor 0 0) 0 100% /var(--d, 0) 1px no-repeat"}
       sx={{
-        "transition-property": "var(--chakra-transition-property-common), background",
-        "transition-duration": "var(--chakra-transition-duration-normal)",
+        transitionProperty: "var(--chakra-transition-property-common), background",
+        transitionDuration: "var(--chakra-transition-duration-normal)",
       }}
     >
       <Text noOfLines={2} fontSize={"lg"} fontWeight={"bold"}>

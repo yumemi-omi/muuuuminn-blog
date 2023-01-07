@@ -17,7 +17,7 @@ export const Header: FC<HeaderProps> = memo(function _header() {
   const { colorMode } = useColorMode();
 
   return (
-    <Flex py={"4"} alignItems={"center"}>
+    <Flex as={"header"} py={"4"} alignItems={"center"}>
       <CustomNextLink
         p={"2"}
         href={"/posts"}

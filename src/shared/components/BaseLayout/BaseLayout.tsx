@@ -25,7 +25,7 @@ export const BaseLayout: FC<BaseLayoutProps> = (props) => {
       {/* TODO: 下スクロールで消す */}
       {/* TODO: headerとbodyのマージンを少し離してもいいかも */}
       <Header />
-      <Box>{children}</Box>
+      <Box as={"main"}>{children}</Box>
       {/* TODO: 何かのきっかけをトリガーに消せたら消す */}
       <Footer />
     </Grid>

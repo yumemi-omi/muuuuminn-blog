@@ -12,6 +12,7 @@ export default {
       ABOUT_ME: "自己紹介",
       RSS: "RSS",
       CONTACT: "お問い合わせ",
+      COFFEE: "Buy me a coffee",
     },
     DESCRIPTION: {
       POSTS: "muuuuminnによる投稿一覧ページです。",
@@ -45,6 +46,7 @@ export default {
       ABOUT_ME: "About me",
       RSS: "RSS",
       CONTACT: "Contact",
+      COFFEE: "Buy me a coffee",
     },
     DESCRIPTION: {
       POSTS: "This page shows post written by muuuuminn.",
