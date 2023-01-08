@@ -22,6 +22,11 @@ const MenuLinks = [
     targetBlank: false,
   },
   {
+    name: "WISH_LIST",
+    href: "https://www.amazon.co.jp/-/en/hz/wishlist/ls/15U19H5XG5941",
+    targetBlank: true,
+  },
+  {
     name: "COFFEE",
     href: "https://www.buymeacoffee.com/muuuuminn",
     targetBlank: true,
