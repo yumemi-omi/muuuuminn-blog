@@ -23,11 +23,10 @@ export const AdSense: React.FC = () => {
         className="adsbygoogle"
         style={{ display: "block" }}
         data-adtest={process.env.NODE_ENV === "production" ? "off" : "on"}
+        data-ad-format="autorelaxed"
         data-ad-client="ca-pub-9104412012929052"
-        data-ad-slot="2566562789"
-        data-ad-format="auto"
-        data-full-width-responsive="true"
-      />
+        data-ad-slot="4647394274"
+      ></ins>
     </Box>
   );
 };
