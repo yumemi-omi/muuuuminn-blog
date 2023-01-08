@@ -1,5 +1,6 @@
 import { FC } from "react";
 
+import { AdSense } from "@/features/advertise/components/AdSense";
 import { PostDetail } from "@/features/post/components/PostDetail";
 import { PostDetailType } from "@/features/post/types";
 import { useTranslation } from "@/libs/i18n";
@@ -36,6 +37,7 @@ export const PostPage: FC<PostPageProps> = ({ post }) => {
         marginX={"auto"}
         postDetail={post}
       />
+      <AdSense />
     </>
   );
 };

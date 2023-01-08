@@ -10,6 +10,11 @@ export default class Document extends NextDocument {
     return (
       <Html lang="ja">
         <Head>
+          <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9104412012929052"
+            crossOrigin="anonymous"
+          ></script>
           <script async src="https://embed.zenn.studio/js/listen-embed-event.js"></script>
           <link rel="icon" href="/favicons/favicon.ico" sizes="any" />
           <link rel="icon" href="/favicons/icon.svg" type="image/svg+xml" />
