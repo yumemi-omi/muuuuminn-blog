@@ -6,11 +6,6 @@ export const MASTER_CATEGORIES = [
     color: "F6AD55",
   },
   {
-    id: "1",
-    name: "Travel",
-    color: "C05621",
-  },
-  {
     id: "2",
     name: "Magic",
     color: "C05621",

@@ -11,16 +11,6 @@ export const MASTER_TAGS = [
     color: "C53030",
   },
   {
-    id: "2",
-    name: "温泉",
-    color: "63171B",
-  },
-  {
-    id: "3",
-    name: "外食",
-    color: "F56565",
-  },
-  {
     id: "4",
     name: "カードマジック",
     color: "9B2C2C",
@@ -34,11 +24,6 @@ export const MASTER_TAGS = [
     id: "6",
     name: "Chakra UI",
     color: "4ac7c1",
-  },
-  {
-    id: "7",
-    name: "Tailwind CSS",
-    color: "42bff8",
   },
   {
     id: "8",
