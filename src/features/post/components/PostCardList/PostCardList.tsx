@@ -14,7 +14,7 @@ type PostCardListProps = {
   posts: PostListType;
 };
 
-const POST_CARD_HEIGHT = 216;
+const POST_CARD_HEIGHT = 220;
 
 export const virtualStartIndex = initializableAtomFamily<number, string>({
   key: "virtualStartIndexState",

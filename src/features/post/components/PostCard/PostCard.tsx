@@ -7,7 +7,7 @@ import { PostTitleLink } from "@/features/post/components/PostTitleLink";
 import { Category } from "@/features/post/subFeatures/category/components/Category";
 import { NoWrapTagList } from "@/features/post/subFeatures/tag/components/TagList";
 import { PostType } from "@/features/post/types";
-import { HStack, Stack, Text, VStack } from "@/libs/chakra";
+import { HStack, Text, VStack } from "@/libs/chakra";
 import { useTranslation } from "@/libs/i18n";
 
 type PostCardProps = {
@@ -18,18 +18,18 @@ const _PostCard: FC<PostCardProps> = ({ post, ...rest }) => {
   const { t } = useTranslation();
   const alt = `${post.title}${t.ALT.THUMBNAIL_OF}`;
   return (
-    <LinkBox as={"article"} py={"4"} overflow={"hidden"} {...rest}>
+    <LinkBox as={"article"} py={"4"} overflowX={"hidden"} {...rest}>
       <VStack align={"start"}>
         <HStack spacing={4}>
           {post.category && <Category asLink category={post.category} />}
           <PostDate fontSize={"sm"} date={post.date} />
         </HStack>
-        <HStack w={"full"} spacing={4}>
+        <HStack flexShrink={0} spacing={4}>
           <PostThumbnail flexShrink={0} src={post.coverImage} imageQuality={50} alt={alt} />
-          <Stack h={"100px"} justifyContent="space-between" py={"2"} overflow={"hidden"}>
+          <VStack alignItems={"flex-start"}>
             <PostTitleLink post={post} />
             <NoWrapTagList tagProps={{ shallow: true, replace: true }} tags={post.tags} />
-          </Stack>
+          </VStack>
         </HStack>
         <Text noOfLines={2}>{post.description}</Text>
       </VStack>

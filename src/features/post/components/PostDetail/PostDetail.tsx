@@ -1,3 +1,4 @@
+import { useBreakpointValue } from "@chakra-ui/react";
 import { FC } from "react";
 
 import { PostDate } from "@/features/post/components/PostDate";
@@ -16,10 +17,20 @@ type PostDetailProps = {
 
 export const PostDetail: FC<PostDetailProps> = ({ postDetail, ...rest }) => {
   const { t } = useTranslation();
+  const sizeSet = useBreakpointValue({
+    base: {
+      width: "300px",
+      height: "168px",
+    },
+    md: {
+      width: "400px",
+      height: "225px",
+    },
+  });
 
   const alt = `${postDetail.title}${t.ALT.THUMBNAIL_OF}`;
   return (
-    <Box {...rest}>
+    <Box {...rest} minWidth={"300px"}>
       <VStack>
         <HStack alignSelf={"flex-start"} spacing={4}>
           {postDetail.category && <Category asLink category={postDetail.category} />}
@@ -29,10 +40,8 @@ export const PostDetail: FC<PostDetailProps> = ({ postDetail, ...rest }) => {
           <PostThumbnail
             src={postDetail.coverImage}
             imageQuality={75}
-            sizeSet={{
-              width: "200px",
-              height: "200px",
-            }}
+            ratio={{ base: 1.85 / 1, md: 16 / 9 }}
+            sizeSet={sizeSet}
             enableBlur
             alt={alt}
           />

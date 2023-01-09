@@ -47,7 +47,7 @@ type ChakraNextImageProps = {
 const _ChakraNextImage = (props: ChakraNextImageProps) => {
   const { src, alt = "", width, quality, height, layout, objectFit, enableBlur, ...rest } = props;
   return (
-    <Box pos="relative" className="group" {...rest}>
+    <Box pos="relative" {...rest}>
       {src ? (
         <ChakraNextUnwrappedImage
           w="auto"

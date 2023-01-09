@@ -12,6 +12,7 @@ interface PostThumbnailProps extends AspectRatioProps {
   };
   enableBlur?: boolean;
   alt?: string;
+  objectFit?: "cover" | "contain";
 }
 
 const _PostThumbnail: FC<PostThumbnailProps> = ({
@@ -20,10 +21,11 @@ const _PostThumbnail: FC<PostThumbnailProps> = ({
   sizeSet = { width: "100px", height: "100px" },
   enableBlur,
   alt,
+  objectFit = "contain",
   ...rest
 }) => {
   return (
-    <AspectRatio ratio={1 / 1} {...sizeSet} {...rest}>
+    <AspectRatio ratio={1 / 1} borderRadius={"xl"} {...sizeSet} {...rest}>
       <ChakraNextImage
         borderRadius={"xl"}
         src={src}
@@ -31,7 +33,7 @@ const _PostThumbnail: FC<PostThumbnailProps> = ({
         {...sizeSet}
         enableBlur={enableBlur}
         alt={alt}
-        objectFit={"contain"}
+        objectFit={objectFit}
       />
     </AspectRatio>
   );

@@ -30,14 +30,10 @@ export const PostPage: FC<PostPageProps> = ({ post }) => {
   return (
     <>
       <ArticleSeo {...seo} />
-      <PostDetail
-        overflowX={"hidden"}
-        marginY={{ base: 2 }}
-        // maxWidth={"640px"}
-        marginX={"auto"}
-        postDetail={post}
-      />
-      <AdSense />
+      <PostDetail overflowX={"hidden"} marginY={{ base: 2 }} marginX={"auto"} postDetail={post} />
+      <div style={{ display: "none" }}>
+        <AdSense />
+      </div>
     </>
   );
 };
