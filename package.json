@@ -52,7 +52,7 @@
     "@graphql-codegen/cli": "2.13.5",
     "@graphql-codegen/client-preset": "1.0.5",
     "@graphql-codegen/near-operation-file-preset": "2.4.3",
-    "@graphql-codegen/typescript-react-query": "4.0.1",
+    "@graphql-codegen/typescript-react-query": "4.0.6",
     "@types/node": "18.11.18",
     "@types/react": "18.0.26",
     "@types/react-window": "1.8.5",
