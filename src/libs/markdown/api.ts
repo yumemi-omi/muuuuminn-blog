@@ -1,6 +1,7 @@
 import fs from "fs";
 import { join } from "path";
 
+import { isBefore } from "date-fns";
 import matter from "gray-matter";
 
 import { MASTER_CATEGORIES } from "@/features/post/subFeatures/category/constants";
@@ -19,7 +20,7 @@ const MARKDOWN_FIELDS = [
   "category",
   "tags",
 ] as const;
-type FieldsType = typeof MARKDOWN_FIELDS[number];
+type FieldsType = (typeof MARKDOWN_FIELDS)[number];
 
 const postsDirectory = join(process.cwd(), POSTS_DIRECTORY_NAME);
 
@@ -99,7 +100,12 @@ export function getAllPosts(fields: FieldsType[]) {
   const posts = slugs
     .map((slug) => getPostBySlug(slug, fields))
     // sort posts by date in descending order
-    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
+    .filter((post) => {
+      // 今日日付より前に投稿された記事のみを取得する
+      const parsedDate = Date.parse(post.date);
+      return isBefore(parsedDate, new Date());
+    });
   return posts;
 }
 

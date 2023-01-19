@@ -50,4 +50,9 @@ export const MASTER_TAGS = [
     name: "ちいかわ",
     color: "0b9fd9",
   },
+  {
+    id: "13",
+    name: "デックレビュー",
+    color: "0b9fd9",
+  },
 ];
