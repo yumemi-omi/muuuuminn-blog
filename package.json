@@ -56,7 +56,7 @@
     "@types/node": "18.11.18",
     "@types/react": "18.0.27",
     "@types/react-window": "1.8.5",
-    "@types/rss": "0.0.29",
+    "@types/rss": "0.0.30",
     "@typescript-eslint/eslint-plugin": "5.48.1",
     "@typescript-eslint/parser": "5.48.1",
     "dependency-cruiser": "12.4.0",
