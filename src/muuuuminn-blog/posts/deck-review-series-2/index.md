@@ -10,10 +10,10 @@ tags: "13"
 
 ### Queens Playing Cards
 
-![トートバッグの正面の画像](https://user-images.githubusercontent.com/38467746/213150877-aa70a753-ba86-4a2a-912a-4dc9a6cdd0f5.jpeg)
-![トートバッグの正面の画像](https://user-images.githubusercontent.com/38467746/213150883-49283f9a-397b-405e-a7d5-e50c5a927ff5.jpeg)
-![トートバッグの正面の画像](https://user-images.githubusercontent.com/38467746/213150889-1ae842b0-9e99-417a-84b5-77635f9a714d.jpeg)
-_上段：バイシクル、下段：Queens Playing Cards_
+![Queens Playing Cardsのケースの画像](https://user-images.githubusercontent.com/38467746/213150877-aa70a753-ba86-4a2a-912a-4dc9a6cdd0f5.jpeg)
+![Queens Playing Cardsのカードの画像](https://user-images.githubusercontent.com/38467746/213150883-49283f9a-397b-405e-a7d5-e50c5a927ff5.jpeg)
+![Queens Playing CardsとBicycleを比較した画像](https://user-images.githubusercontent.com/38467746/213150889-1ae842b0-9e99-417a-84b5-77635f9a714d.jpeg)
+_上段：Bicycle、下段：Queens Playing Cards_
 
 ◆ 感触
 
@@ -43,12 +43,12 @@ _上段：バイシクル、下段：Queens Playing Cards_
 
 ### Bicycle Inspire Playing Cards 青
 
-![トートバッグの正面の画像](https://user-images.githubusercontent.com/38467746/213150896-6ae5c81e-bf80-418e-9186-e7f0579d4f8a.jpeg)
-![トートバッグの正面の画像](https://user-images.githubusercontent.com/38467746/213150899-852fa15f-f244-4422-a4c8-0eec4ec3739b.jpeg)
+![Bicycle Inspire Playing Cardsのケースの画像](https://user-images.githubusercontent.com/38467746/213150896-6ae5c81e-bf80-418e-9186-e7f0579d4f8a.jpeg)
+![Bicycle Inspire Playing Cardsのカードの画像](https://user-images.githubusercontent.com/38467746/213150899-852fa15f-f244-4422-a4c8-0eec4ec3739b.jpeg)
 _ギャフカードと余分なクイーンがそれぞれ 1 枚ついています。_
 
-![トートバッグの正面の画像](https://user-images.githubusercontent.com/38467746/213150906-185d8346-5803-4f41-9c2d-f1015327adeb.jpeg)
-_上段：バイシクル、下段：Bicycle Inspire Playing Cards_
+![Bicycle Inspire Playing CardsとBicycleを比較した画像](https://user-images.githubusercontent.com/38467746/213150906-185d8346-5803-4f41-9c2d-f1015327adeb.jpeg)
+_上段：Bicycle、下段：Bicycle Inspire Playing Cards_
 
 ◆ 感触
 
@@ -70,10 +70,10 @@ _上段：バイシクル、下段：Bicycle Inspire Playing Cards_
 
 ### EDEN PLAYING CARDS
 
-![トートバッグの正面の画像](https://user-images.githubusercontent.com/38467746/213150910-c4458fba-08b0-468f-9880-a91bebcd0506.jpeg)
-![トートバッグの正面の画像](https://user-images.githubusercontent.com/38467746/213150914-91160051-1afb-4f9d-9097-dded4329b354.jpeg)
-![トートバッグの正面の画像](https://user-images.githubusercontent.com/38467746/213150918-82b14e59-4d17-4685-a5bd-7e2fd217d7fb.jpeg)
-_上段：バイシクル、下段：EDEN PLAYING CARDS_
+![EDEN PLAYING CARDSのケースの画像](https://user-images.githubusercontent.com/38467746/213150910-c4458fba-08b0-468f-9880-a91bebcd0506.jpeg)
+![EDEN PLAYING CARDSのカードの画像](https://user-images.githubusercontent.com/38467746/213150914-91160051-1afb-4f9d-9097-dded4329b354.jpeg)
+![EDEN PLAYING CARDSとBicycleを比較した画像](https://user-images.githubusercontent.com/38467746/213150918-82b14e59-4d17-4685-a5bd-7e2fd217d7fb.jpeg)
+_上段：Bicycle、下段：EDEN PLAYING CARDS_
 
 ◆ 感触
 
