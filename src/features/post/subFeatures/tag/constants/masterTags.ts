@@ -3,7 +3,7 @@ export const MASTER_TAGS = [
   {
     id: "0",
     name: "React",
-    color: "",
+    color: "5fd9fb",
   },
   {
     id: "1",
@@ -53,6 +53,11 @@ export const MASTER_TAGS = [
   {
     id: "13",
     name: "デックレビュー",
-    color: "0b9fd9",
+    color: "58427c",
+  },
+  {
+    id: "14",
+    name: "マジック修行",
+    color: "d83473",
   },
 ];

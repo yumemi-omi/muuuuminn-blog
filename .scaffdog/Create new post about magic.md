@@ -14,13 +14,13 @@ questions:
 
 ```markdown
 ---
-title: '{{ inputs.title }}'
+title: '【マジック修行】{{ inputs.title }}'
 description: '{{ inputs.description }}'
 date: '{{ 'new Date().toISOString()' | eval }}'
 coverImage: '{{ inputs.image }}'
 ogImageUrl: '{{ inputs.image }}'
 category: "2"
-tags: "4,5"
+tags: "4,14"
 ---
 
 [ビル・グッドウィン氏が演じる Mistaken Sandwich の動画](https://www.vanishingincmagic.com/card-magic-downloads/mistaken-sandwich/)
