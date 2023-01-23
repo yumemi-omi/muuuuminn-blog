@@ -60,4 +60,14 @@ export const MASTER_TAGS = [
     name: "マジック修行",
     color: "d83473",
   },
+  {
+    id: "15",
+    name: "node-sass",
+    color: "fcc800",
+  },
+  {
+    id: "16",
+    name: "Nuxt",
+    color: "00b068",
+  },
 ];

@@ -8,27 +8,7 @@ category: "2"
 tags: "13"
 ---
 
-### Aristocrat Green Edition Playing Cards
-
-◆ 感触
-
-◆ ケース
-
-◆ スペードのエース
-
-◆ 絵札
-
-◆ JOKER
-
-◆ バック
-
-◆ ボーダー
-
-◆ ひとこと
-
----
-
-### ARISTOCRAT 727 BANKNOTE 赤 青
+### Aristocrat Green Edition Playing Cards + 赤 青
 
 ◆ 感触
 
