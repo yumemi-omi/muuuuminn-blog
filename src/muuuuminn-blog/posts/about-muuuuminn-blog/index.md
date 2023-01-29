@@ -8,13 +8,13 @@ category: "0"
 tags: "0,1,6"
 ---
 
-## 作成した理由
+## **作成した理由**
 
 - Chakra UI をしっかり使ってみたい
 - 自分でレイアウトを考えながら実装してみたい。
 - 実験場いわゆる Sandbox として色々試せる場が欲しい。
 
-## 感想
+## **感想**
 
 - 個人ブログや企業ブログ、medium などの投稿型のサイトを中心にみてまわり、手書きでワイヤーを書いて実装にあたった。この情報集めの時間とレイアウトを考える時間が楽しい。
 - Chakra UI の Layout に分類される Box コンポーネントなどは非常に使いやすかった。
@@ -59,7 +59,7 @@ https://tmegos.hatenablog.jp/entry/react-virtualized-list-libraries
 - [dependency-cruiser](https://github.com/sverweij/dependency-cruiser) を導入したがチェックする頻度は少なかった。
 - タグを表示している箇所は [Intersection observer](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) を使用している。読みづらいコードになってしまっている。
 
-## これから実装したい機能
+## **これから実装したい機能**
 
 - タグによる投稿の絞り込み
   - UI としては表示しており、クリックすると遷移もする。ただ機能は後回しにしてしまったので、優先度高めで対応する。
@@ -98,11 +98,11 @@ https://tmegos.hatenablog.jp/entry/react-virtualized-list-libraries
   - 階層が深くなる予定がないのもあって、優先度低め。
 - PWA 対応
 
-## 最後に
+## **最後に**
 
 ブログ作成は、ToDo 管理アプリを作成するのと同じくらい勉強になるのでは？と感じる。CRUD のうち Read が大半を占めるので、そこは意識しておきたいところではあるが。
 
-### 余談
+## **余談**
 
 [Mantine UI](https://mantine.dev/) に興味を持った。
 最近話題の [ChatGPT](https://chat.openai.com/chat) を相談相手になにかしらの web アプリを作ってみたいとも思っている。

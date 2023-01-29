@@ -8,7 +8,7 @@ category: "2"
 tags: "13"
 ---
 
-### Queens Playing Cards
+## **Queens Playing Cards**
 
 ![Queens Playing Cardsのケースの画像](https://user-images.githubusercontent.com/38467746/213150877-aa70a753-ba86-4a2a-912a-4dc9a6cdd0f5.jpeg)
 ![Queens Playing Cardsのカードの画像](https://user-images.githubusercontent.com/38467746/213150883-49283f9a-397b-405e-a7d5-e50c5a927ff5.jpeg)
@@ -43,7 +43,7 @@ _上段：Bicycle、下段：Queens Playing Cards_
 
 ---
 
-### Bicycle Inspire Playing Cards 青
+## **Bicycle Inspire Playing Cards 青**
 
 ![Bicycle Inspire Playing Cardsのケースの画像](https://user-images.githubusercontent.com/38467746/213150896-6ae5c81e-bf80-418e-9186-e7f0579d4f8a.jpeg)
 ![Bicycle Inspire Playing Cardsのカードの画像](https://user-images.githubusercontent.com/38467746/213150899-852fa15f-f244-4422-a4c8-0eec4ec3739b.jpeg)
@@ -81,7 +81,7 @@ Bicycle でベタ塗りは珍しいので推せる。
 
 ---
 
-### EDEN PLAYING CARDS
+## **EDEN PLAYING CARDS**
 
 ![EDEN PLAYING CARDSのケースの画像](https://user-images.githubusercontent.com/38467746/213150910-c4458fba-08b0-468f-9880-a91bebcd0506.jpeg)
 ![EDEN PLAYING CARDSのカードの画像](https://user-images.githubusercontent.com/38467746/213150914-91160051-1afb-4f9d-9097-dded4329b354.jpeg)

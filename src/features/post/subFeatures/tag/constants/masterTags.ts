@@ -70,4 +70,9 @@ export const MASTER_TAGS = [
     name: "Nuxt",
     color: "00b068",
   },
+  {
+    id: "17",
+    name: "振り返り",
+    color: "ccff99",
+  },
 ];

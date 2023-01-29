@@ -14,32 +14,32 @@ tags: "4,14"
 練習したうちの数回を動画として再生リストに残しておきました。
 https://youtube.com/playlist?list=PLeb-P495b535hv2noz-pNYt5xeNOV-KoL
 
-## 難しい点
+## **難しい点**
 
 - 挟まった裏向きカードを示すときに、すばやく一番下のカードをプルダウンする。
   - 練習あるのみ。
 - カードをデックへ unload するときに、ずれてしまう。
   - デックにカードをつけるくらい、しっかりめに落とせばズレもなくせる。
 
-## アレンジした点
+## **アレンジした点**
 
 - ブレークした上にある 2 枚のカードの回収の仕方
   - 理由
     - 従来のやり方だと事故率が高かった。
     - 下にカードが入り込むのが、なんとなく違和感あった。
 
-## さいごに
+## **さいごに**
 
 難しい技法が少なく、かつインパクトのある現象を起こせるマジックで
 習得しがいがあります。
 
-## 余談
+## **余談**
 
 [最近のレクチャー動画](https://club.conjuror.community/billy-goodwin-living-room-lecture-july-2022/)が公開されているので要チェック。[Still waters](https://www.youtube.com/watch?v=gUpSOrJAP7I) の内容が多そう。
 
-## 参考情報
+## **参考情報**
 
-### Reflection DVD Bill Goodwin
+###** Reflection DVD Bill Goodwin**
 
 https://www.frenchdrop.com/detail?id=2385
 
