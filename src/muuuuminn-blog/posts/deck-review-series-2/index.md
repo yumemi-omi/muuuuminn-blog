@@ -1,7 +1,7 @@
 ---
 title: "【デックレビュー】光りまくるQueens Playing Cards！安定のBicycle。洒落たデザインEDEN PLAYING CARDS【第2弾】"
 description: "デックレビュー第2弾！超主観と感覚で3つのデックをレビューします。"
-date: "2023-02-01T11:59:19.978Z"
+date: "2023-02-07T11:59:19.978Z"
 coverImage: "https://user-images.githubusercontent.com/38467746/213444543-90cc9228-ba9c-446d-b119-4c0f83c218fb.jpeg"
 ogImageUrl: "https://user-images.githubusercontent.com/38467746/213444543-90cc9228-ba9c-446d-b119-4c0f83c218fb.jpeg"
 category: "2"
