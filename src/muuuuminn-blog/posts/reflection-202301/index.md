@@ -1,7 +1,7 @@
 ---
-title: "【振り返り】2023年1月"
-description: "2023年1月を振り返ります。"
-date: "2023-02-01T01:08:02.305Z"
+title: "【振り返り】2023年1月【月間目標】"
+description: "2023年1月の月間目標を振り返ります。"
+date: "2023-02-01T00:00:00.305Z"
 coverImage: "https://user-images.githubusercontent.com/38467746/215315699-955ccad6-00fb-45a9-871e-3de3ff00d8c5.jpeg"
 ogImageUrl: "https://user-images.githubusercontent.com/38467746/215315699-955ccad6-00fb-45a9-871e-3de3ff00d8c5.jpeg"
 category: "4"
