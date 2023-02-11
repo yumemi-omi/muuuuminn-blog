@@ -42,7 +42,7 @@
     "react-window-infinite-loader": "1.0.8",
     "recoil": "0.7.6",
     "recoil-sync": "0.2.0",
-    "recoil-sync-next": "0.0.3",
+    "recoil-sync-next": "0.0.4",
     "rss": "1.2.2",
     "zenn-content-css": "0.1.137",
     "zenn-markdown-html": "0.1.137"
