@@ -44,7 +44,7 @@
     "recoil-sync": "0.2.0",
     "recoil-sync-next": "0.0.4",
     "rss": "1.2.2",
-    "zenn-content-css": "0.1.137",
+    "zenn-content-css": "0.1.140",
     "zenn-markdown-html": "0.1.137"
   },
   "devDependencies": {
