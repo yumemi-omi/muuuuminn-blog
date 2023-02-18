@@ -65,7 +65,7 @@
     "eslint-config-next": "12.3.4",
     "eslint-config-prettier": "8.6.0",
     "husky": "8.0.3",
-    "lint-staged": "13.1.1",
+    "lint-staged": "13.1.2",
     "npm-check-updates": "16.7.4",
     "prettier": "2.8.4",
     "scaffdog": "^2.4.0",
