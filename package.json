@@ -59,7 +59,7 @@
     "@types/rss": "0.0.30",
     "@typescript-eslint/eslint-plugin": "5.52.0",
     "@typescript-eslint/parser": "5.52.0",
-    "dependency-cruiser": "12.9.0",
+    "dependency-cruiser": "12.10.0",
     "dotenv": "16.0.3",
     "eslint": "8.34.0",
     "eslint-config-next": "12.3.4",
