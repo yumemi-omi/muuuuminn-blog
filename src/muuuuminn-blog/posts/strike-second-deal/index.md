@@ -11,6 +11,7 @@ tags: "4,14"
 Strike second deal を練習し始めました。まだまだ練習が必要だなと痛感しています。
 
 練習の記録
+
 https://youtube.com/playlist?list=PLeb-P495b536Eti5tMd2i-QzDBTOhvHUc
 
 ## **難しい点**

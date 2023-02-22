@@ -11,6 +11,7 @@ tags: "4,14"
 今回は Modern Intricacies に収録されている Dr Daley One Second に挑戦しました。
 
 練習の記録
+
 https://youtube.com/playlist?list=PLeb-P495b5340SGM3efxGH1dCpmcxwVO_
 
 ## **難しい点**
