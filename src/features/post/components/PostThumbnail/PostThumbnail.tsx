@@ -5,7 +5,7 @@ import { ChakraNextImage } from "@/libs/next";
 
 interface PostThumbnailProps extends AspectRatioProps {
   src: string;
-  imageQuality?: string | number;
+  imageQuality?: number;
   sizeSet?: {
     width: string;
     height: string;
