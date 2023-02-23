@@ -2,8 +2,8 @@
 title: "【マジック修行】Modern IntricaciesのTogetherをやってみた"
 description: "Togetherを練習した記録をYouTubeに公開した。難しい点とアレンジした点を加えて書いている。"
 date: "2023-02-23T10:07:59.591Z"
-coverImage: "https://user-images.githubusercontent.com/38467746/210532142-d21b4450-42c7-4f97-a0eb-3f93ce115f24.jpeg"
-ogImageUrl: "https://user-images.githubusercontent.com/38467746/210532142-d21b4450-42c7-4f97-a0eb-3f93ce115f24.jpeg"
+coverImage: "https://user-images.githubusercontent.com/38467746/220904200-534b8530-a382-4e89-83b8-3141991b8f75.png"
+ogImageUrl: "https://user-images.githubusercontent.com/38467746/220904200-534b8530-a382-4e89-83b8-3141991b8f75.png"
 category: "2"
 tags: "4,14"
 ---
