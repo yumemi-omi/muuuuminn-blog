@@ -30,7 +30,7 @@ export const PostDetail: FC<PostDetailProps> = ({ postDetail, ...rest }) => {
 
   const alt = `${postDetail.title}${t.ALT.THUMBNAIL_OF}`;
   return (
-    <Box {...rest} minWidth={"300px"}>
+    <Box {...rest}>
       <VStack>
         <HStack alignSelf={"flex-start"} spacing={4}>
           {postDetail.category && <Category asLink category={postDetail.category} />}

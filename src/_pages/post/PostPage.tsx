@@ -33,8 +33,14 @@ export const PostPage: FC<PostPageProps> = ({ post, relatedPosts }) => {
   return (
     <>
       <ArticleSeo {...seo} />
-      <Stack spacing={10}>
-        <PostDetail overflowX={"hidden"} marginY={{ base: 2 }} marginX={"auto"} postDetail={post} />
+      <Stack
+        spacing={10}
+        minWidth={"300px"}
+        overflowX={"hidden"}
+        marginY={{ base: 2 }}
+        marginX={"auto"}
+      >
+        <PostDetail postDetail={post} />
         {relatedPosts.length !== 0 && <RelatedPostsArea relatedPosts={relatedPosts} />}
       </Stack>
       <div style={{ display: "none" }}>
