@@ -11,7 +11,7 @@ interface PostThumbnailProps extends AspectRatioProps {
     height: string;
   };
   enableBlur?: boolean;
-  alt?: string;
+  alt: string;
   objectFit?: "cover" | "contain";
 }
 
@@ -20,7 +20,7 @@ const _PostThumbnail: FC<PostThumbnailProps> = ({
   imageQuality,
   sizeSet = { width: "100px", height: "100px" },
   enableBlur,
-  alt,
+  alt = "",
   objectFit = "contain",
   ...rest
 }) => {
