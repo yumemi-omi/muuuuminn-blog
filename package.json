@@ -44,8 +44,8 @@
     "recoil-sync": "0.2.0",
     "recoil-sync-next": "0.0.4",
     "rss": "1.2.2",
-    "zenn-content-css": "^0.1.137",
-    "zenn-markdown-html": "^0.1.137"
+    "zenn-content-css": "^0.1.141",
+    "zenn-markdown-html": "^0.1.141"
   },
   "devDependencies": {
     "@emotion/eslint-plugin": "11.10.0",

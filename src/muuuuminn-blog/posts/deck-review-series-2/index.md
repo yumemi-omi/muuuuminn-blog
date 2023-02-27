@@ -41,8 +41,6 @@ _上段：Bicycle、下段：Queens Playing Cards_
 とにかくキラキラしているので、好き嫌い分かれそうです。
 フラリッシュで使ったら映えそうですね。
 
----
-
 ## **Bicycle Inspire Playing Cards 青**
 
 ![Bicycle Inspire Playing Cardsのケースの画像](https://user-images.githubusercontent.com/38467746/213150896-6ae5c81e-bf80-418e-9186-e7f0579d4f8a.jpeg)
@@ -79,8 +77,6 @@ Bicycle でベタ塗りは珍しいので推せる。
 ◆ ひとこと
 ベタ塗り好きの僕としてはお気に入りの一つです。Bicycle なので変な装飾や手触りもない安心さ。値段が少々張るのがネックです。赤バージョンもあるので両方持っておけば演じられる手順も増えるでしょう。
 
----
-
 ## **EDEN PLAYING CARDS**
 
 ![EDEN PLAYING CARDSのケースの画像](https://user-images.githubusercontent.com/38467746/213150910-c4458fba-08b0-468f-9880-a91bebcd0506.jpeg)
@@ -112,5 +108,3 @@ EDEN の文字が印字されている。ちょっと厨二病感。
 
 ◆ ひとこと
 ポッシブルデックにもあった匂いが、ほんのり香る。保管場所が同じだったせいかも。良き品質ですのでデザインが気に入ったなら購入すべきかと！
-
----

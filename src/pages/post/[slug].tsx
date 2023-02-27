@@ -3,7 +3,8 @@ import markdownToHtml from "zenn-markdown-html";
 
 import { PostPage } from "@/_pages/post/PostPage";
 import { PostPageLayout } from "@/_pages/post/PostPageLayout";
-import { PostDetailType } from "@/features/post/types";
+import { PostDetailType, PostListType } from "@/features/post/types";
+import { getRelatedPosts } from "@/features/related-posts/utils/getRelatedPosts";
 import { getPostBySlug, getAllPosts } from "@/libs/markdown/api";
 import { BaseLayout } from "@/shared/components/BaseLayout";
 
@@ -11,10 +12,11 @@ import type { NextPageWithLayout } from "@/pages/_app";
 
 type PostProps = {
   post: PostDetailType;
+  relatedPosts: PostListType;
 };
 
-const Post: NextPageWithLayout<PostProps> = ({ post }) => {
-  return <PostPage post={post} />;
+const Post: NextPageWithLayout<PostProps> = ({ post, relatedPosts }) => {
+  return <PostPage post={post} relatedPosts={relatedPosts} />;
 };
 
 Post.getLayout = function getLayout(page: ReactElement) {
@@ -45,12 +47,30 @@ export async function getStaticProps({ params }: Params) {
   ]);
   const content = await markdownToHtml(post.content || "");
 
+  const posts = getAllPosts([
+    "title",
+    "date",
+    "slug",
+    "coverImage",
+    "description",
+    "category",
+    "tags",
+  ]);
+  const relatedPosts = getRelatedPosts(posts, {
+    category: post.category,
+    tags: post.tags,
+    tagMatchLevel: 2,
+    limit: 5,
+    excludeSlug: post.slug,
+  });
+
   return {
     props: {
       post: {
         ...post,
         content,
       },
+      relatedPosts,
     },
   };
 }

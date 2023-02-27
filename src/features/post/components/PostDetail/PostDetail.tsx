@@ -45,7 +45,7 @@ export const PostDetail: FC<PostDetailProps> = ({ postDetail, ...rest }) => {
             enableBlur
             alt={alt}
           />
-          <Text fontSize={"lg"} fontWeight={"bold"}>
+          <Text as={"h1"} fontSize={"lg"} fontWeight={"bold"}>
             {postDetail.title}
           </Text>
           <WrapTagList

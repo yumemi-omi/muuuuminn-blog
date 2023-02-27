@@ -1,7 +1,7 @@
 import zennMarkdown2Html from "zenn-markdown-html";
 
 export default async function markdownToHtml(markdown: string) {
-  const result = await zennMarkdown2Html(markdown);
+  const result = await zennMarkdown2Html(markdown, { embedOrigin: "https://muuuuminn.com" });
   return result.toString();
 }
 

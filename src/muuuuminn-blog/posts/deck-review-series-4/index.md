@@ -26,8 +26,6 @@ tags: "13"
 
 ◆ ひとこと
 
----
-
 ## **ACE FULTON'S 10 YEAR ANNIVERSARY SUNSET ORANGE PLAYING CARDS**
 
 ◆ 感触

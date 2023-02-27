@@ -36,6 +36,9 @@ export default {
         PLACEHOLDER: "すべての",
         LABEL: "タグで絞り込み",
       },
+      RELATED_POST_AREA: {
+        TITLE: "関連する投稿があります",
+      },
     },
     ...COMMON_I18N,
   },
@@ -70,6 +73,9 @@ export default {
       TAG: {
         PLACEHOLDER: "All",
         LABEL: "tag is used by filtering.",
+      },
+      RELATED_POST_AREA: {
+        TITLE: "関連する投稿があります",
       },
     },
     ...COMMON_I18N,
