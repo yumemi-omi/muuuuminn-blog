@@ -1,7 +1,7 @@
 ---
 title: "【振り返り】2023年2月【月間目標】"
 description: "2023年2月の月間目標を振り返ります。"
-date: "2023-03-01T00:00:00.305Z"
+date: "2023-03-01"
 coverImage: "https://user-images.githubusercontent.com/38467746/221881862-b0174e49-0215-4626-af5a-fa059f5a57c3.jpeg"
 ogImageUrl: "https://user-images.githubusercontent.com/38467746/221881862-b0174e49-0215-4626-af5a-fa059f5a57c3.jpeg"
 category: "4"

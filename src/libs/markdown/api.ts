@@ -1,7 +1,7 @@
 import fs from "fs";
 import { join } from "path";
 
-import { isBefore } from "date-fns";
+import { isBefore, isToday } from "date-fns";
 import matter from "gray-matter";
 
 import { MASTER_CATEGORIES } from "@/features/post/subFeatures/category/constants";
@@ -104,7 +104,7 @@ export function getAllPosts(fields: FieldsType[]) {
     .filter((post) => {
       // 今日日付より前に投稿された記事のみを取得する
       const parsedDate = Date.parse(post.date);
-      return isBefore(parsedDate, new Date());
+      return isBefore(parsedDate, new Date()) || isToday(parsedDate);
     });
   return posts;
 }
