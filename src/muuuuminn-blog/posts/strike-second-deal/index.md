@@ -12,7 +12,7 @@ Strike second deal を練習し始めました。まだまだ練習が必要だ�
 
 練習の記録
 
-https://youtube.com/playlist?list=PLeb-P495b536Eti5tMd2i-QzDBTOhvHUc
+[再生リスト](https://youtube.com/playlist?list=PLeb-P495b536Eti5tMd2i-QzDBTOhvHUc)
 
 ## **難しい点**
 
