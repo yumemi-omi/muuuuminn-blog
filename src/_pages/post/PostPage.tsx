@@ -4,8 +4,9 @@ import { AdSense } from "@/features/advertise/components/AdSense";
 import { PostDetail } from "@/features/post/components/PostDetail";
 import { PostDetailType, PostListType } from "@/features/post/types";
 import { RelatedPostsArea } from "@/features/related-posts/components/RelatedPostsArea";
-import { Spacer, Stack } from "@/libs/chakra";
+import { Stack } from "@/libs/chakra";
 import { useTranslation } from "@/libs/i18n";
+import { ArticleJsonLd, ArticleJsonLdProps } from "@/shared/components/JsonLd";
 import { ArticleSeo, ArticleSeoProps } from "@/shared/components/Seo";
 
 type PostPageProps = {
@@ -30,9 +31,19 @@ export const PostPage: FC<PostPageProps> = ({ post, relatedPosts }) => {
     },
   };
 
+  const jsonLd: ArticleJsonLdProps = {
+    title: post.title,
+    description: post.description,
+    url: `/post/${post.slug}`,
+    images: [post.ogImageUrl],
+    datePublished: post.date,
+    dateModified: post.date,
+  };
+
   return (
     <>
       <ArticleSeo {...seo} />
+      <ArticleJsonLd {...jsonLd} />
       <Stack
         spacing={10}
         minWidth={"300px"}

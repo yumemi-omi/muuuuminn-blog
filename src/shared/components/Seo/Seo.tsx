@@ -63,7 +63,7 @@ export type ArticleSeoProps = {
 export const ArticleSeo: FC<ArticleSeoProps> = (props) => {
   const {
     path,
-    title,
+    title = "",
     description,
     ogImage = {
       alt: `${title}のサムネイル`,
