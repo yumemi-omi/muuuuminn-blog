@@ -40,7 +40,7 @@
     "react-virtuoso": "4.1.0",
     "react-window": "1.8.8",
     "react-window-infinite-loader": "1.0.8",
-    "recoil": "0.7.6",
+    "recoil": "0.7.7",
     "recoil-sync": "0.2.0",
     "recoil-sync-next": "0.0.4",
     "rss": "1.2.2",
