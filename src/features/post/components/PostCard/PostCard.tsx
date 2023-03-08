@@ -1,10 +1,10 @@
 import { LinkBox, LinkBoxProps } from "@chakra-ui/react";
 import { FC, memo } from "react";
 
+import { Category } from "@/features/category/components/Category";
 import { PostDate } from "@/features/post/components/PostDate";
 import { PostThumbnail } from "@/features/post/components/PostThumbnail";
 import { PostTitleLink } from "@/features/post/components/PostTitleLink";
-import { Category } from "@/features/post/subFeatures/category/components/Category";
 import { NoWrapTagList } from "@/features/post/subFeatures/tag/components/TagList";
 import { PostType } from "@/features/post/types";
 import { HStack, Text, VStack } from "@/libs/chakra";

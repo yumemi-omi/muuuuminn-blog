@@ -11,13 +11,13 @@ import { Box, Flex } from "@/libs/chakra";
 import { useTranslation } from "@/libs/i18n";
 import { BasicSeo, BasicSeoProps } from "@/shared/components/Seo";
 
-type PostsPageProps = {
+type CategoryPageProps = {
   posts: PostListType;
   categories: CategoryType[];
   tags: TagType[];
 };
 
-export const PostsPage: FC<PostsPageProps> = ({ posts, categories, tags }) => {
+export const CategoryPage: FC<CategoryPageProps> = ({ posts, categories, tags }) => {
   const { t } = useTranslation();
   const router = useRouter();
 

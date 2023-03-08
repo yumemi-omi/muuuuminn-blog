@@ -2,8 +2,8 @@ import { GetStaticProps, GetStaticPropsContext } from "next";
 
 import { PostsPage } from "@/_pages/posts/PostsPage";
 import { PostsPageLayout } from "@/_pages/posts/PostsPageLayout";
-import { MASTER_CATEGORIES } from "@/features/post/subFeatures/category/constants";
-import { CategoryType } from "@/features/post/subFeatures/category/types";
+import { MASTER_CATEGORIES } from "@/features/category/constants";
+import { CategoryType } from "@/features/category/types";
 import { MASTER_TAGS } from "@/features/post/subFeatures/tag/constants";
 import { TagType } from "@/features/post/subFeatures/tag/types";
 import { PostListType } from "@/features/post/types";

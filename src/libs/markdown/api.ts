@@ -4,7 +4,7 @@ import { join } from "path";
 import { isBefore, isToday } from "date-fns";
 import matter from "gray-matter";
 
-import { MASTER_CATEGORIES } from "@/features/post/subFeatures/category/constants";
+import { MASTER_CATEGORIES } from "@/features/category/constants";
 import { MASTER_TAGS } from "@/features/post/subFeatures/tag/constants";
 
 const POSTS_DIRECTORY_NAME = "src/muuuuminn-blog/posts";

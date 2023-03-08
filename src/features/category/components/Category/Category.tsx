@@ -1,7 +1,7 @@
 import { TextProps, Badge, useColorMode } from "@chakra-ui/react";
 import { FC, ReactNode } from "react";
 
-import { CategoryType } from "@/features/post/subFeatures/category/types";
+import { CategoryType } from "@/features/category/types";
 import { CustomNextLink } from "@/libs/next";
 
 type CategoryProps = TextProps & {
@@ -43,7 +43,7 @@ type WrapperProps = {
 
 const Wrapper: FC<WrapperProps> = ({ children, category, asLink }) =>
   asLink ? (
-    <CustomNextLink href={`/posts?category=${category.name}`} prefetch={false} shallow>
+    <CustomNextLink href={`/posts/${category.name.toLowerCase()}`} prefetch={false} shallow>
       {children}
     </CustomNextLink>
   ) : (

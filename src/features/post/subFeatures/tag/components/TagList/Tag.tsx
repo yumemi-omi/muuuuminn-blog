@@ -12,17 +12,19 @@ type TagProps = Omit<CustomNextLinkProps, "href"> & {
 
 const _Tag: FC<TagProps> = ({ tag, ...rest }) => {
   const router = useRouter();
-  const categoryNameAsQuery = (router.query.category as string) || "";
+  const categoryNameAsQuery = (router.query.category_name as string) || "";
   const href = useMemo(() => {
     // TODO: クエリ作成を関数化する
     const params = new URLSearchParams();
-    if (categoryNameAsQuery) {
-      params.append("category", categoryNameAsQuery);
-    }
     params.append("tag", tag.name);
     const searchParams = params.toString();
     const urlSuffix = searchParams ? `/?${searchParams}` : "";
-    return `/posts${urlSuffix}`;
+
+    if (categoryNameAsQuery) {
+      return `/posts/${categoryNameAsQuery}${urlSuffix}`;
+    } else {
+      return `/posts${urlSuffix}`;
+    }
   }, [categoryNameAsQuery, tag]);
 
   const { colorMode } = useColorMode();

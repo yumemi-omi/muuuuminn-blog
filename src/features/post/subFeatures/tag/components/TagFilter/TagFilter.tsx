@@ -13,16 +13,13 @@ type TagFilterProps = {
 const _TagFilter: FC<TagFilterProps> = ({ tags }) => {
   const { t } = useTranslation();
   const router = useRouter();
-  const categoryNameAsQuery = (router.query.category as string) || "";
+  const categoryNameAsQuery = (router.query.category_name as string) || "";
   const tagNameAsQuery = (router.query.tag as string) || "";
 
   const onChange = useCallback(
     (e: ChangeEvent<HTMLSelectElement>) => {
       // TODO: クエリ作成を関数化する
       const params = new URLSearchParams();
-      if (categoryNameAsQuery) {
-        params.append("category", categoryNameAsQuery);
-      }
       const tagName = e.target.value;
       if (tagName) {
         params.append("tag", tagName);
@@ -30,7 +27,11 @@ const _TagFilter: FC<TagFilterProps> = ({ tags }) => {
       const searchParams = params.toString();
       const urlSuffix = searchParams ? `/?${searchParams}` : "";
 
-      router.replace(`/posts${urlSuffix}`, undefined, { shallow: true });
+      if (categoryNameAsQuery) {
+        router.replace(`/posts/${categoryNameAsQuery}${urlSuffix}`, undefined, { shallow: true });
+      } else {
+        router.replace(`/posts${urlSuffix}`, undefined, { shallow: true });
+      }
     },
     [router, categoryNameAsQuery],
   );
