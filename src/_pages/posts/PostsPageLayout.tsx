@@ -1,5 +1,36 @@
 import { FC, ReactNode } from "react";
 
-export const PostsPageLayout: FC<{ children: ReactNode }> = ({ children }) => {
-  return <>{children}</>;
+import { CategoryTabs } from "@/features/category/components/CategoryTabs";
+import { CategoryType } from "@/features/category/types";
+import { TagFilter } from "@/features/post/subFeatures/tag/components/TagFilter";
+import { TagType } from "@/features/post/subFeatures/tag/types";
+import { Flex } from "@/libs/chakra";
+import { useTranslation } from "@/libs/i18n";
+import { BasicSeo, BasicSeoProps } from "@/shared/components/Seo";
+
+type PostsPageLayoutProps = {
+  categories: CategoryType[];
+  tags: TagType[];
+  children: ReactNode;
+};
+
+export const PostsPageLayout: FC<PostsPageLayoutProps> = ({ children, categories, tags }) => {
+  const { t } = useTranslation();
+
+  const seo: BasicSeoProps = {
+    title: t.PAGE.POSTS,
+    description: t.DESCRIPTION.POSTS,
+    path: "/",
+  };
+
+  return (
+    <>
+      <BasicSeo {...seo} />
+      <Flex gap={2} height={"full"} flexDirection={"column"}>
+        <CategoryTabs categories={categories} />
+        <TagFilter tags={tags} />
+        {children}
+      </Flex>
+    </>
+  );
 };

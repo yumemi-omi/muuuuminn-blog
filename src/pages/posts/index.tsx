@@ -31,7 +31,7 @@ const Home: NextPageWithLayout<HomeProps> = (props) => {
 Home.getLayout = function getLayout(page: ReactElement) {
   return (
     <BaseLayout>
-      <PostsPageLayout>{page}</PostsPageLayout>
+      <PostsPageLayout {...page.props}>{page}</PostsPageLayout>
     </BaseLayout>
   );
 };

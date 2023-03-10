@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 
-import { CategoryPage } from "@/_pages/category/CategoryPage";
-import { CategoryPageLayout } from "@/_pages/category/CategoryPageLayout";
+import { CategoryPage } from "@/_pages/posts/CategoryPage";
+import { PostsPageLayout } from "@/_pages/posts/PostsPageLayout";
 import { MASTER_CATEGORIES } from "@/features/category/constants";
 import { CategoryType } from "@/features/category/types";
 import { MASTER_TAGS } from "@/features/post/subFeatures/tag/constants";
@@ -25,7 +25,7 @@ const Category: NextPageWithLayout<CategoryProps> = (props) => {
 Category.getLayout = function getLayout(page: ReactElement) {
   return (
     <BaseLayout>
-      <CategoryPageLayout>{page}</CategoryPageLayout>
+      <PostsPageLayout {...page.props}>{page}</PostsPageLayout>
     </BaseLayout>
   );
 };
