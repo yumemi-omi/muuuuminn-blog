@@ -9,11 +9,11 @@ import { useTranslation } from "@/libs/i18n";
 import { ArticleJsonLd, ArticleJsonLdProps } from "@/shared/components/JsonLd";
 import { ArticleSeo, ArticleSeoProps } from "@/shared/components/Seo";
 
-type PostPageProps = {
+type PostProps = {
   post: PostDetailType;
   relatedPosts: PostListType;
 };
-export const PostPage: FC<PostPageProps> = ({ post, relatedPosts }) => {
+export const Post: FC<PostProps> = ({ post, relatedPosts }) => {
   const { t } = useTranslation();
 
   const seo: ArticleSeoProps = {

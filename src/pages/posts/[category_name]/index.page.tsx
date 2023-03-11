@@ -1,7 +1,5 @@
 import { ReactElement } from "react";
 
-import { CategoryPage } from "@/_pages/posts/CategoryPage";
-import { PostsPageLayout } from "@/_pages/posts/PostsPageLayout";
 import { MASTER_CATEGORIES } from "@/features/category/constants";
 import { CategoryType } from "@/features/category/types";
 import { MASTER_TAGS } from "@/features/post/subFeatures/tag/constants";
@@ -10,22 +8,26 @@ import { PostListType } from "@/features/post/types";
 import { getAllPosts } from "@/libs/markdown/api";
 import { BaseLayout } from "@/shared/components/BaseLayout";
 
-import type { NextPageWithLayout } from "@/pages/_app";
+import { PostsLayout } from "../PostsLayout";
 
-type CategoryProps = {
+import { Category } from "./Category";
+
+import type { NextPageWithLayout } from "@/pages/_app.page";
+
+type CategoryPageProps = {
   posts: PostListType;
   categories: CategoryType[];
   tags: TagType[];
 };
 
-const Category: NextPageWithLayout<CategoryProps> = (props) => {
-  return <CategoryPage {...props} />;
+const CategoryPage: NextPageWithLayout<CategoryPageProps> = (props) => {
+  return <Category {...props} />;
 };
 
-Category.getLayout = function getLayout(page: ReactElement) {
+CategoryPage.getLayout = function getLayout(page: ReactElement) {
   return (
     <BaseLayout>
-      <PostsPageLayout {...page.props}>{page}</PostsPageLayout>
+      <PostsLayout {...page.props}>{page}</PostsLayout>
     </BaseLayout>
   );
 };
@@ -78,4 +80,4 @@ export async function getStaticPaths() {
   };
 }
 
-export default Category;
+export default CategoryPage;

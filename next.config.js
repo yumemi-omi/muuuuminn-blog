@@ -22,6 +22,7 @@ const nextConfig = {
       },
     ];
   },
+  pageExtensions: ["page.tsx", "page.ts"],
   experimental: {
     scrollRestoration: true,
   },

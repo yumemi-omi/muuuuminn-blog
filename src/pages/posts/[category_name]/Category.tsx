@@ -6,12 +6,12 @@ import { TagType } from "@/features/post/subFeatures/tag/types";
 import { PostListType } from "@/features/post/types";
 import { Box } from "@/libs/chakra";
 
-type PostsPageProps = {
+type CategoryProps = {
   posts: PostListType;
   tags: TagType[];
 };
 
-export const PostsPage: FC<PostsPageProps> = ({ posts, tags }) => {
+export const Category: FC<CategoryProps> = ({ posts, tags }) => {
   const router = useRouter();
 
   const tagNameAsQuery = (router.query.tag as string) || "";

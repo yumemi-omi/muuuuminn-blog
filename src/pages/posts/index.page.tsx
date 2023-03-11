@@ -1,7 +1,5 @@
 import { GetStaticProps, GetStaticPropsContext } from "next";
 
-import { PostsPage } from "@/_pages/posts/PostsPage";
-import { PostsPageLayout } from "@/_pages/posts/PostsPageLayout";
 import { MASTER_CATEGORIES } from "@/features/category/constants";
 import { CategoryType } from "@/features/category/types";
 import { MASTER_TAGS } from "@/features/post/subFeatures/tag/constants";
@@ -11,27 +9,30 @@ import { getAllPosts } from "@/libs/markdown/api";
 import generateRssFeed from "@/libs/rss/generateRSSFeed";
 import { BaseLayout } from "@/shared/components/BaseLayout";
 
-import type { NextPageWithLayout } from "@/pages/_app";
+import { Posts } from "./Posts";
+import { PostsLayout } from "./PostsLayout";
+
+import type { NextPageWithLayout } from "@/pages/_app.page";
 import type { ReactElement } from "react";
 
-type HomeProps = {
+type PostsPageProps = {
   posts: PostListType;
   categories: CategoryType[];
   tags: TagType[];
 };
 
-const Home: NextPageWithLayout<HomeProps> = (props) => {
+const PostsPage: NextPageWithLayout<PostsPageProps> = (props) => {
   return (
     <>
-      <PostsPage {...props} />
+      <Posts {...props} />
     </>
   );
 };
 
-Home.getLayout = function getLayout(page: ReactElement) {
+PostsPage.getLayout = function getLayout(page: ReactElement) {
   return (
     <BaseLayout>
-      <PostsPageLayout {...page.props}>{page}</PostsPageLayout>
+      <PostsLayout {...page.props}>{page}</PostsLayout>
     </BaseLayout>
   );
 };
@@ -58,4 +59,4 @@ export const getStaticProps: GetStaticProps = async (_context: GetStaticPropsCon
   };
 };
 
-export default Home;
+export default PostsPage;

@@ -1,28 +1,29 @@
 import { ReactElement } from "react";
 import markdownToHtml from "zenn-markdown-html";
 
-import { PostPage } from "@/_pages/post/PostPage";
-import { PostPageLayout } from "@/_pages/post/PostPageLayout";
 import { PostDetailType, PostListType } from "@/features/post/types";
 import { getRelatedPosts } from "@/features/related-posts/utils/getRelatedPosts";
 import { getPostBySlug, getAllPosts } from "@/libs/markdown/api";
 import { BaseLayout } from "@/shared/components/BaseLayout";
 
-import type { NextPageWithLayout } from "@/pages/_app";
+import { Post } from "./Post";
+import { PostLayout } from "./PostLayout";
 
-type PostProps = {
+import type { NextPageWithLayout } from "@/pages/_app.page";
+
+type PostPageProps = {
   post: PostDetailType;
   relatedPosts: PostListType;
 };
 
-const Post: NextPageWithLayout<PostProps> = ({ post, relatedPosts }) => {
-  return <PostPage post={post} relatedPosts={relatedPosts} />;
+const PostPage: NextPageWithLayout<PostPageProps> = ({ post, relatedPosts }) => {
+  return <Post post={post} relatedPosts={relatedPosts} />;
 };
 
-Post.getLayout = function getLayout(page: ReactElement) {
+PostPage.getLayout = function getLayout(page: ReactElement) {
   return (
     <BaseLayout>
-      <PostPageLayout>{page}</PostPageLayout>
+      <PostLayout>{page}</PostLayout>
     </BaseLayout>
   );
 };
@@ -94,4 +95,4 @@ export async function getStaticPaths() {
   };
 }
 
-export default Post;
+export default PostPage;

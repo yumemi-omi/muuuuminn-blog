@@ -1,3 +1,3 @@
-export type Policy = {
+export type PolicyType = {
   [key: string]: string;
 };

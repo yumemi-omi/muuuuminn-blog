@@ -8,13 +8,13 @@ import { Flex } from "@/libs/chakra";
 import { useTranslation } from "@/libs/i18n";
 import { BasicSeo, BasicSeoProps } from "@/shared/components/Seo";
 
-type PostsPageLayoutProps = {
+type PostsLayoutProps = {
   categories: CategoryType[];
   tags: TagType[];
   children: ReactNode;
 };
 
-export const PostsPageLayout: FC<PostsPageLayoutProps> = ({ children, categories, tags }) => {
+export const PostsLayout: FC<PostsLayoutProps> = ({ children, categories, tags }) => {
   const { t } = useTranslation();
 
   const seo: BasicSeoProps = {
