@@ -58,7 +58,7 @@
     "@types/react-window": "1.8.5",
     "@types/rss": "0.0.30",
     "@typescript-eslint/eslint-plugin": "5.54.1",
-    "@typescript-eslint/parser": "5.54.0",
+    "@typescript-eslint/parser": "5.54.1",
     "dependency-cruiser": "12.10.0",
     "dotenv": "16.0.3",
     "eslint": "8.35.0",
