@@ -7,7 +7,7 @@ import { MASTER_TAGS } from "@/features/tag/constants";
 import { TagType } from "@/features/tag/types";
 import { getAllPosts } from "@/libs/markdown/api";
 import generateRssFeed from "@/libs/rss/generateRSSFeed";
-import { BaseLayout } from "@/shared/components/BaseLayout";
+import { BaseLayout } from "@/shared/components";
 
 import { Posts } from "./Posts";
 import { PostsLayout } from "./PostsLayout";

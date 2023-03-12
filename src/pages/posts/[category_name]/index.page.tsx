@@ -6,7 +6,7 @@ import { PostListType } from "@/features/post/types";
 import { MASTER_TAGS } from "@/features/tag/constants";
 import { TagType } from "@/features/tag/types";
 import { getAllPosts } from "@/libs/markdown/api";
-import { BaseLayout } from "@/shared/components/BaseLayout";
+import { BaseLayout } from "@/shared/components";
 
 import { PostsLayout } from "../PostsLayout";
 

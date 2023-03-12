@@ -9,7 +9,7 @@ import { WrapTagList } from "@/features/tag/components/TagList";
 import { Box, BoxProps, HStack, VStack } from "@/libs/chakra";
 import { Text } from "@/libs/chakra";
 import { useTranslation } from "@/libs/i18n";
-import { RichMarkdownContent } from "@/shared/components/RichMarkdownContent";
+import { RichMarkdownContent } from "@/shared/components";
 
 type PostDetailProps = {
   postDetail: PostDetailType;

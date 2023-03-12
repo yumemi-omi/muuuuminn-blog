@@ -4,7 +4,7 @@ import markdownToHtml from "zenn-markdown-html";
 import { PostDetailType, PostListType } from "@/features/post/types";
 import { getRelatedPosts } from "@/features/related-posts/utils/getRelatedPosts";
 import { getPostBySlug, getAllPosts } from "@/libs/markdown/api";
-import { BaseLayout } from "@/shared/components/BaseLayout";
+import { BaseLayout } from "@/shared/components";
 
 import { Post } from "./Post";
 import { PostLayout } from "./PostLayout";

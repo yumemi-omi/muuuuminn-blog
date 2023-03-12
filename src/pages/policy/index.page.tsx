@@ -1,7 +1,7 @@
 import { PolicyType } from "@/features/policy/types";
 import { getMarkdownFileByFilename } from "@/libs/markdown/api";
 import markdownToHtml from "@/libs/markdown/markdownToHtml";
-import { BaseLayout } from "@/shared/components/BaseLayout";
+import { BaseLayout } from "@/shared/components";
 
 import { Policy } from "./Policy";
 import { PolicyLayout } from "./PolicyLayout";

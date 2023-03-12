@@ -3,8 +3,8 @@ import { FC } from "react";
 import { PolicyType } from "@/features/policy/types";
 import { Box } from "@/libs/chakra";
 import { useTranslation } from "@/libs/i18n";
+import { BasicSeo, BasicSeoProps } from "@/shared/components";
 import { RichMarkdownContent } from "@/shared/components/RichMarkdownContent";
-import { BasicSeo, BasicSeoProps } from "@/shared/components/Seo";
 
 type PolicyProps = {
   policy: PolicyType;

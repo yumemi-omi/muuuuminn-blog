@@ -6,7 +6,7 @@ import { TagFilter } from "@/features/tag/components/TagFilter";
 import { TagType } from "@/features/tag/types";
 import { Flex } from "@/libs/chakra";
 import { useTranslation } from "@/libs/i18n";
-import { BasicSeo, BasicSeoProps } from "@/shared/components/Seo";
+import { BasicSeo, BasicSeoProps } from "@/shared/components";
 
 type PostsLayoutProps = {
   categories: CategoryType[];
