@@ -67,8 +67,8 @@ const _NoWrapTagList: FC<NoWrapTagListProps> = ({ tags, tagProps, ...boxProps })
             key={tag.id}
             id={tag.id}
             flexShrink={0}
-            // iPhone SEで2つタグが見えるギリギリのサイズ
-            width={"78px"}
+            // タグがひとつであれば、省略せずに全表示する
+            width={tags.length === 1 ? "full" : "90px"}
             height={6}
           >
             {index === lastVisibleTagIndex ? (
