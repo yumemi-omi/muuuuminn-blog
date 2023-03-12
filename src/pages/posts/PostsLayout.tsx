@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import { FC, ReactNode } from "react";
 
 import { CategoryTabs } from "@/features/category/components/CategoryTabs";
@@ -9,16 +10,22 @@ import { useTranslation } from "@/libs/i18n";
 import { BasicSeo, BasicSeoProps } from "@/shared/components";
 
 type PostsLayoutProps = {
+  children: ReactNode;
   categories: CategoryType[];
   tags: TagType[];
-  children: ReactNode;
 };
 
 export const PostsLayout: FC<PostsLayoutProps> = ({ children, categories, tags }) => {
+  const router = useRouter();
   const { t } = useTranslation();
 
+  const categoryNameAsQuery = (router.query.category_name as string) || "";
+
+  const title = categoryNameAsQuery
+    ? `${categoryNameAsQuery.toUpperCase()} | ${t.PAGE.POSTS}`
+    : t.PAGE.POSTS;
   const seo: BasicSeoProps = {
-    title: t.PAGE.POSTS,
+    title,
     description: t.DESCRIPTION.POSTS,
     path: "/",
   };
