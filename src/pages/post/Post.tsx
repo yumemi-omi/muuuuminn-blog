@@ -1,9 +1,9 @@
 import { FC } from "react";
 
-import { AdSense } from "@/features/advertise/components/AdSense";
-import { PostDetail } from "@/features/post/components/PostDetail";
+import { AdSense } from "@/features/advertise/components";
+import { PostDetail } from "@/features/post/components";
 import { PostDetailType, PostListType } from "@/features/post/types";
-import { RelatedPostsArea } from "@/features/related-posts/components/RelatedPostsArea";
+import { RelatedPostsArea } from "@/features/related-posts/components";
 import { Stack } from "@/libs/chakra";
 import { useTranslation } from "@/libs/i18n";
 import {

@@ -1,6 +1,6 @@
 import { FC, memo } from "react";
 
-import { PostCard } from "@/features/post/components/PostCard";
+import { PostCard } from "@/features/post/components";
 import { PostListType } from "@/features/post/types";
 import { Stack, Text } from "@/libs/chakra";
 import { useTranslation } from "@/libs/i18n";

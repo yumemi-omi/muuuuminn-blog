@@ -1,11 +1,10 @@
 import { useBreakpointValue } from "@chakra-ui/react";
 import { FC } from "react";
 
-import { Category } from "@/features/category/components/Category";
-import { PostDate } from "@/features/post/components/PostDate";
-import { PostThumbnail } from "@/features/post/components/PostThumbnail";
+import { Category } from "@/features/category/components";
+import { PostDate, PostThumbnail } from "@/features/post/components";
 import { PostDetailType } from "@/features/post/types";
-import { WrapTagList } from "@/features/tag/components/TagList";
+import { WrapTagList } from "@/features/tag/components";
 import { Box, BoxProps, HStack, VStack } from "@/libs/chakra";
 import { Text } from "@/libs/chakra";
 import { useTranslation } from "@/libs/i18n";

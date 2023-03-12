@@ -1,9 +1,9 @@
 import { useRouter } from "next/router";
 import { FC, ReactNode } from "react";
 
-import { CategoryTabs } from "@/features/category/components/CategoryTabs";
+import { CategoryTabs } from "@/features/category/components";
 import { CategoryType } from "@/features/category/types";
-import { TagFilter } from "@/features/tag/components/TagFilter";
+import { TagFilter } from "@/features/tag/components";
 import { TagType } from "@/features/tag/types";
 import { Flex } from "@/libs/chakra";
 import { useTranslation } from "@/libs/i18n";
