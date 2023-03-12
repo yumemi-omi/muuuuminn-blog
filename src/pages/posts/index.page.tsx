@@ -2,9 +2,9 @@ import { GetStaticProps, GetStaticPropsContext } from "next";
 
 import { MASTER_CATEGORIES } from "@/features/category/constants";
 import { CategoryType } from "@/features/category/types";
-import { MASTER_TAGS } from "@/features/post/subFeatures/tag/constants";
-import { TagType } from "@/features/post/subFeatures/tag/types";
 import { PostListType } from "@/features/post/types";
+import { MASTER_TAGS } from "@/features/tag/constants";
+import { TagType } from "@/features/tag/types";
 import { getAllPosts } from "@/libs/markdown/api";
 import generateRssFeed from "@/libs/rss/generateRSSFeed";
 import { BaseLayout } from "@/shared/components/BaseLayout";

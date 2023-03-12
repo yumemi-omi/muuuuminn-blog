@@ -2,7 +2,7 @@ import { Select } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { ChangeEvent, FC, memo, useCallback } from "react";
 
-import { TagType } from "@/features/post/subFeatures/tag/types";
+import { TagType } from "@/features/tag/types";
 import { Flex, Text } from "@/libs/chakra";
 import { useTranslation } from "@/libs/i18n";
 

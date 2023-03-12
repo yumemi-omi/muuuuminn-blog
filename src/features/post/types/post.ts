@@ -1,5 +1,5 @@
 import { CategoryType } from "@/features/category/types";
-import { TagType } from "@/features/post/subFeatures/tag/types";
+import { TagType } from "@/features/tag/types";
 
 export type PostType = {
   content: string;

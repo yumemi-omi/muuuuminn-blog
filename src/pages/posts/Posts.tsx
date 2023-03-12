@@ -2,8 +2,8 @@ import { useRouter } from "next/router";
 import { FC, useMemo } from "react";
 
 import { PostCardList } from "@/features/post/components/PostCardList";
-import { TagType } from "@/features/post/subFeatures/tag/types";
 import { PostListType } from "@/features/post/types";
+import { TagType } from "@/features/tag/types";
 import { Box } from "@/libs/chakra";
 
 type PostsProps = {

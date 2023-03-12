@@ -1,6 +1,6 @@
 import { CategoryType } from "@/features/category/types";
-import { TagType } from "@/features/post/subFeatures/tag/types";
 import { PostListType } from "@/features/post/types";
+import { TagType } from "@/features/tag/types";
 
 export const getRelatedPosts = (
   posts: PostListType,

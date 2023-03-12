@@ -1,6 +1,6 @@
 import { FC, useCallback, useEffect, useMemo, useRef, useState, memo } from "react";
 
-import { TagType } from "@/features/post/subFeatures/tag/types";
+import { TagType } from "@/features/tag/types";
 import { BoxProps, Box } from "@/libs/chakra";
 
 import { Tag } from "./Tag";

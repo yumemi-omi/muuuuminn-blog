@@ -2,7 +2,7 @@ import { useColorMode } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { FC, memo, useMemo } from "react";
 
-import { TagType } from "@/features/post/subFeatures/tag/types";
+import { TagType } from "@/features/tag/types";
 import { Box } from "@/libs/chakra";
 import { CustomNextLink, CustomNextLinkProps } from "@/libs/next";
 

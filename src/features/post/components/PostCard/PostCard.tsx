@@ -5,8 +5,8 @@ import { Category } from "@/features/category/components/Category";
 import { PostDate } from "@/features/post/components/PostDate";
 import { PostThumbnail } from "@/features/post/components/PostThumbnail";
 import { PostTitleLink } from "@/features/post/components/PostTitleLink";
-import { NoWrapTagList } from "@/features/post/subFeatures/tag/components/TagList";
 import { PostType } from "@/features/post/types";
+import { NoWrapTagList } from "@/features/tag/components/TagList";
 import { HStack, Text, VStack } from "@/libs/chakra";
 import { useTranslation } from "@/libs/i18n";
 
