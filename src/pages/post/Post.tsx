@@ -6,8 +6,12 @@ import { PostDetailType, PostListType } from "@/features/post/types";
 import { RelatedPostsArea } from "@/features/related-posts/components/RelatedPostsArea";
 import { Stack } from "@/libs/chakra";
 import { useTranslation } from "@/libs/i18n";
-import { ArticleSeo, ArticleSeoProps } from "@/shared/components";
-import { ArticleJsonLd, ArticleJsonLdProps } from "@/shared/components";
+import {
+  ArticleSeo,
+  ArticleSeoProps,
+  ArticleJsonLd,
+  ArticleJsonLdProps,
+} from "@/shared/components";
 
 type PostProps = {
   post: PostDetailType;
