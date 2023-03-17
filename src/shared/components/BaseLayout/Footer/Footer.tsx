@@ -9,9 +9,9 @@ type FooterProps = FlexProps;
 export const Footer: FC<FooterProps> = () => {
   const { t } = useTranslation();
   return (
-    <Flex as={"footer"} py={"1"} direction={"column"} alignItems={"center"}>
+    <Flex alignItems={"center"} as={"footer"} direction={"column"} py={"1"}>
       <CustomNextLink href={"/policy"} prefetch={false}>
-        <Text fontWeight={"bold"} fontSize={"sm"}>
+        <Text fontSize={"sm"} fontWeight={"bold"}>
           {t.PAGE.POLICY}
         </Text>
       </CustomNextLink>

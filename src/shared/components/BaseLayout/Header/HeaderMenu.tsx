@@ -10,8 +10,8 @@ export const HeaderMenu = () => {
   return (
     <Menu placement={"bottom-end"}>
       <MenuButton
-        as={IconButton}
         aria-label={t.ARIA_LABEL.MENU_BUTTON}
+        as={IconButton}
         icon={<HamburgerIcon />}
         variant="outline"
       />
@@ -19,16 +19,15 @@ export const HeaderMenu = () => {
         {/* https://github.com/chakra-ui/chakra-ui/issues/4892#issuecomment-1003213102
             NextLinkとMenuItemを組み合わせる時は、NextLinkでa要素としてのMenuItemをラップする
         */}
-        <CustomNextLink linkType="withChakraLink" href={"/posts"} prefetch={false}>
+        <CustomNextLink href={"/posts"} linkType="withChakraLink" prefetch={false}>
           <MenuItem>
-            <Text fontWeight={"bold"} fontSize={{ base: "sm", md: "md" }}>
+            <Text fontSize={{ base: "sm", md: "md" }} fontWeight={"bold"}>
               {t.PAGE.POSTS}
             </Text>
           </MenuItem>
         </CustomNextLink>
-        <CustomNextLink linkType="plainNextLink" tabIndex={2} href={"/policy"} prefetch={false}>
+        <CustomNextLink href={"/policy"} linkType="plainNextLink" prefetch={false} tabIndex={2}>
           <MenuItem
-            as="a"
             _focus={{
               outlineColor: "transparent",
             }}
@@ -36,9 +35,10 @@ export const HeaderMenu = () => {
               outlineOffset: "-3px",
               outlineColor: "green",
             }}
+            as="a"
             tabIndex={2}
           >
-            <Text fontWeight={"bold"} fontSize={{ base: "sm", md: "md" }}>
+            <Text fontSize={{ base: "sm", md: "md" }} fontWeight={"bold"}>
               {t.PAGE.POLICY}
             </Text>
           </MenuItem>

@@ -10,9 +10,9 @@ export const ToggleAppearanceButton = () => {
 
   return (
     <IconButton
-      onClick={toggleColorMode}
       aria-label={t.ARIA_LABEL.TOGGLE_APPEARANCE_BUTTON}
       icon={Icon}
+      onClick={toggleColorMode}
       variant="outline"
     />
   );

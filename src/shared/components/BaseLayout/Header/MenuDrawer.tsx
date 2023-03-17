@@ -56,13 +56,13 @@ export const MenuDrawer = () => {
   return (
     <>
       <IconButton
-        variant="outline"
         aria-label={t.ARIA_LABEL.MENU_BUTTON}
         icon={<HamburgerIcon />}
-        ref={btnRef}
         onClick={onOpen}
+        ref={btnRef}
+        variant="outline"
       />
-      <Drawer isOpen={isOpen} placement="right" onClose={onClose} finalFocusRef={btnRef}>
+      <Drawer finalFocusRef={btnRef} isOpen={isOpen} onClose={onClose} placement="right">
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
@@ -72,12 +72,12 @@ export const MenuDrawer = () => {
             <Stack spacing={4}>
               {MenuLinks.map((menuLink) => (
                 <CustomNextLink
-                  key={menuLink.href}
                   href={menuLink.href}
-                  target={menuLink.targetBlank ? "_blank" : undefined}
+                  key={menuLink.href}
                   onClick={onClose}
+                  target={menuLink.targetBlank ? "_blank" : undefined}
                 >
-                  <Text fontWeight={"bold"} fontSize={{ base: "sm", md: "md" }}>
+                  <Text fontSize={{ base: "sm", md: "md" }} fontWeight={"bold"}>
                     {t.PAGE[menuLink.name]}
                   </Text>
                 </CustomNextLink>

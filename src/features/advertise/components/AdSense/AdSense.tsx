@@ -21,11 +21,11 @@ export const AdSense: React.FC = () => {
     <Box key={asPath} width={"full"}>
       <ins
         className="adsbygoogle"
-        style={{ display: "block" }}
-        data-adtest={process.env.NODE_ENV === "production" ? "off" : "on"}
-        data-ad-format="autorelaxed"
         data-ad-client="ca-pub-9104412012929052"
+        data-ad-format="autorelaxed"
         data-ad-slot="4647394274"
+        data-adtest={process.env.NODE_ENV === "production" ? "off" : "on"}
+        style={{ display: "block" }}
       ></ins>
     </Box>
   );

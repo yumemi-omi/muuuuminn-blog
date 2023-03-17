@@ -59,20 +59,20 @@ const _NoWrapTagList: FC<NoWrapTagListProps> = ({ tags, tagProps, ...boxProps })
   }, [handleIntersection]);
 
   return (
-    <Box ref={childrenWrapper} display={"flex"} gap={2} width={"max-content"} {...boxProps}>
+    <Box display={"flex"} gap={2} ref={childrenWrapper} width={"max-content"} {...boxProps}>
       {tags.map((tag, index) => {
         const isVisibleTag = visibilityMap[tag.id];
         return (
           <Box
-            key={tag.id}
+            height={6}
             id={tag.id}
+            key={tag.id}
             flexShrink={0}
             // タグがひとつであれば、省略せずに全表示する
             width={tags.length === 1 ? "full" : "90px"}
-            height={6}
           >
             {index === lastVisibleTagIndex ? (
-              <TagMenu tags={invisibleTags} countsOfTagInMenu={invisibleTags.length} />
+              <TagMenu countsOfTagInMenu={invisibleTags.length} tags={invisibleTags} />
             ) : (
               <Tag {...tagProps} tag={tag} visibility={isVisibleTag ? "visible" : "hidden"} />
             )}

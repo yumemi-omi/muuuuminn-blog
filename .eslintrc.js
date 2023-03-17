@@ -45,6 +45,8 @@ const eslintConfig = {
         destructuredArrayIgnorePattern: "^_",
       },
     ],
+    // Propsのソート
+    "react/jsx-sort-props": "warn",
   },
   overrides: [
     {

@@ -13,31 +13,31 @@ export const Logo: FC<LogoProps> = memo(function _logo({ ...rest }) {
   return (
     <>
       <AspectRatio
+        hidden={colorMode === "dark"}
         ratio={1 / 0.689}
         w={{ base: "40px", md: "60px" }}
-        hidden={colorMode === "dark"}
         {...rest}
       >
         <ChakraNextImage
-          src={"/logo/logo_transparent_reverse_no_title.png"}
           alt={t.ALT.SITE_LOGO}
           borderRadius={"xl"}
           layout={"fill"}
           quality={50}
+          src={"/logo/logo_transparent_reverse_no_title.png"}
         />
       </AspectRatio>
       <AspectRatio
+        hidden={colorMode === "light"}
         ratio={1 / 0.689}
         w={{ base: "40px", md: "60px" }}
-        hidden={colorMode === "light"}
         {...rest}
       >
         <ChakraNextImage
-          src={"/logo/logo_transparent_no_title.png"}
           alt={t.ALT.SITE_LOGO}
           borderRadius={"xl"}
           layout={"fill"}
           quality={50}
+          src={"/logo/logo_transparent_no_title.png"}
         />
       </AspectRatio>
     </>

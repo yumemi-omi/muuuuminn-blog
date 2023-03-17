@@ -16,14 +16,14 @@ const _PostCard: FC<PostCardProps> = ({ post, ...rest }) => {
   const { t } = useTranslation();
   const alt = `${post.title}${t.ALT.THUMBNAIL_OF}`;
   return (
-    <LinkBox as={"article"} py={"4"} overflowX={"hidden"} {...rest}>
+    <LinkBox as={"article"} overflowX={"hidden"} py={"4"} {...rest}>
       <VStack align={"start"}>
         <HStack spacing={4}>
           {post.category && <Category asLink category={post.category} />}
-          <PostDate fontSize={"sm"} date={post.date} />
+          <PostDate date={post.date} fontSize={"sm"} />
         </HStack>
         <HStack flexShrink={0} spacing={4}>
-          <PostThumbnail flexShrink={0} src={post.coverImage} imageQuality={50} alt={alt} />
+          <PostThumbnail alt={alt} flexShrink={0} imageQuality={50} src={post.coverImage} />
           <VStack alignItems={"flex-start"}>
             <PostTitleLink post={post} />
             <NoWrapTagList tagProps={{ shallow: true, replace: true }} tags={post.tags} />

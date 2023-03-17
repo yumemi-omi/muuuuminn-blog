@@ -40,8 +40,8 @@ const _TagFilter: FC<TagFilterProps> = ({ tags }) => {
     <Flex alignItems={"center"} gap={2} justifyContent={"center"}>
       <Select
         onChange={onChange}
-        size={"xs"}
         placeholder={t.COMPONENTS.TAG.PLACEHOLDER}
+        size={"xs"}
         value={tagNameAsQuery}
       >
         {tags.map((tag) => (
@@ -50,7 +50,7 @@ const _TagFilter: FC<TagFilterProps> = ({ tags }) => {
           </option>
         ))}
       </Select>
-      <Text fontSize={"xs"} flexShrink={0}>
+      <Text flexShrink={0} fontSize={"xs"}>
         {t.COMPONENTS.TAG.LABEL}
       </Text>
     </Flex>

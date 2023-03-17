@@ -27,21 +27,21 @@ export const ArticleJsonLd: FC<ArticleJsonLdProps> = (props) => {
 
   return (
     <_ArticleJsonLd
-      url={pageUrl}
-      title={title}
-      images={images}
-      datePublished={datePublished}
-      dateModified={dateModified}
       authorName={[
         {
           name: "muuuuminn",
           url: "https://twitter.com/4ho_v",
         },
       ]}
-      publisherName="muuuuminn"
-      publisherLogo="https://user-images.githubusercontent.com/38467746/206959970-b3ef349e-e1fc-4646-973f-a7862e1f5d09.png"
+      dateModified={dateModified}
+      datePublished={datePublished}
       description={description}
+      images={images}
       isAccessibleForFree={true}
+      publisherLogo="https://user-images.githubusercontent.com/38467746/206959970-b3ef349e-e1fc-4646-973f-a7862e1f5d09.png"
+      publisherName="muuuuminn"
+      title={title}
+      url={pageUrl}
     />
   );
 };

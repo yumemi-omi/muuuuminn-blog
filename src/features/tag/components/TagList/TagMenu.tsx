@@ -24,14 +24,14 @@ const _TagMenu: FC<TagProps> = ({ countsOfTagInMenu, tags, ...rest }) => {
     <Popover>
       <PopoverTrigger>
         <Button
-          title={`+${countsOfTagInMenu}`}
-          variant={"outline"}
-          size={"sm"}
-          height={6}
-          display={"flex"}
-          justifyContent={"center"}
           alignItems={"center"}
           borderRadius={16}
+          display={"flex"}
+          height={6}
+          justifyContent={"center"}
+          size={"sm"}
+          title={`+${countsOfTagInMenu}`}
+          variant={"outline"}
           {...rest}
         >
           <Text fontSize={"sm"}>+{countsOfTagInMenu}</Text>
@@ -40,10 +40,10 @@ const _TagMenu: FC<TagProps> = ({ countsOfTagInMenu, tags, ...rest }) => {
       <PopoverContent>
         <PopoverArrow />
         {/* TODO: CloseButtonをいい感じにおきたい */}
-        <PopoverBody display={"flex"} gap={2} py={2} overflowX={"auto"}>
+        <PopoverBody display={"flex"} gap={2} overflowX={"auto"} py={2}>
           {tags.map((tag, index) => (
-            <Box key={`tag_in_menu_${tag.id}_${index}`} flexShrink={0}>
-              <Tag shallow replace tag={tag} />
+            <Box flexShrink={0} key={`tag_in_menu_${tag.id}_${index}`}>
+              <Tag replace shallow tag={tag} />
             </Box>
           ))}
         </PopoverBody>

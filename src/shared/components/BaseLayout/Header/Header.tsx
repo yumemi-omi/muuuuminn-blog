@@ -17,23 +17,23 @@ export const Header: FC<HeaderProps> = memo(function _header() {
   const { colorMode } = useColorMode();
 
   return (
-    <Flex as={"header"} py={"4"} alignItems={"center"}>
+    <Flex alignItems={"center"} as={"header"} py={"4"}>
       <CustomNextLink
-        p={"2"}
+        _hover={{ backgroundColor: "#fec8c82e" }}
+        borderRadius={"xl"}
         href={"/posts"}
+        p={"2"}
         prefetch={false}
         style={{
           textDecoration: "none",
         }}
-        borderRadius={"xl"}
-        _hover={{ backgroundColor: "#fec8c82e" }}
       >
-        <Flex gap={2} alignItems={"center"}>
+        <Flex alignItems={"center"} gap={2}>
           <Logo />
           <Text
-            fontWeight={"extrabold"}
             color={colorMode === "dark" ? "#fec8c8" : "brand.800"}
             fontSize={{ base: "sm", md: "lg" }}
+            fontWeight={"extrabold"}
           >
             {t.SITE_NAME}
           </Text>

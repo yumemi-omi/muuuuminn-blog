@@ -38,14 +38,14 @@ export const CustomNextLink: FC<
     case "withChakraLink":
       return (
         <WithChakraLink
-          passHref={passHref}
-          href={href}
           as={as}
+          href={href}
+          locale={locale}
+          passHref={passHref}
+          prefetch={prefetch}
           replace={replace}
           scroll={scroll}
           shallow={shallow}
-          prefetch={prefetch}
-          locale={locale}
           {...rest}
         >
           {children}
@@ -54,14 +54,14 @@ export const CustomNextLink: FC<
     case "plainNextLink":
       return (
         <_NextLink
-          passHref={passHref}
-          href={href}
           as={as}
+          href={href}
+          locale={locale}
+          passHref={passHref}
+          prefetch={prefetch}
           replace={replace}
           scroll={scroll}
           shallow={shallow}
-          prefetch={prefetch}
-          locale={locale}
           {...rest}
         >
           {children}
@@ -70,14 +70,14 @@ export const CustomNextLink: FC<
     case "withOverlay":
       return (
         <WithOverlay
-          passHref={passHref}
-          href={href}
           as={as}
+          href={href}
+          locale={locale}
+          passHref={passHref}
+          prefetch={prefetch}
           replace={replace}
           scroll={scroll}
           shallow={shallow}
-          prefetch={prefetch}
-          locale={locale}
           {...rest}
         >
           {children}
@@ -86,14 +86,14 @@ export const CustomNextLink: FC<
     default:
       return (
         <WithChakraLink
-          passHref={passHref}
-          href={href}
           as={as}
+          href={href}
+          locale={locale}
+          passHref={passHref}
+          prefetch={prefetch}
           replace={replace}
           scroll={scroll}
           shallow={shallow}
-          prefetch={prefetch}
-          locale={locale}
           {...rest}
         >
           {children}
@@ -125,14 +125,14 @@ const WithChakraLink: FC<CustomNextLinkProps> = ({
 }) => {
   return (
     <_NextLink
-      passHref={passHref}
-      href={href}
       as={as}
+      href={href}
+      locale={locale}
+      passHref={passHref}
+      prefetch={prefetch}
       replace={replace}
       scroll={scroll}
       shallow={shallow}
-      prefetch={prefetch}
-      locale={locale}
     >
       <OriginChakraLink {...rest} rel={isExternalLink(href) ? "nofollow noreferrer" : undefined}>
         {children}
@@ -157,14 +157,14 @@ const WithOverlay: FC<LinkOverlayProps> = ({
 }) => {
   return (
     <_NextLink
-      passHref={passHref}
-      href={href}
       as={as}
+      href={href}
+      locale={locale}
+      passHref={passHref}
+      prefetch={prefetch}
       replace={replace}
       scroll={scroll}
       shallow={shallow}
-      prefetch={prefetch}
-      locale={locale}
     >
       <OriginLinkOverlay {...rest}>{children}</OriginLinkOverlay>
     </_NextLink>

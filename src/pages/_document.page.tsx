@@ -12,14 +12,14 @@ export default class Document extends NextDocument {
         <Head>
           <script
             async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9104412012929052"
             crossOrigin="anonymous"
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9104412012929052"
           ></script>
           <script async src="https://embed.zenn.studio/js/listen-embed-event.js"></script>
-          <link rel="icon" href="/favicons/favicon.ico" sizes="any" />
-          <link rel="icon" href="/favicons/icon.svg" type="image/svg+xml" />
-          <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
-          <link rel="manifest" href="/favicons/site.webmanifest" />
+          <link href="/favicons/favicon.ico" rel="icon" sizes="any" />
+          <link href="/favicons/icon.svg" rel="icon" type="image/svg+xml" />
+          <link href="/favicons/apple-touch-icon.png" rel="apple-touch-icon" />
+          <link href="/favicons/site.webmanifest" rel="manifest" />
         </Head>
         <body>
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />
