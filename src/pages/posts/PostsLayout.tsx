@@ -33,7 +33,7 @@ export const PostsLayout: FC<PostsLayoutProps> = ({ children, categories, tags }
   return (
     <>
       <BasicSeo {...seo} />
-      <Flex gap={2} height={"full"} flexDirection={"column"}>
+      <Flex flexDirection={"column"} gap={2} height={"full"}>
         <CategoryTabs categories={categories} />
         <TagFilter tags={tags} />
         {children}

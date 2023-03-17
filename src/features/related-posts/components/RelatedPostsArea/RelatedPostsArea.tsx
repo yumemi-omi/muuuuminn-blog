@@ -13,11 +13,11 @@ const _RelatedPostsArea: FC<RelatedPostsArea> = ({ relatedPosts }) => {
   const { t } = useTranslation();
   return (
     <Stack>
-      <Text as="h1" fontSize={"lg"} fontWeight={"bold"} borderBottom={"2px solid #fec8c8"}>
+      <Text as="h1" borderBottom={"2px solid #fec8c8"} fontSize={"lg"} fontWeight={"bold"}>
         {t.COMPONENTS.RELATED_POST_AREA.TITLE}
       </Text>
       {relatedPosts.map((relatedPost) => (
-        <PostCard post={relatedPost} key={relatedPost.slug} />
+        <PostCard key={relatedPost.slug} post={relatedPost} />
       ))}
     </Stack>
   );

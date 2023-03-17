@@ -49,11 +49,11 @@ export const Post: FC<PostProps> = ({ post, relatedPosts }) => {
       <ArticleSeo {...seo} />
       <ArticleJsonLd {...jsonLd} />
       <Stack
-        spacing={10}
+        marginX={"auto"}
+        marginY={{ base: 2 }}
         minWidth={"300px"}
         overflowX={"hidden"}
-        marginY={{ base: 2 }}
-        marginX={"auto"}
+        spacing={10}
       >
         <PostDetail postDetail={post} />
         {relatedPosts.length !== 0 && <RelatedPostsArea relatedPosts={relatedPosts} />}

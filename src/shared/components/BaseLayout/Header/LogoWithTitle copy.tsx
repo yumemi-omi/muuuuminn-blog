@@ -13,20 +13,20 @@ export const LogoWithTitle: FC<LogoWithTitleProps> = memo(function _logo() {
 
   return (
     <>
-      <AspectRatio ratio={1 / 1} w={{ base: "60px", md: "100px" }} hidden={colorMode === "dark"}>
+      <AspectRatio hidden={colorMode === "dark"} ratio={1 / 1} w={{ base: "60px", md: "100px" }}>
         <ChakraNextImage
-          src={"/logo/logo_transparent_reverse.png"}
           alt={t.ALT.SITE_LOGO}
           borderRadius={"xl"}
           layout={"fill"}
+          src={"/logo/logo_transparent_reverse.png"}
         />
       </AspectRatio>
-      <AspectRatio ratio={1 / 1} w={{ base: "60px", md: "100px" }} hidden={colorMode === "light"}>
+      <AspectRatio hidden={colorMode === "light"} ratio={1 / 1} w={{ base: "60px", md: "100px" }}>
         <ChakraNextImage
-          src={"/logo/logo_transparent.png"}
           alt={t.ALT.SITE_LOGO}
           borderRadius={"xl"}
           layout={"fill"}
+          src={"/logo/logo_transparent.png"}
         />
       </AspectRatio>
     </>

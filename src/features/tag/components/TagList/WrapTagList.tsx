@@ -17,7 +17,7 @@ const _WrapTagList: FC<WrapTagListProps> = ({ tags, tagProps, ...boxProps }) => 
   return (
     <Box display={"flex"} gap={2} {...boxProps}>
       {tags.map((tag) => {
-        return <Tag {...tagProps} tag={tag} key={tag.id} id={tag.id} />;
+        return <Tag {...tagProps} id={tag.id} key={tag.id} tag={tag} />;
       })}
     </Box>
   );
