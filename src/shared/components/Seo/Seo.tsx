@@ -27,11 +27,12 @@ export const BasicSeo: FC<BasicSeoProps> = (props) => {
 
   return (
     <NextSeo
-      title={title}
-      titleTemplate={"%s | muuuuminn blog"}
-      defaultTitle="muuuuminn blog"
       canonical={pageUrl}
+      defaultTitle="muuuuminn blog"
       description={description}
+      facebook={{
+        appId: "475650504470227",
+      }}
       nofollow={noindexAndFollow}
       noindex={noindexAndFollow}
       openGraph={{
@@ -41,12 +42,11 @@ export const BasicSeo: FC<BasicSeoProps> = (props) => {
         description,
         images: [ogImage],
       }}
+      title={title}
+      titleTemplate={"%s | muuuuminn blog"}
       twitter={{
         cardType: "summary_large_image",
         site: "@4ho_v",
-      }}
-      facebook={{
-        appId: "475650504470227",
       }}
     />
   );
@@ -79,11 +79,12 @@ export const ArticleSeo: FC<ArticleSeoProps> = (props) => {
 
   return (
     <NextSeo
-      title={title}
-      titleTemplate={"%s | muuuuminn blog"}
-      defaultTitle="muuuuminn blog"
       canonical={pageUrl}
+      defaultTitle="muuuuminn blog"
       description={description}
+      facebook={{
+        appId: "475650504470227",
+      }}
       nofollow={noindexAndFollow}
       noindex={noindexAndFollow}
       openGraph={{
@@ -97,12 +98,11 @@ export const ArticleSeo: FC<ArticleSeoProps> = (props) => {
         },
         images: [ogImage],
       }}
+      title={title}
+      titleTemplate={"%s | muuuuminn blog"}
       twitter={{
         cardType: "summary_large_image",
         site: "@4ho_v",
-      }}
-      facebook={{
-        appId: "475650504470227",
       }}
     />
   );

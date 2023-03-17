@@ -33,25 +33,25 @@ export const PostDetail: FC<PostDetailProps> = ({ postDetail, ...rest }) => {
       <VStack>
         <HStack alignSelf={"flex-start"} spacing={4}>
           {postDetail.category && <Category asLink category={postDetail.category} />}
-          <PostDate fontSize={"sm"} date={postDetail.date} />
+          <PostDate date={postDetail.date} fontSize={"sm"} />
         </HStack>
         <VStack>
           <PostThumbnail
-            src={postDetail.coverImage}
+            alt={alt}
+            enableBlur
             imageQuality={75}
             ratio={{ base: 1.85 / 1, md: 16 / 9 }}
             sizeSet={sizeSet}
-            enableBlur
-            alt={alt}
+            src={postDetail.coverImage}
           />
           <Text as={"h1"} fontSize={"lg"} fontWeight={"bold"}>
             {postDetail.title}
           </Text>
           <WrapTagList
-            tags={postDetail.tags}
             flexWrap={"wrap"}
-            width={"full"}
             justifyContent={"center"}
+            tags={postDetail.tags}
+            width={"full"}
           />
         </VStack>
       </VStack>

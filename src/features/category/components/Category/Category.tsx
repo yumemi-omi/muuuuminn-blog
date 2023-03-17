@@ -16,9 +16,10 @@ export const Category: FC<CategoryProps> = ({ category, asLink = false, ...rest 
     <Wrapper asLink={asLink} category={category}>
       <Badge
         _hover={{ textDecoration: "underline" }}
-        noOfLines={1}
-        w={"100px"}
         maxWidth={"100px"}
+        noOfLines={1}
+        variant={"outline"}
+        w={"100px"}
         fontSize={"sm"}
         // TODO: いい感じの色の管理をする！
         sx={{
@@ -26,7 +27,6 @@ export const Category: FC<CategoryProps> = ({ category, asLink = false, ...rest 
           boxShadow: "inset 0 0 0px 1px var(--new-badge-color)",
           color: "var(--new-badge-color)",
         }}
-        variant={"outline"}
         {...rest}
       >
         {category.name}

@@ -33,20 +33,21 @@ const _Tag: FC<TagProps> = ({ tag, ...rest }) => {
   return (
     <CustomNextLink
       {...rest}
+      _hover={{ backgroundColor: tag.color ? `#${tag.color}2E` : hoverBackgroundColor }}
+      borderColor={tag.color ? `#${tag.color}cc` : "currentcolor"}
+      borderRadius={16}
+      borderWidth={1}
+      display={"flex"}
+      fontSize={"sm"}
       href={href}
+      justifyContent={"center"}
       prefetch={false}
       px={2}
-      display={"flex"}
-      justifyContent={"center"}
       textAlign={"center"}
-      fontSize={"sm"}
-      borderColor={tag.color ? `#${tag.color}cc` : "currentcolor"}
-      borderWidth={1}
-      borderRadius={16}
-      _hover={{ backgroundColor: tag.color ? `#${tag.color}2E` : hoverBackgroundColor }}
     >
       <Box
         noOfLines={1}
+        overflow={"hidden"}
         title={`#${tag.name}`}
         /**
          * workaround
@@ -54,7 +55,6 @@ const _Tag: FC<TagProps> = ({ tag, ...rest }) => {
          * mobile実機のみnoOfLinesが機能しないため、maxHeightを指定してはみ出たテキストは非表示にする
          */
         height={"24px"}
-        overflow={"hidden"}
       >
         #{tag.name}
       </Box>

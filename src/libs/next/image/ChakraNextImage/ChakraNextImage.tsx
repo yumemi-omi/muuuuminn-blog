@@ -50,24 +50,24 @@ const _ChakraNextImage = (props: ChakraNextImageProps) => {
     <Box pos="relative" {...rest}>
       {src ? (
         <ChakraNextUnwrappedImage
-          w="auto"
-          h="auto"
-          loader={myLoader}
-          layout={layout}
-          width={width}
-          quality={quality}
-          height={height}
-          objectFit={objectFit}
-          placeholder={enableBlur ? "blur" : undefined}
+          alt={alt}
           blurDataURL={
             enableBlur ? `data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}` : undefined
           }
+          h="auto"
+          height={height}
+          layout={layout}
+          loader={myLoader}
+          objectFit={objectFit}
+          placeholder={enableBlur ? "blur" : undefined}
+          quality={quality}
           src={src}
-          alt={alt}
           transition="all 0.01s"
+          w="auto"
+          width={width}
         />
       ) : (
-        <Box width={width} height={height} bgColor={"currentcolor"} />
+        <Box bgColor={"currentcolor"} height={height} width={width} />
       )}
     </Box>
   );

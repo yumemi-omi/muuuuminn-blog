@@ -49,28 +49,28 @@ export const CategoryTabs: FC<CategoryTabsProps> = ({ categories }) => {
 
   return (
     <Box>
-      <HStack as={"ul"} overflowX="scroll" listStyleType={"none"}>
+      <HStack as={"ul"} listStyleType={"none"} overflowX="scroll">
         {tabList.map((tab) => (
           <Box
-            as={"li"}
-            id={`${tab.id}`}
-            key={tab.id}
-            transition="0.2s"
             _hover={{
               borderColor: colorMode === "dark" ? "#fec8c82e" : "#473a392e",
             }}
-            borderColor={getBorderStyle(colorMode, tab)}
+            as={"li"}
             borderBottomWidth={"2px"}
+            borderColor={getBorderStyle(colorMode, tab)}
+            id={`${tab.id}`}
+            key={tab.id}
+            transition="0.2s"
           >
             <CustomNextLink
-              key={tab.id}
-              href={getHref(tab)}
-              display={"block"}
-              paddingX={"4"}
-              paddingY={"2"}
               _hover={{
                 textDecoration: "none",
               }}
+              display={"block"}
+              href={getHref(tab)}
+              key={tab.id}
+              paddingX={"4"}
+              paddingY={"2"}
             >
               {tab.name}
             </CustomNextLink>

@@ -11,17 +11,17 @@ export const BaseLayout: FC<BaseLayoutProps> = (props) => {
   const { children } = props;
   return (
     <Grid
-      maxWidth={"690px"}
       marginX={"auto"}
-      templateRows={"auto 1fr auto"}
-      templateColumns={"100%"}
+      maxWidth={"690px"}
+      paddingX={{ base: 2, md: 4 }}
       sx={{
         minHeight: "100vh",
         "&": {
           minHeight: "100svh",
         },
       }}
-      paddingX={{ base: 2, md: 4 }}
+      templateColumns={"100%"}
+      templateRows={"auto 1fr auto"}
     >
       {/* TODO: 下スクロールで消す */}
       {/* TODO: headerとbodyのマージンを少し離してもいいかも */}

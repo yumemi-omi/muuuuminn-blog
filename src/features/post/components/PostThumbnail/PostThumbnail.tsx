@@ -25,14 +25,14 @@ const _PostThumbnail: FC<PostThumbnailProps> = ({
   ...rest
 }) => {
   return (
-    <AspectRatio ratio={1 / 1} borderRadius={"xl"} {...sizeSet} {...rest}>
+    <AspectRatio borderRadius={"xl"} ratio={1 / 1} {...sizeSet} {...rest}>
       <ChakraNextImage
         borderRadius={"xl"}
-        src={src}
         quality={imageQuality}
+        src={src}
         {...sizeSet}
-        enableBlur={enableBlur}
         alt={alt}
+        enableBlur={enableBlur}
         objectFit={objectFit}
       />
     </AspectRatio>
