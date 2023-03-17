@@ -27,7 +27,7 @@ export const PostsLayout: FC<PostsLayoutProps> = ({ children, categories, tags }
   const seo: BasicSeoProps = {
     title,
     description: t.DESCRIPTION.POSTS,
-    path: "/",
+    path: categoryNameAsQuery ? `/posts/${categoryNameAsQuery}` : "/posts",
   };
 
   return (
