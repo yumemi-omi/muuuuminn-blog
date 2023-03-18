@@ -6,6 +6,9 @@ import { ReactElement, ReactNode } from "react";
 import { RecoilRoot } from "recoil";
 import { RecoilHistorySyncJSONNext } from "recoil-sync-next";
 
+import { GoogleTagManager } from "@/features/gtm/components";
+import { gtmId } from "@/features/gtm/constants/gtmId";
+import { GoogleTagManagerIdType } from "@/features/gtm/types";
 import theme from "@/libs/chakra/theme";
 import { useTranslation } from "@/libs/i18n";
 import QueryClientProvider from "@/libs/reactQuery/QueryClientProvider";
@@ -35,6 +38,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout): JSX.Element {
 
   return (
     <>
+      <GoogleTagManager googleTagManagerId={gtmId as GoogleTagManagerIdType} />
       <DefaultSeo titleTemplate={titleTemplate} />
       <QueryClientProvider dehydratedState={pageProps.dehydratedState}>
         <ChakraProvider theme={theme}>
