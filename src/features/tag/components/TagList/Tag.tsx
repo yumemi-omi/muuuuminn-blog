@@ -2,6 +2,7 @@ import { useColorMode } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { FC, memo, useMemo } from "react";
 
+import { fireClickTagTrigger } from "@/features/gtm/utils";
 import { TagType } from "@/features/tag/types";
 import { Box } from "@/libs/chakra";
 import { CustomNextLink, CustomNextLinkProps } from "@/libs/next";
@@ -41,6 +42,7 @@ const _Tag: FC<TagProps> = ({ tag, ...rest }) => {
       fontSize={"sm"}
       href={href}
       justifyContent={"center"}
+      onClick={() => fireClickTagTrigger(tag)}
       prefetch={false}
       px={2}
       textAlign={"center"}
