@@ -51,7 +51,7 @@ https://coliss.com/articles/build-websites/operation/work/how-to-favicon.html
 
   - スクロール位置取得に使っている API は onItemsRendered というもので、実行頻度が高い。この処理内で recoil の state を更新して initialScrollOffset を計算する関数が再計算されるので再描画が走る。結果として投稿カード内のコンポーネントが高い頻度でちらつく。
 
-https://tmegos.hatenablog.jp/entry/react-virtualized-list-libraries
+@[card](https://tmegos.hatenablog.jp/entry/react-virtualized-list-libraries)
 
 - [Scaffdog](https://scaff.dog/) はとても便利
   - Markdown でテンプレートファイルを作成できるため、とっつきやすい。
