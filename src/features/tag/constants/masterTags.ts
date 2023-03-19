@@ -90,4 +90,22 @@ export const MASTER_TAGS = [
     color: "ccff99",
     categoryId: "4",
   },
+  {
+    id: "18",
+    name: "GTM",
+    color: "4285f4",
+    categoryId: "0",
+  },
+  {
+    id: "19",
+    name: "GA",
+    color: "e37400",
+    categoryId: "0",
+  },
+  {
+    id: "20",
+    name: "Vercel",
+    color: "7928ca",
+    categoryId: "0",
+  },
 ];
