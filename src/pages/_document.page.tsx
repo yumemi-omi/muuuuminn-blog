@@ -15,7 +15,7 @@ export default class Document extends NextDocument {
             crossOrigin="anonymous"
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9104412012929052"
           ></script>
-          <script async src="https://embed.zenn.studio/js/listen-embed-event.js"></script>
+          <script async defer src="https://embed.zenn.studio/js/listen-embed-event.js"></script>
           <link href="/favicons/favicon.ico" rel="icon" sizes="any" />
           <link href="/favicons/icon.svg" rel="icon" type="image/svg+xml" />
           <link href="/favicons/apple-touch-icon.png" rel="apple-touch-icon" />
