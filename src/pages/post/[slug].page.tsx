@@ -1,9 +1,9 @@
 import { ReactElement } from "react";
-import markdownToHtml from "zenn-markdown-html";
 
 import { PostDetailType, PostListType } from "@/features/post/types";
 import { getRelatedPosts } from "@/features/related-posts/utils/getRelatedPosts";
 import { getPostBySlug, getAllPosts } from "@/libs/markdown/api";
+import markdownToHtml from "@/libs/markdown/markdownToHtml";
 import { BaseLayout } from "@/shared/components";
 
 import { Post } from "./Post";
