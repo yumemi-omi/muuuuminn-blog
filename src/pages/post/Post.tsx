@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import { AdSense } from "@/features/advertise/components";
+// import { AdSense } from "@/features/advertise/components";
 import { PostDetail } from "@/features/post/components";
 import { PostDetailType, PostListType } from "@/features/post/types";
 import { RelatedPostsArea } from "@/features/related-posts/components";
@@ -58,9 +58,9 @@ export const Post: FC<PostProps> = ({ post, relatedPosts }) => {
         <PostDetail postDetail={post} />
         {relatedPosts.length !== 0 && <RelatedPostsArea relatedPosts={relatedPosts} />}
       </Stack>
-      <div style={{ display: "none" }}>
+      {/* <div style={{ display: "none" }}>
         <AdSense />
-      </div>
+      </div> */}
     </>
   );
 };

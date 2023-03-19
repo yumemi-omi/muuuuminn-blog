@@ -28,8 +28,9 @@ GTM の ID を環境変数で管理して Next.js 内のコードで使用して
 
 GTM, GA を設定するうえで参考になった記事を 2 つ列挙します。
 
-- https://egashira.dev/blog/nextjs-gtm
-- https://zenn.dev/keitakn/articles/nextjs-google-tag-manager
+https://egashira.dev/blog/nextjs-gtm
+
+https://zenn.dev/keitakn/articles/nextjs-google-tag-manager
 
 ## _さらにおまけ_
 
