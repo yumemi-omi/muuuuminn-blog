@@ -36,4 +36,5 @@ https://zenn.dev/keitakn/articles/nextjs-google-tag-manager
 
 それと、この投稿のサムネイルの猫ちゃん可愛くないですか？
 YouTube でさらに可愛い姿をみれるので要チェック 🐈
-[にゃきにゃきチャンネル](https://www.youtube.com/channel/UCy2j7KoCKRteor7NOkhuvlQ)
+
+@[card](https://www.youtube.com/channel/UCy2j7KoCKRteor7NOkhuvlQ)

@@ -12,7 +12,7 @@ tags: "4,14"
 
 練習の記録
 
-[再生リスト](https://youtube.com/playlist?list=PLeb-P495b5340SGM3efxGH1dCpmcxwVO_)
+@[card](https://youtube.com/playlist?list=PLeb-P495b5340SGM3efxGH1dCpmcxwVO_)
 
 ## **難しい点**
 
