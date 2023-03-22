@@ -13,7 +13,7 @@ tags: "4,14"
 
 練習したうちの数回を動画として再生リストに残しておきました。
 
-[再生リスト](https://youtube.com/playlist?list=PLeb-P495b535hv2noz-pNYt5xeNOV-KoL)
+@[card](https://youtube.com/playlist?list=PLeb-P495b535hv2noz-pNYt5xeNOV-KoL)
 
 ## **難しい点**
 
