@@ -32,7 +32,7 @@ const _NoWrapTagList: FC<NoWrapTagListProps> = ({ tags, tagProps, ...boxProps })
     const updatedEntries: Record<string, boolean> = {};
     entries.forEach((entry) => {
       if (entry.target) {
-        const targetId = (entry.target as HTMLElement).id as string;
+        const targetId = (entry.target as HTMLElement).dataset.id || "";
         if (entry.isIntersecting) {
           updatedEntries[targetId] = true;
         } else {
@@ -64,8 +64,8 @@ const _NoWrapTagList: FC<NoWrapTagListProps> = ({ tags, tagProps, ...boxProps })
         const isVisibleTag = visibilityMap[tag.id];
         return (
           <Box
+            data-id={tag.id}
             height={6}
-            id={tag.id}
             key={tag.id}
             flexShrink={0}
             // タグがひとつであれば、省略せずに全表示する
