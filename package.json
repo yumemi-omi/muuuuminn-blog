@@ -16,7 +16,9 @@
     "scaffdog": "scaffdog generate",
     "gen:deps": "depcruise --config .dependency-cruiser.js --include-only '^src' --output-type dot src | dot -T svg > dependencygraph.svg",
     "gen:theme-typings": "npx @chakra-ui/cli tokens src/libs/chakra/theme/index.ts",
-    "gen:type": "graphql-codegen --require dotenv/config --config codegen.ts dotenv_config_path=.env.local"
+    "gen:type": "graphql-codegen --require dotenv/config --config codegen.ts dotenv_config_path=.env.local",
+    "eslint:rules": "eslint --print-config .eslintrc.js > eslint-rules.json",
+    "list-rules": "npm run eslint:rules && node scripts/list-eslint-rules.js"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.17",
