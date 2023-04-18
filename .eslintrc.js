@@ -1,7 +1,6 @@
-/** @type {import('@typescript-eslint/experimental-utils').TSESLint.Linter.Config} */
+/** @type {import('eslint/lib/shared/types').ConfigData} */
 const eslintConfig = {
-  parser: "@typescript-eslint/parser",
-  plugins: ["@emotion", "@typescript-eslint"],
+  plugins: ["@emotion"],
   extends: [
     "eslint:recommended",
     "next/core-web-vitals",
@@ -9,17 +8,8 @@ const eslintConfig = {
     "prettier",
   ],
   env: {
-    browser: true,
-    node: true,
     es2020: true,
     jest: true,
-  },
-  parserOptions: {
-    ecmaVersion: 2020,
-    sourceType: "module",
-    ecmaFeatures: {
-      jsx: true,
-    },
   },
   rules: {
     "react/prop-types": "off",

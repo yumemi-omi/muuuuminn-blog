@@ -54,7 +54,7 @@ Object.entries(updatedRules).forEach(([rule, value]) => {
 });
 
 // 出力内容をマークダウンファイルに書き込む
-const outputPath = path.resolve(projectRoot, "eslint-rules.md");
+const outputPath = path.resolve(projectRoot, "doc", "ESLint.md");
 fs.writeFileSync(outputPath, output);
 
 console.log(`ESLint rules have been saved to: ${outputPath}`);
