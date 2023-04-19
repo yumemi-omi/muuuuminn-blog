@@ -44,7 +44,7 @@ export const useScrollRestoration = (router: NextRouter, elementId: string) => {
 
         if (ele) {
           const json = sessionStorage.getItem(`scrollPos:${url}`);
-          const scrollPos = json ? JSON.parse(json) : undefined;
+          const scrollPos = json ? (JSON.parse(json) as { x: number; y: number }) : undefined;
           if (scrollPos) {
             ele.scrollTo(scrollPos.x, scrollPos.y);
           }

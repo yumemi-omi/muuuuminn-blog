@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unsafe-return */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 const url = `${process.env.NEXT_PUBLIC_APP_ROOT_URL || ""}${
   process.env.NEXT_PUBLIC_APP_GITHUB_API_ENDPOINT || ""
 }`;
@@ -21,7 +24,7 @@ export const fetcher = <TData, TVariables>(
     if (json.errors) {
       const { message } = json.errors[0];
 
-      throw new Error(message);
+      throw new Error(message as string);
     }
 
     return json.data;

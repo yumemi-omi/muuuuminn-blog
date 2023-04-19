@@ -22,7 +22,7 @@ export const ArticleJsonLd: FC<ArticleJsonLdProps> = (props) => {
     dateModified,
   } = props;
 
-  const APP_ROOT_URL = process.env.NEXT_PUBLIC_APP_ROOT_URL;
+  const APP_ROOT_URL = process.env.NEXT_PUBLIC_APP_ROOT_URL || "";
   const pageUrl = APP_ROOT_URL + url;
 
   return (

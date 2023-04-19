@@ -12,7 +12,7 @@ export type BasicSeoProps = {
 export const BasicSeo: FC<BasicSeoProps> = (props) => {
   const {
     path,
-    title,
+    title = "",
     description,
     ogImage = {
       alt: `${title}のサムネイル`,
@@ -22,7 +22,7 @@ export const BasicSeo: FC<BasicSeoProps> = (props) => {
     noindexAndFollow,
   } = props;
 
-  const APP_ROOT_URL = process.env.NEXT_PUBLIC_APP_ROOT_URL;
+  const APP_ROOT_URL = process.env.NEXT_PUBLIC_APP_ROOT_URL || "";
   const pageUrl = APP_ROOT_URL + path;
 
   return (
@@ -74,7 +74,7 @@ export const ArticleSeo: FC<ArticleSeoProps> = (props) => {
     articleOgp,
   } = props;
 
-  const APP_ROOT_URL = process.env.NEXT_PUBLIC_APP_ROOT_URL;
+  const APP_ROOT_URL = process.env.NEXT_PUBLIC_APP_ROOT_URL || "";
   const pageUrl = APP_ROOT_URL + path;
 
   return (

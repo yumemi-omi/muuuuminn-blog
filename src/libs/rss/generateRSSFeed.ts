@@ -4,10 +4,10 @@ import RSS from "rss";
 
 import { getAllPosts } from "../markdown/api";
 
-export default async function generateRssFeed() {
+export default function generateRssFeed() {
   const APP_ROOT_URL = process.env.NEXT_PUBLIC_APP_ROOT_URL || "";
 
-  const posts = await getAllPosts([
+  const posts = getAllPosts([
     "title",
     "date",
     "slug",

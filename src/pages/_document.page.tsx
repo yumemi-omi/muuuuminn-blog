@@ -1,9 +1,13 @@
 // pages/_document.js
 
-import { ColorModeScript } from "@chakra-ui/react";
+import { ColorMode, ColorModeScript } from "@chakra-ui/react";
 import NextDocument, { Html, Head, Main, NextScript } from "next/document";
 
 import theme from "@/libs/chakra/theme";
+
+type MaybeColorMode = ColorMode | undefined;
+// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+const initialColorMode = theme.config.initialColorMode as MaybeColorMode;
 
 export default class Document extends NextDocument {
   render() {
@@ -22,7 +26,7 @@ export default class Document extends NextDocument {
           <link href="/favicons/site.webmanifest" rel="manifest" />
         </Head>
         <body>
-          <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+          <ColorModeScript initialColorMode={initialColorMode} />
           <Main />
           <NextScript />
         </body>

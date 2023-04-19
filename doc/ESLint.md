@@ -185,6 +185,23 @@
 | space-return-throw-case | ["off"] | Not found |
 | space-unary-word-ops | ["off"] | Not found |
 | react/jsx-space-before-closing | ["off"] | [react/jsx-space-before-closing](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-space-before-closing.md) |
+| @typescript-eslint/await-thenable | ["error"] | [@typescript-eslint/await-thenable](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/await-thenable.md) |
+| @typescript-eslint/no-floating-promises | ["error"] | [@typescript-eslint/no-floating-promises](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-floating-promises.md) |
+| @typescript-eslint/no-for-in-array | ["error"] | [@typescript-eslint/no-for-in-array](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-for-in-array.md) |
+| no-implied-eval | ["off"] | Not found |
+| @typescript-eslint/no-implied-eval | ["error"] | [@typescript-eslint/no-implied-eval](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-implied-eval.md) |
+| @typescript-eslint/no-misused-promises | ["error"] | [@typescript-eslint/no-misused-promises](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-misused-promises.md) |
+| @typescript-eslint/no-unnecessary-type-assertion | ["error"] | [@typescript-eslint/no-unnecessary-type-assertion](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unnecessary-type-assertion.md) |
+| @typescript-eslint/no-unsafe-argument | ["error"] | [@typescript-eslint/no-unsafe-argument](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unsafe-argument.md) |
+| @typescript-eslint/no-unsafe-assignment | ["error"] | [@typescript-eslint/no-unsafe-assignment](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unsafe-assignment.md) |
+| @typescript-eslint/no-unsafe-call | ["error"] | [@typescript-eslint/no-unsafe-call](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unsafe-call.md) |
+| @typescript-eslint/no-unsafe-member-access | ["error"] | [@typescript-eslint/no-unsafe-member-access](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unsafe-member-access.md) |
+| @typescript-eslint/no-unsafe-return | ["error"] | [@typescript-eslint/no-unsafe-return](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unsafe-return.md) |
+| require-await | ["off"] | Not found |
+| @typescript-eslint/require-await | ["error"] | [@typescript-eslint/require-await](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/require-await.md) |
+| @typescript-eslint/restrict-plus-operands | ["error"] | [@typescript-eslint/restrict-plus-operands](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/restrict-plus-operands.md) |
+| @typescript-eslint/restrict-template-expressions | ["error"] | [@typescript-eslint/restrict-template-expressions](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/restrict-template-expressions.md) |
+| @typescript-eslint/unbound-method | ["error"] | [@typescript-eslint/unbound-method](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/unbound-method.md) |
 | @typescript-eslint/adjacent-overload-signatures | ["error"] | [@typescript-eslint/adjacent-overload-signatures](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/adjacent-overload-signatures.md) |
 | @typescript-eslint/ban-ts-comment | ["error"] | [@typescript-eslint/ban-ts-comment](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/ban-ts-comment.md) |
 | @typescript-eslint/ban-types | ["error"] | [@typescript-eslint/ban-types](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/ban-types.md) |

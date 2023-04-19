@@ -5,8 +5,12 @@ const eslintConfig = {
     "eslint:recommended",
     "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "prettier",
   ],
+  parserOptions: {
+    project: "./tsconfig.json",
+  },
   env: {
     es2020: true,
     jest: true,

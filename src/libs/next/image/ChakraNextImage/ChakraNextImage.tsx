@@ -20,7 +20,7 @@ const ChakraNextUnwrappedImage = chakra(NextImage, {
 });
 
 const myLoader = (resolverProps: ImageLoaderProps): string => {
-  return `${resolverProps.src}?w=${resolverProps.width}&q=${resolverProps.quality}`;
+  return `${resolverProps.src}?w=${resolverProps.width}&q=${resolverProps.quality || 70}`;
 };
 
 const shimmer = (w: number, h: number) => `

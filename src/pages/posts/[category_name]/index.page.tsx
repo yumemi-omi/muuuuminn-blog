@@ -38,7 +38,7 @@ type Params = {
   };
 };
 
-export async function getStaticProps({ params }: Params) {
+export function getStaticProps({ params }: Params) {
   const posts = getAllPosts([
     "title",
     "date",
@@ -63,7 +63,7 @@ export async function getStaticProps({ params }: Params) {
   };
 }
 
-export async function getStaticPaths() {
+export function getStaticPaths() {
   const paths = MASTER_CATEGORIES.map((category) => {
     return {
       params: {

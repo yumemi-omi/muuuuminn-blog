@@ -30,7 +30,7 @@ const _TagMenu: FC<TagProps> = ({ countsOfTagInMenu, tags, ...rest }) => {
           height={6}
           justifyContent={"center"}
           size={"sm"}
-          title={`+${countsOfTagInMenu}`}
+          title={"隠されているタグを表示する"}
           variant={"outline"}
           {...rest}
         >
