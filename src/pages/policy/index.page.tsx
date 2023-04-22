@@ -25,9 +25,9 @@ PolicyPage.getLayout = function getLayout(page: ReactElement) {
   );
 };
 
-export const getStaticProps = async () => {
+export const getStaticProps = () => {
   const policy = getMarkdownFileByFilename("policy", ["slug", "content"], "src/features/policy");
-  const content = await markdownToHtml(policy.content);
+  const content = markdownToHtml(policy.content);
 
   return {
     props: {

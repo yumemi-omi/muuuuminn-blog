@@ -37,7 +37,7 @@ PostsPage.getLayout = function getLayout(page: ReactElement) {
   );
 };
 
-export const getStaticProps: GetStaticProps = async (_context: GetStaticPropsContext) => {
+export const getStaticProps: GetStaticProps = (_context: GetStaticPropsContext) => {
   const posts = getAllPosts([
     "title",
     "date",
@@ -48,7 +48,7 @@ export const getStaticProps: GetStaticProps = async (_context: GetStaticPropsCon
     "tags",
   ]);
 
-  await generateRssFeed();
+  generateRssFeed();
 
   return {
     props: {
