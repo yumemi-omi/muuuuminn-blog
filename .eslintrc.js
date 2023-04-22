@@ -18,7 +18,6 @@ const eslintConfig = {
   rules: {
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
-    "react-hooks/exhaustive-deps": "warn",
     "@emotion/pkg-renaming": "error",
     "import/order": [
       "warn",
