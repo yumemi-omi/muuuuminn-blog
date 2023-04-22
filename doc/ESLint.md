@@ -4,7 +4,6 @@
 |------|----------|--------|
 | react/prop-types | ["off"] | [react/prop-types](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prop-types.md) |
 | react/react-in-jsx-scope | ["off"] | [react/react-in-jsx-scope](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/react-in-jsx-scope.md) |
-| react-hooks/exhaustive-deps | ["warn"] | [react-hooks/exhaustive-deps](https://github.com/facebook/react/blob/main/packages/eslint-plugin-react-hooks/docs/rules/exhaustive-deps.md) |
 | @emotion/pkg-renaming | ["error"] | [@emotion/pkg-renaming](https://github.com/emotion-js/emotion/blob/main/packages/eslint-plugin/docs/rules/pkg-renaming.md) |
 | import/order | ["warn",{"groups":["builtin","external","internal","parent","sibling","index","object","type"],"newlines-between":"always","pathGroupsExcludedImportTypes":["builtin"],"alphabetize":{"order":"asc","caseInsensitive":true,"orderImportKind":"ignore"},"distinctGroup":true,"warnOnUnassignedImports":false}] | [import/order](https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/order.md) |
 | @typescript-eslint/no-unused-vars | ["warn",{"argsIgnorePattern":"^_","varsIgnorePattern":"^_","caughtErrorsIgnorePattern":"^_","destructuredArrayIgnorePattern":"^_"}] | [@typescript-eslint/no-unused-vars](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unused-vars.md) |
@@ -255,6 +254,7 @@
 | jsx-a11y/role-has-required-aria-props | ["warn"] | Not found |
 | jsx-a11y/role-supports-aria-props | ["warn"] | Not found |
 | react-hooks/rules-of-hooks | ["error"] | [react-hooks/rules-of-hooks](https://github.com/facebook/react/blob/main/packages/eslint-plugin-react-hooks/docs/rules/rules-of-hooks.md) |
+| react-hooks/exhaustive-deps | ["warn"] | [react-hooks/exhaustive-deps](https://github.com/facebook/react/blob/main/packages/eslint-plugin-react-hooks/docs/rules/exhaustive-deps.md) |
 | react/display-name | ["error"] | [react/display-name](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/display-name.md) |
 | react/jsx-key | ["error"] | [react/jsx-key](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-key.md) |
 | react/jsx-no-comment-textnodes | ["error"] | [react/jsx-no-comment-textnodes](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-comment-textnodes.md) |
