@@ -19,10 +19,6 @@ const theme: MantineThemeOverride = {
       },
       body: {
         overflow: "overlay",
-        color:
-          theme.colorScheme === "dark"
-            ? theme.colors["light-coral"][1]
-            : theme.colors["light-coral"][8],
         // TODO: #1f3134と#f3f3f3を定義する
         background: theme.colorScheme === "dark" ? "#1f3134" : "#f3f3f3",
       },
