@@ -15,7 +15,6 @@
     "format": "prettier --write . && npm run lint:js -- --fix",
     "scaffdog": "scaffdog generate",
     "gen:deps": "depcruise --config .dependency-cruiser.js --include-only '^src' --output-type dot src | dot -T svg > dependencygraph.svg",
-    "gen:theme-type": "npx @chakra-ui/cli tokens src/libs/chakra/theme/index.ts",
     "gen:graphql-type": "graphql-codegen --require dotenv/config --config codegen.ts dotenv_config_path=.env.local",
     "eslint:rules": "eslint --print-config .eslintrc.js > eslint-rules.json",
     "gen:eslint-doc": "npm run eslint:rules && node script/show-eslint-config.js",
@@ -23,8 +22,6 @@
     "gen:tsconfig-doc": "npm run tsc:rules && node script/show-tsconfig-config.js"
   },
   "dependencies": {
-    "@chakra-ui/icons": "^2.0.17",
-    "@chakra-ui/react": "^2.5.1",
     "@emotion/react": "^11.10.8",
     "@emotion/server": "^11.10.0",
     "@emotion/styled": "^11.10.6",
@@ -37,7 +34,6 @@
     "@types/react-window-infinite-loader": "1.0.6",
     "axios": "1.4.0",
     "date-fns": "2.30.0",
-    "framer-motion": "10.12.4",
     "graphql": "16.6.0",
     "gray-matter": "4.0.3",
     "next": "13.3.1",

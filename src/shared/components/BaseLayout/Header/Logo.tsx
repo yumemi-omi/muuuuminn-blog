@@ -2,7 +2,7 @@ import { AspectRatio, createStyles, useMantineColorScheme } from "@mantine/core"
 import { FC, memo } from "react";
 
 import { useTranslation } from "@/libs/i18n";
-import { ChakraNextImage } from "@/libs/next";
+import { NextImage } from "@/libs/next";
 
 const RATIO = 1 / 0.689;
 
@@ -26,7 +26,7 @@ export const Logo: FC<LogoProps> = memo(function _logo() {
   return (
     <>
       <AspectRatio className={classes.aspectRatio} hidden={colorScheme === "dark"} ratio={RATIO}>
-        <ChakraNextImage
+        <NextImage
           alt={t.ALT.SITE_LOGO}
           fill
           quality={50}
@@ -34,7 +34,7 @@ export const Logo: FC<LogoProps> = memo(function _logo() {
         />
       </AspectRatio>
       <AspectRatio className={classes.aspectRatio} hidden={colorScheme === "light"} ratio={RATIO}>
-        <ChakraNextImage
+        <NextImage
           alt={t.ALT.SITE_LOGO}
           fill
           quality={50}

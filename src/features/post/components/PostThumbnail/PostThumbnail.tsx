@@ -1,7 +1,7 @@
 import { AspectRatio, AspectRatioProps } from "@mantine/core";
 import { FC, memo } from "react";
 
-import { ChakraNextImage } from "@/libs/next";
+import { NextImage } from "@/libs/next";
 
 interface PostThumbnailProps extends AspectRatioProps {
   src: string;
@@ -33,7 +33,7 @@ const _PostThumbnail: FC<PostThumbnailProps> = ({
       }}
       w={sizeSet.width}
     >
-      <ChakraNextImage
+      <NextImage
         // borderRadius={"xl"}
         alt={alt}
         enableBlur={enableBlur}

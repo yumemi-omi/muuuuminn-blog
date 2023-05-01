@@ -1,4 +1,3 @@
-import { useMediaQuery } from "@chakra-ui/react";
 import {
   em,
   getBreakpointValue,
@@ -6,6 +5,7 @@ import {
   SimpleGridProps,
   useMantineTheme,
 } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
 import { FC } from "react";
 
 import { Box } from "@/libs/mantine/layout";

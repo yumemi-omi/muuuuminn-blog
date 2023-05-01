@@ -1,4 +1,5 @@
-import { Menu, ActionIcon } from "@mantine/core";
+import { Menu, ActionIcon, em, getBreakpointValue, useMantineTheme } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 
@@ -45,6 +46,8 @@ const MenuLinks = [
 
 export const MenuDrawer = () => {
   const { t } = useTranslation();
+  const { breakpoints } = useMantineTheme();
+  const largerThanSm = useMediaQuery(`(min-width: ${em(getBreakpointValue(breakpoints.sm))})`);
 
   return (
     <Menu offset={4} position="bottom-end" shadow="md" width={200} withArrow>
@@ -57,17 +60,25 @@ export const MenuDrawer = () => {
         {MenuLinks.map((menuLink) =>
           menuLink.isNextLink ? (
             // workaround: next/linkのラッパーコンポーネントを使うとhoverのスタイルで不具合が起きるため、直接Linkを使う
-            <Menu.Item component={Link} href={menuLink.href} key={menuLink.name}>
-              {menuLink.name}
+            <Menu.Item
+              component={Link}
+              fw={"bold"}
+              fz={largerThanSm ? "md" : "sm"}
+              href={menuLink.href}
+              key={menuLink.name}
+            >
+              {t.PAGE[menuLink.name]}
             </Menu.Item>
           ) : (
             <Menu.Item
               component="a"
+              fw={"bold"}
+              fz={largerThanSm ? "md" : "sm"}
               href={menuLink.href}
               key={menuLink.name}
               target={menuLink.targetBlank ? "_blank" : undefined}
             >
-              {menuLink.name}
+              {t.PAGE[menuLink.name]}
             </Menu.Item>
           ),
         )}

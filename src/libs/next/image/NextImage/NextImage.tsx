@@ -1,4 +1,4 @@
-import NextImage, { ImageProps, ImageLoaderProps } from "next/image";
+import OriginNextImage, { ImageProps, ImageLoaderProps } from "next/image";
 import { memo } from "react";
 
 import { Box, BoxProps } from "@/libs/mantine/layout";
@@ -24,16 +24,16 @@ const shimmer = (w: number, h: number) => `
 const toBase64 = (str: string) =>
   typeof window === "undefined" ? Buffer.from(str).toString("base64") : window.btoa(str);
 
-type ChakraNextImageProps = {
+type NextImageProps = {
   enableBlur?: boolean;
 } & ImageProps &
   BoxProps;
-const _ChakraNextImage = (props: ChakraNextImageProps) => {
+const _NextImage = (props: NextImageProps) => {
   const { src, alt = "", width, quality, height, fill, enableBlur, ...rest } = props;
   return (
     <Box pos="relative" {...rest}>
       {src ? (
-        <NextImage
+        <OriginNextImage
           alt={alt}
           blurDataURL={
             enableBlur ? `data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}` : undefined
@@ -57,4 +57,4 @@ const _ChakraNextImage = (props: ChakraNextImageProps) => {
   );
 };
 
-export const ChakraNextImage = memo(_ChakraNextImage);
+export const NextImage = memo(_NextImage);

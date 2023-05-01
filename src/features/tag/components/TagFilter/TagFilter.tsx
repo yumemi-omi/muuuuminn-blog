@@ -52,6 +52,8 @@ const _TagFilter: FC<TagFilterProps> = ({ tags }) => {
         searchable
         size={"xs"}
         styles={(theme) => ({
+          fontSize: "16px",
+          transform: "scale(0.8)",
           item: {
             // applies styles to selected item
             "&[data-selected]": {
