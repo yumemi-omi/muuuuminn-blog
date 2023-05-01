@@ -15,9 +15,10 @@ type NoWrapTagListProps = FlexProps & {
   };
 };
 
-const useStyles = createStyles((theme) => ({
+const useStyles = createStyles(() => ({
   tagWrapper: {
     flexShrink: 0,
+    cursor: "pointer",
   },
   tag: {
     visibility: "hidden",
