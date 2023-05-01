@@ -64,7 +64,7 @@ const _PostCardList: FC<PostCardListProps> = ({ posts }) => {
         >
           {({ index, style }) => {
             const post = posts[index];
-            return <PostCard key={post.slug} post={post} style={style} />;
+            return <PostCard h={"220px"} key={post.slug} post={post} style={style} />;
           }}
         </FixedSizeList>
       )}

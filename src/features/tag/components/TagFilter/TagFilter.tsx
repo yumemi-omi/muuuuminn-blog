@@ -1,10 +1,11 @@
-import { Select } from "@chakra-ui/react";
+import { Select } from "@mantine/core";
 import { useRouter } from "next/router";
-import { ChangeEvent, FC, memo, useCallback } from "react";
+import { FC, memo, useCallback } from "react";
 
 import { TagType } from "@/features/tag/types";
-import { Flex, Text } from "@/libs/chakra";
 import { useTranslation } from "@/libs/i18n";
+import { Flex } from "@/libs/mantine/layout";
+import { Text } from "@/libs/mantine/typography";
 
 type TagFilterProps = {
   tags: TagType[];
@@ -17,10 +18,10 @@ const _TagFilter: FC<TagFilterProps> = ({ tags }) => {
   const tagNameAsQuery = (router.query.tag as string) || "";
 
   const onChange = useCallback(
-    (e: ChangeEvent<HTMLSelectElement>) => {
+    (e: string | null) => {
       // TODO: クエリ作成を関数化する
       const params = new URLSearchParams();
-      const tagName = e.target.value;
+      const tagName = e;
       if (tagName) {
         params.append("tag", tagName);
       }
@@ -39,20 +40,31 @@ const _TagFilter: FC<TagFilterProps> = ({ tags }) => {
   );
 
   return (
-    <Flex alignItems={"center"} gap={2} justifyContent={"center"}>
+    <Flex align={"center"} gap={2}>
       <Select
+        clearable
+        data={[
+          { value: "", label: t.COMPONENTS.TAG.PLACEHOLDER },
+          ...tags.map((tag) => ({ value: tag.name, label: tag.name })),
+        ]}
         onChange={onChange}
         placeholder={t.COMPONENTS.TAG.PLACEHOLDER}
+        searchable
         size={"xs"}
+        styles={(theme) => ({
+          item: {
+            // applies styles to selected item
+            "&[data-selected]": {
+              "&, &:hover": {
+                color: theme.colorScheme === "dark" ? theme.black : theme.white,
+              },
+            },
+          },
+        })}
         value={tagNameAsQuery}
-      >
-        {tags.map((tag) => (
-          <option key={tag.name} value={tag.name}>
-            {tag.name}
-          </option>
-        ))}
-      </Select>
-      <Text flexShrink={0} fontSize={"xs"}>
+        w={"100%"}
+      />
+      <Text fz={"xs"} sx={{ flexShrink: 0 }}>
         {t.COMPONENTS.TAG.LABEL}
       </Text>
     </Flex>

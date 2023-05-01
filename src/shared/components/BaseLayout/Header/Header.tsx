@@ -1,8 +1,16 @@
-import { Heading, useColorMode } from "@chakra-ui/react";
+import {
+  em,
+  getBreakpointValue,
+  Title,
+  useMantineColorScheme,
+  useMantineTheme,
+} from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
 import { FC, memo } from "react";
 
-import { Flex, FlexProps, Text, HStack, Spacer } from "@/libs/chakra";
 import { useTranslation } from "@/libs/i18n";
+import { Flex, FlexProps, HStack } from "@/libs/mantine/layout";
+import { Text } from "@/libs/mantine/typography";
 import { CustomNextLink } from "@/libs/next";
 
 import { Logo } from "./Logo";
@@ -14,33 +22,37 @@ type HeaderProps = FlexProps;
 // TODO: PCのレイアウトも用意する
 export const Header: FC<HeaderProps> = memo(function _header() {
   const { t } = useTranslation();
-  const { colorMode } = useColorMode();
+  const { colorScheme } = useMantineColorScheme();
+  const { breakpoints } = useMantineTheme();
+  const largerThanSm = useMediaQuery(`(min-width: ${em(getBreakpointValue(breakpoints.sm))})`);
 
   return (
-    <Flex alignItems={"center"} as={"header"} py={"4"}>
+    <Flex align={"center"} component={"header"} justify={"space-between"} py={16}>
       <CustomNextLink
-        _hover={{ backgroundColor: "#fec8c82e" }}
-        borderRadius={"xl"}
         href={"/posts"}
-        p={"2"}
+        p={8}
         prefetch={false}
-        style={{
+        sx={{
           textDecoration: "none",
+          borderRadius: "0.75rem",
+          "&:hover": {
+            textDecoration: "none",
+            backgroundColor: "#fec8c82e",
+          },
         }}
       >
-        <Flex alignItems={"center"} gap={2}>
+        <Flex align={"center"} gap={8}>
           <Logo />
           <Text
-            color={colorMode === "dark" ? "#fec8c8" : "brand.800"}
-            fontSize={{ base: "sm", md: "lg" }}
-            fontWeight={"extrabold"}
+            color={colorScheme === "dark" ? "#fec8c8" : "#473a39"}
+            fz={largerThanSm ? "lg" : "sm"}
+            weight={"bolder"}
           >
             {t.SITE_NAME}
           </Text>
         </Flex>
-        <Heading hidden>{t.SITE_NAME}</Heading>
+        <Title hidden>{t.SITE_NAME}</Title>
       </CustomNextLink>
-      <Spacer />
       <HStack>
         <ToggleAppearanceButton />
         <MenuDrawer />

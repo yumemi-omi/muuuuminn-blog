@@ -2,8 +2,8 @@ import { formatDistance, format } from "date-fns";
 import { ja } from "date-fns/locale";
 import { FC, memo } from "react";
 
-import { Text, TextProps } from "@/libs/chakra";
 import { useTranslation, Locales, LocalesType } from "@/libs/i18n";
+import { Text, TextProps } from "@/libs/mantine/typography";
 
 const DATE_FORMAT = "yyyy/M/d";
 
@@ -37,7 +37,11 @@ type PostDateProps = {
 const _PostDate: FC<PostDateProps> = ({ date, ...rest }) => {
   const { t, locale } = useTranslation();
   const relativeDate = getRelativeDate(date, t, locale as LocalesType);
-  return <Text {...rest}>{relativeDate}</Text>;
+  return (
+    <Text {...rest} color={"gray"}>
+      {relativeDate}
+    </Text>
+  );
 };
 
 export const PostDate = memo(_PostDate);

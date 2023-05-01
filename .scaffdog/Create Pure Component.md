@@ -20,7 +20,7 @@ export * from "./{{ PascalComponentName }}";
 # {{ PascalComponentName }}/{{ PascalComponentName }}.tsx
 
 ```typescript
-import { Box, BoxProps } from "@/libs/chakra";
+import { Box, BoxProps } from "@/libs/mantine/layout";
 import { FC, memo } from 'react'
 
 export type {{ PascalComponentName }}Props = BoxProps

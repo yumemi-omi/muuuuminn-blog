@@ -1,9 +1,9 @@
-import { useColorMode, ColorMode } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { FC, useCallback, useMemo } from "react";
 
 import { CategoryType } from "@/features/category/types";
-import { Box, BoxProps, HStack } from "@/libs/chakra";
+import { Box, BoxProps, HStack } from "@/libs/mantine/layout";
+import { Text } from "@/libs/mantine/typography";
 import { CustomNextLink } from "@/libs/next";
 
 type CategoryTabsProps = BoxProps & {
@@ -11,32 +11,12 @@ type CategoryTabsProps = BoxProps & {
 };
 
 export const CategoryTabs: FC<CategoryTabsProps> = ({ categories }) => {
-  const { colorMode } = useColorMode();
   const router = useRouter();
   const categoryNameAsQuery = (router.query.category_name as string) || "";
 
   const tabList = useMemo(
     () => [{ id: "-1", name: "All", color: "" }, ...categories],
     [categories],
-  );
-
-  const getBorderStyle = useCallback(
-    (colorMode: ColorMode, tab: CategoryType) => {
-      if (tab.id === "-1") {
-        return !categoryNameAsQuery
-          ? colorMode === "dark"
-            ? "#fec8c8"
-            : "brand.800"
-          : "transparent";
-      } else {
-        return tab.name.toLowerCase() === categoryNameAsQuery
-          ? colorMode === "dark"
-            ? "#fec8c8"
-            : "brand.800"
-          : "transparent";
-      }
-    },
-    [categoryNameAsQuery],
   );
 
   const getHref = useCallback((tab: CategoryType) => {
@@ -49,30 +29,39 @@ export const CategoryTabs: FC<CategoryTabsProps> = ({ categories }) => {
 
   return (
     <Box>
-      <HStack as={"ul"} listStyleType={"none"} overflowX="scroll">
+      <HStack noWrap sx={{ overflowX: "scroll" }}>
         {tabList.map((tab) => (
           <Box
-            _hover={{
-              borderColor: colorMode === "dark" ? "#fec8c82e" : "#473a392e",
-            }}
-            as={"li"}
-            borderBottomWidth={"2px"}
-            borderColor={getBorderStyle(colorMode, tab)}
+            data-selected={
+              categoryNameAsQuery ? tab.name.toLowerCase() === categoryNameAsQuery : tab.id === "-1"
+            }
             id={`${tab.id}`}
             key={tab.id}
-            transition="0.2s"
+            sx={(theme) => ({
+              borderBottom: "2px solid transparent",
+              transition: "0.2s",
+              "&[data-selected='true']": {
+                borderColor: theme.colorScheme === "dark" ? "#fec8c8" : "#473a39",
+              },
+              "&:hover": {
+                borderColor: theme.colorScheme === "dark" ? "#fec8c82e" : "#473a392e",
+              },
+            })}
           >
             <CustomNextLink
-              _hover={{
-                textDecoration: "none",
-              }}
-              display={"block"}
               href={getHref(tab)}
               key={tab.id}
-              paddingX={"4"}
-              paddingY={"2"}
+              px={16}
+              py={8}
+              sx={{
+                display: "block",
+                textDecoration: "none",
+                ":hover": {
+                  textDecoration: "none",
+                },
+              }}
             >
-              {tab.name}
+              <Text color={"gray"}>{tab.name}</Text>
             </CustomNextLink>
           </Box>
         ))}

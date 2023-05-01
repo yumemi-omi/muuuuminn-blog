@@ -1,12 +1,13 @@
+import { createStyles } from "@mantine/core";
 import { FC, useCallback, useEffect, useMemo, useRef, useState, memo } from "react";
 
 import { TagType } from "@/features/tag/types";
-import { BoxProps, Box } from "@/libs/chakra";
+import { FlexProps, Box, Flex } from "@/libs/mantine/layout";
 
 import { Tag } from "./Tag";
 import { TagMenu } from "./TagMenu";
 
-type NoWrapTagListProps = BoxProps & {
+type NoWrapTagListProps = FlexProps & {
   tags: TagType[];
   tagProps?: {
     shallow?: boolean;
@@ -14,7 +15,20 @@ type NoWrapTagListProps = BoxProps & {
   };
 };
 
-const _NoWrapTagList: FC<NoWrapTagListProps> = ({ tags, tagProps, ...boxProps }) => {
+const useStyles = createStyles((theme) => ({
+  tagWrapper: {
+    flexShrink: 0,
+  },
+  tag: {
+    visibility: "hidden",
+    "&[data-visibility='true']": {
+      visibility: "visible",
+    },
+  },
+}));
+
+const _NoWrapTagList: FC<NoWrapTagListProps> = ({ tags, tagProps, ...flexProps }) => {
+  const { classes } = useStyles();
   const childrenWrapper = useRef<HTMLDivElement>(null);
   const [visibilityMap, setVisibilityMap] = useState<Record<string, boolean>>({});
 
@@ -59,27 +73,27 @@ const _NoWrapTagList: FC<NoWrapTagListProps> = ({ tags, tagProps, ...boxProps })
   }, [handleIntersection]);
 
   return (
-    <Box display={"flex"} gap={2} ref={childrenWrapper} width={"max-content"} {...boxProps}>
+    <Flex gap={8} ref={childrenWrapper} w={"max-content"} {...flexProps}>
       {tags.map((tag, index) => {
         const isVisibleTag = visibilityMap[tag.id];
         return (
           <Box
+            className={classes.tagWrapper}
             data-id={tag.id}
-            height={6}
+            h={24}
             key={tag.id}
-            flexShrink={0}
             // タグがひとつであれば、省略せずに全表示する
-            width={tags.length === 1 ? "full" : "90px"}
+            w={tags.length === 1 ? "100%" : "90px"}
           >
             {index === lastVisibleTagIndex ? (
               <TagMenu countsOfTagInMenu={invisibleTags.length} tags={invisibleTags} />
             ) : (
-              <Tag {...tagProps} tag={tag} visibility={isVisibleTag ? "visible" : "hidden"} />
+              <Tag className={classes.tag} data-visibility={isVisibleTag} tag={tag} {...tagProps} />
             )}
           </Box>
         );
       })}
-    </Box>
+    </Flex>
   );
 };
 

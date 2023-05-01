@@ -5,8 +5,8 @@ import { CategoryTabs } from "@/features/category/components";
 import { CategoryType } from "@/features/category/types";
 import { TagFilter } from "@/features/tag/components";
 import { TagType } from "@/features/tag/types";
-import { Flex } from "@/libs/chakra";
 import { useTranslation } from "@/libs/i18n";
+import { Flex } from "@/libs/mantine/layout";
 import { BasicSeo, BasicSeoProps } from "@/shared/components";
 
 type PostsLayoutProps = {
@@ -33,7 +33,7 @@ export const PostsLayout: FC<PostsLayoutProps> = ({ children, categories, tags }
   return (
     <>
       <BasicSeo {...seo} />
-      <Flex flexDirection={"column"} gap={2} height={"full"}>
+      <Flex direction={"column"} gap={8} h={"100%"}>
         <CategoryTabs categories={categories} />
         <TagFilter tags={tags} />
         {children}

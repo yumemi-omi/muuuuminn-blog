@@ -1,15 +1,15 @@
-import { useColorMode } from "@chakra-ui/react";
+import { Badge, BadgeProps, useMantineColorScheme } from "@mantine/core";
 import { useRouter } from "next/router";
 import { FC, memo, useMemo } from "react";
 
 import { fireClickTagTrigger } from "@/features/gtm/utils";
 import { TagType } from "@/features/tag/types";
-import { Box } from "@/libs/chakra";
 import { CustomNextLink, CustomNextLinkProps } from "@/libs/next";
 
 type TagProps = Omit<CustomNextLinkProps, "href"> & {
   tag: TagType;
-};
+  className?: string;
+} & BadgeProps;
 
 const _Tag: FC<TagProps> = ({ tag, ...rest }) => {
   const router = useRouter();
@@ -28,39 +28,35 @@ const _Tag: FC<TagProps> = ({ tag, ...rest }) => {
     }
   }, [categoryNameAsQuery, tag]);
 
-  const { colorMode } = useColorMode();
-  const hoverBackgroundColor = colorMode === "dark" ? "#333333" : "#3333332e";
+  const { colorScheme } = useMantineColorScheme();
+  const hoverBackgroundColor = colorScheme === "dark" ? "#333333" : "#3333332e";
 
   return (
-    <CustomNextLink
+    <Badge
       {...rest}
-      _hover={{ backgroundColor: tag.color ? `#${tag.color}2E` : hoverBackgroundColor }}
-      borderColor={tag.color ? `#${tag.color}cc` : "currentcolor"}
-      borderRadius={16}
-      borderWidth={1}
-      display={"flex"}
-      fontSize={"sm"}
+      component={CustomNextLink}
+      fullWidth
+      fz={"sm"}
       href={href}
-      justifyContent={"center"}
       onClick={() => fireClickTagTrigger(tag)}
       prefetch={false}
-      px={2}
-      textAlign={"center"}
+      px={8}
+      radius={"lg"}
+      size={"lg"}
+      sx={(theme) => ({
+        "--var-badge-color": tag.color ? `#${tag.color}` : "currentcolor",
+        fontWeight: "normal",
+        color: theme.colorScheme === "dark" ? "white" : "black",
+        textTransform: "none",
+        ":hover": {
+          textDecoration: "none",
+          backgroundColor: tag.color ? `#${tag.color}2E` : hoverBackgroundColor,
+        },
+      })}
+      variant="outline"
     >
-      <Box
-        noOfLines={1}
-        overflow={"hidden"}
-        title={`#${tag.name}`}
-        /**
-         * workaround
-         * https://stackoverflow.com/questions/71666775/chakra-ui-text-component-nooflines-doesnt-display-right-in-safari
-         * mobile実機のみnoOfLinesが機能しないため、maxHeightを指定してはみ出たテキストは非表示にする
-         */
-        height={"24px"}
-      >
-        #{tag.name}
-      </Box>
-    </CustomNextLink>
+      #{tag.name}
+    </Badge>
   );
 };
 

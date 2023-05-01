@@ -1,4 +1,4 @@
-import { AspectRatioProps, AspectRatio } from "@chakra-ui/react";
+import { AspectRatio, AspectRatioProps } from "@mantine/core";
 import { FC, memo } from "react";
 
 import { ChakraNextImage } from "@/libs/next";
@@ -7,33 +7,42 @@ interface PostThumbnailProps extends AspectRatioProps {
   src: string;
   imageQuality?: number;
   sizeSet?: {
-    width: string;
-    height: string;
+    width: number;
+    height: number;
   };
   enableBlur?: boolean;
   alt: string;
-  objectFit?: "cover" | "contain";
+  // objectFit?: "cover" | "contain";
 }
 
 const _PostThumbnail: FC<PostThumbnailProps> = ({
   src,
   imageQuality,
-  sizeSet = { width: "100px", height: "100px" },
+  sizeSet = { width: 100, height: 100 },
   enableBlur,
   alt = "",
-  objectFit = "contain",
   ...rest
 }) => {
   return (
-    <AspectRatio borderRadius={"xl"} ratio={1 / 1} {...sizeSet} {...rest}>
+    <AspectRatio
+      {...rest}
+      h={sizeSet.height}
+      ratio={1 / 1}
+      sx={{
+        borderRadius: "10px",
+      }}
+      w={sizeSet.width}
+    >
       <ChakraNextImage
-        borderRadius={"xl"}
-        quality={imageQuality}
-        src={src}
-        {...sizeSet}
+        // borderRadius={"xl"}
         alt={alt}
         enableBlur={enableBlur}
-        objectFit={objectFit}
+        quality={imageQuality}
+        src={src}
+        style={{
+          borderRadius: "10px",
+        }}
+        {...sizeSet}
       />
     </AspectRatio>
   );

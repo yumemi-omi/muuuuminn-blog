@@ -1,35 +1,30 @@
-import { TextProps, Badge, useColorMode } from "@chakra-ui/react";
+import { Badge, BadgeProps } from "@mantine/core";
 import { FC, ReactNode } from "react";
 
 import { CategoryType } from "@/features/category/types";
+import { Text } from "@/libs/mantine/typography";
 import { CustomNextLink } from "@/libs/next";
 
-type CategoryProps = TextProps & {
+type CategoryProps = BadgeProps & {
   category: CategoryType;
   asLink?: boolean;
 };
 
 export const Category: FC<CategoryProps> = ({ category, asLink = false, ...rest }) => {
-  const { colorMode } = useColorMode();
-
   return (
-    <Wrapper asLink={asLink} category={category}>
+    <Wrapper asLink={asLink && !!category} href={`/posts/${category.name.toLowerCase()}`}>
       <Badge
-        _hover={{ textDecoration: "underline" }}
-        maxWidth={"100px"}
-        noOfLines={1}
+        radius={"sm"}
+        sx={() => ({
+          width: "100px",
+          maxWidth: "100%",
+        })}
         variant={"outline"}
-        w={"100px"}
-        fontSize={"sm"}
-        // TODO: いい感じの色の管理をする！
-        sx={{
-          "--new-badge-color": colorMode === "dark" ? "#fec8c8" : "colors.brand.800",
-          boxShadow: "inset 0 0 0px 1px var(--new-badge-color)",
-          color: "var(--new-badge-color)",
-        }}
         {...rest}
       >
-        {category.name}
+        <Text fz={"sm"} lineClamp={1}>
+          {category.name}
+        </Text>
       </Badge>
     </Wrapper>
   );
@@ -38,12 +33,22 @@ export const Category: FC<CategoryProps> = ({ category, asLink = false, ...rest 
 type WrapperProps = {
   children: ReactNode;
   asLink: boolean;
-  category: CategoryType;
+  href: string;
 };
 
-const Wrapper: FC<WrapperProps> = ({ children, category, asLink }) =>
+const Wrapper: FC<WrapperProps> = ({ children, href, asLink }) =>
   asLink ? (
-    <CustomNextLink href={`/posts/${category.name.toLowerCase()}`} prefetch={false} shallow>
+    <CustomNextLink
+      href={href}
+      prefetch={false}
+      shallow
+      sx={{
+        textDecoration: "none",
+        ":hover": {
+          textDecoration: "underline",
+        },
+      }}
+    >
       {children}
     </CustomNextLink>
   ) : (

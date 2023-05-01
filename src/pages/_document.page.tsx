@@ -1,15 +1,13 @@
-// pages/_document.js
-
-import { ColorMode, ColorModeScript } from "@chakra-ui/react";
+import { createGetInitialProps } from "@mantine/next";
 import NextDocument, { Html, Head, Main, NextScript } from "next/document";
 
-import theme from "@/libs/chakra/theme";
-
-type MaybeColorMode = ColorMode | undefined;
-// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-const initialColorMode = theme.config.initialColorMode as MaybeColorMode;
+// eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-assignment
+const getInitialProps = createGetInitialProps();
 
 export default class Document extends NextDocument {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+  static getInitialProps = getInitialProps;
+
   render() {
     return (
       <Html lang="ja">
@@ -24,9 +22,9 @@ export default class Document extends NextDocument {
           <link href="/favicons/icon.svg" rel="icon" type="image/svg+xml" />
           <link href="/favicons/apple-touch-icon.png" rel="apple-touch-icon" />
           <link href="/favicons/site.webmanifest" rel="manifest" />
+          <meta content="minimum-scale=1, initial-scale=1, width=device-width" name="viewport" />
         </Head>
         <body>
-          <ColorModeScript initialColorMode={initialColorMode} />
           <Main />
           <NextScript />
         </body>
