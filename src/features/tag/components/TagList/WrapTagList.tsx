@@ -1,11 +1,11 @@
 import { FC, memo } from "react";
 
 import { TagType } from "@/features/tag/types";
-import { BoxProps, Box } from "@/libs/chakra";
+import { FlexProps, Flex } from "@/libs/mantine/layout";
 
 import { Tag } from "./Tag";
 
-type WrapTagListProps = BoxProps & {
+type WrapTagListProps = FlexProps & {
   tags: TagType[];
   tagProps?: {
     shallow?: boolean;
@@ -15,11 +15,11 @@ type WrapTagListProps = BoxProps & {
 
 const _WrapTagList: FC<WrapTagListProps> = ({ tags, tagProps, ...boxProps }) => {
   return (
-    <Box display={"flex"} gap={2} {...boxProps}>
+    <Flex gap={8} {...boxProps}>
       {tags.map((tag) => {
-        return <Tag {...tagProps} id={tag.id} key={tag.id} tag={tag} />;
+        return <Tag {...tagProps} key={tag.id} tag={tag} w={"min-content"} />;
       })}
-    </Box>
+    </Flex>
   );
 };
 

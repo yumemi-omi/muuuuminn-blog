@@ -4,8 +4,8 @@ import { FC } from "react";
 import { PostDetail } from "@/features/post/components";
 import { PostDetailType, PostListType } from "@/features/post/types";
 import { RelatedPostsArea } from "@/features/related-posts/components";
-import { Stack } from "@/libs/chakra";
 import { useTranslation } from "@/libs/i18n";
+import { Stack } from "@/libs/mantine/layout";
 import {
   ArticleSeo,
   ArticleSeoProps,
@@ -49,11 +49,13 @@ export const Post: FC<PostProps> = ({ post, relatedPosts }) => {
       <ArticleSeo {...seo} />
       <ArticleJsonLd {...jsonLd} />
       <Stack
-        marginX={"auto"}
-        marginY={{ base: 2 }}
-        minWidth={"300px"}
-        overflowX={"hidden"}
+        miw={"300px"}
+        mx={"auto"}
+        my={8}
         spacing={10}
+        sx={{
+          overflowX: "hidden",
+        }}
       >
         <PostDetail postDetail={post} />
         {relatedPosts.length !== 0 && <RelatedPostsArea relatedPosts={relatedPosts} />}

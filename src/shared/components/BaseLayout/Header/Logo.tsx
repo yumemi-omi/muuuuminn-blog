@@ -1,41 +1,42 @@
-import { AspectRatio, useColorMode, AspectRatioProps } from "@chakra-ui/react";
+import { AspectRatio, createStyles, useMantineColorScheme } from "@mantine/core";
 import { FC, memo } from "react";
 
 import { useTranslation } from "@/libs/i18n";
 import { ChakraNextImage } from "@/libs/next";
 
-type LogoProps = AspectRatioProps;
+const RATIO = 1 / 0.689;
 
-export const Logo: FC<LogoProps> = memo(function _logo({ ...rest }) {
+const useStyles = createStyles((theme) => ({
+  aspectRatio: {
+    borderRadius: "xl",
+    width: "40px",
+    [theme.fn.largerThan("sm")]: {
+      width: "60px",
+    },
+  },
+}));
+
+type LogoProps = {};
+
+export const Logo: FC<LogoProps> = memo(function _logo() {
   const { t } = useTranslation();
-  const { colorMode } = useColorMode();
+  const { colorScheme } = useMantineColorScheme();
+  const { classes } = useStyles();
 
   return (
     <>
-      <AspectRatio
-        hidden={colorMode === "dark"}
-        ratio={1 / 0.689}
-        w={{ base: "40px", md: "60px" }}
-        {...rest}
-      >
+      <AspectRatio className={classes.aspectRatio} hidden={colorScheme === "dark"} ratio={RATIO}>
         <ChakraNextImage
           alt={t.ALT.SITE_LOGO}
-          borderRadius={"xl"}
-          layout={"fill"}
+          fill
           quality={50}
           src={"/logo/logo_transparent_reverse_no_title.png"}
         />
       </AspectRatio>
-      <AspectRatio
-        hidden={colorMode === "light"}
-        ratio={1 / 0.689}
-        w={{ base: "40px", md: "60px" }}
-        {...rest}
-      >
+      <AspectRatio className={classes.aspectRatio} hidden={colorScheme === "light"} ratio={RATIO}>
         <ChakraNextImage
           alt={t.ALT.SITE_LOGO}
-          borderRadius={"xl"}
-          layout={"fill"}
+          fill
           quality={50}
           src={"/logo/logo_transparent_no_title.png"}
         />

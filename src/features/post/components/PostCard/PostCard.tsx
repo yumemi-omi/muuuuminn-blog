@@ -1,37 +1,59 @@
-import { LinkBox, LinkBoxProps } from "@chakra-ui/react";
+import { createStyles } from "@mantine/core";
 import { FC, memo } from "react";
 
 import { Category } from "@/features/category/components";
 import { PostDate, PostThumbnail, PostTitleLink } from "@/features/post/components";
 import { PostType } from "@/features/post/types";
 import { NoWrapTagList } from "@/features/tag/components";
-import { HStack, Text, VStack } from "@/libs/chakra";
 import { useTranslation } from "@/libs/i18n";
+import { HStack, Stack, Box, BoxProps } from "@/libs/mantine/layout";
+import { Text } from "@/libs/mantine/typography";
 
 type PostCardProps = {
   post: PostType;
-} & LinkBoxProps;
+} & BoxProps;
+
+const useStyles = createStyles(() => ({
+  card: {
+    overflowX: "hidden",
+  },
+  thumbnailContainer: {
+    flexShrink: 0,
+  },
+  thumbnail: {
+    flexShrink: 0,
+  },
+}));
 
 const _PostCard: FC<PostCardProps> = ({ post, ...rest }) => {
+  const { classes } = useStyles();
   const { t } = useTranslation();
   const alt = `${post.title}${t.ALT.THUMBNAIL_OF}`;
   return (
-    <LinkBox as={"article"} overflowX={"hidden"} py={"4"} {...rest}>
-      <VStack align={"start"}>
-        <HStack spacing={4}>
+    <Box className={classes.card} component={"article"} py={4} {...rest}>
+      <Stack align={"start"} spacing={8}>
+        <HStack spacing={"md"}>
           {post.category && <Category asLink category={post.category} />}
-          <PostDate date={post.date} fontSize={"sm"} />
+          <PostDate date={post.date} fz={"sm"} />
         </HStack>
-        <HStack flexShrink={0} spacing={4}>
-          <PostThumbnail alt={alt} flexShrink={0} imageQuality={50} src={post.coverImage} />
-          <VStack alignItems={"flex-start"}>
+        <HStack className={classes.thumbnailContainer} noWrap spacing={"md"}>
+          <PostThumbnail
+            alt={alt}
+            className={classes.thumbnail}
+            imageQuality={50}
+            ratio={1 / 1}
+            src={post.coverImage}
+          />
+          <Stack align={"flex-start"}>
             <PostTitleLink post={post} />
             <NoWrapTagList tagProps={{ shallow: true, replace: true }} tags={post.tags} />
-          </VStack>
+          </Stack>
         </HStack>
-        <Text noOfLines={2}>{post.description}</Text>
-      </VStack>
-    </LinkBox>
+        <Text color={"gray"} lineClamp={2}>
+          {post.description}
+        </Text>
+      </Stack>
+    </Box>
   );
 };
 

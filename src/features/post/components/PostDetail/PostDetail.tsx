@@ -1,13 +1,13 @@
-import { useBreakpointValue } from "@chakra-ui/react";
+import { em, getBreakpointValue, Title, useMantineTheme } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
 import { FC } from "react";
 
 import { Category } from "@/features/category/components";
 import { PostDate, PostThumbnail } from "@/features/post/components";
 import { PostDetailType } from "@/features/post/types";
 import { WrapTagList } from "@/features/tag/components";
-import { Box, BoxProps, HStack, VStack } from "@/libs/chakra";
-import { Text } from "@/libs/chakra";
 import { useTranslation } from "@/libs/i18n";
+import { Box, BoxProps, HStack, Stack } from "@/libs/mantine/layout";
 import { RichMarkdownContent } from "@/shared/components";
 
 type PostDetailProps = {
@@ -16,47 +16,44 @@ type PostDetailProps = {
 
 export const PostDetail: FC<PostDetailProps> = ({ postDetail, ...rest }) => {
   const { t } = useTranslation();
-  const sizeSet = useBreakpointValue({
-    base: {
-      width: "300px",
-      height: "168px",
-    },
-    md: {
-      width: "400px",
-      height: "225px",
-    },
-  });
+  const { breakpoints } = useMantineTheme();
+  const largerThanSm = useMediaQuery(`(min-width: ${em(getBreakpointValue(breakpoints.sm))})`);
+
+  const sizeSet = largerThanSm
+    ? {
+        width: 400,
+        height: 225,
+      }
+    : {
+        width: 300,
+        height: 168,
+      };
 
   const alt = `${postDetail.title}${t.ALT.THUMBNAIL_OF}`;
   return (
     <Box {...rest}>
-      <VStack>
-        <HStack alignSelf={"flex-start"} spacing={4}>
+      <Stack>
+        <HStack spacing={16}>
           {postDetail.category && <Category asLink category={postDetail.category} />}
-          <PostDate date={postDetail.date} fontSize={"sm"} />
+          <PostDate date={postDetail.date} fz={"sm"} />
         </HStack>
-        <VStack>
+        <Stack align={"center"} justify={"center"}>
           <PostThumbnail
             alt={alt}
             enableBlur
             imageQuality={75}
-            ratio={{ base: 1.85 / 1, md: 16 / 9 }}
+            ratio={largerThanSm ? 16 / 9 : 1.85 / 1.5}
             sizeSet={sizeSet}
             src={postDetail.coverImage}
           />
-          <Text as={"h1"} fontSize={"lg"} fontWeight={"bold"}>
+          <Title fw={"bold"} fz={"lg"}>
             {postDetail.title}
-          </Text>
-          <WrapTagList
-            flexWrap={"wrap"}
-            justifyContent={"center"}
-            tags={postDetail.tags}
-            width={"full"}
-          />
-        </VStack>
-      </VStack>
+          </Title>
+          <WrapTagList justify={"center"} tags={postDetail.tags} w={"full"} wrap={"wrap"} />
+        </Stack>
+      </Stack>
       {postDetail.content && (
-        <Box marginTop={4}>
+        <Box mt={16}>
           <RichMarkdownContent html={postDetail.content} />
         </Box>
       )}

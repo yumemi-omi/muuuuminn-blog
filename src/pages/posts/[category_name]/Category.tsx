@@ -4,7 +4,7 @@ import { FC, useMemo } from "react";
 import { PostCardList } from "@/features/post/components";
 import { PostListType } from "@/features/post/types";
 import { TagType } from "@/features/tag/types";
-import { Box } from "@/libs/chakra";
+import { Box } from "@/libs/mantine/layout";
 
 type CategoryProps = {
   posts: PostListType;
@@ -28,7 +28,7 @@ export const Category: FC<CategoryProps> = ({ posts, tags }) => {
 
   return (
     <>
-      <Box flex={"1 1 auto"}>
+      <Box sx={{ flex: "1 1 auto" }}>
         <PostCardList posts={postsFilteredByTag} />
       </Box>
     </>

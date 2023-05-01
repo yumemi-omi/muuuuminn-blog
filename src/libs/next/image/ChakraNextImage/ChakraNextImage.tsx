@@ -1,23 +1,7 @@
-import { chakra } from "@chakra-ui/react";
 import NextImage, { ImageProps, ImageLoaderProps } from "next/image";
 import { memo } from "react";
 
-import { Box, BoxProps } from "@/libs/chakra/components/Box";
-
-const ChakraNextUnwrappedImage = chakra(NextImage, {
-  shouldForwardProp: (prop) =>
-    [
-      "width",
-      "height",
-      "src",
-      "alt",
-      "layout",
-      "quality",
-      "placeholder",
-      "blurDataURL",
-      "loader ",
-    ].includes(prop),
-});
+import { Box, BoxProps } from "@/libs/mantine/layout";
 
 const myLoader = (resolverProps: ImageLoaderProps): string => {
   return `${resolverProps.src}?w=${resolverProps.width}&q=${resolverProps.quality || 70}`;
@@ -45,29 +29,29 @@ type ChakraNextImageProps = {
 } & ImageProps &
   BoxProps;
 const _ChakraNextImage = (props: ChakraNextImageProps) => {
-  const { src, alt = "", width, quality, height, layout, objectFit, enableBlur, ...rest } = props;
+  const { src, alt = "", width, quality, height, fill, enableBlur, ...rest } = props;
   return (
     <Box pos="relative" {...rest}>
       {src ? (
-        <ChakraNextUnwrappedImage
+        <NextImage
           alt={alt}
           blurDataURL={
             enableBlur ? `data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}` : undefined
           }
-          h="auto"
+          fill={fill}
           height={height}
-          layout={layout}
           loader={myLoader}
-          objectFit={objectFit}
           placeholder={enableBlur ? "blur" : undefined}
           quality={quality}
           src={src}
-          transition="all 0.01s"
-          w="auto"
+          style={{
+            objectFit: "contain",
+            transition: "all 0.01s",
+          }}
           width={width}
         />
       ) : (
-        <Box bgColor={"currentcolor"} height={height} width={width} />
+        <Box bg={"currentcolor"} h={height} w={width} />
       )}
     </Box>
   );

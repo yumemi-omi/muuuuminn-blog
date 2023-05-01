@@ -1,8 +1,8 @@
 import { FC } from "react";
 
 import { PolicyType } from "@/features/policy/types";
-import { Box } from "@/libs/chakra";
 import { useTranslation } from "@/libs/i18n";
+import { Box } from "@/libs/mantine/layout";
 import { BasicSeo, BasicSeoProps, RichMarkdownContent } from "@/shared/components";
 
 type PolicyProps = {

@@ -1,34 +1,45 @@
+import { useMediaQuery } from "@chakra-ui/react";
+import {
+  em,
+  getBreakpointValue,
+  SimpleGrid,
+  SimpleGridProps,
+  useMantineTheme,
+} from "@mantine/core";
 import { FC } from "react";
 
-import { Box, Grid, GridProps } from "@/libs/chakra";
+import { Box } from "@/libs/mantine/layout";
 
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 
-type BaseLayoutProps = GridProps;
+type BaseLayoutProps = SimpleGridProps;
 
 export const BaseLayout: FC<BaseLayoutProps> = (props) => {
   const { children } = props;
+  const { breakpoints } = useMantineTheme();
+  const largerThanSm = useMediaQuery(`(min-width: ${em(getBreakpointValue(breakpoints.sm))})`);
+
   return (
-    <Grid
-      marginX={"auto"}
-      maxWidth={"690px"}
-      paddingX={{ base: 2, md: 4 }}
+    <SimpleGrid
+      cols={1}
+      maw={"690px"}
+      mx={"auto"}
+      px={largerThanSm ? 8 : 4}
       sx={{
         minHeight: "100vh",
         "&": {
           minHeight: "100svh",
         },
+        gridTemplateRows: "auto 1fr auto",
       }}
-      templateColumns={"100%"}
-      templateRows={"auto 1fr auto"}
     >
       {/* TODO: 下スクロールで消す */}
       {/* TODO: headerとbodyのマージンを少し離してもいいかも */}
       <Header />
-      <Box as={"main"}>{children}</Box>
+      <Box component={"main"}>{children}</Box>
       {/* TODO: 何かのきっかけをトリガーに消せたら消す */}
       <Footer />
-    </Grid>
+    </SimpleGrid>
   );
 };

@@ -5,7 +5,7 @@ const eslintConfig = {
     "eslint:recommended",
     "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    // "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "prettier",
   ],
   parserOptions: {

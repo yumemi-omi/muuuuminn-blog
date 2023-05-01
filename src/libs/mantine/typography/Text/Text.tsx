@@ -1,4 +1,4 @@
-import { Text as OriginText, TextProps as OriginTextProps } from "@chakra-ui/react";
+import { Text as OriginText, TextProps as OriginTextProps } from "@mantine/core";
 import { FC, memo } from "react";
 
 export type TextProps = OriginTextProps;

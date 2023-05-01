@@ -1,8 +1,7 @@
-import { useColorMode } from "@chakra-ui/react";
 import { FC, memo } from "react";
 
 import { PostType } from "@/features/post/types";
-import { Text } from "@/libs/chakra";
+import { Text } from "@/libs/mantine/typography";
 import { CustomNextLink } from "@/libs/next";
 
 type PostTitleProps = {
@@ -10,24 +9,32 @@ type PostTitleProps = {
 };
 
 const _PostTitleLink: FC<PostTitleProps> = ({ post }) => {
-  const { colorMode } = useColorMode();
   return (
     <CustomNextLink
-      _hover={{
-        color: colorMode === "dark" ? "#fec8c8cc" : "#775f5fcc",
-        "--d": "100%",
-      }}
-      _visited={{ color: colorMode === "dark" ? "#fec8c8" : "#775f5f" }}
-      background={"linear-gradient(currentColor 0 0) 0 100% /var(--d, 0) 1px no-repeat"}
       href={`/post/${post.slug}`}
-      linkType={"withOverlay"}
       prefetch={false}
-      sx={{
-        transitionProperty: "var(--chakra-transition-property-common), background",
-        transitionDuration: "var(--chakra-transition-duration-normal)",
-      }}
+      sx={(theme) => ({
+        textDecoration: "none",
+        color:
+          theme.colorScheme === "dark"
+            ? theme.colors["light-coral"][1]
+            : theme.colors["light-coral"][8],
+        transitionProperty: "var(--transition-property-common)",
+        transitionDuration: "var(--transition-duration-common)",
+        background: "linear-gradient(currentColor 0 0) 0 100% /var(--d, 0) 1px no-repeat",
+        "&:hover": {
+          color: theme.colorScheme === "dark" ? "#fec8c8cc" : "#775f5fcc",
+          "--d": "100%",
+        },
+        "&:visited": {
+          color:
+            theme.colorScheme === "dark"
+              ? theme.colors["light-coral"][1]
+              : theme.colors["light-coral"][8],
+        },
+      })}
     >
-      <Text fontSize={"lg"} fontWeight={"bold"} noOfLines={2}>
+      <Text fz={"lg"} lineClamp={2} weight={"bold"}>
         {post.title}
       </Text>
     </CustomNextLink>

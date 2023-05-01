@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 
-import { Box } from "@/libs/chakra";
+import { Box } from "@/libs/mantine/layout";
 
 export const AdSense: React.FC = () => {
   const { asPath } = useRouter();
@@ -18,7 +18,7 @@ export const AdSense: React.FC = () => {
   }
 
   return (
-    <Box key={asPath} width={"full"}>
+    <Box key={asPath}>
       <ins
         className="adsbygoogle"
         data-ad-client="ca-pub-9104412012929052"

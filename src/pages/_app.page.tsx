@@ -1,4 +1,3 @@
-import { ChakraProvider } from "@chakra-ui/react";
 import { DehydratedState } from "@tanstack/react-query";
 import { NextPage } from "next";
 import { DefaultSeo } from "next-seo";
@@ -9,8 +8,8 @@ import { RecoilHistorySyncJSONNext } from "recoil-sync-next";
 import { GoogleTagManager } from "@/features/gtm/components";
 import { gtmId } from "@/features/gtm/constants/gtmId";
 import { GoogleTagManagerIdType } from "@/features/gtm/types";
-import theme from "@/libs/chakra/theme";
 import { useTranslation } from "@/libs/i18n";
+import { MantineProvider } from "@/libs/mantine/provider";
 import QueryClientProvider from "@/libs/reactQuery/QueryClientProvider";
 
 import type { AppProps } from "next/app";
@@ -41,13 +40,11 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout): JSX.Element {
       <GoogleTagManager googleTagManagerId={gtmId as GoogleTagManagerIdType} />
       <DefaultSeo titleTemplate={titleTemplate} />
       <QueryClientProvider dehydratedState={pageProps.dehydratedState}>
-        <ChakraProvider theme={theme}>
-          <RecoilRoot>
-            <RecoilHistorySyncJSONNext storeKey="ui-state">
-              {getLayout(<Component {...pageProps} />)}
-            </RecoilHistorySyncJSONNext>
-          </RecoilRoot>
-        </ChakraProvider>
+        <RecoilRoot>
+          <RecoilHistorySyncJSONNext storeKey="ui-state">
+            <MantineProvider>{getLayout(<Component {...pageProps} />)}</MantineProvider>
+          </RecoilHistorySyncJSONNext>
+        </RecoilRoot>
       </QueryClientProvider>
     </>
   );

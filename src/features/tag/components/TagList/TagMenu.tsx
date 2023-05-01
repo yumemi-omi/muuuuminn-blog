@@ -1,53 +1,42 @@
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-  Button,
-  ButtonProps,
-  PopoverArrow,
-  PopoverBody,
-} from "@chakra-ui/react";
+import { Badge, BadgeProps, Popover } from "@mantine/core";
 import { FC, memo } from "react";
 
 import { TagType } from "@/features/tag/types";
-import { Text, Box } from "@/libs/chakra";
+import { Box, Flex } from "@/libs/mantine/layout";
 
 import { Tag } from "./Tag";
 
-type TagProps = ButtonProps & {
+type TagProps = BadgeProps & {
   countsOfTagInMenu?: number;
   tags: TagType[];
 };
 
 const _TagMenu: FC<TagProps> = ({ countsOfTagInMenu, tags, ...rest }) => {
   return (
-    <Popover>
-      <PopoverTrigger>
-        <Button
-          alignItems={"center"}
-          borderRadius={16}
-          display={"flex"}
-          height={6}
-          justifyContent={"center"}
-          size={"sm"}
+    <Popover position="bottom-end" shadow="md" width={200} withArrow>
+      <Popover.Target>
+        <Badge
+          component="button"
+          fullWidth
+          fz={"sm"}
+          size={"lg"}
           title={"隠されているタグを表示する"}
           variant={"outline"}
+          w="max-content"
           {...rest}
         >
-          <Text fontSize={"sm"}>+{countsOfTagInMenu}</Text>
-        </Button>
-      </PopoverTrigger>
-      <PopoverContent>
-        <PopoverArrow />
-        {/* TODO: CloseButtonをいい感じにおきたい */}
-        <PopoverBody display={"flex"} gap={2} overflowX={"auto"} py={2}>
+          +{countsOfTagInMenu}
+        </Badge>
+      </Popover.Target>
+      <Popover.Dropdown>
+        <Flex gap={8}>
           {tags.map((tag, index) => (
-            <Box flexShrink={0} key={`tag_in_menu_${tag.id}_${index}`}>
+            <Box key={`tag_in_menu_${tag.id}_${index}`} sx={{ flexShrink: 0 }}>
               <Tag replace shallow tag={tag} />
             </Box>
           ))}
-        </PopoverBody>
-      </PopoverContent>
+        </Flex>
+      </Popover.Dropdown>
     </Popover>
   );
 };
