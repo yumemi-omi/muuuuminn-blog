@@ -1,5 +1,6 @@
 import { DehydratedState } from "@tanstack/react-query";
 import { NextPage } from "next";
+import Head from "next/head";
 import { DefaultSeo } from "next-seo";
 import { ReactElement, ReactNode } from "react";
 import { RecoilRoot } from "recoil";
@@ -37,6 +38,9 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout): JSX.Element {
 
   return (
     <>
+      <Head>
+        <meta content="minimum-scale=1, initial-scale=1, width=device-width" name="viewport" />
+      </Head>
       <GoogleTagManager googleTagManagerId={gtmId as GoogleTagManagerIdType} />
       <DefaultSeo titleTemplate={titleTemplate} />
       <QueryClientProvider dehydratedState={pageProps.dehydratedState}>

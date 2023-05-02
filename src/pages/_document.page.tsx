@@ -22,7 +22,6 @@ export default class Document extends NextDocument {
           <link href="/favicons/icon.svg" rel="icon" type="image/svg+xml" />
           <link href="/favicons/apple-touch-icon.png" rel="apple-touch-icon" />
           <link href="/favicons/site.webmanifest" rel="manifest" />
-          <meta content="minimum-scale=1, initial-scale=1, width=device-width" name="viewport" />
         </Head>
         <body>
           <Main />
