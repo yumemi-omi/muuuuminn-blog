@@ -21,17 +21,18 @@ const _PostThumbnail: FC<PostThumbnailProps> = ({
   sizeSet = { width: 100, height: 100 },
   enableBlur,
   alt = "",
+  ratio = 1 / 1,
   ...rest
 }) => {
   return (
     <AspectRatio
-      {...rest}
       h={sizeSet.height}
-      ratio={1 / 1}
+      ratio={ratio}
       sx={{
         borderRadius: "10px",
       }}
       w={sizeSet.width}
+      {...rest}
     >
       <NextImage
         // borderRadius={"xl"}

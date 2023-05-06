@@ -44,6 +44,7 @@ const _Tag: FC<TagProps> = ({ tag, ...rest }) => {
       radius={"lg"}
       size={"lg"}
       sx={(theme) => ({
+        cursor: "pointer",
         "--var-badge-color": tag.color ? `#${tag.color}` : "currentcolor",
         fontWeight: "normal",
         color: theme.colorScheme === "dark" ? "white" : "black",

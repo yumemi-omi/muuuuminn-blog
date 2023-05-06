@@ -13,7 +13,7 @@ type TagProps = BadgeProps & {
 
 const _TagMenu: FC<TagProps> = ({ countsOfTagInMenu, tags, ...rest }) => {
   return (
-    <Popover position="bottom-end" shadow="md" width={200} withArrow>
+    <Popover position="bottom-end" shadow="md" withArrow>
       <Popover.Target>
         <Badge
           component="button"
