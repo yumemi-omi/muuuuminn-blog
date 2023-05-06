@@ -8,27 +8,27 @@ category: "0"
 tags: "15,16"
 ---
 
-## **背景**
+## _背景_
 
 ある日突然 node-sass が入ったフロントのローカル環境において yarn install をするとエラーが出るようになってしまった 🥲
 
-## **結論**
+## _結論_
 
 python2 系を使える状態にして`yarn install --force`または`npm rebuild`することでエラーは解消され、無事処理が成功した。
 
-## **詳細**
+## _詳細_
 
-### **使用端末**
+### _使用端末_
 
 mac M1 Max
 
-### **フロントの環境**
+### _フロントの環境_
 
 node の version: `16.14.0`
 Nuxt: `2.15.0`
 node-sass: `6.0.1`
 
-### **エラー内容**
+### _エラー内容_
 
 一部だけ抜粋しました。
 
@@ -68,7 +68,7 @@ gyp verb install version is already installed, need to check "installVersion"
 gyp verb got "installVersion" 9
 ```
 
-### **解決手順**
+### _解決手順_
 
 1. Homebrew 経由で pyenv を導入。[^1]
 2. pyenv 経由で python2, 3 を導入。[^2]

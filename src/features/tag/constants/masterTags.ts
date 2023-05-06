@@ -108,4 +108,10 @@ export const MASTER_TAGS = [
     color: "7928ca",
     categoryId: "0",
   },
+  {
+    id: "21",
+    name: "Amplify",
+    color: "cc7a00",
+    categoryId: "0",
+  },
 ];
