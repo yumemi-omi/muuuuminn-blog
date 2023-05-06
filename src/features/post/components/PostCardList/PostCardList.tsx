@@ -54,13 +54,13 @@ const _PostCardList: FC<PostCardListProps> = ({ posts }) => {
     <AutoSizer>
       {({ height, width }) => (
         <FixedSizeList
-          height={height}
+          height={height || 0}
           initialScrollOffset={initialScrollOffset}
           itemCount={posts.length}
           itemSize={POST_CARD_HEIGHT}
           onItemsRendered={onItemsRendered}
           overscanCount={10}
-          width={width}
+          width={width || 0}
         >
           {({ index, style }) => {
             const post = posts[index];
