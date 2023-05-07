@@ -114,4 +114,16 @@ export const MASTER_TAGS = [
     color: "cc7a00",
     categoryId: "0",
   },
+  {
+    id: "22",
+    name: "App Runner",
+    color: "cc7a00",
+    categoryId: "0",
+  },
+  {
+    id: "23",
+    name: "AWS",
+    color: "cc7a00",
+    categoryId: "0",
+  },
 ];
