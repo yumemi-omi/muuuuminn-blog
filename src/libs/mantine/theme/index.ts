@@ -21,6 +21,8 @@ const theme: MantineThemeOverride = {
         overflow: "overlay",
         // TODO: #1f3134と#f3f3f3を定義する
         background: theme.colorScheme === "dark" ? "#1f3134" : "#f3f3f3",
+        transitionProperty: "var(--transition-property-common)",
+        transitionDuration: "var(--transition-duration-common)",
       },
     };
   },
