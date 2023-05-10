@@ -1,3 +1,22 @@
-## nextjs / typescript / emotion template
+# muuuuminn blog is personal markdown blog.
 
-## Apply Renovate to maintain packages.
+## Tech stack
+### Frontend
+- Next.js
+- TypeScript
+- Mantine UI
+
+### Backend
+None
+
+### Infrastructure
+- Cloud Build
+- Cloud Run
+- Cloudflare
+
+### Related services
+- Google Domains
+- Google Search Console
+- Google Tag Manager
+- Google Analytics
+
