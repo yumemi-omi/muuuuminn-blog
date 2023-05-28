@@ -1,5 +1,9 @@
-import { Space as _Space, SpaceProps as _SpaceProps } from "@mantine/core";
-import { FC } from "react";
+import type { FC } from "react";
+
+import { Space as _Space } from "@mantine/core";
+
+import type { SpaceProps as _SpaceProps } from "@mantine/core";
+
 
 type SpaceProps = _SpaceProps;
 

@@ -1,14 +1,17 @@
+import type { FC } from "react";
+
 import { em, getBreakpointValue, Title, useMantineTheme } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
-import { FC } from "react";
 
 import { Category } from "@/features/category/components";
 import { PostDate, PostThumbnail } from "@/features/post/components";
-import { PostDetailType } from "@/features/post/types";
 import { WrapTagList } from "@/features/tag/components";
 import { useTranslation } from "@/libs/i18n";
-import { Box, BoxProps, HStack, Stack } from "@/libs/mantine/layout";
+import { Box, HStack, Stack } from "@/libs/mantine/layout";
 import { RichMarkdownContent } from "@/shared/components";
+
+import type { PostDetailType } from "@/features/post/types";
+import type { BoxProps } from "@/libs/mantine/layout";
 
 type PostDetailProps = {
   postDetail: PostDetailType;

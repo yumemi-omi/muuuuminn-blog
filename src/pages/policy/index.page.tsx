@@ -1,13 +1,13 @@
-import { PolicyType } from "@/features/policy/types";
-import { getMarkdownFileByFilename } from "@/libs/markdown/api";
-import markdownToHtml from "@/libs/markdown/markdownToHtml";
+import type { ReactElement } from "react";
+
+export { getStaticProps } from "@/pages/policy/policy.ssg";
 import { BaseLayout } from "@/shared/components";
 
 import { Policy } from "./Policy";
 import { PolicyLayout } from "./PolicyLayout";
 
+import type { PolicyType } from "@/features/policy/types";
 import type { NextPageWithLayout } from "@/pages/_app.page";
-import type { ReactElement } from "react";
 
 type PolicyPageProps = {
   policy: PolicyType;
@@ -23,20 +23,6 @@ PolicyPage.getLayout = function getLayout(page: ReactElement) {
       <PolicyLayout>{page}</PolicyLayout>
     </BaseLayout>
   );
-};
-
-export const getStaticProps = () => {
-  const policy = getMarkdownFileByFilename("policy", ["slug", "content"], "src/features/policy");
-  const content = markdownToHtml(policy.content);
-
-  return {
-    props: {
-      policy: {
-        ...policy,
-        content,
-      },
-    },
-  };
 };
 
 export default PolicyPage;

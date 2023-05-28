@@ -1,8 +1,10 @@
-import { FC, memo } from "react";
+import type { FC } from "react";
+import { memo } from "react";
 
-import { PostType } from "@/features/post/types";
 import { Text } from "@/libs/mantine/typography";
 import { CustomNextLink } from "@/libs/next";
+
+import type { PostType } from "@/features/post/types";
 
 type PostTitleProps = {
   post: PostType;

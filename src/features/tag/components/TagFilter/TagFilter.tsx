@@ -1,11 +1,14 @@
-import { Select } from "@mantine/core";
 import { useRouter } from "next/router";
-import { FC, memo, useCallback } from "react";
+import type { FC } from "react";
+import { memo, useCallback } from "react";
 
-import { TagType } from "@/features/tag/types";
+import { Select } from "@mantine/core";
+
 import { useTranslation } from "@/libs/i18n";
 import { Flex } from "@/libs/mantine/layout";
 import { Text } from "@/libs/mantine/typography";
+
+import type { TagType } from "@/features/tag/types";
 
 type TagFilterProps = {
   tags: TagType[];

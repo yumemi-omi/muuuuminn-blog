@@ -1,14 +1,17 @@
+import type { FC } from "react";
+import { memo, useCallback, useMemo, useRef } from "react";
+
 import { number } from "@recoiljs/refine";
-import { FC, memo, useCallback, useMemo, useRef } from "react";
 import AutoSizer from "react-virtualized-auto-sizer";
-import { FixedSizeList, ListOnItemsRenderedProps } from "react-window";
+import { FixedSizeList } from "react-window";
 import { useRecoilState } from "recoil";
 import { syncEffect } from "recoil-sync";
 import { initializableAtomFamily } from "recoil-sync-next";
 
-import { PostListType } from "@/features/post/types";
-
 import { PostCard } from "../PostCard";
+
+import type { PostListType } from "@/features/post/types";
+import type { ListOnItemsRenderedProps } from "react-window";
 
 type PostCardListProps = {
   posts: PostListType;

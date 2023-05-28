@@ -1,9 +1,11 @@
-import { FC } from "react";
+import type { FC } from "react";
 
-import { PolicyType } from "@/features/policy/types";
 import { useTranslation } from "@/libs/i18n";
 import { Box } from "@/libs/mantine/layout";
-import { BasicSeo, BasicSeoProps, RichMarkdownContent } from "@/shared/components";
+import { BasicSeo, RichMarkdownContent } from "@/shared/components";
+
+import type { PolicyType } from "@/features/policy/types";
+import type { BasicSeoProps} from "@/shared/components";
 
 type PolicyProps = {
   policy: PolicyType;

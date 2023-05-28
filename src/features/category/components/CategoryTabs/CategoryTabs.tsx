@@ -1,10 +1,13 @@
 import { useRouter } from "next/router";
-import { FC, useCallback, useMemo } from "react";
+import type { FC } from "react";
+import { useCallback, useMemo } from "react";
 
-import { CategoryType } from "@/features/category/types";
-import { Box, BoxProps, HStack } from "@/libs/mantine/layout";
+import { Box, HStack } from "@/libs/mantine/layout";
 import { Text } from "@/libs/mantine/typography";
 import { CustomNextLink } from "@/libs/next";
+
+import type { CategoryType } from "@/features/category/types";
+import type { BoxProps } from "@/libs/mantine/layout";
 
 type CategoryTabsProps = BoxProps & {
   categories: CategoryType[];

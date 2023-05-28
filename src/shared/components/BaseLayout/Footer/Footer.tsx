@@ -1,9 +1,11 @@
-import { FC } from "react";
+import type { FC } from "react";
 
 import { useTranslation } from "@/libs/i18n";
-import { Box, Flex, FlexProps } from "@/libs/mantine/layout";
+import { Box, Flex } from "@/libs/mantine/layout";
 import { Text } from "@/libs/mantine/typography";
 import { CustomNextLink } from "@/libs/next/link/CustomNextLink";
+
+import type { FlexProps } from "@/libs/mantine/layout";
 
 type FooterProps = FlexProps;
 

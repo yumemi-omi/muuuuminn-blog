@@ -1,9 +1,10 @@
-import { MantineThemeOverride } from "@mantine/core";
-
 import colors from "./colors";
 import components from "./components";
 
+import type { MantineThemeOverride } from "@mantine/core";
+
 const theme: MantineThemeOverride = {
+  fontFamily: "inherit",
   colors,
   primaryColor: "light-coral",
   primaryShade: {

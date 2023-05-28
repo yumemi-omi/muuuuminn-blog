@@ -1,7 +1,10 @@
-import OriginNextImage, { ImageProps, ImageLoaderProps } from "next/image";
+import type { ImageProps, ImageLoaderProps } from "next/image";
+import OriginNextImage from "next/image";
 import { memo } from "react";
 
-import { Box, BoxProps } from "@/libs/mantine/layout";
+import { Box } from "@/libs/mantine/layout";
+
+import type { BoxProps } from "@/libs/mantine/layout";
 
 const myLoader = (resolverProps: ImageLoaderProps): string => {
   return `${resolverProps.src}?w=${resolverProps.width}&q=${resolverProps.quality || 70}`;

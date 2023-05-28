@@ -16,18 +16,40 @@ const eslintConfig = {
     jest: true,
   },
   rules: {
-    "react/prop-types": "off",
-    "react/react-in-jsx-scope": "off",
-    "@emotion/pkg-renaming": "error",
     "import/order": [
-      "warn",
+      "error",
       {
-        groups: ["builtin", "external", "internal", "parent", "sibling", "index", "object", "type"],
-        "newlines-between": "always",
+        groups: [
+          "builtin",
+          "external",
+          "internal",
+          ["parent", "sibling"],
+          "object",
+          "type",
+          "index",
+        ],
+        pathGroups: [
+          {
+            pattern: "{react,next/**}",
+            group: "builtin",
+            position: "before",
+          },
+          {
+            pattern: "@/src/**",
+            group: "parent",
+            position: "before",
+          },
+        ],
         pathGroupsExcludedImportTypes: ["builtin"],
-        alphabetize: { order: "asc", caseInsensitive: true },
+        alphabetize: {
+          order: "asc",
+          caseInsensitive: true,
+        },
+        "newlines-between": "always",
       },
     ],
+    "@typescript-eslint/consistent-type-imports": ["error", { prefer: "type-imports" }],
+    // その他のルール
     "@typescript-eslint/no-unused-vars": [
       "warn",
       // 「_」を変数名につけた場合は、変数を使用していないよって警告を出さない

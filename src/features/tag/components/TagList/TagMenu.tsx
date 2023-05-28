@@ -1,10 +1,14 @@
-import { Badge, BadgeProps, Popover } from "@mantine/core";
-import { FC, memo } from "react";
+import type { FC } from "react";
+import { memo } from "react";
 
-import { TagType } from "@/features/tag/types";
+import { Badge, Popover } from "@mantine/core";
+
 import { Box, Flex } from "@/libs/mantine/layout";
 
 import { Tag } from "./Tag";
+
+import type { TagType } from "@/features/tag/types";
+import type { BadgeProps } from "@mantine/core";
 
 type TagProps = BadgeProps & {
   countsOfTagInMenu?: number;

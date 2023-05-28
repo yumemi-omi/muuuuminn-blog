@@ -1,11 +1,15 @@
+import { forwardRef } from "react";
+
 import {
   Stack as OriginalStack,
-  StackProps as OriginalStackProps,
   Group as OriginalGroup,
-  GroupProps as OriginalGroupProps,
   createPolymorphicComponent,
 } from "@mantine/core";
-import { forwardRef } from "react";
+
+import type {
+  StackProps as OriginalStackProps,
+  GroupProps as OriginalGroupProps} from "@mantine/core";
+
 
 export type StackProps = OriginalStackProps;
 

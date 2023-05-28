@@ -1,11 +1,16 @@
+
+import type { FC } from "react";
+import type { ReactNode} from "react";
+import { useState } from "react";
+
 import {
   Hydrate,
   QueryClientProvider as _QueryClientProvider,
-  DehydratedState,
   QueryClient,
 } from "@tanstack/react-query";
-import { FC } from "react";
-import { ReactNode, useState } from "react";
+
+import type {
+  DehydratedState} from "@tanstack/react-query";
 
 type Props = {
   dehydratedState: DehydratedState;

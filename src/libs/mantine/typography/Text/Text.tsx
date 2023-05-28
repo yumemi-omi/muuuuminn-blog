@@ -1,5 +1,10 @@
-import { Text as OriginText, TextProps as OriginTextProps } from "@mantine/core";
-import { FC, memo } from "react";
+
+import type { FC} from "react";
+import { memo } from "react";
+
+import { Text as OriginText } from "@mantine/core";
+
+import type { TextProps as OriginTextProps } from "@mantine/core";
 
 export type TextProps = OriginTextProps;
 

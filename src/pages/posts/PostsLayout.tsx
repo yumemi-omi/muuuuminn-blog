@@ -1,13 +1,15 @@
 import { useRouter } from "next/router";
-import { FC, ReactNode } from "react";
+import type { FC, ReactNode } from "react";
 
 import { CategoryTabs } from "@/features/category/components";
-import { CategoryType } from "@/features/category/types";
 import { TagFilter } from "@/features/tag/components";
-import { TagType } from "@/features/tag/types";
 import { useTranslation } from "@/libs/i18n";
 import { Flex } from "@/libs/mantine/layout";
-import { BasicSeo, BasicSeoProps } from "@/shared/components";
+import { BasicSeo } from "@/shared/components";
+
+import type { CategoryType } from "@/features/category/types";
+import type { TagType } from "@/features/tag/types";
+import type { BasicSeoProps } from "@/shared/components";
 
 type PostsLayoutProps = {
   children: ReactNode;

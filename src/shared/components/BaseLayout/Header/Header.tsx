@@ -1,3 +1,6 @@
+import type { FC} from "react";
+import { memo } from "react";
+
 import {
   em,
   getBreakpointValue,
@@ -6,16 +9,17 @@ import {
   useMantineTheme,
 } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
-import { FC, memo } from "react";
 
 import { useTranslation } from "@/libs/i18n";
-import { Flex, FlexProps, HStack } from "@/libs/mantine/layout";
+import { Flex, HStack } from "@/libs/mantine/layout";
 import { Text } from "@/libs/mantine/typography";
 import { CustomNextLink } from "@/libs/next";
 
 import { Logo } from "./Logo";
 import { MenuDrawer } from "./MenuDrawer";
 import { ToggleAppearanceButton } from "./ToggleAppearanceButton";
+
+import type { FlexProps} from "@/libs/mantine/layout";
 
 type HeaderProps = FlexProps;
 

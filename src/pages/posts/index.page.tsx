@@ -1,19 +1,15 @@
-import { GetStaticProps, GetStaticPropsContext } from "next";
+import type { ReactElement } from "react";
 
-import { MASTER_CATEGORIES } from "@/features/category/constants";
-import { CategoryType } from "@/features/category/types";
-import { PostListType } from "@/features/post/types";
-import { MASTER_TAGS } from "@/features/tag/constants";
-import { TagType } from "@/features/tag/types";
-import { getAllPosts } from "@/libs/markdown/api";
-import generateRssFeed from "@/libs/rss/generateRSSFeed";
+export { getStaticProps } from "@/pages/posts/posts.ssg";
 import { BaseLayout } from "@/shared/components";
 
 import { Posts } from "./Posts";
 import { PostsLayout } from "./PostsLayout";
 
+import type { CategoryType } from "@/features/category/types";
+import type { PostListType } from "@/features/post/types";
+import type { TagType } from "@/features/tag/types";
 import type { NextPageWithLayout } from "@/pages/_app.page";
-import type { ReactElement } from "react";
 
 type PostsPageProps = {
   posts: PostListType;
@@ -35,28 +31,6 @@ PostsPage.getLayout = function getLayout(page: ReactElement) {
       <PostsLayout {...page.props}>{page}</PostsLayout>
     </BaseLayout>
   );
-};
-
-export const getStaticProps: GetStaticProps = (_context: GetStaticPropsContext) => {
-  const posts = getAllPosts([
-    "title",
-    "date",
-    "slug",
-    "coverImage",
-    "description",
-    "category",
-    "tags",
-  ]);
-
-  generateRssFeed();
-
-  return {
-    props: {
-      posts,
-      categories: MASTER_CATEGORIES,
-      tags: MASTER_TAGS,
-    },
-  };
 };
 
 export default PostsPage;

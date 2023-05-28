@@ -1,4 +1,5 @@
-import Router, { NextRouter } from "next/router";
+import type { NextRouter } from "next/router";
+import Router from "next/router";
 import { useEffect, useRef } from "react";
 
 /**

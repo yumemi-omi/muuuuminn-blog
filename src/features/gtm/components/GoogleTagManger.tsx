@@ -1,7 +1,7 @@
 import Script from "next/script";
-import { FC } from "react";
+import type { FC } from "react";
 
-import { GoogleTagManagerIdType } from "@/features/gtm/types";
+import type { GoogleTagManagerIdType } from "@/features/gtm/types";
 
 type GoogleTagManagerProps = {
   googleTagManagerId: GoogleTagManagerIdType;

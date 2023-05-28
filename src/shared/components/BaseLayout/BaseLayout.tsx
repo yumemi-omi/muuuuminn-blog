@@ -1,19 +1,19 @@
-import {
-  em,
-  getBreakpointValue,
-  SimpleGrid,
-  SimpleGridProps,
-  useMantineTheme,
-} from "@mantine/core";
+import { DotGothic16 } from "next/font/google";
+import type { FC } from "react";
+
+import { em, getBreakpointValue, SimpleGrid, useMantineTheme } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
-import { FC } from "react";
 
 import { Box } from "@/libs/mantine/layout";
 
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 
+import type { SimpleGridProps } from "@mantine/core";
+
 type BaseLayoutProps = SimpleGridProps;
+
+const font = DotGothic16({ weight: "400", subsets: ["latin"] });
 
 export const BaseLayout: FC<BaseLayoutProps> = (props) => {
   const { children } = props;
@@ -22,6 +22,7 @@ export const BaseLayout: FC<BaseLayoutProps> = (props) => {
 
   return (
     <SimpleGrid
+      className={font.className}
       cols={1}
       maw={"690px"}
       mx={"auto"}

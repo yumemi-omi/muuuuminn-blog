@@ -1,5 +1,6 @@
+import type { FC } from "react";
+
 import { ArticleJsonLd as _ArticleJsonLd } from "next-seo";
-import { FC } from "react";
 
 export type ArticleJsonLdProps = {
   url: string;

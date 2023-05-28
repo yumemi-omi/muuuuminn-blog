@@ -1,9 +1,14 @@
+import type { FC } from "react";
+import { memo } from "react";
+
 import { formatDistance, format } from "date-fns";
 import { ja } from "date-fns/locale";
-import { FC, memo } from "react";
 
-import { useTranslation, Locales, LocalesType } from "@/libs/i18n";
-import { Text, TextProps } from "@/libs/mantine/typography";
+import { useTranslation } from "@/libs/i18n";
+import { Text } from "@/libs/mantine/typography";
+
+import type { Locales, LocalesType } from "@/libs/i18n";
+import type { TextProps } from "@/libs/mantine/typography";
 
 const DATE_FORMAT = "yyyy/M/d";
 

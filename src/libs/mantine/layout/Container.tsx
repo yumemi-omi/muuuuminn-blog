@@ -1,5 +1,9 @@
-import { Container as _Container, ContainerProps as _ContainerProps } from "@mantine/core";
-import { FC, ReactNode } from "react";
+import type { FC, ReactNode } from "react";
+
+import { Container as _Container } from "@mantine/core";
+
+import type { ContainerProps as _ContainerProps } from "@mantine/core";
+
 
 type ContainerProps = {
   children: ReactNode;

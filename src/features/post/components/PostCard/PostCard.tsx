@@ -1,13 +1,17 @@
+import type { FC } from "react";
+import { memo } from "react";
+
 import { createStyles } from "@mantine/core";
-import { FC, memo } from "react";
 
 import { Category } from "@/features/category/components";
 import { PostDate, PostThumbnail, PostTitleLink } from "@/features/post/components";
-import { PostType } from "@/features/post/types";
 import { NoWrapTagList } from "@/features/tag/components";
 import { useTranslation } from "@/libs/i18n";
-import { HStack, Stack, Box, BoxProps } from "@/libs/mantine/layout";
+import { HStack, Stack, Box } from "@/libs/mantine/layout";
 import { Text } from "@/libs/mantine/typography";
+
+import type { PostType } from "@/features/post/types";
+import type { BoxProps } from "@/libs/mantine/layout";
 
 type PostCardProps = {
   post: PostType;

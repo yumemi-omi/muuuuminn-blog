@@ -1,9 +1,13 @@
-import { UrlObject } from "url";
 
-import NextLink, { LinkProps as OriginNextLinkProps } from "next/link";
-import { FC, ReactNode } from "react";
+import type { LinkProps as OriginNextLinkProps } from "next/link";
+import NextLink from "next/link";
+import type { FC, ReactNode } from "react";
 
-import { Box, BoxProps } from "@/libs/mantine/layout";
+
+import { Box } from "@/libs/mantine/layout";
+
+import type { BoxProps } from "@/libs/mantine/layout";
+import type { UrlObject } from "url";
 
 export type CustomNextLinkProps = OriginNextLinkProps;
 

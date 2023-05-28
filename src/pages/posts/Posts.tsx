@@ -1,10 +1,12 @@
 import { useRouter } from "next/router";
-import { FC, useMemo } from "react";
+import type { FC} from "react";
+import { useMemo } from "react";
 
 import { PostCardList } from "@/features/post/components";
-import { PostListType } from "@/features/post/types";
-import { TagType } from "@/features/tag/types";
 import { Box } from "@/libs/mantine/layout";
+
+import type { PostListType } from "@/features/post/types";
+import type { TagType } from "@/features/tag/types";
 
 type PostsProps = {
   posts: PostListType;

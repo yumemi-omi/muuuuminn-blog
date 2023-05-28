@@ -1,9 +1,12 @@
-import { Badge, BadgeProps } from "@mantine/core";
-import { FC, ReactNode } from "react";
+import type { FC, ReactNode } from "react";
 
-import { CategoryType } from "@/features/category/types";
+import { Badge } from "@mantine/core";
+
 import { Text } from "@/libs/mantine/typography";
 import { CustomNextLink } from "@/libs/next";
+
+import type { CategoryType } from "@/features/category/types";
+import type { BadgeProps } from "@mantine/core";
 
 type CategoryProps = BadgeProps & {
   category: CategoryType;

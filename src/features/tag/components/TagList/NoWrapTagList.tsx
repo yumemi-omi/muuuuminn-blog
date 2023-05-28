@@ -1,11 +1,15 @@
-import { createStyles } from "@mantine/core";
-import { FC, useCallback, useEffect, useMemo, useRef, useState, memo } from "react";
+import type { FC } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, memo } from "react";
 
-import { TagType } from "@/features/tag/types";
-import { FlexProps, Box, Flex } from "@/libs/mantine/layout";
+import { createStyles } from "@mantine/core";
+
+import { Box, Flex } from "@/libs/mantine/layout";
 
 import { Tag } from "./Tag";
 import { TagMenu } from "./TagMenu";
+
+import type { TagType } from "@/features/tag/types";
+import type { FlexProps } from "@/libs/mantine/layout";
 
 type NoWrapTagListProps = FlexProps & {
   tags: TagType[];

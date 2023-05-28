@@ -1,6 +1,10 @@
-import { NextSeo, NextSeoProps } from "next-seo";
-import { OpenGraphArticle, OpenGraphMedia } from "next-seo/lib/types";
-import { FC } from "react";
+import type { FC } from "react";
+
+import { NextSeo } from "next-seo";
+
+import type { NextSeoProps } from "next-seo";
+import type { OpenGraphArticle, OpenGraphMedia } from "next-seo/lib/types";
+
 
 export type BasicSeoProps = {
   path: string;

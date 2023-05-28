@@ -1,9 +1,8 @@
-import {
-  Box as OriginBox,
-  BoxProps as OriginBoxProps,
-  createPolymorphicComponent,
-} from "@mantine/core";
 import { forwardRef } from "react";
+
+import { Box as OriginBox, createPolymorphicComponent } from "@mantine/core";
+
+import type { BoxProps as OriginBoxProps } from "@mantine/core";
 
 export type BoxProps = OriginBoxProps;
 

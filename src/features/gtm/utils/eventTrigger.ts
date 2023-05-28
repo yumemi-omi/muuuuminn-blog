@@ -1,4 +1,4 @@
-import { TagType } from "@/features/tag/types";
+import type { TagType } from "@/features/tag/types";
 
 export const fireClickTagTrigger = (tag: TagType) => {
   window.dataLayer.push({

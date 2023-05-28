@@ -1,13 +1,18 @@
+import type { FC, ReactNode} from "react";
+import { useEffect } from "react";
+
 import {
-  ColorScheme,
   ColorSchemeProvider as _ColorSchemeProvider,
-  MantineProvider as _MantineProvider,
-  MantineProviderProps,
+  MantineProvider as _MantineProvider
 } from "@mantine/core";
 import { useColorScheme, useLocalStorage } from "@mantine/hooks";
-import { FC, ReactNode, useEffect } from "react";
+
 
 import theme from "@/libs/mantine/theme";
+
+import type {
+  ColorScheme,
+  MantineProviderProps} from "@mantine/core";
 
 type Props = {
   children: ReactNode;

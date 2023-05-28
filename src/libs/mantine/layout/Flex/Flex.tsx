@@ -1,9 +1,13 @@
+import { forwardRef } from "react";
+
 import {
   createPolymorphicComponent,
-  Flex as OriginFlex,
-  FlexProps as OriginFlexProps,
+  Flex as OriginFlex
 } from "@mantine/core";
-import { forwardRef } from "react";
+
+import type {
+  FlexProps as OriginFlexProps} from "@mantine/core";
+
 
 export type FlexProps = OriginFlexProps;
 

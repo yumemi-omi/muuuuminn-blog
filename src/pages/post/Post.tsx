@@ -1,17 +1,19 @@
-import { FC } from "react";
+import type { FC } from "react";
 
 import { AdSense } from "@/features/advertise/components";
 import { PostDetail } from "@/features/post/components";
-import { PostDetailType, PostListType } from "@/features/post/types";
 import { RelatedPostsArea } from "@/features/related-posts/components";
 import { useTranslation } from "@/libs/i18n";
 import { Stack } from "@/libs/mantine/layout";
 import {
   ArticleSeo,
-  ArticleSeoProps,
-  ArticleJsonLd,
-  ArticleJsonLdProps,
+  ArticleJsonLd
 } from "@/shared/components";
+
+import type { PostDetailType, PostListType } from "@/features/post/types";
+import type {
+  ArticleSeoProps,
+  ArticleJsonLdProps} from "@/shared/components";
 
 type PostProps = {
   post: PostDetailType;

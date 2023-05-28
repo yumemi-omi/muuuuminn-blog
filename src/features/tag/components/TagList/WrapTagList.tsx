@@ -1,9 +1,12 @@
-import { FC, memo } from "react";
+import type { FC } from "react";
+import { memo } from "react";
 
-import { TagType } from "@/features/tag/types";
-import { FlexProps, Flex } from "@/libs/mantine/layout";
+import { Flex } from "@/libs/mantine/layout";
 
 import { Tag } from "./Tag";
+
+import type { TagType } from "@/features/tag/types";
+import type { FlexProps } from "@/libs/mantine/layout";
 
 type WrapTagListProps = FlexProps & {
   tags: TagType[];

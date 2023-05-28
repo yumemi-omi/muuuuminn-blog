@@ -1,5 +1,6 @@
-import { createGetInitialProps } from "@mantine/next";
 import NextDocument, { Html, Head, Main, NextScript } from "next/document";
+
+import { createGetInitialProps } from "@mantine/next";
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-assignment
 const getInitialProps = createGetInitialProps();

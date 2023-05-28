@@ -1,10 +1,13 @@
+import type { FC } from "react";
+import { memo } from "react";
+
 import { Title } from "@mantine/core";
-import { FC, memo } from "react";
 
 import { PostCard } from "@/features/post/components";
-import { PostListType } from "@/features/post/types";
 import { useTranslation } from "@/libs/i18n";
 import { Stack } from "@/libs/mantine/layout";
+
+import type { PostListType } from "@/features/post/types";
 
 type RelatedPostsArea = {
   relatedPosts: PostListType;

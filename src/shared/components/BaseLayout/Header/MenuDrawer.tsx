@@ -1,7 +1,8 @@
+import Link from "next/link";
+
 import { Menu, ActionIcon, em, getBreakpointValue, useMantineTheme } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
-import Link from "next/link";
 
 import { useTranslation } from "@/libs/i18n";
 

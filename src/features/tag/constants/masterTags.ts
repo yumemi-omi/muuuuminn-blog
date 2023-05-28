@@ -126,4 +126,16 @@ export const MASTER_TAGS = [
     color: "cc7a00",
     categoryId: "0",
   },
+  {
+    id: "24",
+    name: "Google Fonts",
+    color: "3192e9",
+    categoryId: "0",
+  },
+  {
+    id: "25",
+    name: "Mantine UI",
+    color: "329aef",
+    categoryId: "0",
+  },
 ];

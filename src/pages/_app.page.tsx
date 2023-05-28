@@ -1,19 +1,20 @@
-import { DehydratedState } from "@tanstack/react-query";
-import { NextPage } from "next";
+import type { AppProps } from "next/app";
 import Head from "next/head";
+import type { ReactElement, ReactNode } from "react";
+
 import { DefaultSeo } from "next-seo";
-import { ReactElement, ReactNode } from "react";
 import { RecoilRoot } from "recoil";
 import { RecoilHistorySyncJSONNext } from "recoil-sync-next";
 
 import { GoogleTagManager } from "@/features/gtm/components";
 import { gtmId } from "@/features/gtm/constants/gtmId";
-import { GoogleTagManagerIdType } from "@/features/gtm/types";
 import { useTranslation } from "@/libs/i18n";
 import { MantineProvider } from "@/libs/mantine/provider";
 import QueryClientProvider from "@/libs/reactQuery/QueryClientProvider";
 
-import type { AppProps } from "next/app";
+import type { GoogleTagManagerIdType } from "@/features/gtm/types";
+import type { DehydratedState } from "@tanstack/react-query";
+import type { NextPage } from "next";
 
 import "zenn-content-css";
 import "../libs/markdown/prism-override-style.css";
