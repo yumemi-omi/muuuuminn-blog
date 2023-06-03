@@ -53,7 +53,6 @@ const _TagFilter: FC<TagFilterProps> = ({ tags }) => {
         onChange={onChange}
         placeholder={t.COMPONENTS.TAG.PLACEHOLDER}
         searchable
-        size={"sm"}
         styles={(theme) => ({
           item: {
             // applies styles to selected item
