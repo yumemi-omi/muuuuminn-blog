@@ -60,7 +60,7 @@
     "eslint-config-prettier": "8.8.0",
     "husky": "8.0.3",
     "lint-staged": "13.2.2",
-    "npm-check-updates": "16.10.10",
+    "npm-check-updates": "16.10.19",
     "prettier": "2.8.8",
     "scaffdog": "2.5.0",
     "typescript": "5.0.4"
