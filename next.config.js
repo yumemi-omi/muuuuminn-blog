@@ -28,7 +28,7 @@ const nextConfig = {
     scrollRestoration: true,
   },
   env: {
-    NEXT_PUBLIC_APP_ROOT_URL: process.env.NEXT_PUBLIC_APP_ROOT_URL || "https://muuuuminn.com",
+    NEXT_PUBLIC_APP_ROOT_URL: process.env.NEXT_PUBLIC_APP_ROOT_URL,
     NEXT_PUBLIC_GTM_ID: process.env.NEXT_PUBLIC_GTM_ID,
   },
 };

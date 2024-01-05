@@ -1,1 +1,1 @@
-export const gtmId = process.env.NEXT_PUBLIC_GTM_ID || "GTM-K98TL42";
+export const gtmId = process.env.NEXT_PUBLIC_GTM_ID || "";

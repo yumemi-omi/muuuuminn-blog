@@ -43,7 +43,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout): JSX.Element {
         <meta content="minimum-scale=1, initial-scale=1, width=device-width" name="viewport" />
       </Head>
       <GoogleTagManager googleTagManagerId={gtmId as GoogleTagManagerIdType} />
-      <DefaultSeo titleTemplate={titleTemplate} />
+      {/* <DefaultSeo titleTemplate={titleTemplate} /> */}
       <QueryClientProvider dehydratedState={pageProps.dehydratedState}>
         <RecoilRoot>
           <RecoilHistorySyncJSONNext storeKey="ui-state">
